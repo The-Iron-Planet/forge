@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  devise_scope :user do
-    root to: 'devise/sessions#new'
-    get "login", to: "devise/sessions#new"
-  end
+  root 'users#index'
+  resources :users
 
+  # devise_scope :user do
+  #   root to: 'devise/sessions#new'
+  #   get 'login', to: 'devise/sessions#new'
+  # end
+
+  # Some setup you must do manually if you haven't yet:
+  #
+  #   Ensure you have overridden routes for generated controllers in your route.rb.
+  #   For example:
+  #
+  #     Rails.application.routes.draw do
+  #       devise_for :users, controllers: {
+  #         sessions: 'users/sessions'
+  #       }
+  #     end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
