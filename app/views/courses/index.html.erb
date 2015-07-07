@@ -17,10 +17,10 @@
   <tbody>
     <% @courses.each do |course| %>
       <tr>
-        <td><%= course.started_on %></td>
-        <td><%= course.ended_on %></td>
-        <td><%= course.campus_id %></td>
-        <td><%= course.curriculum_id %></td>
+        <td><%= course.start_date %></td>
+        <td><%= course.end_date %></td>
+        <td><%= course.campus_short %></td>
+        <td><%= course.curriculum.nickname %></td>
         <td><%= course.cohort %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
