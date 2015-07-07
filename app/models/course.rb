@@ -21,4 +21,8 @@ class Course < ActiveRecord::Base
   def end_date
     ended_on.strftime "%B %Y"
   end
+
+  def full_description
+    "#{campus.short_name}: #{curriculum.nickname} Cohort #{cohort}"
+  end
 end
