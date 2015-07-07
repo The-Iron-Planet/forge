@@ -37,4 +37,7 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path if current_user.is_cd%> |
+<%= link_to 'Campuses', campuses_path if current_user.is_cd%> |
+<%= link_to 'Curricula', curricula_path if current_user.is_cd%> |
+<%= link_to 'Courses', courses_path if current_user.is_cd%>
