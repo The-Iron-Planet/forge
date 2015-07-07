@@ -1,9 +1,10 @@
 $black:#000000;
 $shield:#233139;
 $base:#727d84;
-$light-gray:#e9eaeb;
+$medium-gray:#a7acaf;
+$light-gray:#d3d5d7;
 $white:#ffffff;
-$accent-color:;
+$accent-color:red;
 $link:#158cbd;
 $link-hover:#0e6284;
 
@@ -15,7 +16,15 @@ $font-med-italic:"TisaPro-Medilta";
 $font-bold:"TisaPro-Bold";
 $font-bold-italic:"TisaPro-BoldIta";
 
-
+// .layout-color{
+//   background-color: #ccebf0;
+// }
+//
+//
+//
+// .test{
+//   background-color: green;
+// }
 .header .primary-nav a {
   color: #eef1f6;
   font-size: 17px;
@@ -35,12 +44,12 @@ h3 {
 }
 
 .input-field{
-  width:175px;
+  width:230px;
   font-size:16px;
-  padding:5px;
+  padding:6px;
   border-style: none;
   border-radius:4px 4px 4px 4px;
-  background-color:blue;
+  margin: 10px;
 
 }
 
@@ -66,29 +75,14 @@ h3 {
   padding: 10px 20px 15px;
   font-size: 24px;
   text-decoration: none;
-  background: $dark-gray;
+  background: $accent-color;
   color: $white;
 }
 
 button:hover{
-  background: $medium-gray;
+  background: $accent-color;
 }
 
-// .button {
-//   display: block;
-//   width: 100px;
-//   height: 45px;
-//   background-color: $light-gray;
-//   border: .5px solid $light-gray;
-//   border-radius: 5px;
-//   padding: 10px 20px 15px;
-//   font: 14px;
-// }
-//
-// button:hover{
-//     background-color: $medium-gray;
-//     border: .5px solid $medium-gray;
-// }
 
 
 .link{
@@ -110,10 +104,11 @@ button:hover{
   border-style: none;
   border-radius:4px 0px 0px 4px;
   background-color:blue;
+  margin: 4px;
 }
 
 .search-button{
-  background-color: $light-gray;
+  background-color: $medium-gray;
   color:$white;
   border-radius:0px 4px 4px 0px;
   border: none;
@@ -123,10 +118,5 @@ button:hover{
 }
 
 .search-button:hover{
-  background-color: $medium-gray;
+  background-color: $white;
 }
-
-
-// add to html for search button
-// <input type="text" class="search" placeholder="search icon"/>
-//   <button type="button" class="search-button" placeholder="search icon">icon</button>

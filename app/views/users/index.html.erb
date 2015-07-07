@@ -1,40 +1,69 @@
-<h1>Alumni Directory</h1>
+<div class="container-fluid">
 
-<div>
-  <div>
-    <% @users.each do |user| %>
-      <div>
-        <% if user.uploaded_file_file_name.nil? %>
-          <div>-----------------------</div>
-          <div>Default Profile Pic</div>
-          <div>-----------------------</div>
-        <% else %>
-          <div><%= image_tag user.uploaded_file %></div>
-        <% end %>
+  <h1>Alumni Directory</h1>
+  <%= link_to 'New User', new_user_path %>
+  <div class="search-bar">
+    <input type="text" class="search" placeholder="search icon"/>
+      <button type="button" class="search-button" placeholder="search icon">icon</button>
 
-        <div><%= user.full_name %></div>
-        <div>Email Icon: <%= user.email %></div>
-        <div>Location Icon: <%= user.current_location %></div>
-        <div>Github Icon: <%= user.github_profile %></div>
-        <% if !user.website.nil? %>
-          <div>Website: <%= user.website %></div>
-        <% end %>
-        <% if !user.blog.nil? %>
-          <div>Blog: <%= user.blog %></div>
-        <% end %>
-        <% if user.hiring %>
-          <div>Hiring: Yes</div>
-        <% end %>
-        <% if user.looking %>
-          <div>Looking: Yes</div>
-        <% end %>
-
-        <div><%= link_to 'View Profile', user %></div>
-      </div></br>
-    <% end %>
   </div>
+
+  <div class="row">
+      <div class="col-md-.5 layout-color">.col-md-1</div>
+    <div class="col-md-1 layout-color">.col-md-1</div>
+    <div class="col-md-3 align">.col-md-3
+      <div>
+        <div>
+          <% @users.each do |user| %>
+
+          <div>
+            <% if user.uploaded_file_file_name.nil? %>
+            <div>-----------------------</div>
+            <div>Default Profile Pic</div>
+            <div>-----------------------</div>
+            <% else %>
+            <div><%= image_tag user.uploaded_file %></div>
+            <% end %>
+
+            <div><%= user.full_name %></div>
+            <div>Email Icon:
+              <%= user.email %></div>
+            <div>Location Icon:
+              <%= user.current_location %></div>
+            <div>Github Icon:
+              <%= user.github_profile %></div>
+            <% if !user.website.nil? %>
+            <div>Website:
+              <%= user.website %></div>
+            <% end %>
+            <% if !user.blog.nil? %>
+            <div>Blog:
+              <%= user.blog %></div>
+            <% end %>
+            <% if user.hiring %>
+            <div>Hiring: Yes</div>
+            <% end %>
+            <% if user.looking %>
+            <div>Looking: Yes</div>
+            <% end %>
+            <div><%= link_to 'View Profile', user %></div>
+          </div>
+        </br>
+        <% end %>
+      </div>
+
+    </div>
+
+    <br>
+  </div>
+  <div class="col-md-3 layout-color">person 3</div>
+  <div class="col-md-3 layout-color">.col-md-3</div>
+  <div class="col-md-1 layout-color">.col-md-1</div>
+  <div class="col-md-.5 layout-color">.col-md-1</div>
+
+
+</div>
 </div>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  </div>
+</div>
