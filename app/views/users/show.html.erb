@@ -1,4 +1,33 @@
-<%= @user.uploaded_file %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div>
+  <% if @user.uploaded_file_file_name.nil? %>
+    <div>-----------------------</div>
+    <div>Default Profile Pic</div>
+    <div>-----------------------</div>
+  <% else %>
+    <div><%= image_tag @user.uploaded_file %></div>
+  <% end %>
+
+  <div><%= @user.full_name %></div>
+  <div>Email Icon: <%= @user.email %></div>
+  <div>Location Icon: <%= @user.current_location %></div>
+  <div>Github Icon: <%= @user.github_profile %></div>
+  <% if !@user.website.nil? %>
+    <div>Website: <%= @user.website %></div>
+  <% end %>
+  <% if !@user.blog.nil? %>
+    <div>Blog: <%= @user.blog %></div>
+  <% end %>
+  <% if @user.hiring %>
+    <div>Hiring: Yes</div>
+  <% end %>
+  <% if @user.looking %>
+    <div>Looking: Yes</div>
+  <% end %>
+
+  <div>
+    <%= link_to 'Edit Profile', edit_user_path(@user) %> |
+    <%= link_to 'Alumni Directory', users_path %>
+  </div>
+
+</div></br>

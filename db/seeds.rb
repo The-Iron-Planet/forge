@@ -8,8 +8,8 @@
 
 User.create!(first_name: "Elise", last_name: "Moen", email: "elise@test.com",
     password: "password", current_city: "Durham", current_state: "NC",
-    github_profile: "elise_github", is_cd: true)
+    github_profile: "elise_github", is_cd: true, hiring: true)
 User.create!(first_name: "Jane", last_name: "Wilderman", email: "jane@test.com",
     password: "password", current_city: "Raleigh", current_state: "NC",
     github_profile: "jane_github", website: "http://www.janewilderman.com",
-    is_cd: false)
+    is_cd: false, hiring: false, looking: true)

@@ -46,4 +46,8 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
+
+  # test "should show user profile picture" do
+  #
+  # end
 end

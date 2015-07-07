@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user
   end
 
   # POST /users
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find_by_id(current_user.id)
     end
 
     # Only allow a trusted parameter "white list" through.
