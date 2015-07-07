@@ -1,0 +1,69 @@
+<%= form_for @user, html: {multipart: true} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_city %>
+    <%= f.text_field :current_city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_state %>
+    <%= f.text_field :current_state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uploaded_file %>
+    <%= f.file_field :uploaded_file %>
+  </div>
+
+  <div class="field">
+    <%= f.label :github_profile %>
+    <%= f.text_field :github_profile %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= f.label :blog %>
+    <%= f.text_field :blog %>
+  </div>
+
+  <div class="field">
+    <%= f.label :looking %>
+    Yes<%= f.radio_button :looking, true %>
+    No<%= f.radio_button :looking, false %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hiring %>
+    Yes<%= f.radio_button :hiring, true %>
+    No<%= f.radio_button :hiring, false %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
