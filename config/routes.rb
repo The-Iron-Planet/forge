@@ -6,7 +6,17 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'users#index'
-  resources :users
+  resources :users do
+    member do
+      get 'edit_password'
+    end
+  end
+
+  resource :user, only: [:edit_password] do
+    collection do
+      patch 'update_password'
+    end
+  end
 
   devise_scope :user do
     # root to: 'devise/sessions#new'

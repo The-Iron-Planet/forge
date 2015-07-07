@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :check_user, only: [:edit]
+
+  before_action :set_user, only: [:show, :edit, :edit_password, :update, :destroy]
+  before_action :check_user, only: [:edit, :edit_password]
   before_action :user_is_cd?, only: [:new]
 
   # GET /users
@@ -20,6 +21,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user
+  end
+
+  def edit_password
     @user
   end
 
@@ -44,6 +49,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_password
+    @user = User.find(current_user.id)
+    if @user.update_with_password(user_params)
+      # Sign in the user by passing validation in case their password changed
+      sign_in :user, @user, bypass: true
+      redirect_to @user, notice: 'Password was successfully updated'
+    else
+      flash.now[:notice] = 'Current password was invalid. Please try again'
+      render :edit_password
+    end
+  end
+
   # DELETE /users/1
   def destroy
     @user.destroy
@@ -60,7 +77,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
           :current_city, :current_state, :github_profile, :website, :blog,
-          :looking, :hiring, :is_cd, :course_id, :email, :password, :password_confirmation)
+          :looking, :hiring, :is_cd, :course_id, :email, :password,
+          :password_confirmation, :current_password)
     end
 
     def check_user
