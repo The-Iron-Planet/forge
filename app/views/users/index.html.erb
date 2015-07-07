@@ -1,40 +1,45 @@
+<div class = "container">
+
 <h1>Alumni Directory</h1>
 
-<div>
-  <div>
-    <% @users.each do |user| %>
-      <div>
-        <% if user.uploaded_file_file_name.nil? %>
-          <div>-----------------------</div>
-          <div>Default Profile Pic</div>
-          <div>-----------------------</div>
-        <% else %>
-          <div><%= image_tag user.uploaded_file %></div>
-        <% end %>
+<% @users.each_slice(3) do |slice| -%>
+  <div class="row row-centered">
+    <% slice.each do |user| %>
+        <div class = "col-md-1"></div>
+         <div class = "col-md-3">
+             <% if user.uploaded_file_file_name.nil? %>
+                <div>-----------------------</div>
+                <div>Default Profile Pic</div>
+                <div>-----------------------</div>
+             <% else %>
+                <div><%= image_tag user.uploaded_file %></div>
+             <% end %>
+    
+            <div><%= user.full_name %></div>
+            <div>Email Icon: <%= user.email %></div>
+            <div>Location Icon: <%= user.current_location %></div>
+            <div>Github Icon: <%= user.github_profile %></div>
+               <% if !user.website.nil? %>
+            <div>Website: <%= user.website %></div>
+              <% end %>
+              <% if !user.blog.nil? %>
+            <div>Blog: <%= user.blog %></div>
+              <% end %>
+              <% if user.hiring %>
+            <div>Hiring: Yes</div>
+              <% end %>
+              <% if user.looking %>
+            <div>Looking: Yes</div>
+            <% end %>
 
-        <div><%= user.full_name %></div>
-        <div>Email Icon: <%= user.email %></div>
-        <div>Location Icon: <%= user.current_location %></div>
-        <div>Github Icon: <%= user.github_profile %></div>
-        <% if !user.website.nil? %>
-          <div>Website: <%= user.website %></div>
-        <% end %>
-        <% if !user.blog.nil? %>
-          <div>Blog: <%= user.blog %></div>
-        <% end %>
-        <% if user.hiring %>
-          <div>Hiring: Yes</div>
-        <% end %>
-        <% if user.looking %>
-          <div>Looking: Yes</div>
-        <% end %>
-
-        <div><%= link_to 'View Profile', user %></div>
-      </div></br>
+            <div><%= link_to 'View Profile', user %></div>
+         </div>
     <% end %>
+
   </div>
+<% end -%>
 </div>
 
 <br>
-
 <%= link_to 'New User', new_user_path %>
+
