@@ -1,14 +1,13 @@
 $black:#000000;
 $shield:#233139;
 $base:#727d84;
-$medium-gray:#a7acaf;
-$light-gray:#d3d5d7;
+$light-gray:#e9eaeb;
 $white:#ffffff;
-$accent-color:red;
+$accent-color: red;
 $link:#158cbd;
 $link-hover:#0e6284;
 
-
+// we prob need to download this font.
 $font:"TisaPro";
 $font-medium:"TisaPro-Medi";
 $font-italic:"TisaPro-Ita";
@@ -36,13 +35,13 @@ h3 {
   line-height: 1.4;
 }
 
-.input-field{
-  width:230px;
+.input-field {
+  width:175px;
   font-size:16px;
-  padding:6px;
+  padding:5px;
   border-style: none;
   border-radius:4px 4px 4px 4px;
-  margin: 10px;
+  background-color:blue;
 
 }
 
@@ -68,14 +67,29 @@ h3 {
   padding: 10px 20px 15px;
   font-size: 24px;
   text-decoration: none;
-  background: $accent-color;
+  background: $base;
   color: $white;
 }
 
 button:hover{
-  background: $accent-color;
+  background: $white;
 }
 
+// .button {
+//   display: block;
+//   width: 100px;
+//   height: 45px;
+//   background-color: $light-gray;
+//   border: .5px solid $light-gray;
+//   border-radius: 5px;
+//   padding: 10px 20px 15px;
+//   font: 14px;
+// }
+//
+// button:hover{
+//     background-color: $medium-gray;
+//     border: .5px solid $medium-gray;
+// }
 
 h1 {
   width: 100%;
@@ -99,11 +113,10 @@ h1 {
   border-style: none;
   border-radius:4px 0px 0px 4px;
   background-color:blue;
-  margin: 4px;
 }
 
 .search-button{
-  background-color: $medium-gray;
+  background-color: $light-gray;
   color:$white;
   border-radius:0px 4px 4px 0px;
   border: none;
@@ -120,15 +133,7 @@ col-md-3 {
   border: 1px black solid;
 }
 
-// .row-centered {
-//     text-align:center;
-// }
-// .col-centered {
-//     display:inline-block;
-//     float:none;
-//     text-align:left;
-//     margin-right:-4px;
-// }
+
 
 
 
@@ -137,4 +142,3 @@ col-md-3 {
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>
 //   <button type="button" class="search-button" placeholder="search icon">icon</button>
->>>>>>> 57ea8f65baa51a5c59054f7f4966d5fd9d168f7c
