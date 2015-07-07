@@ -3,7 +3,7 @@ $shield:#233139;
 $base:#727d84;
 $light-gray:#e9eaeb;
 $white:#ffffff;
-$accent-color:;
+$accent-color: red;
 $link:#158cbd;
 $link-hover:#0e6284;
 
@@ -14,6 +14,7 @@ $font-italic:"TisaPro-Ita";
 $font-med-italic:"TisaPro-Medilta";
 $font-bold:"TisaPro-Bold";
 $font-bold-italic:"TisaPro-BoldIta";
+
 
 
 .header .primary-nav a {
@@ -66,12 +67,12 @@ h3 {
   padding: 10px 20px 15px;
   font-size: 24px;
   text-decoration: none;
-  background: $dark-gray;
+  background: $base;
   color: $white;
 }
 
 button:hover{
-  background: $medium-gray;
+  background: $white;
 }
 
 // .button {
@@ -90,7 +91,9 @@ button:hover{
 //     border: .5px solid $medium-gray;
 // }
 
-
+h1 {
+  width: 100%;
+}
 .link{
   color:$link;
 }
@@ -123,8 +126,25 @@ button:hover{
 }
 
 .search-button:hover{
-  background-color: $medium-gray;
+  background-color: $white;
 }
+
+col-md-3 {
+  border: 1px black solid;
+}
+
+// .row-centered {
+//     text-align:center;
+// }
+// .col-centered {
+//     display:inline-block;
+//     float:none;
+//     text-align:left;
+//     margin-right:-4px;
+// }
+
+
+
 
 
 // add to html for search button
