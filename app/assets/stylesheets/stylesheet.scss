@@ -1,0 +1,132 @@
+$black:#000000;
+$shield:#233139;
+$base:#727d84;
+$light-gray:#e9eaeb;
+$white:#ffffff;
+$accent-color:;
+$link:#158cbd;
+$link-hover:#0e6284;
+
+// we prob need to download this font.
+$font:"TisaPro";
+$font-medium:"TisaPro-Medi";
+$font-italic:"TisaPro-Ita";
+$font-med-italic:"TisaPro-Medilta";
+$font-bold:"TisaPro-Bold";
+$font-bold-italic:"TisaPro-BoldIta";
+
+
+.header .primary-nav a {
+  color: #eef1f6;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.sub-nav h2 {
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  margin-top: 18px;
+  font-size: 60px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.input-field{
+  width:175px;
+  font-size:16px;
+  padding:5px;
+  border-style: none;
+  border-radius:4px 4px 4px 4px;
+  background-color:blue;
+
+}
+
+.input-field:focus{
+  outline:0;
+}
+
+.profile-card{
+
+
+}
+
+.nav{
+
+}
+
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  font-weight: bolder;
+  font-style: italic;
+  padding: 10px 20px 15px;
+  font-size: 24px;
+  text-decoration: none;
+  background: $dark-gray;
+  color: $white;
+}
+
+button:hover{
+  background: $medium-gray;
+}
+
+// .button {
+//   display: block;
+//   width: 100px;
+//   height: 45px;
+//   background-color: $light-gray;
+//   border: .5px solid $light-gray;
+//   border-radius: 5px;
+//   padding: 10px 20px 15px;
+//   font: 14px;
+// }
+//
+// button:hover{
+//     background-color: $medium-gray;
+//     border: .5px solid $medium-gray;
+// }
+
+
+.link{
+  color:$link;
+}
+
+.link:hover{
+  color:$link-hover;
+}
+
+.profile-card{
+  box-sizing: border-box;
+}
+
+.search{
+  width:175px;
+  font-size:16px;
+  padding:5px;
+  border-style: none;
+  border-radius:4px 0px 0px 4px;
+  background-color:blue;
+}
+
+.search-button{
+  background-color: $light-gray;
+  color:$white;
+  border-radius:0px 4px 4px 0px;
+  border: none;
+  font-size:16px;
+  padding:5px;
+  margin-left:-10px;
+}
+
+.search-button:hover{
+  background-color: $medium-gray;
+}
+
+
+// add to html for search button
+// <input type="text" class="search" placeholder="search icon"/>
+//   <button type="button" class="search-button" placeholder="search icon">icon</button>
