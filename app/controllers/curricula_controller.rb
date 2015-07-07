@@ -1,4 +1,6 @@
 class CurriculaController < ApplicationController
+  before_action :authenticate_user!
+  before_action :user_is_cd?
   before_action :set_curriculum, only: [:show, :edit, :update, :destroy]
 
   # GET /curricula
