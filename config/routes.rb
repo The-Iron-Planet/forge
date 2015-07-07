@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :users
 
-  # devise_scope :user do
-  #   root to: 'devise/sessions#new'
-  #   get 'login', to: 'devise/sessions#new'
-  # end
+  devise_scope :user do
+    # root to: 'devise/sessions#new'
+    get 'login', to: 'devise/sessions#new'
+  end
 
   # Some setup you must do manually if you haven't yet:
   #
