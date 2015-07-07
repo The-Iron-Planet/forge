@@ -8,3 +8,6 @@ This app was created in Ruby version 2.2.2 with Rails 4.2.1
 ### System dependencies
 PostgreSQL
 Rails 12 Factor
+Devise
+Paperclip
+AWS-SDK
