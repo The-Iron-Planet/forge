@@ -10,6 +10,12 @@
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+    <div>
+      Signed in as <%= current_user.first_name %> |
+      <span> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </span>
+    </div>
+  <% end %>
 
 <%= yield %>
 

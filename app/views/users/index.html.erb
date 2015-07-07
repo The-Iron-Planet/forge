@@ -1,22 +1,32 @@
-<h1>Listing Users</h1>
+<h1>Alumni Directory</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div>
+  <div>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div>
+        <div>---------------</div>
+        <div>Profile Picture</div>
+        <div>---------------</div>
+
+        <div><%= user.full_name %></div>
+        <div>Email Icon: <%= user.email %></div>
+        <div>Location Icon: <%= user.current_location %></div>
+        <div>Github Icon: <%= user.github_profile %></div>
+        <% if !user.website.nil? %>
+          <div>Website: <%= user.website %></div>
+        <% end %>
+
+        <% if !user.blog.nil? %>
+          <div>Blog: <%= user.blog %></div>
+        <% end %>
+
+        <div><%= link_to 'View Profile', user %></div>
+        <div><%= link_to 'Edit', edit_user_path(user) %></div>
+        <div><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div></br>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <br>
 
