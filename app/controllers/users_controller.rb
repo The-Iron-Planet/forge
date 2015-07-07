@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit]
 
   # GET /users
   def index
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
+    @user.password = "password"
 
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'
@@ -50,13 +52,17 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find_by_id(current_user.id)
+      @user = User.find_by_id(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def user_params
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
           :current_city, :current_state, :github_profile, :website, :blog,
-          :looking, :hiring, :is_cd, :course_id)
+          :looking, :hiring, :is_cd, :course_id, :email, :password, :password_confirmation)
+    end
+
+    def check_user
+      redirect_to root_path, notice: "You can only edit your own profile!" unless @user.id == current_user.id
     end
 end

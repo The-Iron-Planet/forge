@@ -8,7 +8,7 @@ $accent-color:red;
 $link:#158cbd;
 $link-hover:#0e6284;
 
-// we prob need to download this font.
+
 $font:"TisaPro";
 $font-medium:"TisaPro-Medi";
 $font-italic:"TisaPro-Ita";
@@ -16,15 +16,8 @@ $font-med-italic:"TisaPro-Medilta";
 $font-bold:"TisaPro-Bold";
 $font-bold-italic:"TisaPro-BoldIta";
 
-// .layout-color{
-//   background-color: #ccebf0;
-// }
-//
-//
-//
-// .test{
-//   background-color: green;
-// }
+
+
 .header .primary-nav a {
   color: #eef1f6;
   font-size: 17px;
@@ -84,7 +77,9 @@ button:hover{
 }
 
 
-
+h1 {
+  width: 100%;
+}
 .link{
   color:$link;
 }
@@ -120,3 +115,26 @@ button:hover{
 .search-button:hover{
   background-color: $white;
 }
+
+col-md-3 {
+  border: 1px black solid;
+}
+
+// .row-centered {
+//     text-align:center;
+// }
+// .col-centered {
+//     display:inline-block;
+//     float:none;
+//     text-align:left;
+//     margin-right:-4px;
+// }
+
+
+
+
+
+// add to html for search button
+// <input type="text" class="search" placeholder="search icon"/>
+//   <button type="button" class="search-button" placeholder="search icon">icon</button>
+>>>>>>> 57ea8f65baa51a5c59054f7f4966d5fd9d168f7c
