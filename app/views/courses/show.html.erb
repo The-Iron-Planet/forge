@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Started on:</strong>
+  <%= @course.started_on %>
+</p>
+
+<p>
+  <strong>Ended on:</strong>
+  <%= @course.ended_on %>
+</p>
+
+<p>
+  <strong>Campus:</strong>
+  <%= @course.campus_id %>
+</p>
+
+<p>
+  <strong>Curriculum:</strong>
+  <%= @course.curriculum_id %>
+</p>
+
+<p>
+  <strong>Cohort:</strong>
+  <%= @course.cohort %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

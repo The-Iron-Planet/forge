@@ -1,0 +1,2 @@
+module CurriculaHelper
+end
