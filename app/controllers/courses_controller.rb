@@ -19,6 +19,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    @course.users.build
   end
 
   # POST /courses
@@ -34,6 +35,9 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1
   def update
+    params[:course][:users_attributes].each do |k, v|
+      v[:password] = "theironyardrails" unless v[:id]
+    end
     if @course.update(course_params)
       redirect_to @course, notice: 'Course was successfully updated.'
     else
@@ -55,6 +59,7 @@ class CoursesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def course_params
-      params.require(:course).permit(:started_on, :ended_on, :campus_id, :curriculum_id, :cohort)
+      params.require(:course).permit(:started_on, :ended_on, :campus_id, :curriculum_id, :cohort,
+          users_attributes: [:id, :first_name, :last_name, :email, :password])
     end
 end

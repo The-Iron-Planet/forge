@@ -3,8 +3,6 @@
   <h1>Alumni Directory</h1>
 
   <%= link_to 'New User', new_user_path if current_user.is_cd%>
-  <%= link_to 'Campuses', campuses_path if current_user.is_cd%>
-  <%= link_to 'Curricula', curricula_path if current_user.is_cd%>
   <%= link_to 'Courses', courses_path if current_user.is_cd%>
 
   <div class="search-bar">
@@ -26,6 +24,7 @@
              <% end %>
 
             <div><%= user.full_name %></div>
+            <div><%= user.course.full_description if !user.course.nil? %></div>
             <div>Email Icon: <%= user.email %></div>
             <div>Location Icon: <%= user.current_location %></div>
             <div>Github Icon: <%= user.github_profile %></div>
