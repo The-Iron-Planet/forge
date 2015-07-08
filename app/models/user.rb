@@ -4,7 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
       :validatable
 
-  has_attached_file :uploaded_file
+  has_attached_file :uploaded_file, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
   validates_attachment_content_type :uploaded_file, :content_type => /\Aimage\/.*\Z/
 
   # validates :current_city, presence: true

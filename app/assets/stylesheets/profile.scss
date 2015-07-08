@@ -1,7 +1,69 @@
-.new-user{
-  background-color:$light-gray;
+@media(max-width: 380px) {
+  .input-label {
+    margin: 30px;
+    padding: 30px;
+  }
+  .input-field {
+    margin: 0;
+    padding: 0;
+  }
 }
+.new-user {
+  background-color: $light-gray;
+  color: $base;
+  text-align: left;
+  padding: 35px 50px;
+}
+.new-user-form {
+  padding: 15px 0;
+}
+.uploaded {
+  background-color: orange;
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#user_uploaded_file {
 
-.state{
-  width: 10px;
+  // display: inline-block;
+  width: 220px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  // background-color: orange;
+}
+h2 {
+  @font-family: TisaPro;
+  margin: 20px 0 30px;
+  text-align: center;
+  color: $shield;
+}
+.state {
+  width: 60px;
+}
+.radio-title {
+  margin-right: 10px;
+}
+#user_looking_false,
+#user_looking_true,
+#user_hiring_false,
+#user_hiring_true {
+  width: 20px;
+  margin: auto 10px;
+}
+.form-val {
+  color: red;
+  text-align: center;
+}
+.error {
+  font-style: italic;
+}
+.ctr-btn {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }

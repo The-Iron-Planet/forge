@@ -1,143 +1,135 @@
-$black:#000000;
-$shield:#233139;
-$base:#727d84;
-$light-gray:#e9eaeb;
-$white:#ffffff;
-$accent-color: red;
-$link:#158cbd;
-$link-hover:#0e6284;
-
-// we prob need to download this font.
-$font:"TisaPro";
-$font-medium:"TisaPro-Medi";
-$font-italic:"TisaPro-Ita";
-$font-med-italic:"TisaPro-Medilta";
-$font-bold:"TisaPro-Bold";
-$font-bold-italic:"TisaPro-BoldIta";
-
-
-
+$black: #000;
+$shield: #233139;
+$base: #727d84;
+$medium-gray: #a7acaf;
+$light-gray: #d3d5d7;
+$white: #fff;
+$accent-color: #c319ab;
+$accent-color-dark: #9c1488;
+$link: #158cbd;
+$link-hover: #0e6284;
+$font: "TisaPro";
+$font-medium: "TisaPro-Medi";
+$font-italic: "TisaPro-Ita";
+$font-med-italic: "TisaPro-Medilta";
+$font-bold: "TisaPro-Bold";
+$font-bold-italic: "TisaPro-BoldIta";
+.fixed-nav-bar {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  text-align: right;
+  background-color: red;
+  border: 1px black solid;
+}
+.header-text {
+  position: absolute;
+  bottom: 0.75em;
+  left: 85%;
+  font-size: 1em;
+  text-align: right;
+}
 .header .primary-nav a {
   color: #eef1f6;
   font-size: 17px;
   font-weight: 900;
 }
-
 .sub-nav h2 {
   box-sizing: border-box;
   margin-bottom: 5px;
   margin-top: 18px;
   font-size: 60px;
 }
-
 h3 {
   font-size: 28px;
   line-height: 1.4;
 }
-
 .input-field {
-  width:175px;
-  font-size:16px;
-  padding:5px;
+  width: 230px;
+  font-size: 16px;
+  padding: 6px;
   border-style: none;
-  border-radius:4px 4px 4px 4px;
-  background-color:blue;
+  border-radius: 4px 4px 4px 4px;
+  margin: 10px;
+
+  // background-color: yellow;
+}
+.input-field:focus {
+  outline: 0;
+}
+.input-label {
+  width: 130px;
+
+  // background-color: green;
+  //   // font: $font;
+  font-size: 16px;
+  padding: 6px;
+  border-style: none;
+  border-radius: 4px 4px 4px 4px;
+  margin: 10px 0;
+}
+.input-links {
+  width: 300px;
+}
+.profile-card {
 
 }
-
-.input-field:focus{
-  outline:0;
-}
-
-.profile-card{
-
+.nav {
 
 }
-
-.nav{
-
-}
-
-
 .btn {
-  display: inline-block;
+  margin: 20px;
   border-radius: 4px;
   font-weight: bolder;
   font-style: italic;
   padding: 10px 20px 15px;
   font-size: 24px;
   text-decoration: none;
-  background: $base;
+  background: $accent-color;
   color: $white;
 }
-
-button:hover{
-  background: $white;
+.btn:hover {
+  background: $accent-color-dark;
+  color: $white;
 }
-
-// .button {
-//   display: block;
-//   width: 100px;
-//   height: 45px;
-//   background-color: $light-gray;
-//   border: .5px solid $light-gray;
-//   border-radius: 5px;
-//   padding: 10px 20px 15px;
-//   font: 14px;
-// }
-//
-// button:hover{
-//     background-color: $medium-gray;
-//     border: .5px solid $medium-gray;
-// }
-
 h1 {
   width: 100%;
 }
-.link{
-  color:$link;
+.link {
+  color: $link;
 }
-
-.link:hover{
-  color:$link-hover;
+.link:hover {
+  color: $link-hover;
 }
-
-.profile-card{
+.profile-card {
   box-sizing: border-box;
 }
-
-.search{
-  width:175px;
-  font-size:16px;
-  padding:5px;
+.search {
+  width: 175px;
+  font-size: 16px;
+  padding: 5px;
   border-style: none;
-  border-radius:4px 0px 0px 4px;
-  background-color:blue;
+  border-radius: 4px 0 0 4px;
+  background-color: blue;
+  margin: 4px;
 }
-
-.search-button{
-  background-color: $light-gray;
-  color:$white;
-  border-radius:0px 4px 4px 0px;
+.search-button {
+  background-color: $medium-gray;
+  color: $white;
+  border-radius: 0 4px 4px 0;
+  border-radius: 4px 0 0 4px;
+  background-color: blue;
   border: none;
-  font-size:16px;
-  padding:5px;
-  margin-left:-10px;
+  font-size: 16px;
+  padding: 5px;
+  margin-left: -10px;
 }
-
-.search-button:hover{
-  background-color: $white;
+.search-button:hover {
+  background-color: $light-gray;
 }
-
 col-md-3 {
   border: 1px black solid;
 }
-
-
-
-
-
-
 
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>

@@ -1,79 +1,69 @@
-<div class="container-fluid new-user ">
+<!-- Large modal -->
+<button class="btn btn-primary" data-target=".bs-example-modal-lg" data-toggle="modal" type="button">Large modal</button>
+
+<div aria-labelledby="myLargeModalLabel" class="modal bs-example-modal-lg" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="container-fluid new-user">
+        <h2 id="heading">Create new user</h2>
+        <div class="row form-val">
+          <%= form_for @user, html: {multipart: true} do |f| %>
+          <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h4 class="form-val"><%= pluralize(@user.errors.count, "error") %>
+              prohibited this user from being saved:</h4>
+            <ul class="error">
+              <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
+        </div>
+
+        <div class="row new-user-form">
+          <div class="col-md-1"></div>
+          <div class="col-md-6 label-column">
+
+            <div class="field ">
+              <%= f.label :first_name, :class => "input-label" %>
+              <%= f.text_field :first_name, :class => "input-field" %>
+            </div>
+            <div class="field">
+              <%= f.label :last_name, :class => "input-label" %>
+              <%= f.text_field :last_name, :class => "input-field" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :cohort, :class => "input-label" %>
+              <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
+            </div>
+
+            <div class="field">
+              <%= f.label :email, :class => "input-label" %>
+              <%= f.text_field :email, :class => "input-field" %>
+            </div>
+
+            <div class="field">
+              <%= f.label "Campus Director?", :class => "input-label" %>
+              Yes<%= f.radio_button :is_cd, true %>
+              No<%= f.radio_button :is_cd, false %>
+            </div>
+
+            <div class="col-md-1">
+
+            </div>
+          </div>
+          <div class="col-md-12 actions field ">
+            <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
+          </div>
 
 
-<%= form_for @user, html: {multipart: true} do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <% end %>
+        </div>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+      </div>
     </div>
-  <% end %>
-
-  <div class="field ">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, :class => "input-field" %>
   </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, :class => "input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_city %>
-    <%= f.text_field :current_city, :class => "input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_state %>
-    <%= f.select :current_state, options_for_select(us_states, @user.current_state),
-        class: "input-field state", include_blank: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :uploaded_file %>
-    <%= f.file_field :uploaded_file, :class => "input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :github_profile %>
-    <%= f.text_field :github_profile, :class => "input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website, :class => "input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :blog %>
-    <%= f.text_field :blog, :class => "input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :looking %>
-    Yes<%= f.radio_button :looking, true %>
-    No<%= f.radio_button :looking, false %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hiring %>
-    Yes<%= f.radio_button :hiring, true %>
-    No<%= f.radio_button :hiring, false %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 </div>
