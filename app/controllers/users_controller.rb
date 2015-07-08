@@ -18,10 +18,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def profile
-    @user = current_user
-  end
-
   # GET /users/new
   def new
     @user = User.new
