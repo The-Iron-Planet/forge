@@ -14,12 +14,13 @@ $font-italic: "TisaPro-Ita";
 $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
+
 .fixed-nav-bar {
   height: 50px;
   width: 100%;
   position: relative;
   text-align: right;
-  background-color: red;
+  background-color: grey;
   border: 1px black solid;
 }
 .header-text {
@@ -130,6 +131,42 @@ h1 {
 col-md-3 {
   border: 1px black solid;
 }
+
+.icon-row {
+  width: 20px;
+}
+
+.icon-mail {
+  font-size: 15px;
+}
+
+.icon-github-alt {
+  font-size: 15px;
+}
+
+// .icon-mail:hover:before {
+//   display: none;
+//  }
+
+.icon-mail:hover{
+}
+
+.icon-mail a{
+  visibility:hidden;
+}
+
+.icon-mail:hover a {
+ visibility:visible;
+}
+
+.icon-github {
+  
+}
+
+
+
+ 
+
 
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>

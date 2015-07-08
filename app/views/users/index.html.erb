@@ -26,11 +26,12 @@
              <% end %>
 
             <div><%= user.full_name %></div>
-            <div>Email Icon: <%= user.email %></div>
-            <div>Location Icon: <%= user.current_location %></div>
-            <div>Github Icon: <%= user.github_profile %></div>
+            <span class="icon-mail"><a href="mailto:<%= user.email %>"></a></span>
+            <div><%= user.current_location %></div>
+            <a href="<%= user.github_profile %>" target="_blank"><span class="icon-github"></span></a>
+            <!--<div>Github Icon: <%= user.github_profile %></div>-->
                <% if !user.website.nil? %>
-            <div>Website: <%= user.website %></div>
+            <a href="<%= user.website %>" target="_blank"><span class="icon-github"></span></a>
               <% end %>
               <% if !user.blog.nil? %>
             <div>Blog: <%= user.blog %></div>
