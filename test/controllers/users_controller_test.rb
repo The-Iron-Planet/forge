@@ -5,6 +5,7 @@ class UsersControllerTest < ActionController::TestCase
     sign_in users(:one)
     @user = users(:one)
     @user.sign_in_count = 2
+    @user.save!
   end
 
   test "should get index" do
