@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
+
+  resources :courses
+  resources :curricula
+  resources :campuses
   devise_for :users
 
   root 'users#index'
-  resources :users
+  resources :users do
+    member do
+      get 'edit_password'
+    end
+  end
+
+  resource :user, only: [:edit_password] do
+    collection do
+      patch 'update_password'
+    end
+  end
 
   devise_scope :user do
     # root to: 'devise/sessions#new'
@@ -15,6 +29,7 @@ Rails.application.routes.draw do
   #   For example:
   #
   #     Rails.application.routes.draw do
+  resources :courses
   #       devise_for :users, controllers: {
   #         sessions: 'users/sessions'
   #       }

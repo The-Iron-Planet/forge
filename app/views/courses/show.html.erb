@@ -1,0 +1,27 @@
+<p>
+  <strong>Started on:</strong>
+  <%= @course.start_date %>
+</p>
+
+<p>
+  <strong>Ended on:</strong>
+  <%= @course.end_date %>
+</p>
+
+<p>
+  <strong>Campus:</strong>
+  <%= @course.campus_long%>
+</p>
+
+<p>
+  <strong>Curriculum:</strong>
+  <%= @course.curric_name %>
+</p>
+
+<p>
+  <strong>Cohort:</strong>
+  <%= @course.cohort %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

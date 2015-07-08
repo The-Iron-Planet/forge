@@ -13,3 +13,10 @@ User.create!(first_name: "Jane", last_name: "Wilderman", email: "jane@test.com",
     password: "password", current_city: "Raleigh", current_state: "NC",
     github_profile: "jane_github", website: "http://www.janewilderman.com",
     is_cd: false, hiring: false, looking: true)
+
+
+Campus.create!(city: "Durham", state: "NC")
+
+Curriculum.create!(name: "Rails Engineering")
+Curriculum.create!(name: "Front End Engineering")
+Curriculum.create!(name: "Python Engineering")

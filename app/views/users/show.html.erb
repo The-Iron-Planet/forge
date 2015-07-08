@@ -4,7 +4,7 @@
     <div>Default Profile Pic</div>
     <div>-----------------------</div>
   <% else %>
-    <div><%= image_tag @user.uploaded_file %></div>
+    <div><%= image_tag @user.uploaded_file(:medium) %></div>
   <% end %>
 
   <div><%= @user.full_name %></div>
@@ -26,6 +26,7 @@
 
   <div>
     <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
+    <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
     <%= link_to 'Alumni Directory', users_path %>
   </div>
 

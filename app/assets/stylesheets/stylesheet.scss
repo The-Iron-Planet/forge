@@ -14,6 +14,21 @@ $font-italic: "TisaPro-Ita";
 $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
+.fixed-nav-bar {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  text-align: right;
+  background-color: red;
+  border: 1px black solid;
+}
+.header-text {
+  position: absolute;
+  bottom: 0.75em;
+  left: 85%;
+  font-size: 1em;
+  text-align: right;
+}
 .header .primary-nav a {
   color: #eef1f6;
   font-size: 17px;
@@ -102,27 +117,20 @@ h1 {
   background-color: $medium-gray;
   color: $white;
   border-radius: 0 4px 4px 0;
+  border-radius: 4px 0 0 4px;
+  background-color: blue;
   border: none;
   font-size: 16px;
   padding: 5px;
   margin-left: -10px;
 }
 .search-button:hover {
-  background-color: $white;
+  background-color: $light-gray;
 }
 col-md-3 {
   border: 1px black solid;
 }
 
-// .row-centered {
-//     text-align:center;
-// }
-// .col-centered {
-//     display:inline-block;
-//     float:none;
-//     text-align:left;
-//     margin-right:-4px;
-// }
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>
 //   <button type="button" class="search-button" placeholder="search icon">icon</button>
