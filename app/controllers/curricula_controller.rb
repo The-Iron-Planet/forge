@@ -26,7 +26,7 @@ class CurriculaController < ApplicationController
     @curriculum = Curriculum.new(curriculum_params)
 
     if @curriculum.save
-      redirect_to @curriculum, notice: 'Curriculum was successfully created.'
+      redirect_to new_course_path, notice: 'Curriculum was successfully created.'
     else
       render :new
     end
