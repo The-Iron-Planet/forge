@@ -36,7 +36,8 @@
 
   <div class="field">
     <%= f.label :current_state %>
-    <%= f.text_field :current_state, :class => "input-field state" %>
+    <%= f.select :current_state, options_for_select(us_states, @user.current_state),
+        class: "input-field state", include_blank: true %>
   </div>
 
   <div class="field">

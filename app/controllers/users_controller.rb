@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user = current_user
   end
 
   # GET /users/new
@@ -42,10 +43,16 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
+    if @user.sign_in_count == 1
+      @user.sign_in_count += 1
+    end
     if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      sign_in :user, @user, bypass: true
       redirect_to @user, notice: 'User was successfully updated.'
     else
-      render :edit
+      redirect_to ((current_user.sign_in_count == 1) ? user_path : edit_user_path ),
+      notice: 'You must update your password'
     end
   end
 
@@ -71,6 +78,7 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find_by_id(params[:id])
+      # @user = current_user
     end
 
     # Only allow a trusted parameter "white list" through.

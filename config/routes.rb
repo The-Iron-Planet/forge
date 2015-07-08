@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :campuses
   devise_for :users
 
-  root 'users#index'
+  root 'users#show'
   resources :users do
     member do
       get 'edit_password'
