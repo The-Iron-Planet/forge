@@ -8,12 +8,19 @@ $accent-color: #c319ab;
 $accent-color-dark: #9c1488;
 $link: #158cbd;
 $link-hover: #0e6284;
+
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
 $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
+
+body {
+  font-family: $font;
+
+}
+
 .fixed-nav-bar {
   height: 50px;
   width: 100%;
