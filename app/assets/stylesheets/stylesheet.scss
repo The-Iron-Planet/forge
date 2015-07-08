@@ -1,67 +1,69 @@
-$black:#000000;
-$shield:#233139;
-$base:#727d84;
-$medium-gray:#a7acaf;
-$light-gray:#d3d5d7;
-$white:#ffffff;
-$accent-color:red;
-$link:#158cbd;
-$link-hover:#0e6284;
-
-
-$font:"TisaPro";
-$font-medium:"TisaPro-Medi";
-$font-italic:"TisaPro-Ita";
-$font-med-italic:"TisaPro-Medilta";
-$font-bold:"TisaPro-Bold";
-$font-bold-italic:"TisaPro-BoldIta";
-
-
-
+$black: #000;
+$shield: #233139;
+$base: #727d84;
+$medium-gray: #a7acaf;
+$light-gray: #d3d5d7;
+$white: #fff;
+$accent-color: #c319ab;
+$accent-color-dark: #9c1488;
+$link: #158cbd;
+$link-hover: #0e6284;
+$font: "TisaPro";
+$font-medium: "TisaPro-Medi";
+$font-italic: "TisaPro-Ita";
+$font-med-italic: "TisaPro-Medilta";
+$font-bold: "TisaPro-Bold";
+$font-bold-italic: "TisaPro-BoldIta";
 .header .primary-nav a {
   color: #eef1f6;
   font-size: 17px;
   font-weight: 900;
 }
-
 .sub-nav h2 {
   box-sizing: border-box;
   margin-bottom: 5px;
   margin-top: 18px;
   font-size: 60px;
 }
-
 h3 {
   font-size: 28px;
   line-height: 1.4;
 }
-
-.input-field{
-  width:230px;
-  font-size:16px;
-  padding:6px;
+.input-field {
+  width: 230px;
+  font-size: 16px;
+  padding: 6px;
   border-style: none;
-  border-radius:4px 4px 4px 4px;
+  border-radius: 4px 4px 4px 4px;
   margin: 10px;
 
+  // background-color: yellow;
 }
-
-.input-field:focus{
-  outline:0;
+.input-field:focus {
+  outline: 0;
 }
+.input-label {
+  width: 130px;
 
-.profile-card{
-
+  // background-color: green;
+  //   // font: $font;
+  font-size: 16px;
+  padding: 6px;
+  border-style: none;
+  border-radius: 4px 4px 4px 4px;
+  margin: 10px 0;
+}
+.input-links {
+  width: 300px;
+}
+.profile-card {
 
 }
-
-.nav{
+.nav {
 
 }
-
-
 .btn {
-  display: inline-block;
+  margin: 20px;
   border-radius: 4px;
   font-weight: bolder;
   font-style: italic;
@@ -71,51 +73,43 @@ h3 {
   background: $accent-color;
   color: $white;
 }
-
-button:hover{
-  background: $accent-color;
+.btn:hover {
+  background: $accent-color-dark;
+  color: $white;
 }
-
-
 h1 {
   width: 100%;
 }
-.link{
-  color:$link;
+.link {
+  color: $link;
 }
-
-.link:hover{
-  color:$link-hover;
+.link:hover {
+  color: $link-hover;
 }
-
-.profile-card{
+.profile-card {
   box-sizing: border-box;
 }
-
-.search{
-  width:175px;
-  font-size:16px;
-  padding:5px;
+.search {
+  width: 175px;
+  font-size: 16px;
+  padding: 5px;
   border-style: none;
-  border-radius:4px 0px 0px 4px;
-  background-color:blue;
+  border-radius: 4px 0 0 4px;
+  background-color: blue;
   margin: 4px;
 }
-
-.search-button{
+.search-button {
   background-color: $medium-gray;
-  color:$white;
-  border-radius:0px 4px 4px 0px;
+  color: $white;
+  border-radius: 0 4px 4px 0;
   border: none;
-  font-size:16px;
-  padding:5px;
-  margin-left:-10px;
+  font-size: 16px;
+  padding: 5px;
+  margin-left: -10px;
 }
-
-.search-button:hover{
+.search-button:hover {
   background-color: $white;
 }
-
 col-md-3 {
   border: 1px black solid;
 }
@@ -129,12 +123,6 @@ col-md-3 {
 //     text-align:left;
 //     margin-right:-4px;
 // }
-
-
-
-
-
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>
 //   <button type="button" class="search-button" placeholder="search icon">icon</button>
->>>>>>> 57ea8f65baa51a5c59054f7f4966d5fd9d168f7c
