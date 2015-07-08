@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :first_login_setup, except: [:first_login, :update]
   before_action :set_user, only: [:show, :edit, :edit_password, :update, :destroy]
   before_action :check_user, only: [:edit, :edit_password]
   before_action :user_is_cd?, only: [:new]
@@ -12,6 +12,13 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+  end
+
+  def dashboard
+    @user = current_user
+  end
+
+  def profile
     @user = current_user
   end
 
@@ -22,11 +29,13 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user
   end
 
   def edit_password
-    @user
+  end
+
+  def first_login
+    @user = current_user
   end
 
   # POST /users
@@ -49,10 +58,9 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       # Sign in the user by passing validation in case their password changed
       sign_in :user, @user, bypass: true
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to root_path, notice: 'User was successfully updated.'
     else
-      redirect_to ((current_user.sign_in_count == 1) ? user_path : edit_user_path ),
-      notice: 'You must update your password'
+      redirect_to edit_user_path, notice: 'You must update your password'
     end
   end
 
@@ -76,9 +84,12 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def first_login_setup
+      redirect_to first_login_path if current_user.sign_in_count < 2
+    end
+
     def set_user
       @user = User.find_by_id(params[:id])
-      # @user = current_user
     end
 
     # Only allow a trusted parameter "white list" through.
