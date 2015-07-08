@@ -1,8 +1,10 @@
-<div>
-  <h2> Welcome to The Forge <%= @user.full_name %> </h2>
-  <p> Since this is your first time logging in, please update your account info </p>
-</div>
+<div class="container-fluid new-user">
 
+<div>
+  <h2 id="heading"> Welcome to The Forge <%= @user.full_name %> </h2>
+  <p class="paragraphs"> Since this is your first time logging in, please update your account info </p>
+</div>
+<div class="row form-val">
 <%= form_for @user, html: {multipart: true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -15,73 +17,90 @@
       </ul>
     </div>
   <% end %>
+</div>
+<div class="row new-user-form">
 
-  <div class="field">
-    <%= f.label :password, "Password", :autocomplete => "off" %><i> (minimum 8 characters)</i><br />
-    <%= f.password_field :password%>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm Password" %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name, "First Name" %>
-    <%= f.text_field :first_name %>
-  </div>
+  <div class="col-md-3">
+    <div class="field">
+      <%= f.label :password, "Password", :autocomplete => "off", :class => "input-label stack-align" %><i class="footnote"> (minimum 8 characters)</i>
+      <%= f.password_field :password, :class => "input-field"%>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirm Password", :class => "input-label" %><br />
+      <%= f.password_field :password_confirmation, :class => "input-field" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name, "Last Name"%>
-    <%= f.text_field :last_name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
   </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-5 user-profile">
+    <div class="field">
+      <%= f.label :first_name, "First Name", :class => "input-label" %>
+      <%= f.text_field :first_name, :class => "input-field" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_city, "Current City" %>
-    <%= f.text_field :current_city %>
+    <div class="field">
+      <%= f.label :last_name, "Last Name", :class => "input-label"%>
+      <%= f.text_field :last_name, :class => "input-field" %>
+    </div>
+
+
+
+    <div class="field">
+      <%= f.label :current_city, "Current City" , :class => "input-label"%>
+      <%= f.text_field :current_city,:class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_state, "Current State", :class => "input-label" %>
+      <%= f.select :current_state, options_for_select(us_states, @user.current_state),:class => "input-field" %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :email, :class => "input-label" %>
+      <%= f.text_field :email, :class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :github_profile, "Github Account", :class => "input-label" %>
+      <%= f.text_field :github_profile, :class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :website, "Website", :class => "input-label" %>
+      <%= f.text_field :website, :class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :blog, "Blog" , :class => "input-label"%>
+      <%= f.text_field :blog,:class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :looking, :class => "input-label radio-title", :value => 'I\'m looking for a new job' %>
+      Yes<%= f.radio_button :looking, true %>
+      No<%= f.radio_button :looking, false %>
+    </div>
+
+        <div class="field">
+          <%= f.label :hiring, :class => "input-label radio-title", :value => 'My company is hiring' %>
+          Yes<%= f.radio_button :hiring, true %>
+          No<%= f.radio_button :hiring, false %>
+        </div>
+      </div>
+    <div class="col-md-3">
+      <div class="field">
+        <%= f.label :uploaded_file, "Profile Picture", :class => "input-label" %>
+        <%= f.file_field :uploaded_file ,:class => "input-field"%>
+      </div>
+
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :current_state, "Current State" %>
-    <%= f.select :current_state, options_for_select(us_states, @user.current_state) %>
-  </div>
-
-  <div class="field">
-    <%= f.label :uploaded_file, "Profile Picture" %>
-    <%= f.file_field :uploaded_file %>
-  </div>
-
-  <div class="field">
-    <%= f.label :github_profile, "Github Account" %>
-    <%= f.text_field :github_profile %>
-  </div>
-
-  <div class="field">
-    <%= f.label :website, "Website" %>
-    <%= f.text_field :website %>
-  </div>
-
-  <div class="field">
-    <%= f.label :blog, "Blog" %>
-    <%= f.text_field :blog %>
-  </div>
-
-  <div class="field">
-    <%= f.label :looking, "Looking for a Job?" %><br />
-    Yes<%= f.radio_button :looking, true %>
-    No<%= f.radio_button :looking, false %>
-  </div>
-
-  <div class="field">
-    <%= f.label :hiring, "Is your company hiring?" %><br />
-    Yes<%= f.radio_button :hiring, true %>
-    No<%= f.radio_button :hiring, false %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Save Changes" %>
+  <div class="row">
+    <div class="col-md-12 actions field ">
+    <%= f.submit "Save Changes", :class=> "btn ctr-btn", :value => 'Submit' %>
+    </div>
   </div>
 <% end %>
+</div>

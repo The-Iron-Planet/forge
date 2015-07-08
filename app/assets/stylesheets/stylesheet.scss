@@ -51,6 +51,17 @@ h3 {
   font-size: 28px;
   line-height: 1.4;
 }
+
+.paragraphs{
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.user-profile{
+  background-color: green;
+
+}
 .input-field {
   width: 230px;
   font-size: 16px;
@@ -138,6 +149,10 @@ col-md-3 {
   border: 1px black solid;
 }
 
+
+.stack-align{
+  padding-left:10px;
+}
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>
 //   <button type="button" class="search-button" placeholder="search icon">icon</button>
