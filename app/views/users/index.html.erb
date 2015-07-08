@@ -24,6 +24,7 @@
              <% end %>
 
             <div><%= user.full_name %></div>
+            <div><%= user.course.full_description if !user.course.nil? %></div>
             <div>Email Icon: <%= user.email %></div>
             <div>Location Icon: <%= user.current_location %></div>
             <div>Github Icon: <%= user.github_profile %></div>
