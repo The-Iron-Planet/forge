@@ -16,6 +16,23 @@ $font-bold:"TisaPro-Bold";
 $font-bold-italic:"TisaPro-BoldIta";
 
 
+.fixed-nav-bar {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  text-align: right;
+  background-color: red;
+  border: 1px black solid;
+}
+
+.header-text {
+  position: absolute;
+  bottom: .75em;
+  left: 85%;
+  font-size:1em;
+  text-align:right;
+}
+
 
 .header .primary-nav a {
   color: #eef1f6;
