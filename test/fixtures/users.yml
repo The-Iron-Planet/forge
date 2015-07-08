@@ -11,6 +11,7 @@ one:
   current_city: "Durham"
   current_state: "NC"
   github_profile: "github"
+  is_cd: true
 
 two: {}
 #  column: value
