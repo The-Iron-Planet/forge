@@ -33,6 +33,22 @@
     <%= f.label :cohort, :class => "input-label" %><br>
     <%= f.number_field :cohort, :class => "input-field" %>
   </div>
+
+    <%= f.fields_for :users do |ff| %><br>
+      <div class="field">
+        <%= ff.label :first_name %>
+        <%= ff.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= ff.label :last_name %>
+        <%= ff.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= ff.label :email, :class => "input-label" %>
+        <%= ff.text_field :email, :class => "input-field" %>
+      </div>
+    <% end %>
+
   <div class="actions">
     <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
   </div>

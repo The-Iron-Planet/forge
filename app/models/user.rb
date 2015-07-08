@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  belongs_to :course
+  # before_create :set_default_password
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable, :registerable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
@@ -20,6 +22,10 @@ class User < ActiveRecord::Base
 
   def current_location
     "#{current_city}, #{current_state}"
+  end
+
+  private def set_default_password
+    self.password = "potatomasters"
   end
 
 end
