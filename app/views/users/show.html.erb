@@ -1,3 +1,4 @@
+
 <div>
   <% if @user.uploaded_file_file_name.nil? %>
     <div>-----------------------</div>
@@ -24,12 +25,12 @@
     <div>Looking: Yes</div>
   <% end %>
 
-  <div>
-    <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
-    <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
-    <%= link_to 'Alumni Directory', users_path %>
+    <div>
+      <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
+      <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
+      <%= link_to 'Alumni Directory', users_path %>
+    </div>
+
+
+  </div></br>
   </div>
-
-
-</div></br>
-</div>

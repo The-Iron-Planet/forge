@@ -1,0 +1,87 @@
+<div>
+  <h2> Welcome to The Forge <%= @user.full_name %> </h2>
+  <p> Since this is your first time logging in, please update your account info </p>
+</div>
+
+<%= form_for @user, html: {multipart: true} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password, "Password", :autocomplete => "off" %><i> (minimum 8 characters)</i><br />
+    <%= f.password_field :password%>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm Password" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, "Last Name"%>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_city, "Current City" %>
+    <%= f.text_field :current_city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_state, "Current State" %>
+    <%= f.select :current_state, options_for_select(us_states, @user.current_state) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uploaded_file, "Profile Picture" %>
+    <%= f.file_field :uploaded_file %>
+  </div>
+
+  <div class="field">
+    <%= f.label :github_profile, "Github Account" %>
+    <%= f.text_field :github_profile %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website, "Website" %>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= f.label :blog, "Blog" %>
+    <%= f.text_field :blog %>
+  </div>
+
+  <div class="field">
+    <%= f.label :looking, "Looking for a Job?" %><br />
+    Yes<%= f.radio_button :looking, true %>
+    No<%= f.radio_button :looking, false %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hiring, "Is your company hiring?" %><br />
+    Yes<%= f.radio_button :hiring, true %>
+    No<%= f.radio_button :hiring, false %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save Changes" %>
+  </div>
+<% end %>
