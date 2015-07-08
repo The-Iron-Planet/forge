@@ -1,6 +1,7 @@
 class Course < ActiveRecord::Base
   belongs_to :campus
   belongs_to :curriculum
+  has_many :users
 
   validates :started_on, presence: true
   validates :ended_on, presence: true
@@ -9,6 +10,8 @@ class Course < ActiveRecord::Base
   validates_uniqueness_of :cohort, scope: [:campus_id, :curriculum_id]
   validates_numericality_of :cohort, greater_than: 0
   validate :validate_end_date_before_start_date
+
+  accepts_nested_attributes_for :users
 
   def validate_end_date_before_start_date
     if started_on && ended_on
