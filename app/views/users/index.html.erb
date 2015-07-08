@@ -2,11 +2,11 @@
 
   <h1>Alumni Directory</h1>
 
-  <%= link_to 'New User', new_user_path if current_user.is_cd%> 
-  <%= link_to 'Campuses', campuses_path if current_user.is_cd%> 
-  <%= link_to 'Curricula', curricula_path if current_user.is_cd%> 
+  <%= link_to 'New User', new_user_path if current_user.is_cd%>
+  <%= link_to 'Campuses', campuses_path if current_user.is_cd%>
+  <%= link_to 'Curricula', curricula_path if current_user.is_cd%>
   <%= link_to 'Courses', courses_path if current_user.is_cd%>
-  
+
   <div class="search-bar">
     <input type="text" class="search" placeholder="search icon"/>
       <button type="button" class="search-button" placeholder="search icon">icon</button>
@@ -22,9 +22,9 @@
                 <div>Default Profile Pic</div>
                 <div>-----------------------</div>
              <% else %>
-                <div><%= image_tag user.uploaded_file %></div>
+                <div><%= image_tag user.uploaded_file(:square) %></div>
              <% end %>
-    
+
             <div><%= user.full_name %></div>
             <div>Email Icon: <%= user.email %></div>
             <div>Location Icon: <%= user.current_location %></div>
@@ -48,9 +48,7 @@
    </div>
 <% end -%>
  </div>
- 
+
  <br>
- 
+
   <%= link_to 'New User', new_user_path %>
-  
-  
