@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CurriculaControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @curriculum = curricula(:one)
   end
 
@@ -18,10 +19,10 @@ class CurriculaControllerTest < ActionController::TestCase
 
   test "should create curriculum" do
     assert_difference('Curriculum.count') do
-      post :create, curriculum: { name: @curriculum.name }
+      post :create, curriculum: { name: "Front End Engineering"}
     end
 
-    assert_redirected_to curriculum_path(assigns(:curriculum))
+    assert_redirected_to new_course_path
   end
 
   test "should show curriculum" do
