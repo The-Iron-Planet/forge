@@ -15,8 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/users/:id/profile' => 'users#profile', as: :profile
-
   resource :user, only: [:edit_password] do
     collection do
       patch 'update_password'

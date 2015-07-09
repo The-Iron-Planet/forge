@@ -16,11 +16,9 @@
         <div class = "col-md-1"></div>
          <div class = "col-md-3 profile-content">
              <% if user.uploaded_file_file_name.nil? %>
-                <div>-----------------------</div>
-                <div>Default Profile Pic</div>
-                <div>-----------------------</div>
+              <div><%= image_tag "default_pic.png", size: "200x200" %></div>
              <% else %>
-                <div><%= image_tag user.uploaded_file(:square) %></div>
+              <div><%= image_tag user.uploaded_file(:square) %></div>
              <% end %>
 
 
@@ -52,7 +50,3 @@
    </div>
 <% end -%>
  </div>
-
- <br>
-
-  <%= link_to 'New User', new_user_path %>
