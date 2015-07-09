@@ -53,8 +53,10 @@ class UsersController < ApplicationController
       # Sign in the user by passing validation in case their password changed
       sign_in :user, @user, bypass: true
       redirect_to user_path, notice: 'User was successfully updated.'
-    else
+    elsif @user.valid_password?("theironyard")
       redirect_to edit_user_path, notice: 'You must update your password'
+    else
+      render :edit
     end
   end
 

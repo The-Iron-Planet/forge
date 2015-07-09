@@ -12,8 +12,9 @@ class User < ActiveRecord::Base
   }
   validates_attachment_content_type :uploaded_file, :content_type => /\Aimage\/.*\Z/
 
-  # validates :current_city, presence: true
-  # validates :current_state, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
