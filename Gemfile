@@ -36,6 +36,7 @@ gem 'devise'
 gem 'aws-sdk', '~> 1.6'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'mailgun'
 
 
 group :development, :test do
