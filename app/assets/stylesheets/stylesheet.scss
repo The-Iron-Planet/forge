@@ -16,17 +16,12 @@ $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 
-body {
-  font-family: $font;
-
-}
-
 .fixed-nav-bar {
   height: 50px;
   width: 100%;
   position: relative;
   text-align: right;
-  background-color: red;
+  background-color: grey;
   border: 1px black solid;
 }
 .header-text {
@@ -125,10 +120,11 @@ h1 {
 .search {
   width: 175px;
   font-size: 16px;
+  font: $font-italic;
   padding: 5px;
   border-style: none;
   border-radius: 4px 0 0 4px;
-  background-color: blue;
+  background-color: $light-gray;
   margin: 4px;
 }
 .search-button {
@@ -149,10 +145,41 @@ col-md-3 {
   border: 1px black solid;
 }
 
+<<<<<<< HEAD
+.icon-row {
+  width: 20px;
+}
+
+.icon-mail {
+  font-size: 15px;
+}
+
+.icon-github-alt {
+  font-size: 15px;
+}
+
+.profile-content {
+  text-align: center;
+  font-family: $font;
+}
+
+h4 {
+  font-family: $font-bold;
+  font-size: 20px;
+  font-style: bold;
+}
+
+
+
+ 
+
+
+=======
 
 .stack-align{
   padding-left:10px;
 }
+>>>>>>> 27c13db38342ae8d28fa998374fc839e8e45c0d0
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>
 //   <button type="button" class="search-button" placeholder="search icon">icon</button>

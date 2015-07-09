@@ -6,15 +6,15 @@
   <%= link_to 'Courses', courses_path if current_user.is_cd%>
 
   <div class="search-bar">
-    <input type="text" class="search" placeholder="search icon"/>
-      <button type="button" class="search-button" placeholder="search icon">icon</button>
+    <input type="text" class="search" placeholder="Search..."/>
+      <button type="button" class="glyphicon glyphicon-search"></button>
   </div>
 
 <% @users.each_slice(3) do |slice| -%>
   <div class="row row-centered">
     <% slice.each do |user| %>
         <div class = "col-md-1"></div>
-         <div class = "col-md-3">
+         <div class = "col-md-3 profile-content">
              <% if user.uploaded_file_file_name.nil? %>
                 <div>-----------------------</div>
                 <div>Default Profile Pic</div>
@@ -23,16 +23,21 @@
                 <div><%= image_tag user.uploaded_file(:square) %></div>
              <% end %>
 
-            <div><%= user.full_name %></div>
+            
+            <h4><%= user.full_name %></h4>
+            <br>
             <div><%= user.course.full_description if !user.course.nil? %></div>
-            <div>Email Icon: <%= user.email %></div>
-            <div>Location Icon: <%= user.current_location %></div>
-            <div>Github Icon: <%= user.github_profile %></div>
+            <div><%= user.current_location %></div>
+            <br>
+            <a href="mailto:<%= user.email %>" target="_blank"><span class="user.email"></span></a>
+            <span class="icon-mail"><a href="mailto:<%= user.email %>"></a></span>
+            <a href="<%= user.github_profile %>" target="_blank"><span class="icon-github"></span></a>
+            <!--<div>Github Icon: <%= user.github_profile %></div>-->
                <% if !user.website.nil? %>
-            <div>Website: <%= user.website %></div>
+            <a href="<%= user.website %>" target="_blank"><span class="icon-wordpress-alt"></span></a>
               <% end %>
               <% if !user.blog.nil? %>
-            <div>Blog: <%= user.blog %></div>
+            <a href="<%= user.blog %>" target="_blank"><span class="icon-blogger"></span></a>
               <% end %>
               <% if user.hiring %>
             <div>Hiring: Yes</div>
