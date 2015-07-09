@@ -35,7 +35,7 @@
       </div>
       <div class="field">
         <%= f.label :cohort, :class => "input-label" %><br>
-        <%= f.number_field :cohort, :class => "input-field" %>
+        <%= f.number_field :cohort, :class => "input-field", min: 1 %>
       </div>
 
       <%= f.fields_for :users do |ff| %><br>
