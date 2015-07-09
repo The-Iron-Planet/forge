@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709192159) do
+ActiveRecord::Schema.define(version: 20150709203650) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(version: 20150709192159) do
   create_table "positions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "company_id"
-    t.string   "city"
-    t.string   "state"
     t.string   "title"
     t.string   "description"
     t.date     "started_on"

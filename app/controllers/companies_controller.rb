@@ -25,7 +25,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-      redirect_to @company, notice: 'Company was successfully created.'
+      redirect_to new_position_path, notice: 'Company was successfully created.'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1
   def update
     if @company.update(company_params)
-      redirect_to @company, notice: 'Company was successfully updated.'
+      redirect_to companies_path, notice: 'Company was successfully updated.'
     else
       render :edit
     end

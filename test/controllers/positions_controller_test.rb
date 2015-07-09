@@ -4,6 +4,7 @@ class PositionsControllerTest < ActionController::TestCase
   setup do
     sign_in users(:one)
     @position = positions(:one)
+    @user = users(:one)
   end
 
   test "should get index" do
@@ -19,10 +20,10 @@ class PositionsControllerTest < ActionController::TestCase
 
   test "should create position" do
     assert_difference('Position.count') do
-      post :create, position: { city: @position.city, company_id: @position.company_id, current: @position.current, description: @position.description, ended_on: @position.ended_on, started_on: @position.started_on, state: @position.state, title: @position.title, user_id: @position.user_id }
+      post :create, position: { company_id: @position.company_id, current: @position.current, description: @position.description, ended_on: @position.ended_on, started_on: @position.started_on, title: @position.title, user_id: @position.user_id }
     end
 
-    assert_redirected_to position_path(assigns(:position))
+    assert_redirected_to edit_user_path(@user)
   end
 
   test "should show position" do
@@ -36,8 +37,8 @@ class PositionsControllerTest < ActionController::TestCase
   end
 
   test "should update position" do
-    patch :update, id: @position, position: { city: @position.city, company_id: @position.company_id, current: @position.current, description: @position.description, ended_on: @position.ended_on, started_on: @position.started_on, state: @position.state, title: @position.title, user_id: @position.user_id }
-    assert_redirected_to position_path(assigns(:position))
+    patch :update, id: @position, position: { company_id: @position.company_id, current: @position.current, description: @position.description, ended_on: @position.ended_on, started_on: @position.started_on, title: @position.title, user_id: @position.user_id }
+    assert_redirected_to positions_path
   end
 
   test "should destroy position" do

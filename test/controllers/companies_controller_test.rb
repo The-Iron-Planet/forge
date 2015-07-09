@@ -22,7 +22,7 @@ class CompaniesControllerTest < ActionController::TestCase
       post :create, company: { city: @company.city, name: @company.name, state: @company.state, website: @company.website }
     end
 
-    assert_redirected_to company_path(assigns(:company))
+    assert_redirected_to new_position_path
   end
 
   test "should show company" do
@@ -37,7 +37,7 @@ class CompaniesControllerTest < ActionController::TestCase
 
   test "should update company" do
     patch :update, id: @company, company: { city: @company.city, name: @company.name, state: @company.state, website: @company.website }
-    assert_redirected_to company_path(assigns(:company))
+    assert_redirected_to companies_path
   end
 
   test "should destroy company" do

@@ -1,23 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @position.user_id %>
-</p>
+
 
 <p>
   <strong>Company:</strong>
-  <%= @position.company_id %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @position.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @position.state %>
+  <%= @position.company.name_and_location %>
 </p>
 
 <p>

@@ -4,7 +4,7 @@ class PositionsController < ApplicationController
 
   # GET /positions
   def index
-    @positions = Position.all
+    @positions = Position.all.where(user_id: current_user.id)
   end
 
   # GET /positions/1
@@ -23,9 +23,9 @@ class PositionsController < ApplicationController
   # POST /positions
   def create
     @position = Position.new(position_params)
-
+    @position.user_id = current_user.id
     if @position.save
-      redirect_to @position, notice: 'Position was successfully created.'
+      redirect_to edit_user_path(current_user), notice: 'Position was successfully created.'
     else
       render :new
     end
@@ -34,7 +34,7 @@ class PositionsController < ApplicationController
   # PATCH/PUT /positions/1
   def update
     if @position.update(position_params)
-      redirect_to @position, notice: 'Position was successfully updated.'
+      redirect_to positions_path, notice: 'Position was successfully updated.'
     else
       render :edit
     end

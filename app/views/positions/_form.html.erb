@@ -11,22 +11,12 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.label :company %><br>
+    <%= f.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "") %>
   </div>
-  <div class="field">
-    <%= f.label :company_id %><br>
-    <%= f.number_field :company_id %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
+  <div class="field"><%= link_to "Don't see your company here?", new_company_path %></div>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -36,16 +26,16 @@
     <%= f.text_field :description %>
   </div>
   <div class="field">
+    <%= f.label "Current?" %><br>
+    <%= f.check_box :current %>
+  </div>
+  <div class="field">
     <%= f.label :started_on %><br>
-    <%= f.date_select :started_on %>
+    <%= f.date_field :started_on %>
   </div>
   <div class="field">
     <%= f.label :ended_on %><br>
-    <%= f.date_select :ended_on %>
-  </div>
-  <div class="field">
-    <%= f.label :current %><br>
-    <%= f.check_box :current %>
+    <%= f.date_field :ended_on %>
   </div>
   <div class="actions">
     <%= f.submit %>

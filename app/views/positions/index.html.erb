@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Positions</h1>
+
+<h1><%= "#{current_user.full_name}'s" %> Work Experience</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Company</th>
-      <th>City</th>
-      <th>State</th>
       <th>Title</th>
       <th>Description</th>
       <th>Started on</th>
@@ -21,10 +18,8 @@
   <tbody>
     <% @positions.each do |position| %>
       <tr>
-        <td><%= position.user_id %></td>
-        <td><%= position.company_id %></td>
-        <td><%= position.city %></td>
-        <td><%= position.state %></td>
+
+        <td><%= position.company.name_and_location %></td>
         <td><%= position.title %></td>
         <td><%= position.description %></td>
         <td><%= position.started_on %></td>
