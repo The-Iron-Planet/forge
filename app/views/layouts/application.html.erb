@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Forge</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'application' %>
+      <%= csrf_meta_tags %>
 </head>
+
 <body>
-<div class="logout-header">
+
+  <div class="container-fluid">
+    <div class="row">
 
 
-      <p class="notice"><%= notice %></p>
+
+
+
+    <div class="fixed-nav-bar">
+      <div class="logo-cont">
+        <%= image_tag "TIY-logo-vector-color.png", alt: "logo", class: "tiy" %>
+      </div>
+       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <% if user_signed_in? %> 
+      <% if user_signed_in? %>
         <div class = "header-text">
           Signed in as <%= current_user.first_name%> |
           <span> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"btn btn-default" %> </span>
         </div>
       <% end %>
+
+      </div>
     </div>
-<%= yield %>
+
+
+  <div class="top-header">
+
+
+  <%= yield %>
+</div>
+</div>
 
 </body>
+
 </html>

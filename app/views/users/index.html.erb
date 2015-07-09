@@ -16,33 +16,33 @@
         <div class = "col-md-1"></div>
          <div class = "col-md-3 profile-content">
              <% if user.uploaded_file_file_name.nil? %>
-                <div>-----------------------</div>
-                <div>Default Profile Pic</div>
-                <div>-----------------------</div>
+              <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
              <% else %>
-                <div><%= image_tag user.uploaded_file(:square) %></div>
+              <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
              <% end %>
 
 
             <h4 style = "color: #233139;";><%= user.full_name %></h4>
-            <p style = "color: #727d84;"><%= user.course.full_description if !user.course.nil? %></p>
+            <p style = "color: #727d84;"><%= user.course.full_description unless user.course.blank? %></p>
             <p style = "color: #727d84;"><%= user.current_location %></p>
+
             <a href="mailto:<%= user.email %>" target="_blank"><span class="user.email"></span></a>
             <span class="icon-mail"><a href="mailto:<%= user.email %>"></a></span>
-            <a href="<%= user.github_profile %>" target="_blank"><span class="icon-github"></span></a>
-            <!--<div>Github Icon: <%= user.github_profile %></div>-->
-               <% if !user.website.nil? %>
-            <a href="<%= user.website %>" target="_blank"><span class="icon-wordpress-alt"></span></a>
+              <% unless user.github_profile.blank? %>
+                <a href="<%= user.github_profile %>" target="_blank"><span class="icon-github"></span></a>
               <% end %>
-              <% if !user.blog.nil? %>
-            <a href="<%= user.blog %>" target="_blank"><span class="icon-blogger"></span></a>
+              <% unless user.website.blank? %>
+                <a href="<%= user.website %>" target="_blank"><span class="icon-wordpress-alt"></span></a>
+              <% end %>
+              <% unless user.blog.blank? %>
+                <a href="<%= user.blog %>" target="_blank"><span class="icon-blogger"></span></a>
               <% end %>
               <% if user.hiring %>
-            <div>Hiring: Yes</div>
+                <div>Hiring: Yes</div>
               <% end %>
               <% if user.looking %>
-            <div>Looking: Yes</div>
-            <% end %>
+                <div>Looking: Yes</div>
+              <% end %>
           <div><%= link_to 'View Profile', user %></div>
          </div>
      <% end %>
@@ -50,7 +50,3 @@
    </div>
 <% end -%>
  </div>
-
- <br>
-
-  <%= link_to 'New User', new_user_path %>

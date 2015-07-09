@@ -8,27 +8,27 @@
 
 <p>
   <strong class="label-field ">Started on:</strong>
-  <%= @course.start_date, :class=>"input-field" %>
+  <%= @course.start_date %>
 </p>
 
 <p>
   <strong class="label-field">Ended on:</strong>
-  <%= @course.end_date, :class=>"input-field" %>
+  <%= @course.end_date %>
 </p>
 
 <p>
   <strong class="label-field">Campus:</strong>
-  <%= @course.campus_long, :class=>"input-field"%>
+  <%= @course.campus_long %>
 </p>
 
 <p>
   <strong class="label-field">Curriculum:</strong>
-  <%= @course.curric_name, :class=>"input-field" %>
+  <%= @course.curric_name %>
 </p>
 
 <p>
   <strong>Cohort:</strong>
-  <%= @course.cohort, :class=>"input-field" %>
+  <%= @course.cohort %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
