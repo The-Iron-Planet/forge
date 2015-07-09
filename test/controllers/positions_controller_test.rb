@@ -2,6 +2,7 @@ require 'test_helper'
 
 class PositionsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @position = positions(:one)
   end
 
