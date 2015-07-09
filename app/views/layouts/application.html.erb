@@ -17,27 +17,16 @@
 
     <div class="fixed-nav-bar">
       <div class="logo-cont">
-        <div class="logo">
-          <div class="logo2">
-            <em class="the">The</em>
-            <p class="forge">
-              Forge
-            </p>
-          </div>
-
+        <%= image_tag "TIY-logo-vector-color.png", alt: "logo", class: "tiy" %>
+      </div>
        <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <% if user_signed_in? %>
         <div class = "header-text">
           Signed in as <%= current_user.first_name%> |
           <span > <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"btn logout" %> </span>
-
         </div>
-      </div>
-
-
-          </div>
-          <% end %>
+      <% end %>
       </div>
     </div>
 
