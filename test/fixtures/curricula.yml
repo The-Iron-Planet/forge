@@ -2,6 +2,8 @@
 
 one:
   name: Rails Engineering
+  nickname: Rails
 
 two:
   name: Python Engineering
+  nickname: Python

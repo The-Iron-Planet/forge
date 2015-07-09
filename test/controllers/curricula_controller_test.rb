@@ -19,7 +19,7 @@ class CurriculaControllerTest < ActionController::TestCase
 
   test "should create curriculum" do
     assert_difference('Curriculum.count') do
-      post :create, curriculum: { name: "Front End Engineering"}
+      post :create, curriculum: { name: "Front End Engineering", nickname: "Front End"}
     end
 
     assert_redirected_to new_course_path
