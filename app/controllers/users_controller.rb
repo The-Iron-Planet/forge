@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       # Sign in the user by passing validation in case their password changed
       sign_in :user, @user, bypass: true
-      redirect_to root_path, notice: 'User was successfully updated.'
+      redirect_to user_path, notice: 'User was successfully updated.'
     else
       redirect_to edit_user_path, notice: 'You must update your password'
     end
