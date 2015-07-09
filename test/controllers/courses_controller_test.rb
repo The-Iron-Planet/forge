@@ -39,8 +39,9 @@ class CoursesControllerTest < ActionController::TestCase
   test "should update course" do
     patch :update, id: @course, course: { campus_id: @course.campus_id, cohort: @course.cohort,
         curriculum_id: @course.curriculum_id, ended_on: @course.ended_on, started_on: @course.started_on,
-        users_attributes: ["0" => {first_name: @user.first_name, last_name: @user.last_name,
-          email: @user.email, password: "password"}]}
+        :users_attributes=>{"0" => {id: @user.id, first_name: @user.first_name, last_name: @user.last_name,
+          email: @user.email, password: "password"}}}
+
     assert_redirected_to course_path(assigns(:course))
   end
 

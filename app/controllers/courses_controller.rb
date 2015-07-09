@@ -35,6 +35,7 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1
   def update
+    # byebug
     params[:course][:users_attributes].each do |k, v|
       v[:password] = "theironyardrails" unless v[:id]
     end
