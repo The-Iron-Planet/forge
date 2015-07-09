@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    @user.password = "password"
+    @user.password = "theironyard"
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'
     else
