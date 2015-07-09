@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
   def update
     # byebug
     params[:course][:users_attributes].each do |k, v|
-      v[:password] = "theironyardrails" unless v[:id]
+      v[:password] = "theironyard" unless v[:id]
     end
     if @course.update(course_params)
       redirect_to @course, notice: 'Course was successfully updated.'
