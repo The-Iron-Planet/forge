@@ -7,14 +7,14 @@
   <% end %>
 
   <div><%= @user.full_name %></div>
-  <div><%= @user.course.full_description if !@user.course.nil? %></div>
+  <div><%= @user.course.full_description unless @user.course.blank? %></div>
   <div>Email Icon: <%= @user.email %></div>
   <div>Location Icon: <%= @user.current_location %></div>
   <div>Github Icon: <%= @user.github_profile %></div>
-  <% if !@user.website.nil? %>
+  <% unless @user.website.blank? %>
     <div>Website: <%= @user.website %></div>
   <% end %>
-  <% if !@user.blog.nil? %>
+  <% unless @user.blog.blank? %>
     <div>Blog: <%= @user.blog %></div>
   <% end %>
   <% if @user.hiring %>
