@@ -6,6 +6,7 @@
     <div><%= image_tag @user.uploaded_file(:medium) %></div>
   <% end %>
 
+
   <div><%= @user.full_name %></div>
   <div><%= @user.course.full_description unless @user.course.blank? %></div>
   <div>Email Icon: <%= @user.email %></div>
@@ -13,6 +14,7 @@
   <div>Github Icon: <%= @user.github_profile %></div>
   <% unless @user.website.blank? %>
     <div>Website: <%= @user.website %></div>
+
   <% end %>
   <% unless @user.blog.blank? %>
     <div>Blog: <%= @user.blog %></div>
