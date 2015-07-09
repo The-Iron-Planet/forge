@@ -20,3 +20,5 @@
 *.jpg
 *.pdf
 credentials.csv
+*.eps
+*.ai

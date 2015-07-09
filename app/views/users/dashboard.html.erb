@@ -1,13 +1,29 @@
+<<<<<<< HEAD
 <!-- <div>-----------------------</div>
     <div>THIS IS THE DASHBOARD</div>
     <div>-----------------------</div> -->
 
 <!-- <img alt="logo" class="tiy" src="fonts/images/TIY-logo-vector-color.eps"> -->
+=======
+<div class="container-fluid">
+  <div class="fixed-nav-bar">
+    <div class="logo-cont">
+      <div class="logo">
+        <div class="logo2">
+          <em class="the">The</em>
+          <p class="forge">
+            Forge
+          </p>
+        </div>
+      </div>
+    </div>
+ <img alt="logo" class="tiy" src="fonts/images/TIY-logo-vector-color.eps">
+>>>>>>> 97783f8b519341b1d6ef15365985de32167da3ae
     <div class="nav-links">
-      <%= link_to 'View Profile', (@user), :class=>"nav"%>
+      <%= link_to 'View Profile', (@user), :class=>"nav" %>
       <%= link_to 'Alumni Directory', users_path, :class=>"nav" %>
     </div>
 
-    <!-- <span > <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"btn logout" %> </span> -->
+    <span > <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"btn logout" %> </span>
   </div>
 </div>

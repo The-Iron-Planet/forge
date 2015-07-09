@@ -1,27 +1,22 @@
 
 <div>
   <% if @user.uploaded_file_file_name.nil? %>
-    <div>-----------------------</div>
-    <div>Default Profile Pic</div>
-    <div>-----------------------</div>
+    <div><%= image_tag "default_pic.png", size: "200x200" %></div>
   <% else %>
     <div><%= image_tag @user.uploaded_file(:medium) %></div>
   <% end %>
 
-  <div class="profile-page"><%= @user.full_name %></div>
-  <div><%= @user.course.full_description if !@user.course.nil? %></div>
-  <div class="input-label">Email Icon: <%= @user.email %></div>
 
-    
+  <div><%= @user.full_name %></div>
+  <div><%= @user.course.full_description unless @user.course.blank? %></div>
+  <div>Email Icon: <%= @user.email %></div>
+  <div>Location Icon: <%= @user.current_location %></div>
+  <div>Github Icon: <%= @user.github_profile %></div>
+  <% unless @user.website.blank? %>
+    <div>Website: <%= @user.website %></div>
 
-
-
-  <div class="input-label">Location Icon: <%= @user.current_location %></div>
-  <div class="input-label">Github Icon: <%= @user.github_profile %></div>
-  <% if !@user.website.nil? %>
-    <div class="input-label">Website: <%= @user.website %></div>
   <% end %>
-  <% if !@user.blog.nil? %>
+  <% unless @user.blog.blank? %>
     <div>Blog: <%= @user.blog %></div>
   <% end %>
   <% if @user.hiring %>
