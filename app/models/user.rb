@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
 
+  default_scope {order(:last_name, :first_name)}
+
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
