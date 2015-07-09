@@ -1,69 +1,64 @@
-<!-- Large modal -->
-<button class="btn btn-primary" data-target=".bs-example-modal-lg" data-toggle="modal" type="button">Large modal</button>
+<div class="container-fluid new-user">
+  <h2 id="heading">Create new user</h2>
+  <div class="row form-val">
+    <%= form_for @user, html: {multipart: true} do |f| %>
+    <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="form-val"><%= pluralize(@user.errors.count, "error") %>
+        prohibited this user from being saved:</h4>
+      <ul class="error">
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+  </div>
 
-<div aria-labelledby="myLargeModalLabel" class="modal bs-example-modal-lg" role="dialog" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="container-fluid new-user">
-        <h2 id="heading">Create new user</h2>
-        <div class="row form-val">
-          <%= form_for @user, html: {multipart: true} do |f| %>
-          <% if @user.errors.any? %>
-          <div id="error_explanation">
-            <h4 class="form-val"><%= pluralize(@user.errors.count, "error") %>
-              prohibited this user from being saved:</h4>
-            <ul class="error">
-              <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-          <% end %>
-        </div>
+  <div class="row new-user-form">
+<!-- <div class="col-md-4"></div> -->
+<div class="col-md-4 label-column"></div>
+    <div class="col-md-4 label-column">
 
-        <div class="row new-user-form">
-          <div class="col-md-1"></div>
-          <div class="col-md-6 label-column">
-
-            <div class="field ">
-              <%= f.label :first_name, :class => "input-label" %>
-              <%= f.text_field :first_name, :class => "input-field" %>
-            </div>
-            <div class="field">
-              <%= f.label :last_name, :class => "input-label" %>
-              <%= f.text_field :last_name, :class => "input-field" %>
-            </div>
-
-            <div class="field">
-              <%= f.label :cohort, :class => "input-label" %>
-              <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
-            </div>
-
-            <div class="field">
-              <%= f.label :email, :class => "input-label" %>
-              <%= f.text_field :email, :class => "input-field" %>
-            </div>
-
-            <div class="field">
-              <%= f.label "Campus Director?", :class => "input-label" %>
-              Yes<%= f.radio_button :is_cd, true %>
-              No<%= f.radio_button :is_cd, false %>
-            </div>
-
-            <div class="col-md-1">
-
-            </div>
-          </div>
-          <div class="col-md-12 actions field ">
-            <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
-          </div>
-
-
-          <% end %>
-        </div>
-
-
+      <div class="field ">
+        <%= f.label :first_name, :class => "input-label" %>
+        <%= f.text_field :first_name, :class => "input-field" %>
       </div>
+      <div class="field">
+        <%= f.label :last_name, :class => "input-label" %>
+        <%= f.text_field :last_name, :class => "input-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :cohort, :class => "input-label" %>
+        <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, :class => "input-label" %>
+        <%= f.text_field :email, :class => "input-field" %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Campus Director?", :class => "input-label" %>
+        Yes<%= f.radio_button :is_cd, true %>
+        No<%= f.radio_button :is_cd, false %>
+      </div>
+
+<!-- <div class="col-md-4">
+
+            </div> -->
+    </div>
+    <div class="col-md-4 label-column"></div>
+  </div>
+  <div class="row">
+
+
+    <div class="col-md-12 actions field ">
+      <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
     </div>
   </div>
+    <% end %>
+  </div>
+
 </div>

@@ -1,5 +1,4 @@
 <div class="container-fluid new-user">
-  <h2 id="heading">Edit your profile</h2>
   <div class="row form-val">
     <%= form_for @user, html: {multipart: true} do |f| %>
     <% if @user.errors.any? %>
@@ -16,12 +15,10 @@
     <% end %>
   </div>
   <div class="row new-user-form">
-    <div class="col-md-1"></div>
-    <div class="col-md-4">
-      <%= f.label :uploaded_file, :class => "uploaded"  %>
-      <%= f.file_field :uploaded_file %>
-    </div>
-    <div class="col-md-6 label-column">
+
+
+<!-- <div class="col-md-1"></div> -->
+    <div class="col-md-4 label-column name">
       <div class="field">
         <%= f.label :first_name, :class => "input-label" %>
         <%= f.text_field :first_name, :class => "input-field" %>
@@ -33,11 +30,6 @@
       </div>
 
       <div class="field">
-        <%= f.label :email, :class => "input-label" %>
-        <%= f.text_field :email, :class => "input-field" %>
-      </div>
-
-      <div class="field">
         <%= f.label :current_city, :class => "input-label" %>
         <%= f.text_field :current_city, :class => "input-field" %>
       </div>
@@ -45,6 +37,13 @@
       <div class="field">
         <%= f.label :current_state, :class => "input-label" %>
         <%= f.select :current_state, options_for_select(us_states, @user.current_state), :include_blank => true, :class => "input-field" %>
+      </div>
+    </div>
+
+    <div class="col-md-4 contact">
+      <div class="field">
+        <%= f.label :email, :class => "input-label" %>
+        <%= f.text_field :email, :class => "input-field" %>
       </div>
 
       <div class="field">
@@ -62,20 +61,31 @@
         <%= f.text_field :blog, :class => "input-field" %>
       </div>
 
-      <div class="field">
-        <%= f.label :looking, :class => "input-label radio-title", :value => 'I\'m looking for a new job'%>
-              Yes<%= f.radio_button :looking, true %>
-              No<%= f.radio_button :looking, false %>
-      </div>
-
-      <div class="field">
-        <%= f.label :hiring, :class => "input-label radio-title", :value => 'My company is hiring' %>
-        Yes<%= f.radio_button :hiring, true %>
-        No<%= f.radio_button :hiring, false %>
-      </div>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <%= f.label :uploaded_file, :class => "uploaded"  %>
+      <%= f.file_field :uploaded_file %>
+    </div>
+<!-- <div class="col-md-1"></div> -->
   </div>
+
+  <div class="row">
+    <!-- <div class="col-md-2 ctr"></div> -->
+    <div class="col-md-12 ctr">
+      <div class="field ctr">
+        <%= f.label :looking, :class => "", :value => 'I\'m looking for a new job'%>
+            Yes<%= f.radio_button :looking, true %>
+            No<%= f.radio_button :looking, false %>
+    </div>
+
+    <div class="field ctr">
+      <%= f.label :hiring, :class => "", :value => 'My company is hiring' %>
+      Yes<%= f.radio_button :hiring, true %>
+      No<%= f.radio_button :hiring, false %>
+    </div>
+    <!-- <div class="col-md-2 ctr"></div> -->
+  </div>
+</div>
   <div class="row">
     <div class="col-md-12 actions field ">
       <%= f.submit :class=> "btn ctr-btn", :value => 'Submit'%>
