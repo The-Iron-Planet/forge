@@ -5,12 +5,21 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: "test@email.com"
+  email: "one@email.com"
   first_name: "firstname"
   last_name: "lastname"
   current_city: "Durham"
   current_state: "NC"
   github_profile: "github"
+  is_cd: true
+  course: :one
 
-two: {}
-#  column: value
+two:
+  email: "two@email.com"
+  first_name: "John"
+  last_name: "Doe"
+  current_city: "Raleigh"
+  current_state: "NC"
+  github_profile: "github"
+  is_cd: false
+  course: :two

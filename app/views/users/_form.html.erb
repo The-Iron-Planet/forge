@@ -5,7 +5,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="container-fluid new-user">
-        <h2 id="heading">Create your profile</h2>
+        <h2 id="heading">Create new user</h2>
         <div class="row form-val">
           <%= form_for @user, html: {multipart: true} do |f| %>
           <% if @user.errors.any? %>
@@ -23,10 +23,6 @@
 
         <div class="row new-user-form">
           <div class="col-md-1"></div>
-          <div class="col-md-4">
-            <%= f.label :uploaded_file, :class => "uploaded" %>
-            <%= f.file_field :uploaded_file %>
-          </div>
           <div class="col-md-6 label-column">
 
             <div class="field ">
@@ -39,40 +35,19 @@
             </div>
 
             <div class="field">
-              <%= f.label :current_city, :class => "input-label" %>
-              <%= f.text_field :current_city, :class => "input-field" %>
-            </div>
-            <div class="field">
-              <%= f.label :current_state, :class => "input-label" %>
-              <%= f.text_field :current_state, :class => "input-field state" %>
+              <%= f.label :cohort, :class => "input-label" %>
+              <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
             </div>
 
             <div class="field">
               <%= f.label :email, :class => "input-label" %>
               <%= f.text_field :email, :class => "input-field" %>
             </div>
-            <div class="field">
-              <%= f.label :github_profile, :class => "input-label" %>
-              <%= f.text_field :github_profile, :class => "input-field" %>
-            </div>
-            <div class="field">
-              <%= f.label :website, :class => "input-label" %>
-              <%= f.text_field :website, :class => "input-field" %>
-            </div>
-            <div class="field">
-              <%= f.label :blog, :class => "input-label" %>
-              <%= f.text_field :blog, :class => "input-field " %>
-            </div>
-            <div class="field">
-              <%= f.label :looking, :class => "input-label radio-title", :value => 'I\'m looking for a new job' %>
 
-              Yes<%= f.radio_button :looking, true, :placeholder=>"yes" %>
-              No<%= f.radio_button :looking, false%>
-            </div>
             <div class="field">
-              <%= f.label :hiring, :class => "input-label radio-title", :value => 'My company is hiring' %>
-              Yes<%= f.radio_button :hiring, true %>
-              No<%= f.radio_button :hiring, false %>
+              <%= f.label "Campus Director?", :class => "input-label" %>
+              Yes<%= f.radio_button :is_cd, true %>
+              No<%= f.radio_button :is_cd, false %>
             </div>
 
             <div class="col-md-1">

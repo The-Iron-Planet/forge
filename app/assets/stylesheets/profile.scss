@@ -8,6 +8,8 @@
     padding: 0;
   }
 }
+
+.course-form,
 .new-user {
   background-color: $light-gray;
   color: $base;
@@ -36,7 +38,7 @@
   // background-color: orange;
 }
 h2 {
-  @font-family: TisaPro;
+  font-family: $font-medium;
   margin: 20px 0 30px;
   text-align: center;
   color: $shield;

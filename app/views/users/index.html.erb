@@ -3,8 +3,6 @@
   <h1>Alumni Directory</h1>
 
   <%= link_to 'New User', new_user_path if current_user.is_cd%>
-  <%= link_to 'Campuses', campuses_path if current_user.is_cd%>
-  <%= link_to 'Curricula', curricula_path if current_user.is_cd%>
   <%= link_to 'Courses', courses_path if current_user.is_cd%>
 
   <div class="search-bar">
@@ -24,9 +22,11 @@
              <% else %>
                 <div><%= image_tag user.uploaded_file(:square) %></div>
              <% end %>
+
             
             <h4><%= user.full_name %></h4>
             <br>
+            <div><%= user.course.full_description if !user.course.nil? %></div>
             <div><%= user.current_location %></div>
             <br>
             <a href="mailto:<%= user.email %>" target="_blank"><span class="user.email"></span></a>

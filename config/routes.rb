@@ -5,12 +5,17 @@ Rails.application.routes.draw do
   resources :campuses
   devise_for :users
 
-  root 'users#index'
+  get '/first_login' => 'users#first_login', as: :first_login
+  # get '/dashboard' => 'users#dashboard', as: :dashboard
+
+  root 'users#dashboard'
   resources :users do
     member do
       get 'edit_password'
     end
   end
+
+  get '/users/:id/profile' => 'users#profile', as: :profile
 
   resource :user, only: [:edit_password] do
     collection do
@@ -19,7 +24,6 @@ Rails.application.routes.draw do
   end
 
   devise_scope :user do
-    # root to: 'devise/sessions#new'
     get 'login', to: 'devise/sessions#new'
   end
 
