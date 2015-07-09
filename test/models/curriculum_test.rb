@@ -11,13 +11,17 @@ class CurriculumTest < ActiveSupport::TestCase
   end
 
   test "can't create duplicates or blanks" do
-    c1 = Curriculum.new(name: "")
-    c2 = Curriculum.new(name: "Rails Engineering")
-    c3 = Curriculum.new(name: "Mobile Engineering")
+    c1 = Curriculum.new(name: "", nickname: "")
+    c2 = Curriculum.new(name: "Rails Engineering", nickname: "Rails")
+    c3 = Curriculum.new(name: "Mobile Engineering", nickname: "")
+    c4 = Curriculum.new(name: "", nickname: "Mobile")
+    c5 = Curriculum.new(name: "Mobile Engineering", nickname: "Mobile")
 
     refute c1.save
     refute c2.save
-    assert c3.save
+    refute c3.save
+    refute c4.save
+    assert c5.save
   end
 
   test "nicknames" do
