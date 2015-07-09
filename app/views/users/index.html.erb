@@ -16,9 +16,9 @@
         <div class = "col-md-1"></div>
          <div class = "col-md-3 profile-content">
              <% if user.uploaded_file_file_name.nil? %>
-              <div><%= image_tag "default_pic.png", size: "200x200" %></div>
+              <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
              <% else %>
-              <div><%= image_tag user.uploaded_file(:square) %></div>
+              <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
              <% end %>
 
 
