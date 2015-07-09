@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :course
+  has_many :positions
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable, :registerable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
@@ -22,6 +23,10 @@ class User < ActiveRecord::Base
 
   def current_location
     "#{current_city}, #{current_state}"
+  end
+
+  def current_position
+    positions.first
   end
 
 end
