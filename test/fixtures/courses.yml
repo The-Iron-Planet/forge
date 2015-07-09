@@ -2,14 +2,14 @@
 
 one:
   started_on: 2015-07-07
-  ended_on: 2015-07-07
-  campus_id: 1
-  curriculum_id: 1
+  ended_on: 2015-07-08
+  campus: :one
+  curriculum: :one
   cohort: 1
 
 two:
   started_on: 2015-07-07
-  ended_on: 2015-07-07
-  campus_id: 1
-  curriculum_id: 1
+  ended_on: 2015-07-08
+  campus: :two
+  curriculum: :two
   cohort: 1

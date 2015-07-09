@@ -11,6 +11,8 @@ one:
   current_city: "Durham"
   current_state: "NC"
   github_profile: "github"
+  is_cd: true
+  course: :one
 
 two: {}
 #  column: value
