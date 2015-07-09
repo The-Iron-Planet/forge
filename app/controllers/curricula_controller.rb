@@ -55,6 +55,6 @@ class CurriculaController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def curriculum_params
-      params.require(:curriculum).permit(:name)
+      params.require(:curriculum).permit(:name, :nickname)
     end
 end

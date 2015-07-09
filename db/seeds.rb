@@ -40,6 +40,6 @@ User.create!(first_name: "Patrick", last_name: "Rowe", email: "patrick@test.com"
 
 Campus.create!(city: "Durham", state: "NC")
 
-Curriculum.create!(name: "Rails Engineering")
-Curriculum.create!(name: "Front End Engineering")
-Curriculum.create!(name: "Python Engineering")
+Curriculum.create!(name: "Rails Engineering", nickname: "Rails")
+Curriculum.create!(name: "Front End Engineering", nickname: "Front End")
+Curriculum.create!(name: "Python Engineering", nickname: "Python")

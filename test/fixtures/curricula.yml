@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Rails Engineering
+  nickname: Rails
 
 two:
-  name: MyString
+  name: Python Engineering
+  nickname: Python

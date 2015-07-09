@@ -2,6 +2,7 @@ require 'test_helper'
 
 class CampusesControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @campus = campuses(:one)
   end
 
@@ -18,10 +19,10 @@ class CampusesControllerTest < ActionController::TestCase
 
   test "should create campus" do
     assert_difference('Campus.count') do
-      post :create, campus: { city: @campus.city, state: @campus.state }
+      post :create, campus: { city: "Raleigh", state: "NC" }
     end
 
-    assert_redirected_to campus_path(assigns(:campus))
+    assert_redirected_to new_course_path
   end
 
   test "should show campus" do
