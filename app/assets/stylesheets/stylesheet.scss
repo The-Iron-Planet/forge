@@ -15,38 +15,45 @@ $font-italic: "TisaPro-Ita";
 $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
+$font-logo:"SFIronsidesExtended";
 
 body {
   font-family: $font;
 
 }
 
+.container-fluid{
+  padding: 0;
+}
 .fixed-nav-bar {
-  height: 50px;
+  // z-index: 50;
+  height: 150px;
   width: 100%;
   position: relative;
-  text-align: right;
-  background-color: red;
-  border: 1px black solid;
+
+  // text-align: right;
+  background-color: $white;
+  border: 1px $white solid;
+  box-shadow: 0px 5px 20px #888888;
 }
-.header-text {
-  position: absolute;
-  bottom: 0.75em;
-  left: 85%;
-  font-size: 1em;
-  text-align: right;
-}
-.header .primary-nav a {
-  color: #eef1f6;
-  font-size: 17px;
-  font-weight: 900;
-}
-.sub-nav h2 {
-  box-sizing: border-box;
-  margin-bottom: 5px;
-  margin-top: 18px;
-  font-size: 60px;
-}
+// .header-text {
+//   position: absolute;
+//   bottom: 0.75em;
+//   left: 85%;
+//   font-size: 1em;
+//   text-align: right;
+// }
+// .header .primary-nav a {
+//   color: #eef1f6;
+//   font-size: 17px;
+//   font-weight: 900;
+// }
+// .sub-nav h2 {
+//   box-sizing: border-box;
+//   margin-bottom: 5px;
+//   margin-top: 18px;
+//   font-size: 60px;
+// }
 h3 {
   font-size: 28px;
   line-height: 1.4;
@@ -68,8 +75,8 @@ h3 {
   padding: 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
-  margin: 10px;
-
+  margin: 5px;
+background-color: $light-gray;
   // background-color: yellow;
 }
 .input-field:focus {
@@ -92,9 +99,7 @@ h3 {
 .profile-card {
 
 }
-.nav {
 
-}
 .btn {
   margin: 20px;
   border-radius: 4px;
@@ -106,10 +111,13 @@ h3 {
   background: $accent-color;
   color: $white;
 }
+
 .btn:hover {
   background: $accent-color-dark;
   color: $white;
 }
+
+
 h1 {
   width: 100%;
 }
@@ -156,3 +164,119 @@ col-md-3 {
 // add to html for search button
 // <input type="text" class="search" placeholder="search icon"/>
 //   <button type="button" class="search-button" placeholder="search icon">icon</button>
+
+.logout-header{
+  z-index: 100;
+  width: auto;
+  right: 2em;
+  top: 1.5em;
+  position: absolute;
+  // right: 3em;
+
+}
+.logout{
+  color: black;
+  background-color: white;
+  border: black solid thick;
+  padding: 4px;
+
+}
+
+.logout:hover{
+  background-color: white;
+  color: $accent-color;
+}
+
+.logo-cont{
+  // margin: 0 !important;
+  // display: inline-block;
+  // float: left;
+padding: 1em;
+}
+.logo2,
+.logo{
+  // margin: 0 !important;
+  text-align: center;
+  width: 8em;
+  height: 8em;
+  border: solid black 7px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+}
+
+
+
+.logo2{
+
+  margin: 0 auto;
+  margin-top: .10em;
+  text-align: center;
+  width: 6.7em;
+  height: 6.7em;
+  border: solid black medium;
+  font-family: $font-logo;
+
+}
+
+.the{
+  font-family:$font-bold-italic;
+  font-size: 1.75em;
+}
+
+.forge{
+  font-family: $font-logo;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.tiy{
+  width: 20px;
+  height: 20px;
+}
+
+
+.nav-links{
+  position: fixed;
+  width: 440px;
+margin-left:16em;
+margin-right: auto;
+// background-color: blue;
+  display: inline-block;
+  // float: left;
+}
+.nav {
+  // z-index: 50;
+  color: $base;
+  // font-weight: bold;
+  font-size: 2em;
+  font-family: $font-bold-italic;
+  // line-height: 1em;
+  padding: .5em;
+  display: inline-block;
+// margin-left: 2em;
+// float: center;
+}
+
+// .nav:hover{
+//   color:$accent-color;
+//
+// }
+.footnote{
+
+}
+
+.contact{
+  // background-color: green;
+}
+
+.name{
+  // background-color: blue;
+  // text-align: right;
+}
+.label-column{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

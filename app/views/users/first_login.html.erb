@@ -1,7 +1,7 @@
 <div class="container-fluid new-user">
 
 <div>
-  <h2 id="heading"> Welcome to The Forge <%= @user.full_name %> </h2>
+  <h2 id="heading"> Welcome to The Forge, <%= @user.full_name ! %> </h2>
   <p class="paragraphs"> Since this is your first time logging in, please update your account info </p>
 </div>
 <div class="row form-val">
@@ -43,7 +43,7 @@
       <%= f.label :last_name, "Last Name", :class => "input-label"%>
       <%= f.text_field :last_name, :class => "input-field" %>
     </div>
-    
+
     <div class="field">
       <%= f.label :current_city, "Current City" , :class => "input-label"%>
       <%= f.text_field :current_city,:class => "input-field" %>

@@ -1,27 +1,40 @@
+
+<div class="container-fluid">
+adfadf
+  <div class="row new-user-form">
+  <!-- <div class="col-md-4"></div> -->
+  <div class="col-md-4 label-column"></div>
+    <div class="col-md-4 label-column">
+
 <p>
-  <strong>Started on:</strong>
-  <%= @course.start_date %>
+  <strong class="label-field ">Started on:</strong>
+  <%= @course.start_date, :class=>"input-field" %>
 </p>
 
 <p>
-  <strong>Ended on:</strong>
-  <%= @course.end_date %>
+  <strong class="label-field">Ended on:</strong>
+  <%= @course.end_date, :class=>"input-field" %>
 </p>
 
 <p>
-  <strong>Campus:</strong>
-  <%= @course.campus_long%>
+  <strong class="label-field">Campus:</strong>
+  <%= @course.campus_long, :class=>"input-field"%>
 </p>
 
 <p>
-  <strong>Curriculum:</strong>
-  <%= @course.curric_name %>
+  <strong class="label-field">Curriculum:</strong>
+  <%= @course.curric_name, :class=>"input-field" %>
 </p>
 
 <p>
   <strong>Cohort:</strong>
-  <%= @course.cohort %>
+  <%= @course.cohort, :class=>"input-field" %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+</div>
+  <div class="col-md-4"></div>
+
+</div>
+</div>
