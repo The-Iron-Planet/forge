@@ -8,13 +8,18 @@
     <div><%= image_tag @user.uploaded_file(:medium) %></div>
   <% end %>
 
-  <div><%= @user.full_name %></div>
+  <div class="profile-page"><%= @user.full_name %></div>
   <div><%= @user.course.full_description if !@user.course.nil? %></div>
-  <div>Email Icon: <%= @user.email %></div>
-  <div>Location Icon: <%= @user.current_location %></div>
-  <div>Github Icon: <%= @user.github_profile %></div>
+  <div class="input-label">Email Icon: <%= @user.email %></div>
+
+    
+
+
+
+  <div class="input-label">Location Icon: <%= @user.current_location %></div>
+  <div class="input-label">Github Icon: <%= @user.github_profile %></div>
   <% if !@user.website.nil? %>
-    <div>Website: <%= @user.website %></div>
+    <div class="input-label">Website: <%= @user.website %></div>
   <% end %>
   <% if !@user.blog.nil? %>
     <div>Blog: <%= @user.blog %></div>
