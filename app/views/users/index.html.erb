@@ -35,7 +35,7 @@
               <% unless user.website.blank? %>
                 <a href="<%= user.website %>" target="_blank"><span class="icon-wordpress-alt"></span></a>
               <% end %>
-              <% unless user.blank? %>
+              <% unless user.blog.blank? %>
                 <a href="<%= user.blog %>" target="_blank"><span class="icon-blogger"></span></a>
               <% end %>
               <% if user.hiring %>
