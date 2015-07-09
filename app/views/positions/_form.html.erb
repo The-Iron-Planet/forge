@@ -1,0 +1,53 @@
+<%= form_for(@position) do |f| %>
+  <% if @position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+      <ul>
+      <% @position.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :company_id %><br>
+    <%= f.number_field :company_id %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :started_on %><br>
+    <%= f.date_select :started_on %>
+  </div>
+  <div class="field">
+    <%= f.label :ended_on %><br>
+    <%= f.date_select :ended_on %>
+  </div>
+  <div class="field">
+    <%= f.label :current %><br>
+    <%= f.check_box :current %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

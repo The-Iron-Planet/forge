@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :companies
+  resources :positions
   resources :courses
   resources :curricula
   resources :campuses
@@ -31,6 +33,8 @@ Rails.application.routes.draw do
   #   For example:
   #
   #     Rails.application.routes.draw do
+  resources :companies
+  resources :positions
   resources :courses
   #       devise_for :users, controllers: {
   #         sessions: 'users/sessions'

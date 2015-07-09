@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: :one
+  company: :one
+  city: Durham
+  state: NC
+  title: Potato Master
+  description: Master of all things tuber.
+  started_on: 2015-07-24
+  ended_on: 2015-07-31
+  current: true
+
+two:
+  user: :two
+  company: :two
+  city: Mountain View
+  state: CA
+  title: Chief YouTube Troll
+  description: Exactly what it sounds like.
+  started_on: 2015-07-24
+  ended_on: 2015-07-25
+  current: false
