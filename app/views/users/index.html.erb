@@ -21,12 +21,10 @@
               <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
              <% end %>
 
+            <h4 style = "color: #233139;";><%= user.full_name %></h4>
+            <p style = "color: #727d84;"><%= user.course.full_description unless user.course.blank? %></p>
+            <p style = "color: #727d84;"><%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %></p>
 
-            <h4><%= user.full_name %></h4>
-            <br>
-            <div><%= user.course.full_description unless user.course.blank? %></div>
-            <div><%= user.current_location unless user.current_city.blank? || user.current_state.blank? %></div>
-            <br>
             <a href="mailto:<%= user.email %>" target="_blank"><span class="user.email"></span></a>
             <span class="icon-mail"><a href="mailto:<%= user.email %>"></a></span>
               <% unless user.github_profile.blank? %>
