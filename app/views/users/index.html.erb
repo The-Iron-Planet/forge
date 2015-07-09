@@ -25,7 +25,7 @@
             <h4><%= user.full_name %></h4>
             <br>
             <div><%= user.course.full_description unless user.course.blank? %></div>
-            <div><%= user.current_location %></div>
+            <div><%= user.current_location unless user.current_city.blank? || user.current_state.blank? %></div>
             <br>
             <a href="mailto:<%= user.email %>" target="_blank"><span class="user.email"></span></a>
             <span class="icon-mail"><a href="mailto:<%= user.email %>"></a></span>
