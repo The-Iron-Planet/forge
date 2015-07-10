@@ -6,6 +6,8 @@ class Campus < ActiveRecord::Base
   validates_uniqueness_of :city, scope: :state
   validates :state, presence: true
 
+  default_scope {order(:state, :city)}
+
   def long_name
     "#{city}, #{state}"
   end

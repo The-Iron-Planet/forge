@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user.positions.build
   end
 
   def edit_password
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
+    @user.password = "theironyard"
     if @user.save
       redirect_to @user, notice: 'User was successfully created.'
     else
@@ -53,8 +55,10 @@ class UsersController < ApplicationController
       # Sign in the user by passing validation in case their password changed
       sign_in :user, @user, bypass: true
       redirect_to user_path, notice: 'User was successfully updated.'
-    else
+    elsif @user.valid_password?("theironyard")
       redirect_to edit_user_path, notice: 'You must update your password'
+    else
+      render :edit
     end
   end
 
@@ -91,7 +95,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
           :current_city, :current_state, :github_profile, :website, :blog,
           :looking, :hiring, :is_cd, :course_id, :email, :password,
-          :password_confirmation, :current_password)
+          :password_confirmation, :current_password, positions_attributes: [:id,
+            :user_id, :company_id, :title, :description, :started_on, :ended_on, :current])
     end
 
     def check_user

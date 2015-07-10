@@ -1,4 +1,3 @@
-
 <div>
   <% if @user.uploaded_file_file_name.nil? %>
     <div><%= image_tag "default_pic.png", size: "200x200" %></div>
@@ -9,12 +8,15 @@
 
   <div><%= @user.full_name %></div>
   <div><%= @user.course.full_description unless @user.course.blank? %></div>
+  <% unless @user.current_city.blank? || @user.current_state.blank? %>
+    <div>Location Icon: <%= @user.current_location %></div>
+  <% end %>
   <div>Email Icon: <%= @user.email %></div>
-  <div>Location Icon: <%= @user.current_location %></div>
-  <div>Github Icon: <%= @user.github_profile %></div>
+  <% unless @user.github_profile.blank? %>
+    <div>Github Icon: <%= @user.github_profile %></div>
+  <% end %>
   <% unless @user.website.blank? %>
     <div>Website: <%= @user.website %></div>
-
   <% end %>
   <% unless @user.blog.blank? %>
     <div>Blog: <%= @user.blog %></div>
@@ -25,6 +27,36 @@
   <% if @user.looking %>
     <div>Looking: Yes</div>
   <% end %>
+
+  <h4><%= "#{@user.full_name}'s" %> Work Experience</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Started on</th>
+        <th>Ended on</th>
+        <th>Current</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user.positions.each do |position| %>
+        <tr>
+
+          <td><%= position.company.name_and_location %></td>
+          <td><%= position.title %></td>
+          <td><%= position.description %></td>
+          <td><%= position.started_on %></td>
+          <td><%= position.ended_on %></td>
+          <td><%= position.current %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 
     <div>
       <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>

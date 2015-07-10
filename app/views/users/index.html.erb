@@ -1,4 +1,4 @@
-<div class = "container">
+<div ="container" class >
 
   <h2>Alumni Directory</h2>
 
@@ -6,60 +6,78 @@
   <%= link_to 'Courses', courses_path if current_user.is_cd%>
 
   <div>
-    <input type="text" class="search" placeholder="Search..."/>
-      <button type="search" class="glyphicon glyphicon-search search-button"></button>
+    <input class="search" placeholder="Search..." type="text"/>
+    <button class="glyphicon glyphicon-search search-button" type="search"></button>
   </div>
 
-<% @users.each_slice(3) do |slice| -%>
+  <% @users.each_slice(3) do |slice| -%>
   <div class="row row-centered">
     <% slice.each do |user| %>
-        <div class = "col-md-1"></div>
-         <div class = "col-md-3 profile-content">
-             <% if user.uploaded_file_file_name.nil? %>
-              <div><%= image_tag "default_pic.png", size: "200x200" %></div>
-             <% else %>
-              <div><%= image_tag user.uploaded_file(:square) %></div>
-             <% end %>
+    <div ="col-md-1" class ></div>
+    <div ="col-md-3 profile-content" class >
+      <% if user.uploaded_file_file_name.nil? %>
+      <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
+      <% else %>
+      <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
+      <% end %>
 
+      <h4 ; ="color: #233139;" style ><%= user.full_name %></h4>
+      <p ="color: #727d84;" style ><%= user.course.full_description unless user.course.blank? %></p>
+      <p ="color: #727d84;" style ><%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %></p>
 
-            <h4><%= user.full_name %></h4>
-            <br>
-            <div><%= user.course.full_description unless user.course.blank? %></div>
-            <div><%= user.current_location %></div>
-            <br>
-            <button type="button" class="ellipse" data-toggle="collapse"
-             data-target=".collapse">...
-            </button>
-            <div id="collapse" class="collapse">more info here that might be interesting
-            </div></br>
-            <div class="icon-box">
-            <a href="mailto:<%= user.email %>" target="_blank"><span class="user.email"></span></a>
-            <span class="icon-mail icon"><a href="mailto:<%= user.email %>"></a></span>
-              <% unless user.github_profile.blank? %>
-                <a href="<%= user.github_profile %>" target="_blank"><span class="icon-github icon "></span></a>
+      <h4><%= user.full_name %></h4>
+      <br>
+      <div><%= user.course.full_description unless user.course.blank? %></div>
+      <div><%= user.current_location %></div>
+      <br>
+      <button class="ellipse" data-target=".collapse" data-toggle="collapse" type="button">...
+      </button>
+      <div class="collapse" id="collapse">more info here that might be interesting
+      </div>
+    </br>
 
-              <% end %>
-              <% unless user.website.blank? %>
-                <a href="<%= user.website %>" target="_blank"><span class="icon-wordpress-alt icon icon"></span></a>
-              <% end %>
-              <% unless user.blog.blank? %>
-                <a href="<%= user.blog %>" target="_blank"><span class="icon-blogger icon"></span></a>
+    <div class="icon-box">
 
-              <% end %>
-              </div>
-            </div>
-              <% if user.hiring %>
-                <div>Hiring: Yes</div>
-              <% end %>
-              <% if user.looking %>
-                <div>Looking: Yes</div>
+      <a href="mailto:<%= user.email %>" target="_blank">
+        <span class="user.email"></span>
+      </a>
+      <span class="icon-mail icon">
+        <a href="mailto:<%= user.email %>"></a>
+      </span>
+      <% unless user.github_profile.blank? %>
+      <a href="<%= user.github_profile %>" target="_blank">
+        <span class="icon-github icon "></span>
+      </a>
+      <% end %>
+      <% unless user.website.blank? %>
+      <a href="<%= user.website %>" target="_blank">
+        <span class="icon-wordpress-alt icon icon"></span>
+      </a>
+      <% end %>
+      <% unless user.blog.blank? %>
+      <a href="<%= user.blog %>" target="_blank">
+        <span class="icon-blogger icon"></span>
+      </a>
+      <% end %>
+    </div>
+  </div>
 
-              <% end %>
-          <div><%= link_to 'View Profile', user %></div>
+  <% unless user.positions.empty? %>
+  <div><%= user.current_position.company_name %></div>
+  <div><%= user.current_position.title %></div>
+  <% end %>
+  <% if user.hiring %>
+  <div>Hiring: Yes</div>
+  <% end %>
+  <% if user.looking %>
+  <div>Looking: Yes</div>
+  <% end %>
+  <div><%= link_to 'View Profile', user %></div>
 
-         </div>
-     <% end %>
+</div>
 
-   </div>
+<% end %>
+</div>
+
 <% end -%>
- </div>
+</div>
