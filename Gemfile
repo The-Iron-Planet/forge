@@ -37,6 +37,7 @@ gem 'aws-sdk', '~> 1.6'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'mailgun'
+gem 'faker'
 
 
 group :development, :test do

@@ -31,15 +31,37 @@ class User < ActiveRecord::Base
     "#{current_city}, #{current_state}"
   end
 
-
   def current_position
     positions.first
   end
+
+  def self.search_by_city(city)
+    self.select {|u| u.current_city.downcase == city.downcase }
+  end
+
+  def self.search_by_state(state)
+    self.select {|u| u.current_state.downcase == state.downcase }
+  end
+
+  def self.looking?
+    self.select {|u| u.looking}
+  end
+
+  def self.search_results(state)
+    search_by_state(state) if state
+  end
+  #
+  # def self.search_by_curriculum(curric_id)
+  #   self.where(course_id: (Course.where(curriculum_id: curric_id).id))
+  # end
 
   private
     def send_account_email
       # UserMailer.account_created(self).deliver_now
     end
 
+    def search_params
+      params.permit(:current_state, :current_city)
+    end
 
 end

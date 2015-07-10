@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def results
+    @users = User.search_results(params[:current_state])
+  end
+
   # GET /users/1
   def show
   end
