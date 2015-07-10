@@ -12,4 +12,6 @@ This app was created in Ruby version 2.2.2 with Rails 4.2.1
 * Devise
 * Paperclip
 * AWS-SDK
-* Bootstrap 
+* Bootstrap
+  * Bootstrap Datetimepicker
+* [American Date](https://github.com/jeremyevans/ruby-american_date)
