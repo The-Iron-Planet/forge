@@ -19,19 +19,17 @@ $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
-$corners: 4px;
+$corners: 4px 4px 4px 4px;
 
-// .container-fluid {
-//   padding: 0;
-//   width: 100%;
-// }
-//
-// .paragraphs {
-//   text-align: center;
-// }
-// .user-profile {
-//   background-color: green;
-// }
+.container-fluid {
+  padding: 0;
+  width: 100%;
+}
+
+.paragraphs {
+  text-align: center;
+}
+
 h1 {
   width: 100%;
 }
@@ -114,9 +112,9 @@ p {
   text-align: center;
   font-size: 20px;
 }
-.user-profile {
-  background-color: green;
-}
+// .user-profile {
+//   background-color: green;
+// }
 .input-field {
   width: 230px;
   // font-size: 16px;
@@ -150,9 +148,9 @@ p {
   color: $link-hover;
 }
 
-// .profile-card {
-//   box-sizing: border-box;
-// }
+.profile-card {
+  box-sizing: border-box;
+}
 .search {
   width: 240px;
   height: 40px;
@@ -179,9 +177,9 @@ p {
   background-color: $accent-color-dark;
 }
 
-// col-md-3 {
-//   border: 1px black solid;
-// }
+col-md-3 {
+  border: 1px black solid;
+}
 // .icon-row {
 //   width: 20px;
 // }
@@ -194,37 +192,32 @@ p {
   padding: 1px;
 }
 
-// .profile-content {
-//   text-align: center;
-//   font-family: $font;
-// }
-// .stack-align {
-//   padding-left: 10px;
-// }
+.profile-content {
+  text-align: center;
+  font-family: $font;
+}
+.stack-align {
+  padding-left: 10px;
+
+}
 //
 //
-// .footnote {
-//
-// }
-// .contact {
-//
-//   // background-color: green;
-// }
+
 // .name {
 //
 //   // background-color: blue;
 //   // text-align: right;
 // }
-// .label-column {
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-// .profile-page {
-//   font-family: $font-bold-italic;
-//   // font-size: 2em;
-//   color: $black;
-// }
+.label-column {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-page {
+  font-family: $font-bold-italic;
+  // font-size: 2em;
+  color: $black;
+}
 //
 .form-val {
   color: red;
@@ -253,3 +246,7 @@ p {
   border-top: solid thin black;
   border-bottom: solid thin black;
 }
+// .footnote{
+//   font-family: $small-font;
+//
+// }

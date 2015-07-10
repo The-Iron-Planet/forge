@@ -31,16 +31,6 @@ btn-login {
   color: $white;
   border: 1px solid $base;
 }
-.logout {
-  color: black;
-  background-color: white;
-  border: $black solid thick;
-  padding: 4px;
-}
-.logout:hover {
-  background-color: white;
-  color: $accent-color;
-}
 .toggle {
   @extend.btn;
   border: none;

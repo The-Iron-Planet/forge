@@ -5,7 +5,7 @@
   <%= link_to 'New User', new_user_path if current_user.is_cd%>
   <%= link_to 'Courses', courses_path if current_user.is_cd%>
 
-  <div>
+  <div class="search-bar">
     <input class="search" placeholder="Search..." type="text"/>
     <button class="glyphicon glyphicon-search search-button" type="search"></button>
   </div>
@@ -14,22 +14,22 @@
   <div class="row row-centered">
     <% slice.each do |user| %>
     <div ="col-md-1" class ></div>
-    <div ="col-md-3 profile-content" class >
+    <div ="col-md-3 profile-content" class="" >
       <% if user.uploaded_file_file_name.nil? %>
       <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
       <% else %>
       <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
       <% end %>
 
-      <h4 ; ="color: #233139;" style ><%= user.full_name %></h4>
+      <h4 ="color: #233139;" style ><%= user.full_name %></h4>
       <p ="color: #727d84;" style ><%= user.course.full_description unless user.course.blank? %></p>
       <p ="color: #727d84;" style ><%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %></p>
-
-      <h4><%= user.full_name %></h4>
+<!-- <h4><%= user.full_name %></h4>
       <br>
       <div><%= user.course.full_description unless user.course.blank? %></div>
       <div><%= user.current_location %></div>
-      <br>
+      <br> -->
+
       <button class="ellipse" data-target=".collapse" data-toggle="collapse" type="button">...
       </button>
       <div class="collapse" id="collapse">more info here that might be interesting
@@ -60,7 +60,8 @@
       </a>
       <% end %>
     </div>
-  </div>
+
+
 
   <% unless user.positions.empty? %>
   <div><%= user.current_position.company_name %></div>
@@ -72,11 +73,13 @@
   <% if user.looking %>
   <div>Looking: Yes</div>
   <% end %>
+
   <div><%= link_to 'View Profile', user %></div>
 
-</div>
+
 
 <% end %>
+</div>
 </div>
 
 <% end -%>
