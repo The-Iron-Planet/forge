@@ -1,6 +1,6 @@
-<h2 id="heading"><%= @user.first_name.capitalize %>, you can Edit you Profile here...</h2>
+<h2 id="heading"><%= @user.first_name.capitalize %>, you can Edit your Profile here...</h2>
 
 <%= render 'edit_form' %>
-
+<%= link_to 'Edit Work History', positions_path %>
 <%= link_to 'View Profile', @user %> |
 <%= link_to 'Alumni Directory', users_path %>

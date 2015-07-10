@@ -36,6 +36,10 @@
               <% unless user.blog.blank? %>
                 <a href="<%= user.blog %>" target="_blank"><span class="icon-blogger"></span></a>
               <% end %>
+              <% unless user.positions.empty? %>
+                <div><%= user.current_position.company_name %></div>
+                <div><%= user.current_position.title %></div>
+              <% end %>
               <% if user.hiring %>
                 <div>Hiring: Yes</div>
               <% end %>

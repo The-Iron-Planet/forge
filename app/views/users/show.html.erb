@@ -29,6 +29,36 @@
     <div>Looking: Yes</div>
   <% end %>
 
+  <h4><%= "#{current_user.full_name}'s" %> Work Experience</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Started on</th>
+        <th>Ended on</th>
+        <th>Current</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user.positions.each do |position| %>
+        <tr>
+
+          <td><%= position.company.name_and_location %></td>
+          <td><%= position.title %></td>
+          <td><%= position.description %></td>
+          <td><%= position.started_on %></td>
+          <td><%= position.ended_on %></td>
+          <td><%= position.current %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
     <div>
       <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
       <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>

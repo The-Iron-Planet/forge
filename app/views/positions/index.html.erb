@@ -1,0 +1,38 @@
+
+
+<h1><%= "#{current_user.full_name}'s" %> Work Experience</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Started on</th>
+      <th>Ended on</th>
+      <th>Current</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+
+        <td><%= position.company.name_and_location %></td>
+        <td><%= position.title %></td>
+        <td><%= position.description %></td>
+        <td><%= position.started_on %></td>
+        <td><%= position.ended_on %></td>
+        <td><%= position.current %></td>
+        <td><%= link_to 'Show', position %></td>
+        <td><%= link_to 'Edit', edit_position_path(position) %></td>
+        <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Position', new_position_path %>
