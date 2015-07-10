@@ -1,0 +1,64 @@
+$h2:1.953em;
+$h3:1.563em;
+$h4:1.25em;
+$small-font:0.8em;
+$white: #fff;
+$font-bold: "TisaPro-Bold";
+.btn {
+  font-size: $h4;
+  margin: 20px;
+  border-radius: $corners;
+  font-family: $font-bold-italic;
+  padding: 10px 20px 15px;
+  text-decoration: none;
+  background: $accent-color;
+  color: $white;
+}
+.ellipse{
+  color: $font-bold;
+}
+.btn:hover {
+  background: $accent-color-dark;
+  color: $white;
+}
+
+.toggle{
+  @extend.btn;
+  border: none;
+  color: $font-bold;
+}
+btn-login{
+  display: inline-block;
+  border-radius: $corners;
+  font-weight: bold;
+  font-style: italic;
+  width: 225px;
+  margin: auto;
+  // padding: 3px 55px 3px;
+  // font-size: 20px;
+  text-decoration: none;
+  background: $base;
+  color: $white;
+  border: 1px solid $base;
+}
+
+.logout {
+  color: black;
+  background-color: white;
+  border: black solid thick;
+  padding: 4px;
+}
+.logout:hover {
+  background-color: white;
+  color: $accent-color;
+}
+
+.ellipse{
+  text-decoration: none;
+  background-color:$white;
+  color: $font-bold;
+  border: $white;
+}
+.ellipse:focus {
+  outline: none;
+}

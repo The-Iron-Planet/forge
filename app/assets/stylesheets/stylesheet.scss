@@ -1,13 +1,18 @@
+
+// Colors
 $black: #000;
 $shield: #233139;
 $base: #727d84;
 $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
+$field-focus-gray:#e0e1e3;
 $white: #fff;
 $accent-color: #c319ab;
 $accent-color-dark: #9c1488;
 $link: #158cbd;
 $link-hover: #0e6284;
+
+//Fonts
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
@@ -15,28 +20,25 @@ $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
-body {
-  font-family: $font;
-}
-.container-fluid {
-  padding: 0;
-  width: 100%;
-}
 
-h3 {
-  font-size: 28px;
-  line-height: 1.4;
-}
-.paragraphs {
-  text-align: center;
-  font-size: 20px;
-}
-.user-profile {
-  background-color: green;
-}
+$corners:4px;
+
+// .container-fluid {
+//   padding: 0;
+//   width: 100%;
+// }
+//
+
+// .paragraphs {
+//   text-align: center;
+//   // font-size: 20px;
+// }
+// .user-profile {
+//   background-color: green;
+// }
 .input-field {
   width: 230px;
-  font-size: 16px;
+  // font-size: 16px;
   padding: 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
@@ -47,16 +49,15 @@ h3 {
 }
 .input-field:focus {
   outline: 0;
+  background-color:$field-focus-gray;
+
 }
+
 .input-label {
   width: 130px;
-
-  // background-color: green;
-  //   // font: $font;
-  font-size: 16px;
   padding: 6px;
   border-style: none;
-  border-radius: 4px 4px 4px 4px;
+  border-radius: $corners;
   margin: 10px 0;
 }
 .input-links {
@@ -65,42 +66,27 @@ h3 {
 .profile-card {
 
 }
-.btn {
-  margin: 20px;
-  border-radius: 4px;
-  font-weight: bolder;
-  font-style: italic;
-  padding: 10px 20px 15px;
-  font-size: 24px;
-  text-decoration: none;
-  background: $accent-color;
-  color: $white;
-}
-.btn:hover {
-  background: $accent-color-dark;
-  color: $white;
-}
-
-
-
-
-
-h1 {
-  width: 100%;
-}
+//
+//
+//
+//
+//
+// // h1 {
+// //   width: 100%;
+// // }
 .link {
   color: $link;
 }
 .link:hover {
   color: $link-hover;
 }
-.profile-card {
-  box-sizing: border-box;
-}
+// .profile-card {
+//   box-sizing: border-box;
+// }
 .search {
-  width: 175px;
-  font-size: 16px;
-  font: $font-italic;
+  width: 240px;
+  height:40px;
+  font: $font;
   padding: 5px;
   border-style: none;
   border-radius: 4px 0 0 4px;
@@ -108,64 +94,86 @@ h1 {
   margin: 4px;
 }
 .search-button {
-  background-color: $medium-gray;
+  background-color: $accent-color;
+  // height:40px;
+  font-size: 30px;
   color: $white;
   border-radius: 0 4px 4px 0;
-  border-radius: 4px 0 0 4px;
-  background-color: blue;
   border: none;
-  font-size: 16px;
+  height:1em;
   padding: 5px;
   margin-left: -10px;
 }
 .search-button:hover {
-  background-color: $light-gray;
+  background-color: $accent-color-dark;
 }
-col-md-3 {
-  border: 1px black solid;
-}
-.icon-row {
-  width: 20px;
-}
+// col-md-3 {
+//   border: 1px black solid;
+// }
+// .icon-row {
+//   width: 20px;
+// }
 .icon-mail {
-  font-size: 15px;
+  font-size: 35px;
+  padding:1px;
 }
-.icon-github-alt {
-  font-size: 15px;
+.icon-github {
+  font-size: 35px;
+  padding:1px;
 }
-.profile-content {
+// .profile-content {
+//   text-align: center;
+//   font-family: $font;
+// }
+
+// .stack-align {
+//   padding-left: 10px;
+// }
+//
+//
+// .footnote {
+//
+// }
+// .contact {
+//
+//   // background-color: green;
+// }
+// .name {
+//
+//   // background-color: blue;
+//   // text-align: right;
+// }
+// .label-column {
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+// .profile-page {
+//   font-family: $font-bold-italic;
+//   // font-size: 2em;
+//   color: $black;
+// }
+//
+.form-val {
+  color: red;
   text-align: center;
-  font-family: $font;
 }
-h4 {
-  font-family: $font-bold;
-  font-size: 20px;
-  font-style: bold;
-}
-.stack-align {
-  padding-left: 10px;
-}
-
-
-.footnote {
+.error>li {
+  list-style-type: none;
+  font-style: italic;
 
 }
-.contact {
 
-  // background-color: green;
+.icon-box{
+  border-top: black thin solid;
+  border-bottom:black thin solid;
+  width: 200px;
+text-align: center;
 }
-.name {
+.icon {
+  font-size: 35px;
+  padding:1px;
+  color:$medium-gray;
+  padding-bottom: 0;
 
-  // background-color: blue;
-  // text-align: right;
-}
-.label-column {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.profile-page {
-  font-family: $font-bold-italic;
-  font-size: 2em;
-  color: $black;
 }

@@ -1,0 +1,274 @@
+<!--______________________________________________
+          Styleguide for The Forge website
+
+__________________________________________________
+
+---------Colors--------
+$black: #000; (text)
+$shield: #233139; (TIY logo)
+$base: #727d84;
+$medium-gray: #a7acaf;
+$light-gray: #d3d5d7; (input fields)
+$field-focus-gray:#e0e1e3; (auto focus input fields)
+$white: #fff;
+$accent-color: #c319ab; (submit buttons)
+$accent-color-dark: #9c1488; (submit buttons on hover)
+$link: #158cbd; (url links)
+$link-hover: #0e6284; (url links on hover)
+
+---------Primary Font Styles--------
+
+$font: "TisaPro";
+$font-medium: "TisaPro-Medi";
+$font-italic: "TisaPro-Ita";
+$font-med-italic: "TisaPro-Medilta";
+$font-bold: "TisaPro-Bold";
+$font-bold-italic: "TisaPro-BoldIta";
+$font-logo: "SFIronsidesExtended";
+
+Font Sizes
+
+All page headings should use an h2 or @import h2-font in black ($black) for a light background or white for a colored background
+
+h2 HTML tag OR
+@mixin h2-font{
+font: 1.953em;
+margin: 1.414em 0 0.5em;
+font-weight: inherit;
+line-height: 1.2;
+}
+
+
+
+--Misc Styles Used Throughout the Site--
+
+The design is flat without use of borders on box elements. Borders should only be used on an exception basis if they intrinsic to the functionality or there is reason to make a design exception.
+
+CSS for any box element:
+border-radius:$corners;
+
+
+---------Buttons--------
+ Buttons should use an h3 font with a white background
+Colors:
+    Form submit buttons:
+    Log In buttons: TBD
+    Cancel buttons: TBd
+    Submit buttons: TBD
+    Log Out button: TBD
+
+
+RoR:
+<%= f.submit "Save Changes", :class=> "btn", :value => 'Submit' %>
+
+OR
+
+HTML:
+<input type="submit" name="commit" value="Submit" class="btn ctr-btn">
+
+CSS
+.btn {
+  margin: 20px;
+  border-radius: $corners;
+  font-weight: bolder;
+  font-style: italic;
+  padding: 10px 20px 15px;
+  font-size: 24px;
+  text-decoration: none;
+  background: $accent-color;
+  color: $white;
+}
+.btn:hover {
+  background: $accent-color-dark;
+  color: $white;
+}
+
+btn-login{
+  display: inline-block;
+  border-radius: $corners;
+  font-weight: bold;
+  font-style: italic;
+  width: 225px;
+  margin: auto;
+  // padding: 3px 55px 3px;
+  // font-size: 20px;
+  text-decoration: none;
+  background: $base;
+  color: $white;
+  border: 1px solid $base;
+}
+
+---Buttons that use ellipses----
+
+
+
+.ellipse{
+  background-color:$white;
+  color: $font-bold;
+  border: $white;
+}
+
+---------Input Field--------
+
+
+---Input Field
+Style for all input fields that require character input from the user:
+
+RoR
+<%= f.text_field :name_of_field, :class => "input-field" %>
+
+OR
+
+<input class="input-field" type="text" value="value" name="name" id="user_email">
+
+CSS
+.input-field {
+  width: 230px;
+  font-size: 16px;
+  padding: 6px;
+  border-style: none;
+  border-radius: $corners;
+  margin: 5px;
+  background-color: $light-gray;
+}
+.input-field:focus {
+  outline: 0;
+}
+
+---Input Field Label for all user input types
+
+RoR
+  <%= f.label :field_name, "Name", :class => "input-label" %>
+
+OR
+
+HTML
+<label class="input-label" for="input-field"></label>
+
+CSS
+.input-label {
+  width: 130px;
+  // background-color: green;
+  //   // font: $font;
+  font-size: 16px;
+  padding: 6px;
+  border-style: none;
+  border-radius: $corners;
+  margin: 10px 0;
+}
+
+
+---------Dropdown Menus--------
+Dropdown menu
+
+RoR
+
+OR
+
+HTML
+
+CSS
+
+
+
+Search Box
+
+RoR
+
+OR
+
+HTML
+
+CSS
+
+---------Form Validation--------
+Form Validation Error Notification (form-val)
+and error explanations (error)
+
+RoR
+RoR may differ by page or element. wrap error notification code in a div and
+and list specific error messages in a ul/li
+see HTML below
+
+HTML
+
+<h4 class="form-val"></h4>
+<ul class="error">
+  <li>specific error</li>
+</ul>
+
+CSS
+
+.form-val {
+  color: red;
+  text-align: center;
+}
+.error {
+  list-style-type: none;
+  font-style: italic;
+}
+---------Navigation Bar--------
+---------Layout--------
+
+---------Filter Components--------
+
+---------Search Boxes-------------
+.search {
+  width: 175px;
+  height: 16px;
+  font: $font;
+  padding: 5px;
+  border-style: none;
+  border-radius: $corners;
+  background-color: $light-gray;
+  margin: 4px;
+}
+.search-button {
+  background-color: $accent-color;
+  color: $white;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  padding: 5px;
+  margin-left: -10px;
+}
+.search-button:hover {
+  background-color: $light-gray;
+}
+---------Accordian --------
+<button type="button" class="btn" data-toggle="collapse"
+ data-target="#collapse">
+</button>
+<div id="collapse" class="collapse in"> … </div>
+
+---------Icons----------------
+Fontastic text icons
+
+HTML/RoR
+<a href="<%= user.profile %>" target="_blank"><span class="icon"></span></a>
+
+
+.icon {
+  font-size: 35px;
+  padding:1px;
+  color:$medium-gray;
+}
+---------hyperinks--------
+RoR
+<%= link_to 'Description', param %>
+
+OR
+
+HTML
+<a href="/file/location" class="link"></a>
+
+CSS
+
+.link {
+  color: $link;
+}
+.link:hover {
+  color: $link-hover;
+}
+---------Dropdown Menus--------
+---------Dropdown Menus--------
+Style Guide  -->
