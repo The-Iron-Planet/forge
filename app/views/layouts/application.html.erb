@@ -15,12 +15,24 @@
         </div>
           <% if user_signed_in? %>
         <div class="nav-links">
-          <%= link_to 'View Profile', (@user), :class=>"nav" %>
           <%= link_to 'Alumni Directory', users_path, :class=>"nav" %>
         </div>
-        <div class = "header-text">
-          Signed in as <%= current_user.first_name%> |
-          <div class = "logout-btn"> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"logout" %> </div>
+        <div class = "header-text">           
+          <div class="dropdown">
+                <button class="btn-default dropdown-toggle" type="button" 
+                  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" 
+                  aria-expanded="true">
+                      <%= current_user.first_name%>
+                      <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                      <li><%= link_to 'View Profile', user_path(current_user) %></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><div class = "logout-btn"> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"logout" %> </div></li>
+                </ul>
+          </div>  
+            
+          
         </div>
           <% end %>
       </div>

@@ -64,15 +64,14 @@
   width: 500px;
   height: 100px;
   display: inline-block;
-  margin-left: 15em;
-  margin-bottom: 1em;
+  margin-left: 4em;
+  margin-top: 2em;
   z-index: 3;
 }
 .nav {
   color: black;
   font-size: 1.5em;
   font-family: $font-bold-italic;
-  padding: 1em;
   display: inline-block;
   z-index: 4;
 }
@@ -90,29 +89,33 @@
   text-align: right;
 }
 
-.logout {
-  color: black;
-  background-color: white;
-  border: black solid thick;
-  padding: 4px;
-  z-index: 3;
-}
+// .logout {
+//   color: black;
+//   background-color: white;
+//   border: black solid thick;
+//   padding: 4px;
+//   z-index: 3;
+// }
 
-.logout:hover {
-  background-color: white;
-  color: $accent-color;
-}
+// .logout:hover {
+//   background-color: white;
+//   color: $accent-color;
+// }
 
-.logout-btn {
-  font-size: 1em;
-  margin-right: 15px;
-  z-index: 4;
-}
+// .logout-btn {
+//   font-size: 1em;
+//   margin-right: 15px;
+//   z-index: 4;
+// }
 
 .top-header {
   margin-top: 85px;
   z-index: -1;
 }
 
+.btn-default {
+  padding: .5em;
+  margin-bottom: .75em;
+}
 
 

@@ -38,7 +38,7 @@
         <%= f.number_field :cohort, :class => "input-field", min: 1 %>
       </div>
 
-      <%= f.fields_for :users do |ff| %><br>
+      <<%= f.fields_for :users do |ff| %><br>
       <div class="field">
         <%= ff.label :first_name %>
         <%= ff.text_field :first_name %>
