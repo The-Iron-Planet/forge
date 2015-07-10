@@ -18,54 +18,54 @@
 
 
 <!-- <div class="col-md-1"></div> -->
-    <div class="col-md-4 label-column name">
-      <div class="field">
-        <%= f.label :first_name, :class => "input-label" %>
-        <%= f.text_field :first_name, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :last_name, :class => "input-label" %>
-        <%= f.text_field :last_name, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :current_city, :class => "input-label" %>
-        <%= f.text_field :current_city, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :current_state, :class => "input-label" %>
-        <%= f.select :current_state, options_for_select(us_states, @user.current_state), :include_blank => true, :class => "input-field" %>
-      </div>
+  <div class="col-md-4 label-column name">
+    <div class="field">
+      <%= f.label :first_name, :class => "input-label" %>
+      <%= f.text_field :first_name, :class => "input-field" %>
     </div>
 
-    <div class="col-md-4 contact">
-      <div class="field">
-        <%= f.label :email, :class => "input-label" %>
-        <%= f.text_field :email, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :github_profile, :class => "input-label" %>
-        <%= f.text_field :github_profile, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :website , :class => "input-label"%>
-        <%= f.text_field :website, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :blog, :class => "input-label" %>
-        <%= f.text_field :blog, :class => "input-field" %>
-      </div>
-
+    <div class="field">
+      <%= f.label :last_name, :class => "input-label" %>
+      <%= f.text_field :last_name, :class => "input-field" %>
     </div>
-    <div class="col-md-4">
-      <%= f.label :uploaded_file, :class => "uploaded"  %>
-      <%= f.file_field :uploaded_file %>
+
+    <div class="field">
+      <%= f.label :current_city, :class => "input-label" %>
+      <%= f.text_field :current_city, :class => "input-field" %>
     </div>
+
+    <div class="field">
+      <%= f.label :current_state, :class => "input-label" %>
+      <%= f.select :current_state, options_for_select(us_states, @user.current_state), :include_blank => true, :class => "input-field" %>
+    </div>
+  </div>
+
+  <div class="col-md-4 contact">
+    <div class="field">
+      <%= f.label :email, :class => "input-label" %>
+      <%= f.text_field :email, :class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :github_profile, :class => "input-label" %>
+      <%= f.text_field :github_profile, :class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :website , :class => "input-label"%>
+      <%= f.text_field :website, :class => "input-field" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :blog, :class => "input-label" %>
+      <%= f.text_field :blog, :class => "input-field" %>
+    </div>
+
+  </div>
+  <div class="col-md-4">
+    <%= f.label :uploaded_file, :class => "uploaded"  %>
+    <%= f.file_field :uploaded_file %>
+  </div>
 <!-- <div class="col-md-1"></div> -->
   </div>
 
@@ -74,18 +74,47 @@
     <div class="col-md-12 ctr">
       <div class="field ctr">
         <%= f.label :looking, :class => "", :value => 'I\'m looking for a new job'%>
-            Yes<%= f.radio_button :looking, true %>
-            No<%= f.radio_button :looking, false %>
-    </div>
+        Yes<%= f.radio_button :looking, true %>
+        No<%= f.radio_button :looking, false %>
+      </div>
 
-    <div class="field ctr">
-      <%= f.label :hiring, :class => "", :value => 'My company is hiring' %>
-      Yes<%= f.radio_button :hiring, true %>
-      No<%= f.radio_button :hiring, false %>
-    </div>
+      <div class="field ctr">
+        <%= f.label :hiring, :class => "", :value => 'My company is hiring' %>
+        Yes<%= f.radio_button :hiring, true %>
+        No<%= f.radio_button :hiring, false %>
+      </div>
     <!-- <div class="col-md-2 ctr"></div> -->
+    </div>
   </div>
-</div>
+
+  <%= f.fields_for :positions do |ff| %>
+    <div class="field">
+      <%= ff.label :company %><br>
+      <%= ff.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "") %>
+    </div>
+    <div class="field">
+      <%= ff.label :title %><br>
+      <%= ff.text_field :title %>
+    </div>
+    <div class="field">
+      <%= ff.label :description %><br>
+      <%= ff.text_field :description %>
+    </div>
+    <div class="field">
+      <%= ff.label "Current?" %><br>
+      <%= ff.check_box :current %>
+    </div>
+    <div class="field">
+      <%= ff.label :started_on %><br>
+      <%= ff.date_field :started_on %>
+    </div>
+    <div class="field">
+      <%= ff.label :ended_on %><br>
+      <%= ff.date_field :ended_on %>
+    </div>
+    <div class = "field">----------------</div>
+  <% end %>
+<div class="field"><%= link_to "Don't see your company here?", new_company_path %></div>
   <div class="row">
     <div class="col-md-12 actions field ">
       <%= f.submit :class=> "btn ctr-btn", :value => 'Submit'%>

@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   default_scope {order(:last_name, :first_name)}
 
+  accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? || attributes['title'].blank? }
+
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
