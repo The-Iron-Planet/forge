@@ -13,6 +13,7 @@ one:
   github_profile: "github"
   is_cd: true
   course: :one
+  sign_in_count: 2
 
 two:
   email: "two@email.com"

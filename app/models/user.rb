@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? || attributes['title'].blank? }
 
+  after_create :send_account_email
+
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end
@@ -29,8 +31,15 @@ class User < ActiveRecord::Base
     "#{current_city}, #{current_state}"
   end
 
+<<<<<<< HEAD
   def current_position
     positions.first
   end
+=======
+  private
+    def send_account_email
+      UserMailer.account_created(self).deliver_now
+    end
+>>>>>>> bee62dfacb22f5735c7e9480f977474dcd05fc44
 
 end
