@@ -31,15 +31,15 @@ class User < ActiveRecord::Base
     "#{current_city}, #{current_state}"
   end
 
-<<<<<<< HEAD
+
   def current_position
     positions.first
   end
-=======
+
   private
     def send_account_email
       UserMailer.account_created(self).deliver_now
     end
->>>>>>> bee62dfacb22f5735c7e9480f977474dcd05fc44
+
 
 end
