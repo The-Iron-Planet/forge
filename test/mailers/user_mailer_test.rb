@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserMailerTest < ActionMailer::TestCase
-  test "account_created" do
+  test "mail sends" do
     @user = users(:one)
     mail = UserMailer.account_created(@user)
 

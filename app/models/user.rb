@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
 
   private
     def send_account_email
-      UserMailer.account_created(self).deliver_now
+      # UserMailer.account_created(self).deliver_now
     end
 
 
