@@ -1,60 +1,35 @@
+.container-fluid {
+  z-index: -3;
+}
+
 .fixed-nav-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 85px;
   width: 100%;
-  background-color: $white;
   border: 1px $white solid;
+  background-color: green;
   box-shadow: 0 5px 20px #888;
+  z-index: 5;
 }
 
-.top-header{
-  margin-top: 150px;
-}
-.header-text {
-  position: absolute;
-  bottom: 0.75em;
-  left: 85%;
-  font-size: 1em;
-  text-align: right;
-}
+// .logout-header {
+//   // z-index: 100;
+//   width: auto;
+//   right: 3em;
+//   // top: 1.5em;
+//   position: absolute;
 
-
-
-
-
-.logout-header {
-  // z-index: 100;
-  width: auto;
-  right: 3em;
-  // top: 1.5em;
-  position: absolute;
-
-  // right: 3em;
-}
-.logout {
-  color: black;
-  background-color: white;
-  border: black solid thick;
-  padding: 4px;
-}
-.logout:hover {
-  background-color: white;
-  color: $accent-color;
-}
+//   // right: 3em;
+// }
 .logo-cont {
-
-  // margin: 0 !important;
-  // display: inline-block;
-  // float: left;
-  padding: 1em;
+  float: left;
+  padding: .5em;
 }
 .logo2,
 .logo {
-
-  // margin: 0 !important;
   text-align: center;
   width: 8em;
   height: 8em;
@@ -82,41 +57,62 @@
   font-size: 2em;
 }
 .tiy {
-  width: 20px;
-  height: 20px;
+  width: 75px;
+  height: 75px;
 }
 .nav-links {
-
-  // z-index: 500;
-  position: fixed;
-  width: 440px;
-  margin-left: 16em;
-  margin-right: auto;
-  background-color: blue;
+  width: 500px;
+  height: 100px;
   display: inline-block;
-
-  // float: left;
+  margin-left: 15em;
+  margin-bottom: 1em;
+  z-index: 3;
 }
 .nav {
-  // z-index: 50;
-  color: $base;
-
-  // font-weight: bold;
-  font-size: 2em;
+  color: black;
+  font-size: 1.5em;
   font-family: $font-bold-italic;
-
-  // line-height: 1em;
-  padding: 0.5em;
+  padding: 1em;
   display: inline-block;
-
-  // margin-left: 2em;
-  // float: center;
+  z-index: 4;
 }
 
-// .nav:hover{
-//   color:$accent-color;
-//
-// }
-.header-text{
-
+.nav:hover {
+  font-color: blue;
 }
+
+.notice {
+  z-index: -1;
+}
+
+.header-text {
+  font-size: 1em;
+  text-align: right;
+}
+
+.logout {
+  color: black;
+  background-color: white;
+  border: black solid thick;
+  padding: 4px;
+  z-index: 3;
+}
+
+.logout:hover {
+  background-color: white;
+  color: $accent-color;
+}
+
+.logout-btn {
+  font-size: 1em;
+  margin-right: 15px;
+  z-index: 4;
+}
+
+.top-header {
+  margin-top: 85px;
+  z-index: -1;
+}
+
+
+
