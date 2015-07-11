@@ -10,8 +10,8 @@
   height: 85px;
   width: 100%;
   border: 1px #567a89 solid;
-  background-color: #567a89;
-  box-shadow: 0 5px 20px #888;
+  background-color: $nav-bar-green;
+  // box-shadow: 0 2px 2px grey;
   z-index: 5;
 }
 
@@ -39,6 +39,8 @@
   display: inline-block;
   float: left;
 }
+
+
 .logo2 {
   margin: 0.10em auto 0;
   text-align: center;
