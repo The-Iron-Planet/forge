@@ -28,7 +28,7 @@
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                       <li><%= link_to 'View Profile', user_path(current_user) %></li>
                       <li><a href="#">Another action</a></li>
-                      <li><div class = "logout-btn"> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"logout" %> </div></li>
+                      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"logout" %> </div></li>
                 </ul>
           </div>
 

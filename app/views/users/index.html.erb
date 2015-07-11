@@ -30,9 +30,15 @@
       <div><%= user.current_location %></div>
       <br> -->
 
-      <button class="ellipse" data-target="#collapse" data-toggle="collapse" type="button">...
+      <button class="ellipse" data-target=".collapse" data-toggle="collapse" type="button">More Info
       </button>
-      <div class="collapse" id="collapse">more info here that might be interesting
+      <div class="collapse" id="collapse">
+          <% if user.hiring %>
+            <div>Hiring: Yes</div>
+          <% end %>
+          <% if user.looking %>
+             <div>Looking: Yes</div>
+          <% end %>
       </div>
     </br>
 
@@ -68,12 +74,7 @@
   <div><%= user.current_position.company_name %></div>
   <div><%= user.current_position.title %></div>
   <% end %>
-  <% if user.hiring %>
-  <div>Hiring: Yes</div>
-  <% end %>
-  <% if user.looking %>
-  <div>Looking: Yes</div>
-  <% end %>
+  
 
   <div class="spacer"><%= link_to 'View Profile', user %></div>
 
