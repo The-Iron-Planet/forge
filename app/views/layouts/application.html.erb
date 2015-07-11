@@ -11,16 +11,16 @@
 <body>
       <div class="fixed-nav-bar">
         <div class="logo-cont">
-          <%= image_tag "TIY-logo-vector-color.png", alt: "logo", class: "tiy" %>
+          <%= image_tag "TIY-logo-500px.png", alt: "logo", class: "tiy" %>
         </div>
           <% if user_signed_in? %>
         <div class="nav-links">
           <%= link_to 'Alumni Directory', users_path, :class=>"nav" %>
         </div>
-        <div class = "header-text">           
+        <div class = "header-text">
           <div class="dropdown">
-                <button class="btn-default dropdown-toggle" type="button" 
-                  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" 
+                <button class="btn-default dropdown-toggle" type="button"
+                  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="true">
                       <%= current_user.first_name%>
                       <span class="caret"></span>
@@ -30,9 +30,9 @@
                       <li><a href="#">Another action</a></li>
                       <li><div class = "logout-btn"> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"logout" %> </div></li>
                 </ul>
-          </div>  
-            
-          
+          </div>
+
+
         </div>
           <% end %>
       </div>
