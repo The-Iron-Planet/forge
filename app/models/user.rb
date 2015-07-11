@@ -47,11 +47,11 @@ class User < ActiveRecord::Base
     self.select {|u| u.looking}
   end
 
-  def self.search_results(city, state)
+  def self.search_results(city, state, looking)
     result = self
     result = result.search_by_state(state) if state != ""
     result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
-    result = result.select {|u| u.looking}
+    result = result.select {|u| u.looking} unless looking.nil?
     result
   end
   #
@@ -64,8 +64,8 @@ class User < ActiveRecord::Base
       # UserMailer.account_created(self).deliver_now
     end
 
-    def search_params
-      params.permit(:current_state, :current_city)
-    end
+    # def search_params
+    #   params.permit(:current_state, :current_city)
+    # end
 
 end
