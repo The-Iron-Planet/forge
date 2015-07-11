@@ -9,6 +9,7 @@
     <%= form_tag results_path do %>
     <%= text_field_tag "current_city", nil, class: "search", placeholder: "City"%>
     <%= select_tag "current_state", options_for_select(us_states), include_blank: true, class: "search"%>
+    <%= check_box_tag "looking" %>
     <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
     <% end %>
   </div>
