@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Icomoon';
+  src:url('icomoon.eot');
+  src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+    url('icomoon.svg#icomoon') format('svg'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
 $black: #000;
 $shield: #233139;
 $base: #727d84;
@@ -15,6 +30,8 @@ $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
+
+
 
 h1 {
   width: 100%;
