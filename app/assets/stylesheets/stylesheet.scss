@@ -50,6 +50,7 @@ $corners: 4px 4px 4px 4px;
 
 .paragraphs {
   text-align: center;
+
 }
 
 h1 {
@@ -57,7 +58,8 @@ h1 {
 }
 h2 {
   text-align: center;
-  font-family: $font-medium;
+    font-family: $font-bold;
+  // font-family: $font-medium;
   margin: 20px 0 30px;
   text-align: center;
   color: $shield;
