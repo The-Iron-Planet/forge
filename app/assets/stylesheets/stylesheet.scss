@@ -10,13 +10,18 @@ $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
 $field-focus-gray: #e0e1e3;
 $white: #fff;
-$accent-color: red;
+$accent-color: #4A6889;
 $accent-color-light:#00b796;
 $accent-color-dark: #3d5159;
 $link: #158cbd;
 $link-hover: #0e6284;
 
 //Fonts
+
+// @font-face {
+//     font-family: "TisaPro-BoldIta";
+//     url:(assets/fonts/TisaPro-BoldIta);
+// }
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
@@ -101,6 +106,7 @@ textarea, input { outline: none; }
   border-radius: 4px 4px 4px 4px;
   margin: 5px 0 20px 0;
   background-color: $light-gray;
+  color: $dark-gray;
 }
 .input-field:focus {
   outline: 0;
@@ -267,4 +273,8 @@ col-md-3 {
 input, textarea{
     background-color:$light-gray!important;
     color: #FFF;
+}
+
+.name{
+  background-color: $accent-color-light;
 }
