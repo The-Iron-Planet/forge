@@ -89,32 +89,32 @@
 
   <%= f.fields_for :positions do |ff| %>
     <div class="field">
-      <%= ff.label :company %><br>
-      <%= ff.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "") %>
+      <%= ff.label :company, :class => "input-label" %><br>
+      <%= ff.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "",:class => "input-field drop-down") %>
     </div>
     <div class="field">
-      <%= ff.label :title %><br>
-      <%= ff.text_field :title %>
+      <%= ff.label :title, :class => "input-label" %><br>
+      <%= ff.text_field :title, :class => "input-field" %>
     </div>
     <div class="field">
-      <%= ff.label :description %><br>
-      <%= ff.text_field :description %>
+      <%= ff.label :description, :class => "input-label" %><br>
+      <%= ff.text_field :description, :class => "input-field" %>
     </div>
     <div class="field">
-      <%= ff.label "Current?" %><br>
+      <%= ff.label "Current?", :class => "input-label" %><br>
       <%= ff.check_box :current %>
     </div>
     <div class="field">
-      <%= ff.label :started_on %><br>
-      <%= ff.date_field :started_on %>
+      <%= ff.label :started_on, :class => "input-lable" %><br>
+      <%= ff.date_field :started_on, :class => "input-field" %>
     </div>
     <div class="field">
-      <%= ff.label :ended_on %><br>
-      <%= ff.date_field :ended_on %>
+      <%= ff.label :ended_on, :class => "input-lable" %><br>
+      <%= ff.date_field :ended_on, :class => "input-field" %>
     </div>
-    <div class = "field">----------------</div>
+    <!-- <div class = "field">----------------</div> -->
   <% end %>
-<div class="field"><%= link_to "Don't see your company here?", new_company_path %></div>
+<div class="field"><%= link_to "Don't see your company here? Add it to the list...", new_company_path %></div>
   <div class="row">
     <div class="col-md-12 actions field ">
       <%= f.submit :class=> "btn ctr-btn", :value => 'Submit'%>
