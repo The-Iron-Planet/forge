@@ -1,12 +1,3 @@
-// @font-face {
-//     font-family: TisaPro;
-//     src: url('/assets/sf-ironsides/TisaPro.otf');
-// }
-
-
-// Fonts
-
-
 
 // Colors
 
@@ -19,10 +10,10 @@ $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
 $field-focus-gray: #e0e1e3;
 $white: #fff;
-$accent-color: #3D4E89;
-$accent-color-light:#92AAFF;
-$accent-color-dark: #7997FF;
 $form:#92AAFF;
+$accent-color: #4A6889;
+$accent-color-light:#00b796;
+$accent-color-dark: #3d5159;
 $link: #158cbd;
 $link-hover: #0e6284;
 
@@ -192,9 +183,9 @@ col-md-3 {
 .profile-content {
   text-align: center;
   font-family: $font;
-  background-color: red;
+  background-color: lightgrey;
   margin-bottom: 10px;
-
+  font-color: black;
 }
 .stack-align {
   padding-left: 10px;
@@ -231,11 +222,11 @@ col-md-3 {
   padding-left: 10px;
 }
 .icon-box {
-  border-top:solid thin $medium-gray;
-  border-bottom: solid thin $medium-gray;
+  border-top:solid thin black;
+  border-bottom: solid thin black;
   width: 200px;
   text-align: center;
-  background-color: green;
+  background-color: lightgrey;
   margin: 0 auto;
 
 }

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   belongs_to :course
   has_many :positions
+  has_many :events
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable, :registerable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,

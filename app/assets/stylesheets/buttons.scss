@@ -16,15 +16,16 @@
   background: $accent-color;
   color: $white;
   padding: 10px 20px 15px;
-  margin: 25px 20px 20px 20px;
+  margin: 30px 20px 20px 20px;
   text-decoration: none;
+  border: 1px solid $accent-color-light;
 
 }
+
 .btn:hover {
   background: $accent-color-dark;
   color: $white;
 }
-
 
 btn-login {
   display: inline-block;
@@ -45,9 +46,9 @@ btn-login {
 }
 .ellipse {
   text-decoration: none;
-  background-color: $white;
+  background-color: lightgrey;
   color: $font-bold;
-  border: $white;
+  border: lightgrey;
   // float: right;
 }
 .ellipse:focus {

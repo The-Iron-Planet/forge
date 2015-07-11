@@ -32,5 +32,6 @@ module Forge
         :secret_access_key => ENV['FORGE_AWS_SECRET_ACCESS_KEY']
       }
     }
+
   end
 end

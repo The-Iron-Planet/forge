@@ -1,6 +1,7 @@
 class Campus < ActiveRecord::Base
   has_many :courses
   has_many :users, through: :courses
+  has_many :events
 
   validates :city, presence: true
   validates_uniqueness_of :city, scope: :state

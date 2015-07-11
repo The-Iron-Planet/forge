@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = current_user
+    @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day)
   end
 
   # GET /users/new

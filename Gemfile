@@ -37,6 +37,9 @@ gem 'aws-sdk', '~> 1.6'
 gem 'paperclip'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'mailgun'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+gem 'american_date'
 
 
 group :development, :test do
