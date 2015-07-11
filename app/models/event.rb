@@ -13,12 +13,12 @@ class Event < ActiveRecord::Base
   }
   validates_attachment_content_type :uploaded_file, :content_type => /\Aimage\/.*\Z/
 
-def event_date
-  happens_on.strftime "%a, %b %e, %Y"
-end
+  def event_date
+    happens_on.strftime "%a, %b %e, %Y"
+  end
 
-def event_time
-  happens_on.strftime "%l:%M %p"
-end
+  def event_time
+    happens_on.strftime "%l:%M %p"
+  end
 
 end
