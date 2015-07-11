@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :events
+  resources :events, except: [:show]
   resources :companies
   resources :positions
   resources :courses
