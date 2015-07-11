@@ -184,7 +184,7 @@ col-md-3 {
 //   width: 20px;
 // }
 .icon-mail {
-  font-size: 35px;
+  font-size: 25px;
   padding: 1px;
 }
 .icon-github {
@@ -195,6 +195,9 @@ col-md-3 {
 .profile-content {
   text-align: center;
   font-family: $font;
+  background-color: red;
+  margin-bottom: 10px;
+
 }
 .stack-align {
   padding-left: 10px;
@@ -231,16 +234,20 @@ col-md-3 {
   font-style: italic;
 }
 .icon-box {
-  border-top: black thin solid;
-  border-bottom: black thin solid;
+  border-top:solid thin $medium-gray;
+  border-bottom: solid thin $medium-gray;
   width: 200px;
   text-align: center;
+  background-color: green;
+  margin: 0 auto;
+
 }
 .icon {
   font-size: 35px;
-  padding: 1px;
+
+  padding: 1.5px;
   color: $medium-gray;
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .search-bar {
   border-top: solid thin black;
@@ -250,3 +257,28 @@ col-md-3 {
 //   font-family: $small-font;
 //
 // }
+.spacer{
+  margin-bottom: 2em;
+}
+.search {
+  width: 220px;
+  height: 40px;
+  font: $font;
+  padding: 5px;
+  border-style: none;
+  border-radius: $corners;
+  background-color: $light-gray;
+  // margin: 4px;
+}
+.search-button {
+  background-color: $accent-color;
+  color: $white;
+  height: 40px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  padding: 5px;
+  margin-left: -10px;
+}
+.search-button:hover {
+  background-color: $light-gray;
+}
