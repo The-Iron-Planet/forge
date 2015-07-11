@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   resources :companies
   resources :positions
   resources :courses
