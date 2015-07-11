@@ -34,22 +34,22 @@ class User < ActiveRecord::Base
   def current_position
     positions.first
   end
-
-  def self.search_by_city(city)
-    self.select {|u| u.current_city.downcase == city.downcase }
-  end
-
-  def self.search_by_state(state)
-    self.select {|u| u.current_state.downcase == state.downcase }
-  end
-
-  def self.looking?
-    self.select {|u| u.looking}
-  end
-
-  def self.hiring?
-    self.select {|u| u.hiring}
-  end
+  # 
+  # def self.search_by_city(city)
+  #   self.select {|u| u.current_city.downcase == city.downcase }
+  # end
+  #
+  # def self.search_by_state(state)
+  #   self.select {|u| u.current_state.downcase == state.downcase }
+  # end
+  #
+  # def self.looking?
+  #   self.select {|u| u.looking}
+  # end
+  #
+  # def self.hiring?
+  #   self.select {|u| u.hiring}
+  # end
 
   def self.search_results(city, state, looking, hiring, curric_id, campus_id)
     result = self
@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
       courses = Course.select {|c| c.curriculum_id == curric_id.to_i}
       result = result.where(course: courses)
     end
-    result = result.search_by_state(state) if state != ""
+    result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
     result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
     result = result.select {|u| u.looking} unless looking.nil?
     result = result.select {|u| u.hiring} unless hiring.nil?
