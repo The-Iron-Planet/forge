@@ -6,12 +6,13 @@
 
 // Fonts
 @font-face {
-  font-family: 'Icomoon';
-  src:url('icomoon.eot');
-  src:url('icomoon.eot?#iefix') format('embedded-opentype'),
-    url('icomoon.svg#icomoon') format('svg'),
-    url('icomoon.woff') format('woff'),
-    url('icomoon.ttf') format('truetype');
+  font-family: 'TisaPro';
+  src:url('TisaPro.otf');
+  src:url('TisaPro-Bold') format('otf'),
+    url('TisaPro-Boldlta') format('otf'),
+    url('TisaPro-lta') format('otf'),
+    url('TisaPro-Medi') format('otf'),
+    url('TisaPro-Medilta') format('otf');
   font-weight: normal;
   font-style: normal;
 }
