@@ -1,11 +1,11 @@
-<div class="container-fluid new-user">
+<div class="container-fluid">
   <h2 id="heading">Create new user</h2>
   <div class="row form-val">
     <%= form_for @user, html: {multipart: true} do |f| %>
     <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h4 class="form-val"><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h4>
+      <p class="form-val"><%= pluralize(@user.errors.count, "error") %>
+        prohibited this user from being saved:</p>
       <ul class="error">
         <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -16,8 +16,7 @@
   </div>
 
   <div class="row new-user-form">
-<!-- <div class="col-md-4"></div> -->
-<div class="col-md-4 label-column"></div>
+    <div class="col-md-4"></div>
     <div class="col-md-4 label-column">
 
       <div class="field ">
@@ -40,25 +39,21 @@
       </div>
 
       <div class="field">
-        <%= f.label "Campus Director?", :class => "input-label" %>
-        Yes<%= f.radio_button :is_cd, true %>
-        No<%= f.radio_button :is_cd, false %>
-      </div>
-
-<!-- <div class="col-md-4">
-
-            </div> -->
-    </div>
-    <div class="col-md-4 label-column"></div>
-  </div>
-  <div class="row">
-
-
-    <div class="col-md-12 actions field ">
-      <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
+        <%= f.label "Campus Director?", :class => "input-label" %></br>
+      Yes<%= f.radio_button :is_cd, true %>
+      No<%= f.radio_button :is_cd, false %>
     </div>
   </div>
-    <% end %>
-  </div>
+  <div class="col-md-4"></div>
+</div>
 
+<div class="row">
+
+  <div class="col-md-12 actions field ">
+
+    <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
+
+  </div>
+</div>
+<% end %>
 </div>

@@ -11,14 +11,15 @@
  * file per style scope.
  *
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import 'bootstrap-datetimepicker';
- @import 'stylesheet';
- @import 'login';
- @import "navbar";
- @import 'profile';
- @import 'dashboard';
- @import 'directory';
- @import 'resources';
- @import 'fontastic';
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "normalize";
+@import "fonts";
+@import 'fontastic';
+@import 'stylesheet';
+@import "buttons";
+@import 'login';
+@import 'navbar';
+@import 'profile';

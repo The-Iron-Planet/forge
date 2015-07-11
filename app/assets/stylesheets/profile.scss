@@ -1,3 +1,5 @@
+
+
 @media(max-width: 380px) {
   .input-label {
     margin: 30px;
@@ -10,6 +12,7 @@
 }
 .course-form,
 .new-user {
+
   // background-color: $light-gray;
   color: $base;
   text-align: left;
@@ -27,16 +30,11 @@
   margin-right: auto;
 }
 #user_uploaded_file {
-
-  // display: inline-block;
   width: 220px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-
-  // background-color: orange;
 }
-
 .state {
   width: 60px;
 }
@@ -61,25 +59,22 @@
   margin-right: auto;
 }
 .radio-title {
-  background-color: red;
+  // background-color: red;
   width: 400px;
-  font-size: 20px;
+
+  // font-size: 20px;
   padding: 6px;
   border-style: none;
-
   margin-top: 10px;
   display: block;
+
   // margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-
-
 }
 .ctr {
-  font-size: 16px;
   padding: 6px;
-  // display: block;
   margin-left: auto;
   margin-right: auto;
-text-align: center;
+  text-align: center;
 }

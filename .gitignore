@@ -16,7 +16,7 @@
 !/log/.keep
 /tmp
 .DS_Store
-*.jpg
+
 *.pdf
 credentials.csv
 *.eps
