@@ -1,4 +1,3 @@
-
 <div class="logo-cont">
    <%= image_tag "people1.png", :id => "bg", alt: "", :class=> "background-image" %>
 
@@ -36,10 +35,11 @@
         <br/>
         <br/>
 
+
     </div>
 
+       <div class = "forgot-password">
+         <%= render "devise/shared/links" %>
+       </div>
     <br/>
-    <div class = "forgot-password">
-      <%= render "devise/shared/links" %>
-    </div>
 </div>
