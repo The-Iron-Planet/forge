@@ -1,5 +1,4 @@
 
-
 // Fonts
 @font-face {
   font-family: 'Icomoon';
@@ -16,11 +15,13 @@
 $black: #000;
 $shield: #233139;
 $base: #727d84;
+$dark-gray:#646769;
 $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
 $field-focus-gray: #e0e1e3;
 $white: #fff;
-$accent-color: #c319ab;
+$accent-color: 4A6889;
+$accent-color-light:#8EDEFF;
 $accent-color-dark: #9c1488;
 $link: #158cbd;
 $link-hover: #0e6284;
@@ -126,25 +127,34 @@ p {
 // .user-profile {
 //   background-color: green;
 // }
+
+
+textarea, input { outline: none; }
+#input-field,
 .input-field {
+  -webkit-appearance:none;
+  outline: none;
   width: 230px;
   // font-size: 16px;
   padding: 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
-  margin: 5px;
+  margin: 5px 0 20px 0;
   background-color: $light-gray;
 }
 .input-field:focus {
   outline: 0;
   background-color: $field-focus-gray;
 }
+#input-lable,
 .input-label {
-  width: 130px;
-  padding: 6px;
+  width: 230px;
+  padding: 6px 0 0 0;
   border-style: none;
   border-radius: $corners;
-  margin: 10px 0;
+  text-align: left;
+  font-size: .8em;
+  color: $dark-gray;
 }
 .input-links {
   width: 300px;
@@ -234,15 +244,22 @@ col-md-3 {
 }
 //
 .form-val {
+  font-family: $font-bold;
   color: red;
   text-align: center;
 }
-.stack-align {
-  padding-left: 10px;
+
+.error{
+  margin-bottom: 20px;
+  text-align: center;
 }
 .error>li {
   list-style-type: none;
   font-style: italic;
+  color: red;
+}
+.stack-align {
+  padding-left: 10px;
 }
 .icon-box {
   border-top:solid thin $medium-gray;
@@ -292,4 +309,12 @@ col-md-3 {
 }
 .search-button:hover {
   background-color: $light-gray;
+}
+
+
+// forms override default color
+
+input, textarea{
+    background-color:$light-gray!important;
+    color: #FFF;
 }

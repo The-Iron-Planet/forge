@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 85px;
+  height: 100px;
   width: 100%;
   border: 1px #567a89 solid;
   background-color: #567a89;
@@ -15,10 +15,6 @@
   z-index: 5;
 }
 
-
-.top-header{
-  margin-top: 150px;
-}
 .header-text {
   position: absolute;
   bottom: 0.75em;
@@ -41,42 +37,7 @@
   // right: 3em;
 }
 
-.logo-cont {
-  float: left;
-  padding: .5em;
-}
-.logo2,
-.logo {
-  text-align: center;
-  width: 8em;
-  height: 8em;
-  border: solid black 7px;
-  background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-  float: left;
-}
-.logo2 {
-  margin: 0.10em auto 0;
-  text-align: center;
-  width: 6.7em;
-  height: 6.7em;
-  border: solid black medium;
-  font-family: $font-logo;
-}
-.the {
-  font-family: $font-bold-italic;
-  // font-size: 1.75em;
-}
-.forge {
-  font-family: $font-logo;
-  font-weight: bold;
-  // font-size: 2em;
-}
-.tiy {
-  width: 75px;
-  height: 75px;
-}
+
 .nav-links {
   width: 500px;
   height: 100px;
@@ -111,31 +72,22 @@
   text-align: right;
 }
 
-// .logout {
-//   color: black;
-//   background-color: white;
-//   border: black solid thick;
-//   padding: 4px;
-//   z-index: 3;
-// }
-
-// .logout:hover {
-//   background-color: white;
-//   color: $accent-color;
-// }
-
-// .logout-btn {
-//   font-size: 1em;
-//   margin-right: 15px;
-//   z-index: 4;
-// }
-
 .top-header {
-  margin-top: 85px;
+  margin-top: 140px;
   z-index: -1;
 }
 
 .btn-default {
   padding: .5em;
   margin-bottom: .75em;
+}
+
+.logo-cont {
+  float: left;
+  padding: .5em;
+}
+
+.tiy {
+  width: 75px;
+  height: 75px;
 }
