@@ -10,6 +10,7 @@ $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
 $field-focus-gray: #e0e1e3;
 $white: #fff;
+$form:#92AAFF;
 $accent-color: #4A6889;
 $accent-color-light:#00b796;
 $accent-color-dark: #3d5159;
@@ -270,11 +271,15 @@ col-md-3 {
 
 // forms override default color
 
-input, textarea{
-    background-color:$light-gray!important;
-    color: #FFF;
-}
+// input, textarea{
+//     background-color:$light-gray!important;
+//     color: #FFF;
+// }
 
+.form-bk{
+  background-color: $form;
+}
 .name{
-  background-color: $accent-color-light;
+  background-color: white;
+  border-radius: $corners;
 }

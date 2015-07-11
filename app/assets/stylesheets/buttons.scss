@@ -13,12 +13,13 @@
   font-size: $h4;
   border-radius: $corners;
   font-family: $font-bold-italic;
-  background: $accent-color-light;
+  background: $accent-color;
   color: $white;
   padding: 10px 20px 15px;
   margin: 30px 20px 20px 20px;
   text-decoration: none;
   border: 1px solid $accent-color-light;
+
 }
 
 .btn:hover {
@@ -52,4 +53,8 @@ btn-login {
 }
 .ellipse:focus {
   outline: none;
+}
+
+.dropdown{
+
 }
