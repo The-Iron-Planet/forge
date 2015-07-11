@@ -4,17 +4,36 @@
 }
 
 
+// Fonts
+@font-face {
+  font-family: 'Icomoon';
+  src:url('icomoon.eot');
+  src:url('icomoon.eot?#iefix') format('embedded-opentype'),
+    url('icomoon.svg#icomoon') format('svg'),
+    url('icomoon.woff') format('woff'),
+    url('icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Colors
+
 $black: #000;
 $shield: #233139;
 $base: #727d84;
 $nav-bar-green: #567a89;
+$dark-gray:#646769;
 $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
+$field-focus-gray: #e0e1e3;
 $white: #fff;
-$accent-color: #c319ab;
+$accent-color: 4A6889;
+$accent-color-light:#8EDEFF;
 $accent-color-dark: #9c1488;
 $link: #158cbd;
 $link-hover: #0e6284;
+
+//Fonts
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
@@ -22,13 +41,20 @@ $font-med-italic: "TisaPro-Medilta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
+$corners: 4px 4px 4px 4px;
 
+.container-fluid {
+  padding: 0;
+  width: 100%;
+}
 
+.paragraphs {
+  text-align: center;
+}
 
 h1 {
   width: 100%;
 }
-
 h2 {
   text-align: center;
   font-family: $font-medium;
@@ -36,19 +62,16 @@ h2 {
   text-align: center;
   color: $shield;
 }
-
 h3 {
   font-size: 28px;
   line-height: 1.4;
 }
-
 h4 {
   font-family: $font-bold;
   font-size: 22px;
   font-weight: bold;
   font-color: $shield;
 }
-
 p {
   font-weight: 400;
   line-height: 1.6;
@@ -56,22 +79,6 @@ p {
   font-color: #727d84;
 }
 
-.container-fluid {
-  padding: 0;
-  width: 100%;
-}
-
-//   // z-index: 50;
-//   height: 150px;
-//   width: 100%;
-//   position: relative;
-
-//   // text-align: right;
-//   background-color: $white;
-//   border: 1px $white solid;
-//   box-shadow: 0 5px 20px #888;
-//   text-align: right;
-// }
 .header-text {
   position: absolute;
   bottom: 0.75em;
@@ -91,56 +98,38 @@ p {
   font-size: 60px;
 }
 
-// .header-text {
-//   position: absolute;
-//   bottom: 0.75em;
-//   left: 85%;
-//   font-size: 1em;
-//   text-align: right;
-// }
-// .header .primary-nav a {
-//   color: #eef1f6;
-//   font-size: 17px;
-//   font-weight: 900;
-// }
-// .sub-nav h2 {
-//   box-sizing: border-box;
-//   margin-bottom: 5px;
-//   margin-top: 18px;
-//   font-size: 60px;
-// }
-
 .paragraphs {
   text-align: center;
   font-size: 20px;
 }
-.user-profile {
-  background-color: green;
-}
+
+
+textarea, input { outline: none; }
+#input-field,
 .input-field {
+  -webkit-appearance:none;
+  outline: none;
   width: 230px;
-  font-size: 16px;
+  // font-size: 16px;
   padding: 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
-  margin: 5px;
+  margin: 5px 0 20px 0;
   background-color: $light-gray;
-
-  // background-color: yellow;
 }
 .input-field:focus {
   outline: 0;
+  background-color: $field-focus-gray;
 }
+#input-lable,
 .input-label {
-  width: 130px;
-
-  // background-color: green;
-  //   // font: $font;
-  font-size: 16px;
-  padding: 6px;
+  width: 230px;
+  padding: 6px 0 0 0;
   border-style: none;
-  border-radius: 4px 4px 4px 4px;
-  margin: 10px 0;
+  border-radius: $corners;
+  text-align: left;
+  font-size: .8em;
+  color: $dark-gray;
 }
 .input-links {
   width: 300px;
@@ -148,35 +137,20 @@ p {
 .profile-card {
 
 }
-.btn {
-  margin: 20px;
-  border-radius: 4px;
-  font-weight: bolder;
-  font-style: italic;
-  padding: 10px 20px 15px;
-  font-size: 24px;
-  text-decoration: none;
-  background: $accent-color;
-  color: $white;
-}
-.btn:hover {
-  background: $accent-color-dark;
-  color: $white;
-}
-
 .link {
   color: $link;
 }
 .link:hover {
   color: $link-hover;
 }
+
 .profile-card {
   box-sizing: border-box;
 }
 .search {
-  width: 175px;
-  font-size: 16px;
-  font: $font-italic;
+  width: 240px;
+  height: 40px;
+  font: $font;
   padding: 5px;
   border-style: none;
   border-radius: 4px 0 0 4px;
@@ -184,53 +158,48 @@ p {
   margin: 4px;
 }
 .search-button {
-  background-color: $medium-gray;
+  background-color: $accent-color;
+
+  // height:40px;
+  font-size: 30px;
   color: $white;
   border-radius: 0 4px 4px 0;
-  border-radius: 4px 0 0 4px;
-  background-color: blue;
   border: none;
-  font-size: 16px;
+  height: 1em;
   padding: 5px;
   margin-left: -10px;
 }
 .search-button:hover {
-  background-color: $light-gray;
+  background-color: $accent-color-dark;
 }
+
 col-md-3 {
   border: 1px black solid;
 }
-.icon-row {
-  width: 20px;
-}
+// .icon-row {
+//   width: 20px;
+// }
 .icon-mail {
-  font-size: 15px;
+  font-size: 25px;
+  padding: 1px;
 }
-.icon-github-alt {
-  font-size: 15px;
+.icon-github {
+  font-size: 35px;
+  padding: 1px;
 }
+
 .profile-content {
   text-align: center;
   font-family: $font;
-}
+  background-color: red;
+  margin-bottom: 10px;
 
+}
 .stack-align {
   padding-left: 10px;
-}
-
-
-.footnote {
 
 }
-.contact {
 
-  // background-color: green;
-}
-.name {
-
-  // background-color: blue;
-  // text-align: right;
-}
 .label-column {
   display: block;
   margin-left: auto;
@@ -238,6 +207,79 @@ col-md-3 {
 }
 .profile-page {
   font-family: $font-bold-italic;
-  font-size: 2em;
+  // font-size: 2em;
   color: $black;
+}
+//
+.form-val {
+  font-family: $font-bold;
+  color: red;
+  text-align: center;
+}
+
+.error{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.error>li {
+  list-style-type: none;
+  font-style: italic;
+  color: red;
+}
+.stack-align {
+  padding-left: 10px;
+}
+.icon-box {
+  border-top:solid thin $medium-gray;
+  border-bottom: solid thin $medium-gray;
+  width: 200px;
+  text-align: center;
+  background-color: green;
+  margin: 0 auto;
+
+}
+.icon {
+  font-size: 35px;
+
+  padding: 1.5px;
+  color: $medium-gray;
+  margin-bottom: 0;
+}
+.search-bar {
+  border-top: solid thin black;
+  border-bottom: solid thin black;
+}
+
+.spacer{
+  margin-bottom: 2em;
+}
+.search {
+  width: 220px;
+  height: 40px;
+  font: $font;
+  padding: 5px;
+  border-style: none;
+  border-radius: $corners;
+  background-color: $light-gray;
+  // margin: 4px;
+}
+.search-button {
+  background-color: $accent-color;
+  color: $white;
+  height: 40px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  padding: 5px;
+  margin-left: -10px;
+}
+.search-button:hover {
+  background-color: $light-gray;
+}
+
+
+// forms override default color
+
+input, textarea{
+    background-color:$light-gray!important;
+    color: #FFF;
 }

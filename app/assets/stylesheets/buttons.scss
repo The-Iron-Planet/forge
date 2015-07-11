@@ -1,0 +1,54 @@
+@import 'stylesheet';
+
+// $h2: 1.953em;
+// $h3: 1.563em;
+// $h4: 1.25em;
+// $small-font: 0.8em;
+// $white: #fff;
+// $font-bold: "TisaPro-Bold";
+// $accent-color: #4A6889;
+// $accent-color-light:#79B7FF;
+// $accent-color-dark: #3c555f;
+.btn {
+  font-size: $h4;
+  border-radius: $corners;
+  font-family: $font-bold-italic;
+  background: $accent-color-light;
+  color: $white;
+  padding: 10px 20px 15px;
+  margin: 25px 20px 20px 20px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: $accent-color-dark;
+  color: $white;
+}
+
+
+btn-login {
+  display: inline-block;
+  border-radius: $corners;
+  font-weight: bold;
+  font-style: italic;
+  width: 225px;
+  margin: auto;
+  text-decoration: none;
+  background: $base;
+  color: $white;
+  border: 1px solid $base;
+}
+.toggle {
+  @extend.btn;
+  border: none;
+  color: $font-bold;
+}
+.ellipse {
+  text-decoration: none;
+  background-color: $white;
+  color: $font-bold;
+  border: $white;
+  // float: right;
+}
+.ellipse:focus {
+  outline: none;
+}

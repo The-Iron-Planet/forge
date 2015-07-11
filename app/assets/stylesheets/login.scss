@@ -1,8 +1,8 @@
 #bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-	
+  position: fixed;
+  top: 0;
+  left: 0;
+
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
@@ -22,11 +22,9 @@
   background-color: white;
   opacity: 0.6;
 }
-
 .field {
   text-align: center;
 }
-
 .login-page {
   margin-left: 5px;
   font-size: 20px;
@@ -66,6 +64,11 @@
   opacity: 1;
 }
 
+<<<<<<< HEAD
+  .forgot-password {
+    text-align: center;
+  }
+=======
 .forgot-password {
   text-align: center;
   font-color: white;
@@ -78,3 +81,4 @@
 
 
 
+>>>>>>> 6ee7bdb066199d8db9ce6087ba489dd22caa0116
