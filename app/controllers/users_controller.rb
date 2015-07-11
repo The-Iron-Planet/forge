@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def results
     @users = User.search_results(params[:current_city], params[:current_state], params[:looking],
-        params[:hiring])
+        params[:hiring], params[:curric_id], params[:campus_id])
   end
 
   # GET /users/1

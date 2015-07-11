@@ -8,9 +8,11 @@
   <div class="search-bar">
     <%= form_tag results_path do %>
     <%= text_field_tag "current_city", nil, class: "search", placeholder: "City"%>
-    <%= select_tag "current_state", options_for_select(us_states), include_blank: true, class: "search"%>
-    <div display="inline-block">Looking</div><%= check_box_tag "looking" %>
-    <div display="inline-block">Hiring</div>  <%= check_box_tag "hiring" %>
+    <%= select_tag "current_state", options_for_select(us_states), prompt: "Search by State", class: "search"%>
+    <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name), prompt: "Search by Curriculum", class: "search" %>
+    <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name), prompt: "Search by Campus", class: "search" %>
+    <div>Looking<%= check_box_tag "looking" %></div>
+    <div>Hiring<%= check_box_tag "hiring" %></div>
     <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
     <% end %>
   </div>
