@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit]
 
   # GET /events
   def index
@@ -55,5 +57,9 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:name, :happens_on, :description, :website,
           :campus_id, :user_id, :uploaded_file)
+    end
+
+    def check_user
+      redirect_to root_path, notice: "You can only edit your own events!" unless @event.user_id == current_user.id
     end
 end
