@@ -6,6 +6,20 @@
 
 // Fonts
 @font-face {
+   font-family: 'TisaPro';
+    src: asset-url('TisaPro.otf');
+    // src: asset-url('chalkduster-webfont.svg#chalkdusterregular') format('svg'),
+    //      asset-url('chalkduster-webfont.eot?#iefix') format('embedded-opentype'),
+    //      asset-url('chalkduster-webfont.woff') format('woff'),
+    //      asset-url('chalkduster-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {
   font-family: 'Icomoon';
   src:url('icomoon.eot');
   src:url('icomoon.eot?#iefix') format('embedded-opentype'),
