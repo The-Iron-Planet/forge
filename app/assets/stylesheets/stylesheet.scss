@@ -19,9 +19,10 @@ $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
 $field-focus-gray: #e0e1e3;
 $white: #fff;
-$accent-color: #4A6889;
-$accent-color-light:#8EDEFF;
-$accent-color-dark: #9c1488;
+$accent-color: #3D4E89;
+$accent-color-light:#92AAFF;
+$accent-color-dark: #7997FF;
+$form:#92AAFF;
 $link: #158cbd;
 $link-hover: #0e6284;
 
@@ -279,11 +280,15 @@ col-md-3 {
 
 // forms override default color
 
-input, textarea{
-    background-color:$light-gray!important;
-    color: #FFF;
-}
+// input, textarea{
+//     background-color:$light-gray!important;
+//     color: #FFF;
+// }
 
+.form-bk{
+  background-color: $form;
+}
 .name{
-  background-color: $accent-color-light;
+  background-color: white;
+  border-radius: $corners;
 }

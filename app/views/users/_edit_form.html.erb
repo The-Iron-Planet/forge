@@ -1,4 +1,4 @@
-<div class="container-fluid new-user">
+<div class="container-fluid form-bk">
   <div class="row form-val">
     <%= form_for @user, html: {multipart: true} do |f| %>
     <% if @user.errors.any? %>
@@ -63,6 +63,7 @@
 
   </div>
   <div class="col-md-4">
+
     <%= f.label :uploaded_file, :class => "uploaded"  %>
     <%= f.file_field :uploaded_file %>
   </div>
@@ -117,7 +118,7 @@
 <div class="field"><%= link_to "Don't see your company here? Add it to the list...", new_company_path %></div>
   <div class="row">
     <div class="col-md-12 actions field ">
-      <%= f.submit :class=> "btn ctr-btn", :value => 'Submit'%>
+      <%= f.submit :class=> "btn ", :value => 'Submit'%>
     </div>
   </div>
   <% end %>

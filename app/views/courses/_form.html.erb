@@ -40,11 +40,11 @@
 
       <%= f.fields_for :users do |ff| %><br>
       <div class="field">
-        <%= ff.label :first_name %>
+        <%= ff.label :first_name, :class => "input-label" %>
         <%= ff.text_field :first_name %>
       </div>
       <div class="field">
-        <%= ff.label :last_name %>
+        <%= ff.label :last_name, :class => "input-label" %>
         <%= ff.text_field :last_name %>
       </div>
       <div class="field">
@@ -59,7 +59,7 @@
   <div class="row new-user-form">
     <div class="col-md-12 label-column">
       <div class="actions">
-        <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
+        <%= f.submit :class=> "btn ctr-btn", :value => 'Add New Course' %>
       </div>
 </div>
   </div>
