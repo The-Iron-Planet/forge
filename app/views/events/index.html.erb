@@ -1,37 +1,29 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Happens on</th>
-      <th>Description</th>
-      <th>Website</th>
-      <th>Campus</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.happens_on %></td>
-        <td><%= event.description %></td>
-        <td><%= event.website %></td>
-        <td><%= event.campus.long_name %></td>
-        <td><%= event.user.full_name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1>Events</h1><span><%= link_to 'New Event', new_event_path %></span>
+<% @events.each do |event| %>
+  <div class="row">
+    <p> <%= event.name %> </p>
+    <div class="container col-md-4">
+      <div class="col-md-5">
+        <h5> <%= event.event_date %> </h5>
+        <h6> <%= event.event_time %> </h6>
+        <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
+            edit_event_path(event) if event.user_id == current_user.id %>
+      </div>
+      <div class="col-md-5">
+        <p> <%= event.campus.long_name %> </p>
+        <p> <%= event.description %> </p>
+        <p> <%= event.website %> </p>
+      </div>
+      <div class="col-md-2">
+        <% if event.uploaded_file_file_name.nil? %>
+         <div><%= image_tag "event_default.png", size: "100x100" %></div>
+        <% else %>
+          <div> <%= image_tag event.uploaded_file(:thumb) %> </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>

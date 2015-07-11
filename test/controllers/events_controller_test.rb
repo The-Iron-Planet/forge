@@ -2,7 +2,11 @@ require 'test_helper'
 
 class EventsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @event = events(:one)
+    @campus = campuses(:one)
+    @user = users(:one)
+    @event.campus_id = @campus.id
   end
 
   test "should get index" do
@@ -18,10 +22,12 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: { campus_id: @event.campus_id, description: @event.description, happens_on: @event.happens_on, name: @event.name, user_id: @event.user_id, website: @event.website }
+      post :create, event: { campus_id: @campus.id, description: @event.description,
+          happens_on: @event.happens_on, name: @event.name, user_id: @event.user_id,
+          website: @event.website }
     end
 
-    assert_redirected_to event_path(assigns(:event))
+    assert_redirected_to root_path
   end
 
   test "should show event" do
@@ -35,8 +41,10 @@ class EventsControllerTest < ActionController::TestCase
   end
 
   test "should update event" do
-    patch :update, id: @event, event: { campus_id: @event.campus_id, description: @event.description, happens_on: @event.happens_on, name: @event.name, user_id: @event.user_id, website: @event.website }
-    assert_redirected_to event_path(assigns(:event))
+    patch :update, id: @event, event: { campus_id: @event.campus_id,
+        description: @event.description, happens_on: @event.happens_on,
+        name: @event.name, user_id: @event.user_id, website: @event.website }
+    assert_redirected_to root_path
   end
 
   test "should destroy event" do
