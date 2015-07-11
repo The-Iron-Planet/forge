@@ -66,8 +66,9 @@
 .forgot-password {
   text-align: center;
   font-color: white;
-  z-index: 5;
-  position: absolute;
-  margin-top: 20em;
+z-index: 5;
+  // position: relative;
+  margin-top: 10em;
   margin-left: 35em;
+  background-color: red;
 }

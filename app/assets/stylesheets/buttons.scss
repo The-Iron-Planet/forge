@@ -16,14 +16,15 @@
   background: $accent-color-light;
   color: $white;
   padding: 10px 20px 15px;
-  margin: 25px 20px 20px 20px;
+  margin: 30px 20px 20px 20px;
   text-decoration: none;
+  border: 1px solid $accent-color-light;
 }
+
 .btn:hover {
   background: $accent-color-dark;
   color: $white;
 }
-
 
 btn-login {
   display: inline-block;
