@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   end
 
   def results
-    @users = User.search_results(params[:current_city], params[:current_state], params[:looking])
+    @users = User.search_results(params[:current_city], params[:current_state], params[:looking],
+        params[:hiring])
   end
 
   # GET /users/1

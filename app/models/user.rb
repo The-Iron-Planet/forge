@@ -47,11 +47,16 @@ class User < ActiveRecord::Base
     self.select {|u| u.looking}
   end
 
-  def self.search_results(city, state, looking)
+  def self.hiring?
+    self.select {|u| u.hiring}
+  end
+
+  def self.search_results(city, state, looking, hiring)
     result = self
     result = result.search_by_state(state) if state != ""
     result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
     result = result.select {|u| u.looking} unless looking.nil?
+    result = result.select {|u| u.hiring} unless hiring.nil?
     result
   end
   #
