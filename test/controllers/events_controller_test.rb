@@ -7,6 +7,8 @@ class EventsControllerTest < ActionController::TestCase
     @campus = campuses(:one)
     @user = users(:one)
     @event.campus_id = @campus.id
+    @event.user_id = @user.id
+    @event.save
   end
 
   test "should get index" do
@@ -30,11 +32,6 @@ class EventsControllerTest < ActionController::TestCase
     assert_redirected_to root_path
   end
 
-  test "should show event" do
-    get :show, id: @event
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, id: @event
     assert_response :success
@@ -52,6 +49,6 @@ class EventsControllerTest < ActionController::TestCase
       delete :destroy, id: @event
     end
 
-    assert_redirected_to events_path
+    assert_redirected_to root_path
   end
 end
