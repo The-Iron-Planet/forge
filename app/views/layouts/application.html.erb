@@ -11,7 +11,7 @@
 <body>
       <div class="fixed-nav-bar">
         <div class="logo-cont">
-          <%= image_tag "TIY-logo-500px.png", alt: "logo", class: "tiy" %>
+          <%= link_to image_tag("TIY-logo-500px.png", alt: "logo", class: "tiy"), root_path %>
         </div>
           <% if user_signed_in? %>
         <div class="nav-links">
