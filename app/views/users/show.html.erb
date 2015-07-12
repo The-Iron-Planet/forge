@@ -29,6 +29,12 @@
     <div>Looking: Yes</div>
   <% end %>
 
+  <div>
+    <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
+    <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
+    <%= link_to 'My Events', events_path if @user.id == current_user.id %>
+  </div>
+
   <h4 class = "work-experience"><%= "#{@user.full_name}'s" %> Work Experience</h1>
 
   <table class = "table">
@@ -57,14 +63,5 @@
       <% end %>
     </tbody>
   </table>
-
-
-    <div>
-      <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
-      <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
-      <%= link_to 'Alumni Directory', users_path %>
-    </div>
-
-
   </div></br>
   </div>

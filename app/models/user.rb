@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
       :validatable
 
   has_attached_file :uploaded_file, styles: {
-    thumb: '100x100>',
+    thumb: '50x50>',
     square: '200x200#',
     medium: '300x300>'
   }
