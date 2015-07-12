@@ -1,5 +1,5 @@
 
-<div>
+<div class = "container-fluid">
   <% if @user.uploaded_file_file_name.nil? %>
     <div><%= image_tag "default_pic.png", size: "200x200" %></div>
   <% else %>
@@ -10,11 +10,11 @@
   <div><%= @user.full_name %></div>
   <div><%= @user.course.full_description unless @user.course.blank? %></div>
   <% unless @user.current_city.blank? || @user.current_state.blank? %>
-    <div>Location Icon: <%= @user.current_location %></div>
+    <div>Current Location: <%= @user.current_location %></div>
   <% end %>
-  <div>Email Icon: <%= @user.email %></div>
+  <div>Email Address: <%= @user.email %></div>
   <% unless @user.github_profile.blank? %>
-    <div>Github Icon: <%= @user.github_profile %></div>
+    <div>Github: <%= @user.github_profile %></div>
   <% end %>
   <% unless @user.website.blank? %>
     <div>Website: <%= @user.website %></div>
@@ -29,9 +29,9 @@
     <div>Looking: Yes</div>
   <% end %>
 
-  <h4><%= "#{@user.full_name}'s" %> Work Experience</h1>
+  <h4 class = "work-experience"><%= "#{@user.full_name}'s" %> Work Experience</h1>
 
-  <table>
+  <table class = "table">
     <thead>
       <tr>
         <th>Company</th>
