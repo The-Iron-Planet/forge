@@ -1,7 +1,7 @@
 
-<h2>Listing Curricula</h2>
-
-<table>
+<h2>Curricula</h2>
+<div class = "table-responsive">
+  <table class = "table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
@@ -13,14 +13,14 @@
     <% @curricula.each do |curriculum| %>
       <tr>
         <td><%= curriculum.name %></td>
-        <td><%= link_to 'Show', curriculum %></td>
+        <!-- <td><%= link_to 'Show', curriculum %></td> -->
         <td><%= link_to 'Edit', edit_curriculum_path(curriculum) %></td>
         <td><%= link_to 'Destroy', curriculum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Curriculum', new_curriculum_path %>

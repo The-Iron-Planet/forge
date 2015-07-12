@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="row col-med-4"></div>
-    <div class="row col-md-4">
+    <div class="row col-med-4">
 
       <%= form_for(@curriculum) do |f| %>
       <% if @curriculum.errors.any? %>
@@ -18,16 +18,16 @@
       <% end %>
     </div>
     <div class="row col-med-4"></div>
-  </div>
+
   <div class="row">
     <div class="row col-med-4"></div>
     <div class="row col-med-4">
       <div class="field">
-        <%= f.label "Full Name" ,:class => "input-label"%><br>
+        <%= f.label "Full Course Title" ,:class => "input-label"%><br>
         <%= f.text_field :name,  :class => "input-field" %>
       </div>
       <div class="field">
-        <%= f.label :nickname, :class => "input-label" %>
+        <%= f.label :"Abbreviated Title", :class => "input-label" %>
         <%= f.text_field :nickname,  :class => "input-field" %>
       </div>
     </div>
@@ -40,3 +40,4 @@
         <% end %>
       </div>
     </div>
+</div>

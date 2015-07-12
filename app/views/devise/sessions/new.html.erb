@@ -7,14 +7,14 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <!--<%= f.label :email, :class => "login-page" %><br />-->
-            <%= f.email_field :email, autofocus: true, :class => "input-field-login login-page", :placeholder => "Email" %>
+            <%= f.email_field :email, autofocus: true, :class => "input-field", :placeholder => "Email" %>
           </div>
 
           <br/>
 
           <div class="field">
             <!--<%= f.label :password, :class => "login-page" %><br />-->
-            <%= f.password_field :password, autocomplete: "off", :class => "input-field-login login-page", :placeholder => "Password" %>
+            <%= f.password_field :password, autocomplete: "off", :class => "input-field", :placeholder => "Password" %>
           </div>
 
 
@@ -28,7 +28,7 @@
           <br/>
 
           <div class="actions">
-            <%= f.submit "Submit", :class => "btn-login" %>
+            <%= f.submit "Submit", :class => "btn" %>
           </div>
         <% end %>
 

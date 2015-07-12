@@ -1,7 +1,13 @@
 
-<h1>Events</h1><span><%= link_to 'New Event', new_event_path %></span>
+<h2>Events</h2><span><%= link_to 'New Event', new_event_path %></span>
 <% @events.each do |event| %>
   <div class="row">
+    <div class="image-circle">
+    <% if event.uploaded_file_file_name.nil? %>
+     <div><%= image_tag "event_default.png", size: "100x100" %></div>
+     <div class="event-details">
+
+
     <p> <%= event.name %> </p>
     <div class="container col-md-4">
       <div class="col-md-5">
@@ -18,10 +24,10 @@
         <p> <%= event.website %> </p>
       </div>
       <div class="col-md-2">
-        <% if event.uploaded_file_file_name.nil? %>
-         <div><%= image_tag "event_default.png", size: "100x100" %></div>
+
         <% else %>
           <div> <%= image_tag event.uploaded_file(:thumb) %> </div>
+            </div>
         <% end %>
       </div>
     </div>

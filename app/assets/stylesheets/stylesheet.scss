@@ -278,8 +278,47 @@ col-md-3 {
 
 .form-bk{
   background-color: $form;
+
+
 }
 .name{
   background-color: white;
   border-radius: $corners;
+  padding: 100px;
 }
+
+.container {
+    display: table;
+    vertical-align: middle;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.company-tble-th::nth-child(1){
+  width: 500px;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+.description{
+  @extend .input-field;
+  width: 300px;
+}
+// .image-circle{
+//   z-index: -10;
+//   width: 150px;
+//   height: 150px;
+//   border-radius: 50%;
+//   background-color: #677f9a;
+//   color: white;
+// }
+// .event-details{
+//   background-color: #26496f;
+//   width: 500px;
+//   height: 160px;
+//   color: $white;
+// }

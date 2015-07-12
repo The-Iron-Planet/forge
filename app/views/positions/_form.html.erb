@@ -1,24 +1,24 @@
 <%= form_for(@position) do |f| %>
   <% if @position.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+      <h4 class="form-val"><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h4>
 
-      <ul>
+      <ul class="error">
       <% @position.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
-  <% end %>
 
+  <% end %>
+</div>
 
   <div class="field">
-    <%= f.label :company %><br>
+    <%= f.label :company,:class => "input-label" %><br>
     <%= f.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "") %>
   </div>
   <div class="field"><%= link_to "Don't see your company here?", new_company_path %></div>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, :class => "input-label"%><br>
     <%= f.text_field :title, :class => "input-field" %>
   </div>
   <div class="field">
@@ -30,11 +30,11 @@
     <%= f.check_box :current, :class => "input-field" %>
   </div>
   <div class="field">
-    <%= f.label :started_on %><br>
+    <%= f.label :started_on, :class => "input-label" %><br>
     <%= f.date_field :started_on, :class => "input-field" %>
   </div>
   <div class="field">
-    <%= f.label :ended_on %><br>
+    <%= f.label :ended_on, :class => "input-label" %><br>
     <%= f.date_field :ended_on, :class => "input-field" %>
   </div>
   <div class="actions">

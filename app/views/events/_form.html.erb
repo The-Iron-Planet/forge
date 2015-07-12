@@ -1,9 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+<div class= "col-med-5 event-list">
+
+
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <h4 class="form-val"><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h4>
 
-      <ul>
+      <ul class="error">
       <% @event.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -12,38 +17,49 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, :class => "input-label" %><br>
+    <%= f.text_field :name, :class => "input-field" %>
   </div>
 
     <!-- <div class='input-group date' id='datetimepicker1' >
       <div class="field"> -->
   <div class="field">
-    <%= f.label "Happens On" %><br>
+    <%= f.label "Happens On", :class => "input-label" %><br>
     <%= f.datetime_select :happens_on, class: "form-control" %>
   </div>
-      <!-- </div>
+      </div>
+      <div class="field image-circle">
         <span class="input-group-addon">
           <span class="glyphicon glyphicon-calendar"></span>
         </span>
-    </div> -->
+      </div>
+    </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :description, :class => "input-label" %><br>
+    <%= f.text_area :description, :class => "description" %>
   </div>
-  <div class="field">
+  <div class="image-circle">
+afdsfadsfas
+  </div>
+  <div class="field image-circle">
     <%= f.label :uploaded_file, class: "uploaded" %>
-    <%= f.file_field :uploaded_file %>
+
+
+
+    <%= f.file_field :uploaded_file%>
   </div>
   <div class="field">
-    <%= f.label :website %><br>
-    <%= f.text_field :website %>
+    <%= f.label :website , :class => "input-label"%><br>
+    <%= f.text_field :website, :class => "input-field" %>
   </div>
   <div class="field">
     <%= f.label :campus, :class => "input-label" %><br>
     <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=> "btn", :value => 'Add Event'%>
   </div>
 <% end %>
+</div>
+</div>
+</div>
