@@ -49,13 +49,7 @@
     </br>
 
     <div class="icon-box">
-
-      <a href="mailto:<%= user.email %>" target="_blank">
-        <span class="user.email"></span>
-      </a>
-      <span class="icon-mail icon">
-        <a href="mailto:<%= user.email %>"></a>
-      </span>
+      <a href="mailto:<%= user.email %>", class="icon-mail icon"></a>
       <% unless user.github_profile.blank? %>
       <a href="<%= user.github_profile %>" target="_blank">
         <span class="icon-github icon "></span>
