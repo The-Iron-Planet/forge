@@ -18,9 +18,9 @@
 //= require_tree .
 //= require jquery-ui
 //= require dialog
-
-$(function () {
-  $('#datetimepicker1').datetimepicker({
-
-  });
-});
+//
+// $(function () {
+//   $('#datetimepicker1').datetimepicker({
+//
+//   });
+// });

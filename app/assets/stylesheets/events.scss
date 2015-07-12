@@ -1,3 +1,12 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// @@include 'stylesheet';
+
+.image-circle{
+  z-index: -10;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: $accent-color-light;
+}

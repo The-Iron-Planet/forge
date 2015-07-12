@@ -1,11 +1,15 @@
 
 
-<h1>Listing Companies</h1>
+<h2>Company Listing</h2>
+<!-- <div class="container-fluid" >
+  <div class="row"> -->
 
+<!-- <div class="col-med-4"></div> -->
+<!-- <div class="col-med-4"> -->
 <div class = "table-responsive">
-  <table class = "table table-condensed">
+  <table align="center" class = "company-table table-condensed">
   <thead>
-    <tr>
+    <tr class="company-tbl-th">
       <th>Name</th>
       <th>City</th>
       <th>State</th>
@@ -16,21 +20,23 @@
 
   <tbody>
     <% @companies.each do |company| %>
-      <tr>
+      <tr class="company-tbl-row">
         <td><%= company.name %></td>
         <td><%= company.city %></td>
         <td><%= company.state %></td>
         <td><%= company.website %></td>
-        <td><%= link_to 'Show', company %></td>
+        <!-- <td><%= link_to 'Show', company %></td> -->
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' }%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
+<!-- </div> -->
+<!-- <div class="col-med-4 test"></div> -->
+<!-- </div> -->
 <br>
 
 <%= link_to 'New Company', new_company_path %>
-</div>
-</div>
+<!-- </div> -->

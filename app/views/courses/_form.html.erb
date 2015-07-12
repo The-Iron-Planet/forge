@@ -6,7 +6,7 @@
       <h4 class="form-val"><%= pluralize(@course.errors.count, "error") %>
         prohibited this course from being saved:</h4>
 
-      <ul>
+      <ul class="error">
         <% @course.errors.full_messages.each do |message| %>
         <li><%= message %></li>
         <% end %>
@@ -41,27 +41,27 @@
       <%= f.fields_for :users do |ff| %><br>
       <div class="field">
         <%= ff.label :first_name, :class => "input-label" %>
-        <%= ff.text_field :first_name %>
+        <%= ff.text_field :first_name, :class => "input-field" %>
       </div>
       <div class="field">
         <%= ff.label :last_name, :class => "input-label" %>
-        <%= ff.text_field :last_name %>
+        <%= ff.text_field :last_name,:class => "input-field" %>
       </div>
       <div class="field">
         <%= ff.label :email, :class => "input-label" %>
         <%= ff.text_field :email, :class => "input-field" %>
       </div>
     </div>
-      <div class="col-md-4 label-column"></div>
-    </div>
-    <% end %>
+    <div class="col-md-4 label-column"></div>
   </div>
+    <% end %>
+
   <div class="row new-user-form">
     <div class="col-md-12 label-column">
       <div class="actions">
         <%= f.submit :class=> "btn ctr-btn", :value => 'Add New Course' %>
       </div>
-</div>
+    </div>
   </div>
   <% end %>
 

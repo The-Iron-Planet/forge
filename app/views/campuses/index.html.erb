@@ -1,6 +1,11 @@
-<h2>Listing Campuses</h2>
+<h2>TIY Campus Listing</h2>
+<div class="container-fluid" >
+  <div class="row">
 
-<table class="table">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<div class = "table-responsive">
+  <table class = "table table-condensed">
   <thead>
     <tr>
       <th>City</th>
@@ -14,14 +19,18 @@
       <tr>
         <td><%= campus.city %></td>
         <td><%= campus.state %></td>
-        <td><%= link_to 'Show', campus %></td>
+        <!-- <td><%= link_to 'Show', campus %></td> -->
         <td><%= link_to 'Edit', edit_campus_path(campus) %></td>
         <td><%= link_to 'Destroy', campus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
+<div class="col-md-4"></div>
+</div>
 <br>
 
 <%= link_to 'New Campus', new_campus_path %>
+</div>
