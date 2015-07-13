@@ -8,8 +8,8 @@
   <div class="search-bar">
     <!-- <div class="search-box"> -->
 
-    <input id="search" class="search" type="search" placeholder="Search..." type="search"/>
-    <button class=" search-button"></button>
+    <!-- <input id="search" class="search" type="search" placeholder="Search..." type="search"/>
+    <button class=" search-button"></button> -->
   <!-- </div> -->
 
 
@@ -19,13 +19,14 @@
     <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search"%>
     <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search" %>
     <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search" %>
+    <%= select_tag "company_id", options_from_collection_for_select(Company.all, :id, :name_and_location, params[:company_id]), prompt: "Search by Company", class: "search" %>
     <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search"%>
     <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
     <% end %>
     </div></br>
   <!-- </div> -->
 
-  <% @users.each_slice(3) do |slice| -%>
+  <% @users.each_slice(3) do |slice| %>
   <div class="row row-centered">
     <% slice.each do |user| %>
     <div class="col-md-1"></div>
@@ -86,7 +87,8 @@
 </div>
 </div>
 
-<% end -%>
+<% end %>
+
 </div>
 
 
