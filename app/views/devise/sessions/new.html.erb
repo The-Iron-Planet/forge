@@ -7,39 +7,38 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <!--<%= f.label :email, :class => "login-page" %><br />-->
-            <%= f.email_field :email, autofocus: true, :class => "input-field", :placeholder => "Email" %>
+            <%= f.email_field :email, autofocus: true, :class => "input-field-login", :placeholder => "Email" %>
           </div>
 
           <br/>
 
           <div class="field">
             <!--<%= f.label :password, :class => "login-page" %><br />-->
-            <%= f.password_field :password, autocomplete: "off", :class => "input-field", :placeholder => "Password" %>
+            <%= f.password_field :password, autocomplete: "off", :class => "input-field-login", :placeholder => "Password" %>
           </div>
 
 
           <% if devise_mapping.rememberable? %>
-            <div class="field">
+            <div class="field remember-me">
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
             </div>
           <% end %>
-
-          <br/>
 
           <div class="actions">
             <%= f.submit "Submit", :class => "btn" %>
           </div>
         <% end %>
 
+          <p class = "text-center">
+            <%= render "devise/shared/links" %>
+          </p>
         <br/>
         <br/>
 
 
     </div>
 
-       <div class = "forgot-password">
-         <%= render "devise/shared/links" %>
-       </div>
+
     <br/>
 </div>
