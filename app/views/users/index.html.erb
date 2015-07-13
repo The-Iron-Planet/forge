@@ -18,6 +18,7 @@
 
     <%= form_tag search_path do %>
     <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
+    <%= select_tag "cohort_class", options_for_select(["My Classmates", "My Cohort"], params[:cohort_class]), prompt: "Search within your Cohort", class: "search"%>
     <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search"%>
     <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search" %>
     <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search" %>
