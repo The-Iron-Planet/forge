@@ -31,7 +31,7 @@
 
   <h4><%= "#{@user.full_name}'s" %> Work Experience</h1>
 
-  <table>
+  <table class = "table">
     <thead>
       <tr>
         <th>Company</th>
@@ -59,10 +59,9 @@
   </table>
 
 
-    <div>
-      <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
-      <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
-      <%= link_to 'Alumni Directory', users_path %>
+    <div class = "links">
+      <div class = "link1"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></div>
+      <div class = "link1"><%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %></div>
     </div>
 
 

@@ -1,5 +1,4 @@
 <div class="container-fluid">
-  <!-- <h2 id="heading">Create new user</h2> -->
   <div class="row form-val">
     <%= form_for @user, html: {multipart: true} do |f| %>
     <% if @user.errors.any? %>
@@ -39,11 +38,11 @@
       </div>
 
       <div class="field">
-        <%= f.label "Campus Director?", :class => "input-label" %></br>
-      Yes<%= f.radio_button :is_cd, true %>
-      No<%= f.radio_button :is_cd, false %>
+        <%= f.label "Admin access?", :class => "input-label" %></br>
+           <div class = "radio-button">Yes <%= f.radio_button :is_cd, true %></div>
+           <div class = "radio-button">No <%= f.radio_button :is_cd, false %></div>
+       </div>
     </div>
-  </div>
   <div class="col-md-4"></div>
 </div>
 
