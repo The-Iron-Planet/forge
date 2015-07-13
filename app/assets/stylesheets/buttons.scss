@@ -1,14 +1,5 @@
 @import 'stylesheet';
 
-// $h2: 1.953em;
-// $h3: 1.563em;
-// $h4: 1.25em;
-// $small-font: 0.8em;
-// $white: #fff;
-// $font-bold: "TisaPro-Bold";
-// $accent-color: #4A6889;
-// $accent-color-light:#79B7FF;
-// $accent-color-dark: #3c555f;
 .btn {
   font-size: $h4;
   border-radius: $corners;
@@ -50,6 +41,7 @@ btn-login {
   background-color: lightgrey;
   color: $font-bold;
   border: lightgrey;
+  font-size: 12px;
   // float: right;
 }
 .ellipse:focus {
