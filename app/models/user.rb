@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
       :validatable
 
   has_attached_file :uploaded_file, styles: {
-    thumb: '100x100>',
+    thumb: '50x50>',
     square: '200x200#',
     medium: '300x300>'
   }
@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
 
-  default_scope {order(:last_name, :first_name)}
+  scope :ordered, -> { order(:last_name, :first_name) }
+  # default_scope {order(:last_name, :first_name)}
 
   accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? || attributes['title'].blank? }
 

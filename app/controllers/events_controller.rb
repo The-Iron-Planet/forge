@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    @events = Event.where(user_id: current_user.id)
   end
 
   # GET /events/new
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   def destroy
     @event.destroy
-    redirect_to rooth_path, notice: 'Event was successfully destroyed.'
+    redirect_to root_path, notice: 'Event was successfully destroyed.'
   end
 
   private

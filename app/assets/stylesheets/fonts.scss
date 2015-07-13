@@ -10,15 +10,15 @@ $font-logo: "SFIronsidesExtended";
 // Variables for standard fonts
 $h2: 1.563em;
 $h3: 1.25em;
-$h4: .8em;
+$h4: 1em;
 $small-font: 0.8em;
 
 // Standard fonts by html element
 html {
-  font-size: .8em;
+  font-size: 1em;
 }
 body {
-  font-size: 1.25em;
+  font-size: 1em;
   background-color: white;
   font-family: $font;
   font-weight: 400;
