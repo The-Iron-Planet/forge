@@ -13,7 +13,7 @@
   font-size: $h4;
   border-radius: $corners;
   font-family: $font-bold-italic;
-  background: $accent-color;
+  background: $accent-color-light;
   color: $white;
   padding: 10px 20px 15px;
   margin: 30px 20px 20px 20px;
@@ -25,6 +25,7 @@
 .btn:hover {
   background: $accent-color-dark;
   color: $white;
+  border: 1px solid $accent-color-dark;
 }
 
 btn-login {
@@ -57,4 +58,8 @@ btn-login {
 
 .dropdown{
 
+}
+
+.logout-header{
+  margin: 10px
 }

@@ -1,5 +1,5 @@
 
-<div class = "container-fluid">
+<div>
   <% if @user.uploaded_file_file_name.nil? %>
     <div><%= image_tag "default_pic.png", size: "200x200" %></div>
   <% else %>
@@ -10,11 +10,11 @@
   <div><%= @user.full_name %></div>
   <div><%= @user.course.full_description unless @user.course.blank? %></div>
   <% unless @user.current_city.blank? || @user.current_state.blank? %>
-    <div>Current Location: <%= @user.current_location %></div>
+    <div>Location Icon: <%= @user.current_location %></div>
   <% end %>
-  <div>Email Address: <%= @user.email %></div>
+  <div>Email Icon: <%= @user.email %></div>
   <% unless @user.github_profile.blank? %>
-    <div>Github: <%= @user.github_profile %></div>
+    <div>Github Icon: <%= @user.github_profile %></div>
   <% end %>
   <% unless @user.website.blank? %>
     <div>Website: <%= @user.website %></div>
@@ -29,15 +29,9 @@
     <div>Looking: Yes</div>
   <% end %>
 
-  <div>
-    <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
-    <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
-    <%= link_to 'My Events', events_path if @user.id == current_user.id %>
-  </div>
+  <h4><%= "#{@user.full_name}'s" %> Work Experience</h1>
 
-  <h4 class = "work-experience"><%= "#{@user.full_name}'s" %> Work Experience</h1>
-
-  <table class = "table">
+  <table>
     <thead>
       <tr>
         <th>Company</th>
@@ -63,5 +57,14 @@
       <% end %>
     </tbody>
   </table>
+
+
+    <div>
+      <%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %>
+      <%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %>
+      <%= link_to 'Alumni Directory', users_path %>
+    </div>
+
+
   </div></br>
   </div>
