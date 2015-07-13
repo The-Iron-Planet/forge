@@ -8,10 +8,21 @@
   <div class="search-bar">
     <!-- <div class="search-box"> -->
 
-    <input id="search" class="search" placeholder="Search..." type="search"/>
-    <button class=" search-button" type="search"></button>
+    <input id="search" class="search" type="search" placeholder="Search..." type="search"/>
+    <button class=" search-button"></button>
   <!-- </div> -->
   </div></br>
+
+
+    <%= form_tag search_path do %>
+    <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
+    <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search"%>
+    <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search" %>
+    <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search" %>
+    <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search"%>
+    <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
+    <% end %>
+  </div>
 
   <% @users.each_slice(3) do |slice| -%>
   <div class="row row-centered">
@@ -32,13 +43,8 @@
 
       <button class="ellipse" data-target=".collapse" data-toggle="collapse" type="button">More Info
       </button>
+
       <div class="collapse" id="collapse" data-parent="collapse"  >
-
-
-
-
-
-
           <% if user.hiring %>
             <div>Hiring: Yes</div>
           <% end %>
@@ -49,7 +55,6 @@
           <div><%= user.current_position.company_name %></div>
           <div><%= user.current_position.title %></div>
           <% end %>
-
       </div>
     </br>
 

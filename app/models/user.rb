@@ -33,15 +33,54 @@ class User < ActiveRecord::Base
     "#{current_city}, #{current_state}"
   end
 
-
   def current_position
     positions.first
   end
+  #
+  # def self.search_by_city(city)
+  #   self.select {|u| u.current_city.downcase == city.downcase }
+  # end
+  #
+  # def self.search_by_state(state)
+  #   self.select {|u| u.current_state.downcase == state.downcase }
+  # end
+  #
+  # def self.looking?
+  #   self.select {|u| u.looking}
+  # end
+  #
+  # def self.hiring?
+  #   self.select {|u| u.hiring}
+  # end
+
+  def self.search_results(city, state, curric_id, campus_id, job_status)
+    result = self
+    if campus_id != ""
+      courses = Course.select {|c| c.campus_id == campus_id.to_i}
+      result = result.where(course: courses)
+    end
+    if curric_id != ""
+      courses = Course.select {|c| c.curriculum_id == curric_id.to_i}
+      result = result.where(course: courses)
+    end
+    result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
+    result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
+    result = result.select {|u| u.looking} if job_status == "Looking for work"
+    result = result.select {|u| u.hiring} if job_status == "Hiring"
+    result
+  end
+  #
+  # def self.search_by_curriculum(curric_id)
+  #   self.where(course_id: (Course.where(curriculum_id: curric_id).id))
+  # end
 
   private
     def send_account_email
       # UserMailer.account_created(self).deliver_now
     end
 
+    # def search_params
+    #   params.permit(:current_state, :current_city)
+    # end
 
 end

@@ -40,6 +40,8 @@ gem 'mailgun'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'american_date'
+gem 'faker'
+
 
 
 group :development, :test do

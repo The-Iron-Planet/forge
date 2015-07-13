@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 d1 = Time.zone.local(2016, 7, 20, 18, 30, 00)
 d2 = Time.zone.local(2016, 7, 11, 19, 00, 00)
 d3 = Time.zone.local(2016, 8, 1, 17, 30, 00)
@@ -17,6 +18,7 @@ rails = Curriculum.create!(name: "Rails Engineering", nickname: "Rails")
 fe = Curriculum.create!(name: "Front End Engineering", nickname: "Front End")
 python = Curriculum.create!(name: "Python Engineering", nickname: "Python")
 staff = Curriculum.create!(name: "Staff", nickname: "Staff")
+
 
 rails_course = Course.create!(started_on: "2015-05-04", ended_on: "2015-07-24",
     campus_id: campus.id, curriculum_id: rails.id, cohort: 4)
