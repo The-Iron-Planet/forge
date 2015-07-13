@@ -4,6 +4,31 @@
   src: font-url('TisaPro.otf');
 }
 
+@font-face {
+  font-family: TisaPro-Bold;
+  src: font-url('TisaPro-Bold.otf');
+}
+
+@font-face {
+  font-family: TisaPro-Boldlta;
+  src: font-url('TisaPro-Boldlta.otf');
+}
+
+@font-face {
+  font-family: TisaPro-lta;
+  src: font-url('TisaPro-lta.otf');
+}
+
+@font-face {
+  font-family: TisaPro-Medi;
+  src: font-url('TisaPro-Medi.otf');
+}
+
+@font-face {
+  font-family: TisaPro-Medilta;
+  src: font-url('TisaPro-Medilta.otf');
+}
+
 
 $font: 'TisaPro';
 $font-medium: "TisaPro-Medi";
@@ -26,7 +51,7 @@ html {
 body {
   font-size: 1em;
   background-color: white;
-  font-family: TisaPro;
+  font-family: $font;
   font-weight: 400;
   line-height: 1.45;
   color: #333;

@@ -54,11 +54,15 @@ class User < ActiveRecord::Base
   #   self.select {|u| u.hiring}
   # end
 
-  def self.search_results(city, state, curric_id, campus_id, job_status, company_id)
+  def self.search_results(city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
     result = self
     if company_id != ""
       company = Company.find_by_id(company_id)
       result = company.users
+    end
+    if cohort_class == "My Cohort"
+      courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.cohort == current_user.course.cohort}
+      result = result.where(course: courses)
     end
     if campus_id != ""
       courses = Course.select {|c| c.campus_id == campus_id.to_i}
@@ -68,12 +72,16 @@ class User < ActiveRecord::Base
       courses = Course.select {|c| c.curriculum_id == curric_id.to_i}
       result = result.where(course: courses)
     end
+    if cohort_class == "My Classmates"
+      result = result.select {|u| u.course_id == current_user.course_id}
+    end
     result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
     result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
     result = result.select {|u| u.looking} if job_status == "Looking for work"
     result = result.select {|u| u.hiring} if job_status == "Hiring"
     result
   end
+
   #
   # def self.search_by_curriculum(curric_id)
   #   self.where(course_id: (Course.where(curriculum_id: curric_id).id))
