@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   def index
 
     if request.post?
-      @users = User.search_results(params[:current_city], params[:current_state],
-          params[:curric_id], params[:campus_id], params[:job_status]).ordered
+      @users = User.all.ordered.search_results(params[:current_city], params[:current_state],
+          params[:curric_id], params[:campus_id], params[:job_status])
     else
       @users = User.all.ordered
     end
