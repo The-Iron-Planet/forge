@@ -1,12 +1,19 @@
 <div class="container-fluid">
 
-  <h2>Events</h2>
-  <span><%= link_to 'New Event', new_event_path %></span>
-  <% @events.each do |event| %>
-  <div class="row event-bk">
-    <div class="col-md-4">
 
-      <div class="images">
+  <span><%= link_to 'New Event', new_event_path %></span>
+    <h2>Events</h2>
+  <% @events.each do |event| %>
+  <div class="row">
+
+    <div class="col-md-4">
+</div>
+<div class="event-bk">
+
+
+    <div class="col-md-2 ">
+
+      <div class="images ">
         <% if event.uploaded_file_file_name.nil? %>
         <div><%= image_tag "event_default.png", size: "100x100" %></div>
         <% else %>
@@ -15,7 +22,7 @@
         </div>
         <% end %>
       </div>
-      <div class="event-details">
+      <div class="event-details event-bk">
         <% if event.user.uploaded_file_file_name.nil? %>
         <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %>
         </div>
@@ -24,9 +31,9 @@
           <%=link_to image_tag(event.user.uploaded_file(:thumb)),"users/#{event.user_id}"  %>
         </div>
 
-
-    <% end %>
 </div>
+    <% end %>
+
 
 
 
@@ -34,7 +41,8 @@
       <%= event.name %>
     </p>
     </div>
-    <div class="container col-md-4">
+    </div>
+    <div class="container col-md-2">
 
       <h5>
         <%= event.event_date %>
@@ -47,7 +55,7 @@
       <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
               event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5">
       <p>
         <%= event.campus.long_name %>
       </p>
@@ -58,7 +66,9 @@
         <%= event.website %>
       </p>
     </div>
-  </div>
+
+
 </div>
 <br>
 <% end %>
+</div>
