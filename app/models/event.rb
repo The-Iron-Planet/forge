@@ -4,7 +4,8 @@ class Event < ActiveRecord::Base
 
   validates :campus, presence: true
 
-  default_scope {order(happens_on: :asc)}
+  scope :ordered, -> { order(happens_on: :asc) }
+  # default_scope {order(happens_on: :asc)}
 
   has_attached_file :uploaded_file, styles: {
     thumb: '50x50>',
@@ -20,6 +21,10 @@ class Event < ActiveRecord::Base
 
   def event_time
     happens_on.strftime "%l:%M %p"
+  end
+
+  def self.search_results(campus_id)
+    where(campus_id: campus_id.to_i) if campus_id != ""
   end
 
 end
