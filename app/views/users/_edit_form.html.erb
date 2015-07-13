@@ -15,10 +15,12 @@
     <% end %>
   </div>
   <div class="row new-user-form">
-    
+  
+<!--
+<div class="col-xs-1">label-column name</div>-->
+<div class="col-xs-1"></div>
+  <div class="col-md-3">
 
- <!--<div class="col-md-1"></div> -->
-  <div class="col-md-4 label-column name">
     <div class="field">
       <%= f.label :first_name, :class => "input-label" %>
       <%= f.text_field :first_name, :class => "input-field" %>
@@ -39,8 +41,8 @@
       <%= f.select :current_state, options_for_select(us_states, @user.current_state), :include_blank => true, :class => "input-field" %>
     </div>
   </div>
-
-  <div class="col-md-4 contact">
+<div class="col-xs-1"></div>
+  <div class="col-md-3 contact">
     <div class="field">
       <%= f.label :email, :class => "input-label" %>
       <%= f.text_field :email, :class => "input-field" %>
@@ -60,9 +62,10 @@
       <%= f.label :blog, :class => "input-label" %>
       <%= f.text_field :blog, :class => "input-field" %>
     </div>
+</div>
 
-  </div>
-  <div class="col-md-4">
+<div class="col-xs-1"></div>
+  <div class="col-md-3">
 
     <%= f.label :uploaded_file, :class => "uploaded"  %>
     <%= f.file_field :uploaded_file %>
@@ -70,17 +73,19 @@
 <!-- <div class="col-md-1"></div> -->
   </div>
 
+<hr>
+
   <div class="row">
     <!-- <div class="col-md-2 ctr"></div> -->
     <div class="col-md-12 ctr">
       <div class="field ctr">
-        <%= f.label :looking, :class => "", :value => 'I\'m looking for a new job'%>
+        <%= f.label :looking, :class => "", :value => 'Are you looking for a new job?'%>
         Yes<%= f.radio_button :looking, true %>
         No<%= f.radio_button :looking, false %>
       </div>
 
       <div class="field ctr">
-        <%= f.label :hiring, :class => "radio-title", :value => 'My company is hiring' %>
+        <%= f.label :hiring, :class => "radio-title", :value => 'Is your company hiring?' %>
         Yes<%= f.radio_button :hiring, true %>
         No<%= f.radio_button :hiring, false %>
       </div>
@@ -91,7 +96,7 @@
   <%= f.fields_for :positions do |ff| %>
     <div class="field">
       <%= ff.label :company, :class => "input-label" %><br>
-      <%= ff.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "",:class => "input-field drop-down") %>
+      <%= ff.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "",:class => "input-field-company drop-down") %>
     </div>
     <div class="field">
       <%= ff.label :title, :class => "input-label" %><br>
