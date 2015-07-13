@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-
   <div class="fixed-nav-bar">
     <div class="logo-cont">
       <%= link_to image_tag("TIY-logo-500px.png", alt: "logo", class: "tiy"), root_path %>
@@ -20,34 +18,25 @@
         <%= link_to 'Home', root_path, class: "nav" %>
         <%= link_to 'Alumni Directory', users_path, class: "nav" %>
         <% if current_user.is_cd %>
-        <div class = "admin-header nav">
-          <div class="dropdown">
-            <div class="dropdown-toggle" type="text"
-            id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="true">
-            Admin
-            <span class="caret"></span>
+          <div class = "admin-header nav">
+            <div class="dropdown">
+              <div class="dropdown-toggle" type="text"
+              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="true">
+                Admin
+                <span class="caret"></span>
+              </div>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                <li><%= link_to 'New User', new_user_path, class: "nav" %></li>
+                <li><%= link_to 'New Campus', new_campus_path, class: "nav" %></li>
+                <li><%= link_to 'New Course', new_course_path, class: "nav" %></li>
+                <li><%= link_to 'New Curriculum', new_curriculum_path, class: "nav" %></li>
+              </ul>
             </div>
-          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-            <li><%= link_to 'New User', new_user_path, class: "nav" %></li>
-            <li><%= link_to 'New Campus', new_campus_path, class: "nav" %></li>
-            <li><%= link_to 'New Course', new_course_path, class: "nav" %></li>
-            <li><%= link_to 'New Curriculum', new_curriculum_path, class: "nav" %></li>
-          </ul>
-        </div>
-      </div>  
-        
-        
+          </div>
+        <% end %>
       </div>
-      
-     
-      <!-- Add divs between here and END on line 26 to make the Admin links show up as drop down -->
-        <!--<%= link_to 'New User', new_user_path, class: "nav" %>
-        <%= link_to 'New Campus', new_campus_path, class: "nav" %>
-        <%= link_to 'New Course', new_course_path, class: "nav" %>
-        <%= link_to 'New Curriculum', new_curriculum_path, class: "nav" %>-->
-      <!-- Add divs between here and IF on line 21 to make the Admin links show up as drop down -->
-      <% end %>
+
       <div class = "header-text">
         <div class="dropdown">
           <button class="btn btn-default dropdown-toggle" type="button"
