@@ -37,9 +37,15 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update user" do
+  test "should update user with more than 1 login" do
     patch :update, id: @user1, user: { first_name: @user1.first_name }
     assert_redirected_to user_path(assigns(:user))
+  end
+
+  test "should render edit when errors on update for user1" do
+    patch :update, id: @user1, user: { email: "" }
+    assert_response :success
+    response.body.match(/you can edit your profile here/)
   end
 
   test "should destroy user" do
@@ -62,6 +68,25 @@ class UsersControllerTest < ActionController::TestCase
 
     get :index
     assert_redirected_to first_login_path
+  end
+
+  test "should render first_logon when errors on update for user2" do
+    sign_out users(:one)
+    sign_in users(:two)
+
+    get :index
+    assert_redirected_to first_login_path
+
+    patch :update, id: @user2, user: { password: "password", password_confirmation: "junkword" }
+    assert_response :success
+    response.body.match(/your first time logging in/)
+
+    patch :update, id: @user2, user: { password: "pass", password_confirmation: "pass" }
+    assert_response :success
+    response.body.match(/your first time logging in/)
+
+    patch :update, id: @user2, user: { password: "password", password_confirmation: "password" }
+    assert_redirected_to user_path
   end
 
   # test "should show user profile picture" do

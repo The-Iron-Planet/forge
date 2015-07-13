@@ -53,8 +53,12 @@ class User < ActiveRecord::Base
   #   self.select {|u| u.hiring}
   # end
 
-  def self.search_results(city, state, curric_id, campus_id, job_status)
+  def self.search_results(city, state, curric_id, campus_id, job_status, company_id)
     result = self
+    if company_id != ""
+      company = Company.find_by_id(company_id)
+      result = company.users
+    end
     if campus_id != ""
       courses = Course.select {|c| c.campus_id == campus_id.to_i}
       result = result.where(course: courses)

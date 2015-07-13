@@ -15,7 +15,7 @@ $accent-color: #00b796;
 $accent-color-light:#00b796;
 $accent-color-dark: #009278;
 $link: #158cbd;
-$link-hover: #0e6284;
+$link-hover: grey;
 
 //Fonts
 
@@ -60,7 +60,6 @@ h3 {
 h4 {
   font-family: $font-bold;
   // font-size: 22px;
-  font-weight: bold;
   font-color: $shield;
 }
 p {
@@ -156,9 +155,8 @@ col-md-3 {
 .profile-content {
   text-align: center;
   font-family: $font;
-  background-color: lightgrey;
-  // padding-left: 20px;
-  // margin-right: 20px;
+  background-color: white;
+  padding-left: 20px;
   margin-bottom: 30px;
   // margin-left: 8.33%;
   // padding: 5%;

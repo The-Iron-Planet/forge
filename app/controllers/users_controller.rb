@@ -10,7 +10,12 @@ class UsersController < ApplicationController
 
     if request.post?
       @users = User.all.ordered.search_results(params[:current_city], params[:current_state],
-          params[:curric_id], params[:campus_id], params[:job_status])
+          params[:curric_id], params[:campus_id], params[:job_status], params[:company_id])
+      if @users == User
+        @users = User.all.ordered
+        flash.now[:notice] = "Please choose specific search parameters."
+        render :index
+      end
     else
       @users = User.all.ordered
     end
@@ -61,17 +66,23 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.sign_in_count == 1
-      @user.sign_in_count += 1
-    end
-    if @user.update(user_params)
-      # Sign in the user by passing validation in case their password changed
-      sign_in :user, @user, bypass: true
-      redirect_to user_path, notice: 'User was successfully updated.'
-    elsif @user.valid_password?("theironyard")
-      redirect_to edit_user_path, notice: 'You must update your password'
+    if @user.sign_in_count > 1
+      if @user.update(user_params)
+        # Sign in the user by passing validation in case their password changed
+        sign_in :user, @user, bypass: true
+        redirect_to user_path, notice: 'User was successfully updated.'
+      else
+        render :edit
+      end
     else
-      render :edit
+      @user.sign_in_count += 1
+      if @user.update(user_params)
+        # Sign in the user by passing validation in case their password changed
+        sign_in :user, @user, bypass: true
+        redirect_to user_path, notice: 'User was successfully updated.'
+      else
+        render :first_login
+      end
     end
   end
 

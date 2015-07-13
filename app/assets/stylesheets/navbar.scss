@@ -47,19 +47,22 @@
   z-index: 3;
 }
 .nav {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-family: $font;
+  font-weight: 900;
   display: inline-block;
   z-index: 4;
   text-transform: uppercase;
-  color: white;
+  color: #eef1f6;
   padding: 0 1em 0 0;
   // font-size: 19px;
   // font-weight: 500;
   // letter-spacing: .5px;
 }
 .nav:hover {
-  font-color: blue;
+  text-decoration: underline;
+  bottom: 1px;
+  color: #eef1f6;
 }
 
 .notice {
@@ -96,4 +99,8 @@
 .tiy {
   width: 75px;
   height: 75px;
+}
+
+.logout {
+  font-family: $font;
 }
