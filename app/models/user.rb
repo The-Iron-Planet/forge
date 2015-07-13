@@ -86,5 +86,4 @@ class User < ActiveRecord::Base
     # def search_params
     #   params.permit(:current_state, :current_city)
     # end
-
 end
