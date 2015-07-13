@@ -20,7 +20,7 @@
   padding: 15px 0;
 }
 .uploaded {
-  background-color: orange;
+  background-color: grey;
   width: 220px;
   height: 220px;
   display: block;
@@ -79,4 +79,10 @@
 
 .view-profile {
   text-align: center;
+}
+
+.nav-stacked {
+  width: 8em;
+  float: left;
+  position: fixed;
 }

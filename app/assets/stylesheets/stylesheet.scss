@@ -277,7 +277,7 @@ col-md-3 {
 // }
 
 .form-bk{
-  background-color: $form;
+  background-color: white;;
 
 
 }
@@ -308,6 +308,8 @@ table, th, td {
   @extend .input-field;
   width: 300px;
 }
+
+
 // .image-circle{
 //   z-index: -10;
 //   width: 150px;
