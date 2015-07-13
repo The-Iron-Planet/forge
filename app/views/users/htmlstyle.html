@@ -4,6 +4,7 @@
 __________________________________________________
 
 ---------Colors--------
+
 $black: #000; (text)
 $shield: #233139; (TIY logo)
 $base: #727d84;
@@ -11,10 +12,9 @@ $nav-bar-green: #567a89;
 $light-gray: #d3d5d7; (input fields)
 $field-focus-gray:#e0e1e3; (auto focus input fields)
 $white: #fff;
-
-$accent-color: #567a89;
+$accent-color: #567a89; (buttons)
 $accent-color-light:#7794a0;
-$accent-color-dark: #3c555f;
+$accent-color-dark: #3c555f;(buttons on hover)
 $link: #158cbd; (url links)
 $link-hover: #0e6284; (url links on hover)
 
@@ -40,8 +40,6 @@ font-weight: inherit;
 line-height: 1.2;
 }
 
-
-
 --Misc Styles Used Throughout the Site--
 
 The design is flat without use of borders on box elements. Borders should only be used on an exception basis if they intrinsic to the functionality or there is reason to make a design exception.
@@ -49,14 +47,14 @@ The design is flat without use of borders on box elements. Borders should only b
 CSS for any box element:
 border-radius:$corners;
 
-
 ---------Buttons--------
+
  Buttons should use an h3 font with a white background
 Colors:
-    Form submit buttons:
+    Form submit buttons: $accent-color and $accent-color-dark on hover
     Log In buttons: TBD
     Cancel buttons: TBd
-    Submit buttons: TBD
+
     Log Out button: TBD
 
 
@@ -103,8 +101,6 @@ btn-login{
 
 ---Buttons that use ellipses----
 
-
-
 .ellipse{
   background-color:$white;
   color: $font-bold;
@@ -113,8 +109,7 @@ btn-login{
 
 ---------Input Field--------
 
-
----Input Field
+--(a)--  Input Field
 Style for all input fields that require character input from the user:
 
 RoR
@@ -138,7 +133,7 @@ CSS
   outline: 0;
 }
 
----Input Field Label for all user input types
+---(b)--Input Field Label for all user input types
 
 RoR
   <%= f.label :field_name, "Name", :class => "input-label" %>
@@ -160,31 +155,8 @@ CSS
   margin: 10px 0;
 }
 
-
----------Dropdown Menus--------
-Dropdown menu
-
-RoR
-
-OR
-
-HTML
-
-CSS
-
-
-
-Search Box
-
-RoR
-
-OR
-
-HTML
-
-CSS
-
 ---------Form Validation--------
+
 Form Validation Error Notification (form-val)
 and error explanations (error)
 
@@ -210,12 +182,9 @@ CSS
   list-style-type: none;
   font-style: italic;
 }
----------Navigation Bar--------
----------Layout--------
 
----------Filter Components--------
+--------Search Boxes-------------
 
----------Search Boxes-------------
 .search {
   width: 175px;
   height: 16px;
@@ -237,13 +206,16 @@ CSS
 .search-button:hover {
   background-color: $light-gray;
 }
+
 ---------Accordian --------
+
 <button type="button" class="btn" data-toggle="collapse"
  data-target="#collapse">
 </button>
 <div id="collapse" class="collapse in"> … </div>
 
 ---------Icons----------------
+
 Fontastic text icons
 
 HTML/RoR
@@ -255,7 +227,9 @@ HTML/RoR
   padding:1px;
   color:$medium-gray;
 }
+
 ---------hyperinks--------
+
 RoR
 <%= link_to 'Description', param %>
 
@@ -272,6 +246,38 @@ CSS
 .link:hover {
   color: $link-hover;
 }
+
+---------Dropdown Menus--------
+Dropdown menu
+
+RoR
+
+OR
+
+HTML
+
+CSS
+
+
+
+Search Box
+
+RoR
+
+OR
+
+HTML
+
+CSS
+
+
+---------Navigation Bar--------
+---------Layout--------
+
+---------Filter Components--------
+
+
+
 ---------Dropdown Menus--------
 ---------Dropdown Menus--------
 
