@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # get '/dashboard' => 'users#dashboard', as: :dashboard
 
   root 'users#dashboard'
-  post 'results' => 'users#results'
+  post 'search' => 'users#index'
   resources :users do
     member do
       get 'edit_password'

@@ -7,13 +7,18 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    if request.post?
+      @users = User.search_results(params[:current_city], params[:current_state],
+          params[:curric_id], params[:campus_id], params[:job_status])
+    else
+      @users = User.all
+    end
   end
 
-  def results
-    @users = User.search_results(params[:current_city], params[:current_state], params[:looking],
-        params[:hiring], params[:curric_id], params[:campus_id])
-  end
+  # def results
+  #   @users = User.search_results(params[:current_city], params[:current_state],
+  #       params[:curric_id], params[:campus_id], params[:job_status])
+  # end
 
   # GET /users/1
   def show
