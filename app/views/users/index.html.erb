@@ -11,7 +11,7 @@
     <input id="search" class="search" type="search" placeholder="Search..." type="search"/>
     <button class=" search-button"></button>
   <!-- </div> -->
-  </div></br>
+
 
 
     <%= form_tag search_path do %>
@@ -22,7 +22,8 @@
     <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search"%>
     <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
     <% end %>
-  </div>
+    </div></br>
+  <!-- </div> -->
 
   <% @users.each_slice(3) do |slice| -%>
   <div class="row row-centered">
