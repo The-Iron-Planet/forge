@@ -35,23 +35,16 @@
       <button class="ellipse" data-target=".collapse" data-toggle="collapse" type="button">More Info
       </button>
       <div class="collapse" id="collapse">
-
-
-
-
-
-
-          <% if user.hiring %>
-            <div>Hiring: Yes</div>
-          <% end %>
-          <% if user.looking %>
-             <div>Looking: Yes</div>
-          <% end %>
-          <% unless user.positions.empty? %>
-          <div><%= user.current_position.company_name %></div>
-          <div><%= user.current_position.title %></div>
-          <% end %>
-
+        <% if user.hiring %>
+          <div>Hiring: Yes</div>
+        <% end %>
+        <% if user.looking %>
+           <div>Looking: Yes</div>
+        <% end %>
+        <% unless user.positions.empty? %>
+        <div><%= user.current_position.company_name %></div>
+        <div><%= user.current_position.title %></div>
+        <% end %>
       </div>
     </br>
 
@@ -73,12 +66,6 @@
       </a>
       <% end %>
     </div>
-
-
-
-
-
-
 
   <div class="spacer"><%= link_to 'View Profile', user %></div>
 
