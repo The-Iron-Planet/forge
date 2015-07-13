@@ -39,7 +39,7 @@
 
 
 .nav-links {
-  width: 500px;
+  width: 800px;
   height: 100px;
   display: inline-block;
   margin-left: 4em;
@@ -53,6 +53,7 @@
   z-index: 4;
   text-transform: uppercase;
   color: white;
+  padding: 0 1em 0 0;
   // font-size: 19px;
   // font-weight: 500;
   // letter-spacing: .5px;
@@ -64,6 +65,12 @@
 .notice {
   z-index: -1;
 }
+
+// .admin-header {
+//   font-size: 1em;
+//   text-align: right;
+// }
+
 
 .header-text {
   font-size: 1em;
