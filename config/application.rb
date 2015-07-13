@@ -32,6 +32,6 @@ module Forge
         :secret_access_key => ENV['FORGE_AWS_SECRET_ACCESS_KEY']
       }
     }
-    config.time_zone = 'Eastern Time (US & Canada)' 
+    config.time_zone = 'Eastern Time (US & Canada)'
   end
 end
