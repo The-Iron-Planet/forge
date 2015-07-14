@@ -6,7 +6,7 @@ one:
   title: Potato Master
   description: Master of all things tuber.
   started_on: 2015-07-24
-  ended_on: 2015-07-31
+  ended_on: 2015-08-01
   current: true
 
 two:
@@ -14,6 +14,6 @@ two:
   company: :two
   title: Chief YouTube Troll
   description: Exactly what it sounds like.
-  started_on: 2015-07-24
+  started_on: 2015-07-23
   ended_on: 2015-07-25
   current: false

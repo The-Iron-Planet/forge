@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   scope :ordered, -> { order(:last_name, :first_name) }
   # default_scope {order(:last_name, :first_name)}
 
-  accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? || attributes['title'].blank? }
+  accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? && attributes['title'].blank? }
 
   after_create :send_account_email
 
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def current_position
-    positions.first
+    positions.ordered.first
   end
 
   def self.search_results(city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
