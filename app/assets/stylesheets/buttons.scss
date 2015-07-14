@@ -3,9 +3,9 @@
 .btn {
   font-size: $h4;
   border-radius: $corners;
-  font-family: $font-bold-italic;
+  font-family: $font-italic;
   background: $accent-color-light;
-  color: $white;
+  color: white;
   padding: 10px 20px 15px;
   margin: 30px 20px 20px 20px;
   text-decoration: none;
@@ -54,4 +54,13 @@ btn-login {
 
 .logout-header{
   margin: 10px
+}
+
+.search-box a {
+  font-size: $h4;
+  font-family: $font-italic;
+  font-color: black;
+  // padding: 10px 20px 15px;
+  // margin: 15px 10px 10px 10px;
+  text-decoration: none;
 }

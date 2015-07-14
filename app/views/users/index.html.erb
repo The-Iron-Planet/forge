@@ -3,16 +3,16 @@
   <h2>Alumni Directory</h2>
 
   <div class="row">
-    <div class="search-box col-med-12">
+    <div class="search-box col-med-12 well">
         <%= form_tag search_path do %>
-          <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search search-boxes-bar" %>
-          <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search search-boxes-bar" %>
-          <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <%= text_field_tag "name", params[:name], class: "search-boxes-bar search-long search-on-left text-field", placeholder: "Name"%>
+          <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search search-boxes-bar-mid" %>
+          <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
+          <a class="more-options search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           More options</a>
-          <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
           <div class="collapse" id="collapseExample">
-            <div class="well">
-              <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search" %>
+            <div class="list">
+              <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search search-on-left" %>
               <%= select_tag "company_id", options_from_collection_for_select(Company.all, :id, :name_and_location, params[:company_id]), prompt: "Search by Company", class: "search" %>
               <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
               <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search-state"%>
