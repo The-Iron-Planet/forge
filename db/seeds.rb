@@ -19,7 +19,6 @@ atl_campus = Campus.create!(city: "Atlanta", state: "GA")
 rails = Curriculum.create!(name: "Rails Engineering", nickname: "Rails")
 fe = Curriculum.create!(name: "Front End Engineering", nickname: "Front End")
 python = Curriculum.create!(name: "Python Engineering", nickname: "Python")
-staff = Curriculum.create!(name: "Staff", nickname: "Staff")
 
 dur_rails_course = Course.create!(started_on: "2015-05-04", ended_on: "2015-07-24",
     campus_id: dur_campus.id, curriculum_id: rails.id, cohort: 4)
