@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <h2>Resources</h2><span><%= link_to 'New Resources', new_resource_path %></span>
+    <% @resources.each do |resource| %>
+      <div class="row">
+        <div class="resource-details">
+          <% if resource.user.uploaded_file_file_name.nil? %>
+           <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %></div>
+          <% else %>
+            <div> <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}"  %> </div>
+          <% end %>
+          <p> <%= resource.title %> </p>
+          <div class="container col-md-4">
+            <div class="col-md-5">
+              <h5> <%= resource.curriculum.nickname %> </h5>
+              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
+                  edit_resource_path(resource) if resource.user_id == current_user.id %>
+              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+                  resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
+            </div>
+            <div class="col-md-5">
+              <p> <%= resource.description %> </p>
+              <p> <%= resource.website %> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <br>
+  </div>
+</div>

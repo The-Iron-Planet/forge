@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :resources, except: [:show]
   resources :events, except: [:show]
   resources :companies
   resources :positions
