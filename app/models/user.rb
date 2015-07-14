@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
       result = result.select {|u| u.course_id == current_user.course_id}
     end
     result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
-    result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
+    result = result.select {|u| u.current_city.downcase.match(city.downcase) } if city != ""
     result = result.select {|u| u.looking} if job_status == "Looking for work"
     result = result.select {|u| u.hiring} if job_status == "Hiring"
     result = result.select {|u| u.full_name.downcase.match(name.downcase)} if name != ""
