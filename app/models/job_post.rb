@@ -14,4 +14,12 @@ class JobPost < ActiveRecord::Base
   def last_update
     updated_at.strftime "%B %e, %Y"
   end
+
+  def self.search_results(curric_id, city, state)
+    result = self
+    result = result.where(curriculum_id: curric_id) if curric_id != ""
+    result = result.select {|j| j.company.city.downcase.match(city.downcase)} if city != ""
+    result = result.select {|j| j.company.state == state} if state != ""
+    result
+  end
 end

@@ -5,7 +5,16 @@ class JobPostsController < ApplicationController
 
   # GET /job_posts
   def index
-    @job_posts = JobPost.all.ordered
+    if request.post?
+      @job_posts = JobPost.ordered.search_results(params[:curriculum_id], params[:city], params[:state])
+      if @job_posts == JobPost
+        @job_posts = JobPost.ordered
+        flash.now[:notice] = "Please choose specific search parameters."
+        render :index
+      end
+    else
+      @job_posts = JobPost.all.ordered
+    end
   end
 
   # GET /job_posts/new

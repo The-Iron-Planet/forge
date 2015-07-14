@@ -42,4 +42,11 @@ class JobPostTest < ActiveSupport::TestCase
     refute j5.save
     refute j6.save
   end
+
+  test "scope ordered by last update" do
+    assert_equal [@job2, @job1], JobPost.all.ordered
+    @job1.description = "Updated Description!"
+    @job1.save!
+    assert_equal [@job1, @job2], JobPost.all.ordered
+  end
 end
