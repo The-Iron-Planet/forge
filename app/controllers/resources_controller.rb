@@ -6,7 +6,7 @@ class ResourcesController < ApplicationController
 
   # GET /resources
   def index
-    @resources = Resource.all
+    @resources = Resource.all.ordered
   end
 
   # GET /resources/new
