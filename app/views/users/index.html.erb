@@ -15,8 +15,8 @@
           <input class=" search search-all" id="search" placeholder="Search..." type="search" type="search"/>
         </li>
         <li> -->
-
     <%= form_tag search_path do %>
+    <%= text_field_tag "name", params[:name], class: "search", placeholder: "Name"%>
     <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
     <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search-state"%>
     <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search" %>
