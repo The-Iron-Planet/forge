@@ -15,6 +15,7 @@ one:
   course: :one
   sign_in_count: 2
   looking: true
+  hiring: false
 
 two:
   email: "two@email.com"
