@@ -12,6 +12,8 @@ class UserTest < ActiveSupport::TestCase
     @greenville = campuses(:two)
     @python = curricula(:two)
     @google = companies(:two)
+    @post1 = job_posts(:one)
+    @post2 = job_posts(:two)
   end
 
   test "should show profile info" do
@@ -26,6 +28,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal @durham, @user1.course.campus
     assert_equal @course1, @user1.course
     assert_equal @rails, @user1.course.curriculum
+    assert_equal [@post1], @user1.job_posts
   end
 
   test "search with all params but cohort/class" do

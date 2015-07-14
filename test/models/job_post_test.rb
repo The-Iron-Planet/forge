@@ -49,4 +49,31 @@ class JobPostTest < ActiveSupport::TestCase
     @job1.save!
     assert_equal [@job1, @job2], JobPost.all.ordered
   end
+
+  test "posting a job turns user's hiring field to true" do
+    assert_equal false, @user1.hiring
+    JobPost.create!(user_id: @user1.id, company_id: @google.id, curriculum_id: @rails.id,
+        title: "Boss", description: "Great Job", experience_desired: "Many, many years.")
+    @user1.reload
+    assert_equal true, @user1.hiring
+  end
+
+  test "deleting job turns user's hiring field to false" do
+    assert_equal true, @user2.hiring
+    @job2.destroy!
+    @user2.reload
+    assert_equal false, @user2.hiring
+  end
+
+  test "deleting a job doesn't change hiring field if user has other posts" do
+    job_3 = JobPost.create!(user_id: @user2.id, company_id: @google.id, curriculum_id: @rails.id,
+        title: "Boss", description: "Great Job", experience_desired: "Many, many years.")
+    assert_equal true, @user2.hiring
+    @job2.destroy!
+    @user2.reload
+    assert_equal true, @user2.hiring
+    job_3.destroy!
+    @user2.reload
+    assert_equal false, @user2.hiring
+  end
 end
