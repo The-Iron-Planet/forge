@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     positions.ordered.first
   end
 
-  def self.search_results(city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
+  def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
     result = self
     if company_id != ""
       company = Company.find_by_id(company_id)
@@ -62,6 +62,7 @@ class User < ActiveRecord::Base
     result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
     result = result.select {|u| u.looking} if job_status == "Looking for work"
     result = result.select {|u| u.hiring} if job_status == "Hiring"
+    result = result.select {|u| u.full_name.downcase.match(name.downcase)} if name != ""
     result
   end
 
