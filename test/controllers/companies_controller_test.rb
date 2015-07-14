@@ -19,7 +19,7 @@ class CompaniesControllerTest < ActionController::TestCase
 
   test "should create company" do
     assert_difference('Company.count') do
-      post :create, company: { city: @company.city, name: @company.name, state: @company.state, website: @company.website }
+      post :create, company: { city: @company.city, name: "New Company", state: @company.state, website: @company.website }
     end
 
     assert_redirected_to new_position_path

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710180352) do
+ActiveRecord::Schema.define(version: 20150713195436) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20150710180352) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
+    t.integer  "campus_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

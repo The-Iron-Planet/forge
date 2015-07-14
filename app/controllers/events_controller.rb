@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.where(user_id: current_user.id)
+    @events = Event.where(user_id: current_user.id).ordered
   end
 
   # GET /events/new

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   root 'users#dashboard'
   post 'search' => 'users#index'
+  post 'search_events' => 'users#dashboard'
   resources :users do
     member do
       get 'edit_password'
