@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: :one
+  user: :one
+  curriculum: :one
+  title: Front End Instructor
+  description: Teach Iron Yard students about HTML, CSS, JavaScript, and jQuery.
+  experience_desired: 5-7 years experience in front-end development
+  website: theironyard.com
+  expires_on: <% Date.today + 1.month %>
+
+two:
+  company: :two
+  user: :two
+  curriculum: :two
+  title: Assistant to the Chief YouTube Troll.
+  description: Learn the ropes at Google. Take over the world.
+  experience_desired: 2 years experience trolling YouTube.
+  website: google.com
+  expires_on: <% Date.today + 1.month %>
