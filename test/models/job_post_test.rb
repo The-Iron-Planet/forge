@@ -82,9 +82,9 @@ class JobPostTest < ActiveSupport::TestCase
   end
 
   test "search returns accurate results" do
-    assert_equal [@job1], JobPost.search_results(@rails.id, @tiy.city, @tiy.state)
-    assert_equal [@job2], JobPost.search_results(@python.id, @google.city, @google.state)
-    assert_equal JobPost, JobPost.search_results("", "", "")
+    assert_equal [@job1], JobPost.search_results(@rails.id, @tiy.city, @tiy.state,
+        @job1.company_id, @job1.description, @job1.experience_desired)
+    assert_equal JobPost.ordered.all_active, JobPost.search_results("", "", "", "", "", "")
   end
 
   test "all active method - deactivate" do

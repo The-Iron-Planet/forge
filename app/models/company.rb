@@ -18,4 +18,8 @@ class Company < ActiveRecord::Base
     "#{city}, #{state}"
   end
 
+  def self.has_open_jobs
+    job_posts.any? {|j| j.is_active?}
+  end
+
 end

@@ -22,7 +22,7 @@ class CurriculaControllerTest < ActionController::TestCase
       post :create, curriculum: { name: "Front End Engineering", nickname: "Front End"}
     end
 
-    assert_redirected_to new_course_path
+    assert_redirected_to curricula_path
   end
 
   test "should show curriculum" do
