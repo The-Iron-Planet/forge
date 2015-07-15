@@ -1,37 +1,44 @@
-<div class = "profile">
-  <% if @user.uploaded_file_file_name.nil? %>
-    <div><%= image_tag "default_pic.png", size: "200x200" %></div>
-  <% else %>
-    <div><%= image_tag @user.uploaded_file(:medium) %></div>
-  <% end %>
-
-
-  <div><%= @user.full_name %></div>
-  <div><%= @user.course.full_description unless @user.course.blank? %></div>
-  <% unless @user.current_city.blank? || @user.current_state.blank? %>
-    <div>Location: <%= @user.current_location %></div>
-  <% end %>
-  <div>Email Icon: <%= @user.email %></div>
-  <% unless @user.github_profile.blank? %>
-    <div>Github: <%= @user.github_profile %></div>
-  <% end %>
-  <% unless @user.website.blank? %>
-    <div>Website: <%= @user.website %></div>
-  <% end %>
-  <% unless @user.blog.blank? %>
-    <div>Blog: <%= @user.blog %></div>
-  <% end %>
-  <% if @user.hiring %>
-    <div>Hiring: Yes</div>
-  <% end %>
-  <% if @user.looking %>
-    <div>Looking: Yes</div>
-  <% end %>
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-md-3"></div>
+    <div class = "col-md-6 profile">
+      <% if @user.uploaded_file_file_name.nil? %>
+        <div><%= image_tag "default_pic.png", size: "200x200" %></div>
+      <% else %>
+        <div><%= image_tag @user.uploaded_file(:medium) %></div>
+      <% end %>
+    
+      </br>
+    
+      <div><%= @user.full_name %></div>
+      <div><%= @user.course.full_description unless @user.course.blank? %></div>
+      <% unless @user.current_city.blank? || @user.current_state.blank? %>
+        <div>Location: <%= @user.current_location %></div>
+      <% end %>
+      <div>Email Icon: <%= @user.email %></div>
+      <% unless @user.github_profile.blank? %>
+        <div>Github: <%= @user.github_profile %></div>
+      <% end %>
+      <% unless @user.website.blank? %>
+        <div>Website: <%= @user.website %></div>
+      <% end %>
+      <% unless @user.blog.blank? %>
+        <div>Blog: <%= @user.blog %></div>
+      <% end %>
+      <% if @user.hiring %>
+        <div>Hiring: Yes</div>
+      <% end %>
+      <% if @user.looking %>
+        <div>Looking: Yes</div>
+      <% end %>
+    </div>
+    <div class = "col-md-3"></div>
+  </div>
 </div>
 
   <h4><%= "#{@user.full_name}'s" %> Work Experience</h1>
 
-  <table class = "table">
+  <table class = "table table-condensed">
     <thead>
       <tr>
         <th>Company</th>
