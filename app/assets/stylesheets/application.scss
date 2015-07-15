@@ -16,10 +16,10 @@
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 @import "normalize";
-@import "fonts";
+@import 'fonts';
 @import 'fontastic';
 @import 'stylesheet';
-@import "buttons";
+@import 'buttons';
 
 @import 'login';
 @import 'navbar';
@@ -27,3 +27,5 @@
 @import 'search';
 @import 'magnific-popup';
 @import 'campuses';
+@import "events";
+

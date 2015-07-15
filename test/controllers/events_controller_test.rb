@@ -4,11 +4,7 @@ class EventsControllerTest < ActionController::TestCase
   setup do
     sign_in users(:one)
     @event = events(:one)
-    @campus = campuses(:one)
     @user = users(:one)
-    @event.campus_id = @campus.id
-    @event.user_id = @user.id
-    @event.save
   end
 
   test "should get index" do
@@ -24,7 +20,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: { campus_id: @campus.id, description: @event.description,
+      post :create, event: { campus_id: @event.campus_id, description: @event.description,
           happens_on: @event.happens_on, name: @event.name, user_id: @event.user_id,
           website: @event.website }
     end

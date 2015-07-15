@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :job_posts, except: [:show]
+  resources :resources, except: [:show]
   resources :events, except: [:show]
   resources :companies
   resources :positions
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
 
   root 'users#dashboard'
   post 'search' => 'users#index'
+  post 'search_events' => 'users#dashboard'
+  post 'search_jobs' => 'job_posts#index'
   resources :users do
     member do
       get 'edit_password'

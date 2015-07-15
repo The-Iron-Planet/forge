@@ -4,7 +4,7 @@ class PositionsController < ApplicationController
 
   # GET /positions
   def index
-    @positions = Position.all.where(user_id: current_user.id)
+    @positions = Position.all.where(user_id: current_user.id).ordered
   end
 
   # GET /positions/1

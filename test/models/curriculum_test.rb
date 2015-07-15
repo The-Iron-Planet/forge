@@ -8,6 +8,8 @@ class CurriculumTest < ActiveSupport::TestCase
     @course2 = courses(:two)
     @user1 = users(:one)
     @user2 = users(:two)
+    @post1 = job_posts(:one)
+    @post2 = job_posts(:two)
   end
 
   test "can't create duplicates or blanks" do
@@ -31,10 +33,12 @@ class CurriculumTest < ActiveSupport::TestCase
     assert_equal "Python", @python.nickname
   end
 
-  test "associates with courses and users" do
+  test "associates with courses, posts and users" do
     assert_equal [@course1], @rails.courses
     assert_equal [@course2], @python.courses
     assert_equal [@user1], @rails.users
     assert_equal [@user2], @python.users
+    assert_equal [@post1], @rails.job_posts
+    assert_equal [@post2], @python.job_posts
   end
 end

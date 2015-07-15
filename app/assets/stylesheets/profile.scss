@@ -78,10 +78,6 @@
   text-align: center;
 }
 
-.profile {
-  text-align: center;
-}
-
 .profile-name{
   margin: 20px 0 5px 0;
   padding: 2px;
@@ -95,6 +91,10 @@
   width: 8em;
   float: left;
   position: fixed;
+}
+
+.profile {
+  background-color: lightgrey;
 }
 
 .input-field-company {
