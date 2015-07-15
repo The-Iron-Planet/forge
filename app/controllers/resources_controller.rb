@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_resource, only: [:edit, :update, :destroy]
+  before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :destroy]
 
 
@@ -21,6 +21,10 @@ class ResourcesController < ApplicationController
   # GET /resources/new
   def new
     @resource = Resource.new
+  end
+
+  # GET /resources/1
+  def show
   end
 
   # GET /resources/1/edit

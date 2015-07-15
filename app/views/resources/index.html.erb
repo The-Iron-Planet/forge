@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="container">
-    <h2>Resources</h2><span><%= link_to 'New Resource', new_resource_path %></span>
     <div class="col-md-5 events-column container">
       <%= form_tag search_resources_path do %>
         <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
@@ -9,6 +8,7 @@
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
       <% end %>
     </div><br />
+    <h2>Resources</h2><span><%= link_to 'New Resource', new_resource_path %></span>
   </div>
   <% @resources.each do |resource| %>
     <div class="row event-bk">
