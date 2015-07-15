@@ -5,6 +5,7 @@ class CurriculaController < ApplicationController
 
   # GET /curricula
   def index
+    @curriculum = Curriculum.new
     @curricula = Curriculum.all
   end
 
@@ -26,7 +27,7 @@ class CurriculaController < ApplicationController
     @curriculum = Curriculum.new(curriculum_params)
 
     if @curriculum.save
-      redirect_to new_course_path, notice: 'Curriculum was successfully created.'
+      redirect_to curricula_path, notice: 'Curriculum was successfully created.'
     else
       render :new
     end

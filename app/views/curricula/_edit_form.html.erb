@@ -1,0 +1,27 @@
+<%= form_for(curriculum) do |f| %>
+  <% if curriculum.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="form-val"><%= pluralize(curriculum.errors.count, "error") %> prohibited this curriculum from being saved:</h4>
+
+      <ul class="error">
+      <% curriculum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+     <%= f.label "Course Title" ,:class => "input-label"%><br>
+     <%= f.text_field :name,  :class => "input-field" %>
+  </div>
+  <br/>
+  <div class="field">
+     <%= f.label :"Abbreviated Title", :class => "input-label"%><br>
+     <%= f.text_field :nickname,  :class => "input-field" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Save Curriculum', :class=> "btn new-campus" %>
+  </div>
+<% end %>

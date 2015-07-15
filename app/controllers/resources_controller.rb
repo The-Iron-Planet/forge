@@ -1,17 +1,30 @@
 class ResourcesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_resource, only: [:edit, :update, :destroy]
+  before_action :set_resource, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :destroy]
 
 
   # GET /resources
   def index
-    @resources = Resource.all.ordered
+    if request.post?
+      @resources = Resource.all.ordered.search_results(params[:curriculum_id])
+      if @resources.nil?
+        @resources = Resource.all.ordered.first(5)
+        flash.now[:notice] = "Please choose specific search parameters."
+        render :index
+      end
+    else
+      @resources = Resource.all.ordered.first(5)
+    end
   end
 
   # GET /resources/new
   def new
     @resource = Resource.new
+  end
+
+  # GET /resources/1
+  def show
   end
 
   # GET /resources/1/edit
