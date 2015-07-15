@@ -1,0 +1,35 @@
+<%= form_for(course) do |f| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="form-val"><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h4>
+
+      <ul class="error">
+      <% course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :started_on, :class => "input-label" %><br>
+    <%= f.date_field :started_on, :class => "input-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :ended_on, :class => "input-label" %><br>
+    <%= f.date_field :ended_on,:class => "input-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :campus, :class => "input-label" %><br>
+    <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
+  </div>
+  <div class="field">
+    <%= f.label :curriculum, :class => "input-label" %><br>
+    <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "") %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Save Course', :class=> "btn new-course" %>
+  </div>
+  
+<% end %>
