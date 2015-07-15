@@ -17,10 +17,5 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui
+//= require magnific-popup
 //= require dialog
-//
-// $(function () {
-//   $('#datetimepicker1').datetimepicker({
-//
-//   });
-// });

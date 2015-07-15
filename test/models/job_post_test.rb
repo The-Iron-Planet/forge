@@ -65,7 +65,7 @@ class JobPostTest < ActiveSupport::TestCase
     assert_equal false, @user2.hiring
   end
 
-  test "deleting a job doesn't change hiring field if user has other posts" do
+  test "deleting job doesn't change hiring field if user has other posts" do
     job_3 = JobPost.create!(user_id: @user2.id, company_id: @google.id, curriculum_id: @rails.id,
         title: "Boss", description: "Great Job", experience_desired: "Many, many years.")
     assert_equal true, @user2.hiring
@@ -75,5 +75,11 @@ class JobPostTest < ActiveSupport::TestCase
     job_3.destroy!
     @user2.reload
     assert_equal false, @user2.hiring
+  end
+
+  test "search returns accurate results" do
+    assert_equal [@job1], JobPost.search_results(@rails.id, @tiy.city, @tiy.state)
+    assert_equal [@job2], JobPost.search_results(@python.id, @google.city, @google.state)
+    assert_equal JobPost, JobPost.search_results("", "", "")
   end
 end

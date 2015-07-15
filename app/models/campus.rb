@@ -1,6 +1,6 @@
 class Campus < ActiveRecord::Base
   has_many :courses
-  has_many :users, through: :courses
+  has_many :users
   has_many :events
 
   validates :city, presence: true

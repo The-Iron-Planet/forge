@@ -29,17 +29,17 @@ position: relative;
 
   // background: yellow;
   box-shadow: 0 30px 10px $white;
-  overflow-y: hidden;
+  // overflow-y: hidden;
 }
 .events-h2 {
 
-  // z-index: 4;
+  z-index: 4;
   position: fixed;
 // background-color: red;
   display: inline-block;
   // color: red;
   font-family: $font-bold;
-  margin-top: 120px;
+  // margin-top: 120px;
   margin-left: 180px;
   margin-right: auto;
   padding-bottom: 120px;
