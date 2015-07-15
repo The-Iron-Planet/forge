@@ -22,7 +22,7 @@ class CampusesControllerTest < ActionController::TestCase
       post :create, campus: { city: "Raleigh", state: "NC" }
     end
 
-    assert_redirected_to new_course_path
+    assert_redirected_to campuses_path
   end
 
   test "should show campus" do
