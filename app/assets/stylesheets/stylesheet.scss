@@ -26,7 +26,7 @@ $link-hover: grey;
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
-$font-med-italic: "TisaPro-Medilta";
+$font-med-italic: "TisaPro-MediIta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
@@ -294,6 +294,14 @@ table, th, td {
 }
 
 .text-field {
+  @extend .search;
+  padding: .5em;
+  width: 204px;
+  height: 49px;
+  font-color: black;
+}
 
+input {
+  font-color: black;
 }
 
