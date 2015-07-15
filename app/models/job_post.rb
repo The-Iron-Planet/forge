@@ -35,7 +35,7 @@ class JobPost < ActiveRecord::Base
   end
 
   def self.all_active
-    where(active: true)
+    select {|j| j.active == true && j.expires_on >= Date.today}
   end
 
   private def user_is_hiring!

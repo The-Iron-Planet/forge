@@ -17,6 +17,9 @@ class JobPostsController < ApplicationController
     end
   end
 
+  def my_job_posts
+    @job_posts = JobPost.ordered.where(user_id: current_user.id)
+  end
   # GET /job_posts/new
   def new
     @job_post = JobPost.new
@@ -61,7 +64,8 @@ class JobPostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_post_params
-      params.require(:job_post).permit(:company_id, :user_id, :curriculum_id, :title, :description, :experience_desired, :website, :expires_on)
+      params.require(:job_post).permit(:company_id, :user_id, :curriculum_id,
+          :title, :description, :experience_desired, :website, :expires_on, :active)
     end
 
     def check_user

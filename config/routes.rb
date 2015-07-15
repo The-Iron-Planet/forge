@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'search' => 'users#index'
   post 'search_events' => 'users#dashboard'
   post 'search_jobs' => 'job_posts#index'
+  get 'my_job_posts' => 'job_posts#my_job_posts'
   resources :users do
     member do
       get 'edit_password'
