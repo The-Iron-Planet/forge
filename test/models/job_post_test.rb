@@ -4,6 +4,7 @@ class JobPostTest < ActiveSupport::TestCase
   setup do
     @job1 = job_posts(:one)
     @job2 = job_posts(:two)
+    @job3 = job_posts(:three)
     @tiy = companies(:one)
     @google = companies(:two)
     @user1 = users(:one)
@@ -47,10 +48,10 @@ class JobPostTest < ActiveSupport::TestCase
   end
 
   test "scope ordered by last update" do
-    assert_equal [@job2, @job1], JobPost.all.ordered
+    assert_equal [@job3, @job2, @job1], JobPost.all.ordered
     @job1.description = "Updated Description!"
     @job1.save!
-    assert_equal [@job1, @job2], JobPost.all.ordered
+    assert_equal [@job1, @job3, @job2], JobPost.all.ordered
   end
 
   test "posting a job turns user's hiring field to true" do
@@ -86,10 +87,21 @@ class JobPostTest < ActiveSupport::TestCase
     assert_equal JobPost, JobPost.search_results("", "", "")
   end
 
-  test "all active method" do
+  test "all active method - deactivate" do
     assert_equal [@job1], JobPost.all_active
     @job1.active = false
     @job1.save
     assert_equal [], JobPost.all_active
   end
+
+  test "all active method - expires_on" do
+    assert_equal [@job1], JobPost.all_active
+    @job3.expires_on = Date.today + 1.month #@job3 was originally expired, but is still marked inactive
+    @job3.save
+    assert_equal [@job1], JobPost.all_active
+    @job3.active = true
+    @job3.save
+    assert_equal [@job3, @job1], JobPost.all_active
+  end
+
 end

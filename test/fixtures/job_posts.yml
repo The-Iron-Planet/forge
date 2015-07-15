@@ -21,3 +21,14 @@ two:
   website: google.com
   expires_on: <%= Date.today + 1.month %>
   active: false
+
+three:
+  company: Somewhere
+  user: Someone
+  curriculum: Something
+  title: Mr. No-Job
+  description: No One Knows!
+  experience_desired: No One Cares!
+  website: google.com
+  expires_on: <%= Date.today - 1.month %>
+  active: false
