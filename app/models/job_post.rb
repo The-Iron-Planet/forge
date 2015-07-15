@@ -13,6 +13,14 @@ class JobPost < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :experience_desired, presence: true
+  validates :expires_on, presence: true
+  validate :validate_expire_date_after_current_date
+
+  def validate_expire_date_after_current_date
+    if expires_on
+      errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
+    end
+  end
 
   def last_update
     updated_at.strftime "%B %e, %Y"
@@ -24,6 +32,10 @@ class JobPost < ActiveRecord::Base
     result = result.select {|j| j.company.city.downcase.match(city.downcase)} if city != ""
     result = result.select {|j| j.company.state == state} if state != ""
     result
+  end
+
+  def self.all_active
+    where(active: true)
   end
 
   private def user_is_hiring!

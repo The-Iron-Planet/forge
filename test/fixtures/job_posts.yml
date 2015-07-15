@@ -8,7 +8,8 @@ one:
   description: Teach Iron Yard students about HTML, CSS, JavaScript, and jQuery.
   experience_desired: 5-7 years experience in front-end development
   website: theironyard.com
-  expires_on: <% Date.today + 1.month %>
+  expires_on: <%= Date.today + 1.month %>
+  active: true
 
 two:
   company: :two
@@ -18,4 +19,5 @@ two:
   description: Learn the ropes at Google. Take over the world.
   experience_desired: 2 years experience trolling YouTube.
   website: google.com
-  expires_on: <% Date.today + 1.month %>
+  expires_on: <%= Date.today + 1.month %>
+  active: false

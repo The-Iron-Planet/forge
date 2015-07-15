@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714213129) do
+ActiveRecord::Schema.define(version: 20150715041923) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150714213129) do
     t.date     "expires_on"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.boolean  "active"
   end
 
   create_table "positions", force: :cascade do |t|
