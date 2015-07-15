@@ -46,13 +46,13 @@
       </div>
 
       <div class="field">
-        <%= f.label "Iron Yard Instructor?", :class => "input-label" %></br>
+        <%= f.label :is_instructor, "Iron Yard Instructor?", :class => "input-label" %></br>
           <div class = "radio-button">Yes <%= f.radio_button :is_instructor, true %></div>
           <div class = "radio-button">No <%= f.radio_button :is_instructor, false %></div>
       </div>
 
       <div class="field">
-        <%= f.label "Admin access?", :class => "input-label" %></br>
+        <%= f.label :is_cd, "Campus Director or other Iron Yard Staff?", :class => "input-label" %></br>
           <div class = "radio-button">Yes <%= f.radio_button :is_cd, true %></div>
           <div class = "radio-button">No <%= f.radio_button :is_cd, false %></div>
       </div>

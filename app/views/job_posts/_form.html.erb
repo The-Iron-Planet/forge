@@ -38,20 +38,20 @@
                   :include_blank => true, :class => "input-field"%>
         </div>
         <div class="field">
-          <%= f.label "Which students would be most well-suited for the position?", :class => "input-label" %><br>
+          <%= f.label :curriculum_id, "Which students would be most well-suited for the position?", :class => "input-label" %><br>
           <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "", :class=>"input-field dropdown") %>
         </div>
         <div class="field">
-          <%= f.label "Link to job description", :class => "input-label" %><br>
+          <%= f.label :website, "Link to job description", :class => "input-label" %><br>
           <%= f.text_field :website, :class => "input-field" %>
         </div>
         <div class="field">
-          <%= f.label "When should this post expire?", :class => "input-label" %><br>
+          <%= f.label :expires_on, "When should this post expire? (Posts expire after one month unless otherwise specified.)", :class => "input-label" %><br>
           <%= f.date_field :expires_on, :value => (Date.today + 1.month) %>
         </div>
         <% if @job_post.active != nil %>
           <div class="field">
-            <%= f.label "Is this Job Post active?", :class => "input-label" %><br>
+            <%= f.label :active, "Is this Job Post active?", :class => "input-label" %><br>
             Yes<%= f.radio_button :active, true %>
             No<%= f.radio_button :active, false %>
           </div>
