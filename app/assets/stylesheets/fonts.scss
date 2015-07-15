@@ -10,13 +10,13 @@
 }
 
 @font-face {
-  font-family: TisaPro-Boldlta;
-  src: font-url('TisaPro-Boldlta.otf');
+  font-family: TisaPro-BoldIta;
+  src: font-url('TisaPro-BoldIta.otf');
 }
 
 @font-face {
-  font-family: TisaPro-lta;
-  src: font-url('TisaPro-lta.otf');
+  font-family: TisaPro-Ita;
+  src: font-url('TisaPro-Ita.otf');
 }
 
 @font-face {
@@ -25,15 +25,15 @@
 }
 
 @font-face {
-  font-family: TisaPro-Medilta;
-  src: font-url('TisaPro-Medilta.otf');
+  font-family: TisaPro-MediIta;
+  src: font-url('TisaPro-MediIta.otf');
 }
 
 
 $font: 'TisaPro';
 $font-medium: "TisaPro-Medi";
-$font-italic: "TisaPro-Ita";
-$font-med-italic: "TisaPro-Medilta";
+$font-italic: 'TisaPro-Ita';
+$font-med-italic: "TisaPro-MediIta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
