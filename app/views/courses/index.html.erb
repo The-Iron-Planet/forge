@@ -8,7 +8,6 @@
         <th>Ended on</th>
         <th>Campus</th>
         <th>Curriculum</th>
-        <th>Cohort</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -28,6 +27,7 @@
             </div>
           </td>   
           <!--<td><%= link_to 'Edit', edit_course_path(course) %></td>-->
+
           <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>

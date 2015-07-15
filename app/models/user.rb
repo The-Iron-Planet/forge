@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :campus_id, presence: true
+  validates_presence_of :curriculum_id, :unless => Proc.new { |u| u.is_cd == true }
+  validates_presence_of :course_id, :if => Proc.new { |u| u.is_cd != true && u.is_instructor != true }
+  # validates :curriculum, presence: true proc { unless cd }
+  # validates :course_id, presence: true proc { if student }
 
   scope :ordered, -> { order(:last_name, :first_name) }
 
@@ -48,7 +53,7 @@ class User < ActiveRecord::Base
       result = company.users
     end
     if cohort_class == "My Cohort"
-      courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.cohort == current_user.course.cohort}
+      courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.started_on == current_user.course.started_on}
       result = result.where(course: courses)
     end
     if campus_id != ""

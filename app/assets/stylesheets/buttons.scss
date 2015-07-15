@@ -14,7 +14,7 @@
 }
 
 .btn:hover {
-  background: grey;
+  background: $accent-color-dark;
   color: $white;
   border: 1px solid $accent-color-dark;
 }
@@ -63,4 +63,8 @@ btn-login {
   // padding: 10px 20px 15px;
   // margin: 15px 10px 10px 10px;
   text-decoration: none;
+}
+
+.btn-default {
+  text-transform: uppercase;
 }
