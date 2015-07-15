@@ -16,6 +16,7 @@ one:
   sign_in_count: 2
   looking: true
   hiring: false
+  campus: :one
 
 two:
   email: "two@email.com"
@@ -27,3 +28,5 @@ two:
   is_cd: false
   course: :two
   hiring: true
+  campus: :two
+  curriculum: :one
