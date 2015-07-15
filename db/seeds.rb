@@ -21,11 +21,11 @@ fe = Curriculum.create!(name: "Front End Engineering", nickname: "Front End")
 python = Curriculum.create!(name: "Python Engineering", nickname: "Python")
 
 dur_rails_course = Course.create!(started_on: "2015-05-04", ended_on: "2015-07-24",
-    campus_id: dur_campus.id, curriculum_id: rails.id, cohort: 4)
+    campus_id: dur_campus.id, curriculum_id: rails.id)
 fe_course = Course.create!(started_on: "2015-05-04", ended_on: "2015-07-24",
-    campus_id: dur_campus.id, curriculum_id: fe.id, cohort: 4)
+    campus_id: dur_campus.id, curriculum_id: fe.id)
 atl_rails_course = Course.create!(started_on: "2015-05-11", ended_on: "2015-07-31",
-    campus_id: atl_campus.id, curriculum_id: rails.id, cohort: 4)
+    campus_id: atl_campus.id, curriculum_id: rails.id)
 
 dur_cd = User.create!(first_name: "Elise", last_name: "Moen", email: "elise@test.com",
     password: "password", current_city: "Durham", current_state: "NC",
