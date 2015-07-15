@@ -12,7 +12,7 @@ $field-focus-gray: #e0e1e3;
 $white: #fff;
 $form:#92AAFF;
 $accent-color: #00b796;
-$accent-color-light:#00b796;
+$accent-color-light:#32c5ab;
 $accent-color-dark: #009278;
 $link: #158cbd;
 $link-hover: grey;
@@ -162,6 +162,7 @@ col-md-3 {
   // padding: 5%;
   font-color: black;
   box-sizing: border-box;
+  margin-top: 5px;
 }
 
 .profile-page {
@@ -221,7 +222,7 @@ col-md-3 {
 // }
 
 .form-bk{
-  background-color: white;;
+  background-color: white;
 
 
 }
@@ -296,4 +297,3 @@ table, th, td {
 .text-field {
 
 }
-
