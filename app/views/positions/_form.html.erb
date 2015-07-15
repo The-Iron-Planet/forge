@@ -16,7 +16,7 @@
     <%= f.label :company,:class => "input-label" %><br>
     <%= f.collection_select(:company_id, Company.all.ordered, :id, :name_and_location, prompt: "") %>
   </div>
-  <div class="field"><%= link_to "Don't see your company here?", new_company_path %></div>
+  <div class="field"><%= link_to "Don't see your company here? Add it to the list.", new_company_path %></div>
   <div class="field">
     <%= f.label :title, :class => "input-label"%><br>
     <%= f.text_field :title, :class => "input-field" %>

@@ -26,16 +26,23 @@ class JobPost < ActiveRecord::Base
     updated_at.strftime "%B %e, %Y"
   end
 
-  def self.search_results(curric_id, city, state)
-    result = self
-    result = result.where(curriculum_id: curric_id) if curric_id != ""
+  def self.search_results(curric_id, city, state, company_id, search_terms, experience_desired)
+    result = self.all_active
+    result = result.select {|j| j.curriculum_id == curric_id.to_i} if curric_id != ""
     result = result.select {|j| j.company.city.downcase.match(city.downcase)} if city != ""
     result = result.select {|j| j.company.state == state} if state != ""
+    result = result.select {|j| j.company_id == company_id.to_i} if company_id != ""
+    result = result.select {|j| j.description.downcase.match(search_terms.downcase) || j.title.downcase.match(search_terms.downcase)} if search_terms != ""
+    result = result.select {|j| j.experience_desired == experience_desired} if experience_desired != ""
     result
   end
 
   def self.all_active
-    select {|j| j.active == true && j.expires_on >= Date.today}
+    select {|j| j.is_active?}
+  end
+
+  def is_active?
+    active == true && expires_on >= Date.today
   end
 
   private def user_is_hiring!

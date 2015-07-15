@@ -21,6 +21,9 @@
           <%= f.label :company, :class => "input-label" %><br>
           <%= f.collection_select(:company_id, Company.all.ordered, :id, :name_and_location, prompt: "", :class=>"input-field dropdown") %>
         </div>
+        <% unless @job_post.company %>
+        <div class="field"><%= link_to "Don't see your company here? Add it to the list.", new_company_path %></div>
+        <% end %>
         <div class="field">
           <%= f.label :title, :class => "input-label" %><br>
           <%= f.text_field :title, :class => "input-field" %>
@@ -31,7 +34,8 @@
         </div>
         <div class="field">
           <%= f.label :experience_desired, :class => "input-label" %><br>
-          <%= f.text_field :experience_desired, :class => "input-field"%>
+          <%= f.select :experience_desired, options_for_select(["Junior Developer", "Intermediate", "Senior Developer"]),
+                  :include_blank => true, :class => "input-field"%>
         </div>
         <div class="field">
           <%= f.label "Which students would be most well-suited for the position?", :class => "input-label" %><br>

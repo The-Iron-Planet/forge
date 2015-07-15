@@ -2,11 +2,17 @@
   <div class="row">
     <div class="search-box col-med-12">
       <%= form_tag search_jobs_path do %>
+        <%= text_field_tag "search_terms", params[:search_terms], class: "search", placeholder: "Search by Keyword"%>
         <%= text_field_tag "city", params[:city], class: "search", placeholder: "Search by City"%>
         <%= select_tag "state", options_for_select(us_states, params[:state]), prompt: "Search by State", class: "search-state"%>
+        <%= select_tag "company_id", options_from_collection_for_select((Company.select {|c| c.job_posts.all_active.count != 0}),
+            :id, :name_and_location, params[:company_id]), prompt: "Search by Company",
+            class: "search" %>
         <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :name, params[:curriculum_id]), prompt: "Search by Curriculum",
             class: "search" %>
+        <%= select_tag :experience_desired, options_for_select(["Junior Developer", "Intermediate", "Senior Developer"],
+                params[:experience_desired]), prompt: "Search by Experience Level", :class => "search"%>
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
       <% end %>
     </div></br>

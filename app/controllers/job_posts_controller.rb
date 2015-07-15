@@ -5,12 +5,17 @@ class JobPostsController < ApplicationController
 
   # GET /job_posts
   def index
-    if request.post?
-      @job_posts = JobPost.ordered.all_active.search_results(params[:curriculum_id], params[:city], params[:state])
-      if @job_posts == JobPost
-        @job_posts = JobPost.ordered.all_active
+    if request.post? && JobPost.ordered.all_active != []
+      @job_posts = JobPost.ordered.search_results(params[:curriculum_id], params[:city], params[:state],
+          params[:company_id], params[:search_terms], params[:experience_desired])
+      if @job_posts == []
+        flash.now[:notice] = "Your search did not return any results. Please try again."
+        render :index
+      elsif @job_posts == JobPost.ordered.all_active
         flash.now[:notice] = "Please choose specific search parameters."
         render :index
+      else
+        @job_posts
       end
     else
       @job_posts = JobPost.ordered.all_active
