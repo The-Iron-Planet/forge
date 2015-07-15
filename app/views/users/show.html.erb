@@ -7,11 +7,11 @@
       <% else %>
         <div><%= image_tag @user.uploaded_file(:medium) %></div>
       <% end %>
-    
+
       </br>
-    
+
       <div><%= @user.full_name %></div>
-      <div><%= @user.course.full_description unless @user.course.blank? %></div>
+      <div><%= @user.tiy_relation %></div>
       <% unless @user.current_city.blank? || @user.current_state.blank? %>
         <div>Location: <%= @user.current_location %></div>
       <% end %>

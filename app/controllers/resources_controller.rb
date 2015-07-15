@@ -6,7 +6,16 @@ class ResourcesController < ApplicationController
 
   # GET /resources
   def index
-    @resources = Resource.all.ordered
+    if request.post?
+      @resources = Resource.all.ordered.search_results(params[:curriculum_id])
+      if @resources.nil?
+        @resources = Resource.all.ordered.first(5)
+        flash.now[:notice] = "Please choose specific search parameters."
+        render :index
+      end
+    else
+      @resources = Resource.all.ordered.first(5)
+    end
   end
 
   # GET /resources/new
