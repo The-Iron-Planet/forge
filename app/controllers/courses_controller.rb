@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      redirect_to @course, notice: 'Course was successfully created.'
+      redirect_to courses_path, notice: 'Course was successfully created.'
     else
       render :new
     end
@@ -36,11 +36,13 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   def update
     # byebug
-    params[:course][:users_attributes].each do |k, v|
-      v[:password] = "theironyard" unless v[:id]
+    unless params[:course][:users_attributes] == nil
+      params[:course][:users_attributes].each do |k, v|
+        v[:password] = "theironyard" unless v[:id]
+      end
     end
     if @course.update(course_params)
-      redirect_to @course, notice: 'Course was successfully updated.'
+      redirect_to courses_path, notice: 'Course was successfully updated.'
     else
       render :edit
     end
@@ -60,7 +62,7 @@ class CoursesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def course_params
-      params.require(:course).permit(:started_on, :ended_on, :campus_id, :curriculum_id, 
+      params.require(:course).permit(:started_on, :ended_on, :campus_id, :curriculum_id,
           users_attributes: [:id, :first_name, :last_name, :email, :password])
     end
 end

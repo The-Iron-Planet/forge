@@ -24,7 +24,7 @@ class CoursesControllerTest < ActionController::TestCase
           ended_on: @course.ended_on, started_on: (Date.today + 1.day) }
     end
 
-    assert_redirected_to course_path(assigns(:course))
+    assert_redirected_to courses_path
   end
 
   test "should show course" do
@@ -43,7 +43,7 @@ class CoursesControllerTest < ActionController::TestCase
         :users_attributes=>{"0" => {id: @user.id, first_name: @user.first_name, last_name: @user.last_name,
           email: @user.email, password: "password"}}}
 
-    assert_redirected_to course_path(assigns(:course))
+    assert_redirected_to courses_path
   end
 
   test "should destroy course" do
