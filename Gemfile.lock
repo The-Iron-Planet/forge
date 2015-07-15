@@ -98,6 +98,7 @@ GEM
     json (1.8.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
+    magnific-popup-rails (0.9.9.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mailgun (0.8)
@@ -212,6 +213,7 @@ DEPENDENCIES
   devise
   faker
   jquery-rails
+  magnific-popup-rails
   mailgun
   momentjs-rails (>= 2.9.0)
   paperclip

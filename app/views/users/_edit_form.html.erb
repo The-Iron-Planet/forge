@@ -15,7 +15,7 @@
     <% end %>
   </div>
   <div class="row new-user-form">
-  
+
 <!--
 <div class="col-xs-1">label-column name</div>-->
 <div class="col-xs-1"></div>
@@ -96,7 +96,7 @@
   <%= f.fields_for :positions do |ff| %>
     <div class="field">
       <%= ff.label :company, :class => "input-label" %><br>
-      <%= ff.collection_select(:company_id, Company.all, :id, :name_and_location, prompt: "",:class => "input-field-company drop-down") %>
+      <%= ff.collection_select(:company_id, Company.all.ordered, :id, :name_and_location, prompt: "",:class => "input-field-company drop-down") %>
     </div>
     <div class="field">
       <%= ff.label :title, :class => "input-label" %><br>

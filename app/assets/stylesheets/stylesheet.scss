@@ -171,9 +171,10 @@ col-md-3 {
 }
 //
 .form-val {
-  font-family: $font-bold;
+    font-size: .8em;
   color: red;
   text-align: center;
+
 }
 
 .error{
@@ -283,13 +284,7 @@ table, th, td {
   padding: 1em;
 }
 
-.event-img{
 
-}
-.event-bk{
-  background-color: $light-gray;
-  overflow: hidden;
-}
 
 .choose{
   background-color: white;
@@ -298,6 +293,7 @@ table, th, td {
   margin-bottom: 30px;
 }
 
-.event-list{
+.text-field {
 
 }
+

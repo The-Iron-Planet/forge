@@ -18,6 +18,7 @@
         <%= link_to 'Home', root_path, class: "nav" %>
         <%= link_to 'Alumni Directory', users_path, class: "nav" %>
         <%= link_to 'Resources', resources_path, class: "nav" %>
+        <%= link_to 'Jobs', job_posts_path, class: "nav" %>
         <% if current_user.is_cd %>
           <div class = "admin-header nav">
             <div class="dropdown">
@@ -29,7 +30,7 @@
               </div>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                 <li><%= link_to 'New User', new_user_path, class: "nav" %></li>
-                <li><%= link_to 'New Campus', new_campus_path, class: "nav" %></li>
+                <li><%= link_to 'Campuses', new_campus_path, class: "nav" %></li>
                 <li><%= link_to 'New Course', new_course_path, class: "nav" %></li>
                 <li><%= link_to 'New Curriculum', new_curriculum_path, class: "nav" %></li>
               </ul>

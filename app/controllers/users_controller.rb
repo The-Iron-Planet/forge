@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
 
     if request.post?
-      @users = User.all.ordered.search_results(params[:current_city], params[:current_state],
+      @users = User.all.ordered.search_results(params[:name], params[:current_city], params[:current_state],
           params[:curric_id], params[:campus_id], params[:job_status], params[:company_id], params[:cohort_class],
           current_user)
       if @users == User

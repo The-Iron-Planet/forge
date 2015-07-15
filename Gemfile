@@ -42,6 +42,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'american_date'
 gem 'faker'
 gem 'auto_html'
+gem 'magnific-popup-rails'
 
 
 

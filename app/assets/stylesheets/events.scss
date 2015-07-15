@@ -1,32 +1,193 @@
+// @import "stylesheet";
+// @import "fonts";
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // @@include 'stylesheet';
+// .events-container{
+//   margin-top: 60px;
+// }
 
-.image-circle{
-  z-index: -10;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: $accent-color-light;
+
+.container-scroll {
+  margin-left: 15%;
+  width: 500px;
+  margin-top: 10px;
+position: relative;
+  // background-color: red;
 }
 
-.input-group-addon{
+.events-heading {
+  width: 500px;
+  top: 0;
+  right: 0;
+  height: 200px;
+  position: fixed;
+  z-index: 4;
+  background-color: $white;
+  font-family: $font-bold;
+
+  // background: yellow;
+  box-shadow: 0 30px 10px $white;
+  // overflow-y: hidden;
+}
+.events-h2 {
+
+  z-index: 4;
+  position: fixed;
+// background-color: red;
   display: inline-block;
-width: 120px;
-
+  // color: red;
+  font-family: $font-bold;
+  // margin-top: 120px;
+  margin-left: 180px;
+  margin-right: auto;
+  padding-bottom: 120px;
 }
 
-.test{
+.scroll {
+  position: relative;
+
+  // background-color:red;
+  width: 450px;
+  height: 220px;
+  text-align: left;
+  margin-bottom: -140px;
+  overflow-y: hidden;
+  display: inline-block;
+  -webkit-transition: all 90ms ease-in;
+  -webkit-transform: scale(.75);
+  -ms-transition: all 90ms ease-in;
+  -ms-transform: scale(.75);
+  -moz-transition: all 90ms ease-in;
+  -moz-transform: scale(.75);
+  transition: all 90ms ease-in;
+  transform: scale(.75);
+}
+.scroll:hover {
+  // box-shadow: 0 10px 60px $medium-gray;
+
+
+  z-index: 5;
+  // margin-top: 20px;
+  -webkit-transition: all 90ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 90ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 90ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 90ms ease-in;
+  transform: scale(1);
+}
+
+.scroll:hover .container-scroll{
   background-color: red;
+   opacity: 0.5;
+   filter: Alpha(opacity=50); /* IE8 and earlier */
 }
 
-.default-img{
-  width:50px;
+
+.event-images-bk {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  float: left;
+  padding: 10px;
+
+}
+.default-img {
+  width: 100px;
+  height: 100px;
   margin-left: auto;
-  margin-right: 0 auto;
+  display: inline-block;
+
 }
 
-.event-bk{
+.thumbnail {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+// margin-top: 120px;
+// padding-bottom: 0;
+  border-radius: 0;
+margin: 25px;
+}
+.event-dates {
+  display: inline-block;
+  float: left;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+}
+.event-details {
+  display: inline-block;
+  line-height: 1em;
+  margin-bottom: 2px;
+  // padding-left: 20px;
+  width: 250px;
+z-index: 20;
+
+}
+
+.event-details-par{
+  @extend .event-details;
+display: inline-block;
+  margin-top: 75px;
+width: 325px;
+color: black;
+background-color: red;
+}
+.event-details-padding{
+  padding-top: 15px;
+font-family: $font-bold;
+}
+
+.bold{
+    font: $font-bold;
+}
+.event-desc {
+  height: 100px;
+  // margin-left: 100px;
+  width: 350px;
+}
+.event-block {
+  width: 450px;
+  height: 120px;
+  // position: relative;
+  text-align: left;
   background-color: $light-gray;
+  float: right;
+  overflow-y: hidden;
+
+
+}
+
+
+
+.event-desc{
+    display: inline-block;
+    float: right;
+    width: 350px;
+    // margin-top: 120px;
+    // margin-left: 100px;
+}
+.details-block{
+  width: 450px;
+  height: 150px;
+  // position: relative;
+  text-align: left;
+  // display: inline-block;
+background-color: $light-gray;
+  float: right;
+display: none;
+}
+
+.scroll:hover .details-block{
+  display: inline-block;
+}
+.event-link{
+  display: inline-block;
+  top: 150px;
+
 }

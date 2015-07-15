@@ -5,6 +5,7 @@ class CampusesController < ApplicationController
 
   # GET /campuses
   def index
+    @campus = Campus.new
     @campuses = Campus.all
   end
 
@@ -26,7 +27,7 @@ class CampusesController < ApplicationController
     @campus = Campus.new(campus_params)
 
     if @campus.save
-      redirect_to new_course_path, notice: 'Campus was successfully created.'
+      redirect_to campuses_url, notice: 'Campus was successfully created.'
     else
       render :new
     end

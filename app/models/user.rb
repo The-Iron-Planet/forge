@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
   belongs_to :campus
   has_many :positions
   has_many :events
+  has_many :job_posts
   has_many :resources
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable, :registerable
   devise :database_authenticatable, :recoverable, :rememberable, :trackable,
@@ -21,9 +23,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   scope :ordered, -> { order(:last_name, :first_name) }
-  # default_scope {order(:last_name, :first_name)}
 
-  accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? || attributes['title'].blank? }
+  accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? && attributes['title'].blank? }
 
   after_create :send_account_email
 
@@ -36,26 +37,10 @@ class User < ActiveRecord::Base
   end
 
   def current_position
-    positions.first
+    positions.ordered.first
   end
-  #
-  # def self.search_by_city(city)
-  #   self.select {|u| u.current_city.downcase == city.downcase }
-  # end
-  #
-  # def self.search_by_state(state)
-  #   self.select {|u| u.current_state.downcase == state.downcase }
-  # end
-  #
-  # def self.looking?
-  #   self.select {|u| u.looking}
-  # end
-  #
-  # def self.hiring?
-  #   self.select {|u| u.hiring}
-  # end
 
-  def self.search_results(city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
+  def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
     result = self
     if company_id != ""
       company = Company.find_by_id(company_id)
@@ -77,23 +62,16 @@ class User < ActiveRecord::Base
       result = result.select {|u| u.course_id == current_user.course_id}
     end
     result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
-    result = result.select {|u| u.current_city.downcase == city.downcase } if city != ""
+    result = result.select {|u| u.current_city.downcase.match(city.downcase) } if city != ""
     result = result.select {|u| u.looking} if job_status == "Looking for work"
     result = result.select {|u| u.hiring} if job_status == "Hiring"
+    result = result.select {|u| u.full_name.downcase.match(name.downcase)} if name != ""
     result
   end
-
-  #
-  # def self.search_by_curriculum(curric_id)
-  #   self.where(course_id: (Course.where(curriculum_id: curric_id).id))
-  # end
 
   private
     def send_account_email
       # UserMailer.account_created(self).deliver_now
     end
 
-    # def search_params
-    #   params.permit(:current_state, :current_city)
-    # end
 end
