@@ -28,20 +28,34 @@
       </div>
 
       <div class="field">
-        <%= f.label :cohort, :class => "input-label" %>
-        <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
-      </div>
-
-      <div class="field">
         <%= f.label :email, :class => "input-label" %>
         <%= f.text_field :email, :class => "input-field" %>
       </div>
 
       <div class="field">
+        <%= f.label :campus, :class => "input-label" %>
+        <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
+      </div>
+      <div class="field">
+        <%= f.label :curriculum, :class => "input-label" %>
+        <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "") %>
+      </div>
+      <div class="field">
+        <%= f.label :course, :class => "input-label" %>
+        <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Iron Yard Instructor?", :class => "input-label" %></br>
+          <div class = "radio-button">Yes <%= f.radio_button :is_instructor, true %></div>
+          <div class = "radio-button">No <%= f.radio_button :is_instructor, false %></div>
+      </div>
+
+      <div class="field">
         <%= f.label "Admin access?", :class => "input-label" %></br>
-           <div class = "radio-button">Yes <%= f.radio_button :is_cd, true %></div>
-           <div class = "radio-button">No <%= f.radio_button :is_cd, false %></div>
-       </div>
+          <div class = "radio-button">Yes <%= f.radio_button :is_cd, true %></div>
+          <div class = "radio-button">No <%= f.radio_button :is_cd, false %></div>
+      </div>
     </div>
   <div class="col-md-4"></div>
 </div>

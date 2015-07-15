@@ -14,7 +14,7 @@ class Resource < ActiveRecord::Base
     # gist
     metacafe
     # google_map
-    ted
+    # ted
     twitter
     vimeo
     youtube(:width => 400, :height => 250, :autoplay => false)

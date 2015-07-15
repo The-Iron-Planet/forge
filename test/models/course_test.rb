@@ -14,35 +14,32 @@ class CourseTest < ActiveSupport::TestCase
 
   test "must include all fields" do
     c1=Course.new(started_on: "", ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: 4)
+        campus_id: @durham.id, curriculum_id: @rails.id)
     c2=Course.new(started_on: (Date.today - 1.month), ended_on: "",
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: 4)
+        campus_id: @durham.id, curriculum_id: @rails.id)
     c3=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: nil, curriculum_id: @rails.id, cohort: 4)
+        campus_id: nil, curriculum_id: @rails.id)
     c4=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: nil, cohort: 4)
+        campus_id: @durham.id, curriculum_id: nil)
     c5=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: nil)
-    c6=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: 4)
+        campus_id: @durham.id, curriculum_id: @rails.id)
 
     refute c1.save
     refute c2.save
     refute c3.save
     refute c4.save
-    refute c5.save
-    assert c6.save
+    assert c5.save
   end
 
-  test "cohort must be unique within scope of campus and curriculum" do
-    c1=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: @course1.cohort)
-    c2=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course2.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: @course1.cohort)
-    c3=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course2.curriculum_id, cohort: @course1.cohort)
-    c4=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: 4)
+  test "started_on must be unique within scope of campus and curriculum" do
+    c1=Course.new(started_on: @course1.started_on, ended_on: (Date.today + 1.month), campus_id: @course1.campus_id,
+        curriculum_id: @course1.curriculum_id)
+    c2=Course.new(started_on: @course1.started_on, ended_on: (Date.today + 1.month), campus_id: @course2.campus_id,
+        curriculum_id: @course1.curriculum_id)
+    c3=Course.new(started_on: @course1.started_on, ended_on: (Date.today + 1.month), campus_id: @course1.campus_id,
+        curriculum_id: @course2.curriculum_id)
+    c4=Course.new(started_on: @course2.started_on, ended_on: (Date.today + 1.month), campus_id: @course1.campus_id,
+        curriculum_id: @course1.curriculum_id)
 
     refute c1.save
     assert c2.save
@@ -50,19 +47,9 @@ class CourseTest < ActiveSupport::TestCase
     assert c4.save
   end
 
-  test "cohort number must be greater than zero" do
-    c1=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: 0)
-    c2=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course2.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: -1)
-
-    refute c1.save
-    refute c2.save
-  end
-
   test "end date must be later than start date" do
     c1=Course.new(started_on: Date.today, ended_on: (Date.today - 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: 4)
+        curriculum_id: @course1.curriculum_id)
 
     refute c1.save
   end
@@ -83,8 +70,8 @@ class CourseTest < ActiveSupport::TestCase
   end
 
   test "full description" do
-    assert_equal "Durham: Rails Cohort 1", @course1.full_description
-    assert_equal "Greenville: Python Cohort 1", @course2.full_description
+    assert_equal "Durham: Rails - July 2015", @course1.full_description
+    assert_equal "Greenville: Python - July 2015", @course2.full_description
   end
 
   test "associated with users" do

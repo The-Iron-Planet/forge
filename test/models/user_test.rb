@@ -50,4 +50,22 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [@user1], search_1
     assert_equal [@user2], search_2
   end
+
+  test "can create campus director without course and curriculum" do
+    cd = User.new(first_name: @user1.first_name, last_name: @user1.last_name,
+        email: "cd@email.com", campus_id: @durham.id, is_cd: true, password: "password")
+    assert cd.save
+  end
+
+  test "can create instructor without course but must have curriculum" do
+    good_instructor = User.new(first_name: @user1.first_name, last_name: @user1.last_name,
+        email: "instructor1@email.com", is_instructor: true, campus_id: @durham.id,
+        curriculum_id: @rails.id, password: "password")
+    bad_instructor = User.new(first_name: @user1.first_name, last_name: @user1.last_name,
+        email: "instructor2@email.com", is_instructor: true, campus_id: @durham.id,
+        curriculum_id: nil, password: "password")
+
+    assert good_instructor.save
+    refute bad_instructor.save
+  end
 end

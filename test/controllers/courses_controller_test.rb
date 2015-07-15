@@ -20,7 +20,8 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { campus_id: @course.campus_id, cohort: 2, curriculum_id: @course.curriculum_id, ended_on: @course.ended_on, started_on: @course.started_on }
+      post :create, course: { campus_id: @course.campus_id, curriculum_id: @course.curriculum_id,
+          ended_on: @course.ended_on, started_on: (Date.today + 1.day) }
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -37,8 +38,8 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    patch :update, id: @course, course: { campus_id: @course.campus_id, cohort: @course.cohort,
-        curriculum_id: @course.curriculum_id, ended_on: @course.ended_on, started_on: @course.started_on,
+    patch :update, id: @course, course: { campus_id: @course.campus_id,
+        curriculum_id: @course.curriculum_id, ended_on: @course.ended_on, started_on: (Date.today + 1.day),
         :users_attributes=>{"0" => {id: @user.id, first_name: @user.first_name, last_name: @user.last_name,
           email: @user.email, password: "password"}}}
 

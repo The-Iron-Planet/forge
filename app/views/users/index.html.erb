@@ -2,23 +2,36 @@
 <div class="container-fluid">
 
   <h2>Alumni Directory</h2>
+  <div class="align">
+
+
+<div class="color-indicator-looking"></div><div class="key-code">
+  Looking for a job
+</div>
+<div class="color-indicator-hiring"></div>
+<div class="key-code">
+  My company is hiring
+</div>
+<div class="color-indicator-mentor"></div>
+<div class="key-code">I'm available to mentor or tutor</div>
+  </div>
 
 
   <div class="row">
     <div class="search-box col-med-12 well">
         <%= form_tag search_path do %>
           <%= text_field_tag "name", params[:name], class: "search-boxes-bar search-long search-on-left text-field", placeholder: "Name"%>
-          <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search search-boxes-bar-mid" %>
+          <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Search by Campus", class: "search-reg search-boxes-bar-mid" %>
           <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
           <a class="more-options search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           More options</a>
           <div class="collapse" id="collapseExample">
             <div class="list">
-              <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search search-on-left" %>
-              <%= select_tag "company_id", options_from_collection_for_select(Company.all, :id, :name_and_location, params[:company_id]), prompt: "Search by Company", class: "search" %>
-              <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
+              <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Search by Curriculum", class: "search-reg search-on-left" %>
+              <%= select_tag "company_id", options_from_collection_for_select(Company.all, :id, :name_and_location, params[:company_id]), prompt: "Search by Company", class: "search-reg" %>
+              <%= text_field_tag "current_city", params[:current_city], class: "text-field", placeholder: "City"%>
               <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search-state"%>
-              <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search"%>
+              <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search-reg"%>
 
             </div>
           <% end %>
@@ -47,19 +60,38 @@
     <% end %>-->
 
 
+
 <% @users.each_slice(3) do |slice| -%>
+
+
 <div class="row row-centered">
+
+
   <% slice.each do |user| %>
 
-  <div class="col-md-4 profile-content">
+  <div class="col-md-4 profile-content ">
+
+
+
 
     <% if user.uploaded_file_file_name.nil? %>
+    <!--looking for a job div below is a test  -->
+    <!-- <div  class="looking-for-job"> -->
     <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
     <% else %>
     <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
     <% end %>
 
     <h4 class="profile-name" style="color: #233139;"><%= user.full_name %></h4>
+
+    <% if user.looking %>
+    <div class="color-indicator-looking"></div>
+    <% end %>
+    <% if user.hiring %>
+    <div class="color-indicator-hiring"></div>
+    <% end %>
+<div class="color-indicator-mentor"></div>
+
     <p class="profile-details" style="color: #727d84;"><%= user.course.full_description unless user.course.blank? %></p>
     <p class="profile-details" style="color: #727d84;"><%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %></p>
 
@@ -67,12 +99,8 @@
     </button>
 
     <div class="collapse" data-parent="collapse" id="collapse">
-      <% if user.hiring %>
-      <div>Hiring: Yes</div>
-      <% end %>
-      <% if user.looking %>
-      <div>Job-Searching: Yes</div>
-      <% end %>
+
+
       <% unless user.positions.empty? %>
       <div><%= user.current_position.company_name %></div>
       <div><%= user.current_position.title %></div>
@@ -102,7 +130,8 @@
   <div class="spacer"><%= link_to 'View Profile', user %></div>
 
 </div>
-
+<!--div below is a test  -->
+<!-- </div> -->
 <% end %>
 </div>
 
