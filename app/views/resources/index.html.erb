@@ -22,7 +22,7 @@
       <div class="container col-md-4">
         <p> <%= resource.description %> </p>
         <% unless resource.website.blank? %>
-          <p> <a href="http://<%= resource.website %>"><%= resource.website %></a> </p>
+          <p><%= resource.website_html %></p>
         <% end %>
       </div>
     </div>
