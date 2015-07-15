@@ -1,3 +1,6 @@
+@import 'fonts';
+@import 'stylesheet';
+
 @media(max-width: 380px) {
   .input-label {
     margin: 30px;
@@ -99,4 +102,57 @@
 
 .input-field-company {
   width: 30px;
+}
+
+.looking-for-job{
+  // color: red;
+}
+
+.profile-content{
+
+}
+
+.color-indicator-looking{
+display: inline-block;
+  height:15px;
+  width: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: red;
+  box-shadow: 10px 5px 50px $light-gray;
+}
+
+.color-indicator-hiring{
+  display: inline-block;
+  height:15px;
+  width: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+  background-color: #6829ba;
+
+}
+
+.color-indicator-mentor{
+  display: inline-block;
+  height:15px;
+  width: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+  background-color: #DF9714;
+
+}
+
+.key-code{
+  display: inline-block;
+  font-family: $font-italic;
+text-align: center;
+margin-left: 2px;
+margin-right: 20px;
+}
+
+.align{
+
+  text-align: center;
 }
