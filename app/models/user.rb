@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   belongs_to :course
   belongs_to :campus
+  belongs_to :curriculum
   has_many :positions
   has_many :events
   has_many :job_posts

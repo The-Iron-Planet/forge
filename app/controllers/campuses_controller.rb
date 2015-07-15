@@ -25,9 +25,8 @@ class CampusesController < ApplicationController
   # POST /campuses
   def create
     @campus = Campus.new(campus_params)
-
     if @campus.save
-      redirect_to campuses_url, notice: 'Campus was successfully created.'
+      redirect_to campuses_path, notice: 'Campus was successfully created.'
     else
       render :new
     end
@@ -36,7 +35,7 @@ class CampusesController < ApplicationController
   # PATCH/PUT /campuses/1
   def update
     if @campus.update(campus_params)
-      redirect_to @campus, notice: 'Campus was successfully updated.'
+      redirect_to campuses_path, notice: 'Campus was successfully updated.'
     else
       render :edit
     end

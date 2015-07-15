@@ -20,10 +20,10 @@
         <td><%= campus.city %></td>
         <td><%= campus.state %></td>
         <!-- <td><%= link_to 'Show', campus %></td> -->
-        <td><a href="mobile-friendly-page.html" data-mfp-src="#edit-campus" class="open-popup-link edit-campus">Edit</a></td>
-          <div id="edit-campus" class="white-popup mfp-hide">
+        <td><%= link_to "Edit", "mobile-friendly-page.html", "data-mfp-src" => "#edit-campus#{campus.id}", class: "open-popup-link edit-campus" %>
+          <div id="edit-campus<%= "#{campus.id}" %>" class="white-popup mfp-hide">
             <h2>Edit Campus</h2>
-            <%= render 'form' %>
+            <%= render partial: 'edit_form', locals: { campus: campus } %>
           </div>
         <!--<td><%= link_to 'Edit', edit_campus_path(campus) %></td>-->
         <td><%= link_to 'Delete', campus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
