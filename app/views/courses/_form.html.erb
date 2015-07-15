@@ -33,10 +33,6 @@
         <%= f.label :curriculum, :class => "input-label" %><br>
         <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "") %>
       </div>
-      <div class="field">
-        <%= f.label :cohort, :class => "input-label" %><br>
-        <%= f.number_field :cohort, :class => "input-field", min: 1 %>
-      </div>
     </div>
   </div>
 

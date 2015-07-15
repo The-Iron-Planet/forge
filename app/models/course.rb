@@ -4,6 +4,7 @@ class Course < ActiveRecord::Base
   has_many :users
 
   validates :started_on, presence: true
+  validates_uniqueness_of :started_on, scope: [:campus_id, :curriculum_id]
   validates :ended_on, presence: true
   validates :campus_id, presence: true
   validates :curriculum_id, presence: true
@@ -38,6 +39,6 @@ class Course < ActiveRecord::Base
   end
 
   def full_description
-    "#{campus.short_name}: #{curriculum.nickname} - #{course.start_date}"
+    "#{campus.short_name}: #{curriculum.nickname} - #{start_date}"
   end
 end

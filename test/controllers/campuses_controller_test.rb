@@ -37,7 +37,7 @@ class CampusesControllerTest < ActionController::TestCase
 
   test "should update campus" do
     patch :update, id: @campus, campus: { city: @campus.city, state: @campus.state }
-    assert_redirected_to campus_path(assigns(:campus))
+    assert_redirected_to campuses_path
   end
 
   test "should destroy campus" do

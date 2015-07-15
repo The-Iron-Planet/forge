@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715144429) do
+ActiveRecord::Schema.define(version: 20150715170410) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150715144429) do
     t.datetime "uploaded_file_updated_at"
     t.integer  "campus_id"
     t.integer  "curriculum_id"
+    t.boolean  "is_instructor"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

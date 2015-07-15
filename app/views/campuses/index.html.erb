@@ -21,7 +21,7 @@
         <td><%= campus.state %></td>
         <!-- <td><%= link_to 'Show', campus %></td> -->
         <td><%= link_to "Edit", "mobile-friendly-page.html", "data-mfp-src" => "#edit-campus#{campus.id}", class: "open-popup-link edit-campus" %>
-          <div id="edit-campus<%= "#{campus.id}" %>" class="white-popup mfp-hide">
+          <div id="edit-campus<%= '#{campus.id}' %>" class="white-popup mfp-hide">
             <h2>Edit Campus</h2>
             <%= render partial: 'edit_form', locals: { campus: campus } %>
           </div>

@@ -7,7 +7,7 @@ one:
   curriculum: :one
 
 two:
-  started_on: 2015-07-07
+  started_on: 2015-07-08
   ended_on: 2015-09-08
   campus: :two
   curriculum: :two
