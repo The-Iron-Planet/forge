@@ -12,6 +12,7 @@ one:
   current_state: "NC"
   github_profile: "github"
   is_cd: true
+  is_instructor: false
   course: :one
   sign_in_count: 2
   looking: true
@@ -26,7 +27,21 @@ two:
   current_state: "NC"
   github_profile: "github"
   is_cd: false
+  is_instructor: false
   course: :two
+  hiring: true
+  campus: :two
+  curriculum: :two
+
+three:
+  email: "three@email.com"
+  first_name: "Jim"
+  last_name: "Jones"
+  current_city: "Chapel Hill"
+  current_state: "NC"
+  github_profile: "github"
+  is_cd: false
+  is_instructor: true
   hiring: true
   campus: :two
   curriculum: :one

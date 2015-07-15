@@ -132,8 +132,8 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
           :current_city, :current_state, :github_profile, :website, :blog,
-          :looking, :hiring, :is_cd, :course_id, :campus_id, :curriculum_id, :email,
-          :password, :password_confirmation, :current_password, 
+          :looking, :hiring, :is_cd, :is_instructor, :course_id, :campus_id, :curriculum_id, :email,
+          :password, :password_confirmation, :current_password,
           positions_attributes: [:id, :user_id, :company_id, :title, :description, :started_on, :ended_on, :current])
     end
 

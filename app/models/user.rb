@@ -46,6 +46,16 @@ class User < ActiveRecord::Base
     positions.ordered.first
   end
 
+  def tiy_relation
+    if is_cd
+      "#{campus.short_name}: Staff"
+    elsif is_instructor
+      "#{campus.short_name}: #{curriculum.nickname} - Instructor"
+    else
+      course.full_description
+    end
+  end
+
   def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
     result = self
     if company_id != ""

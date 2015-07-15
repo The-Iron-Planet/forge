@@ -8,6 +8,7 @@ class CampusTest < ActiveSupport::TestCase
     @course2 = courses(:two)
     @user1 = users(:one)
     @user2 = users(:two)
+    @user3 = users(:three)
   end
 
   test "validates presence of both city and state" do
@@ -41,6 +42,6 @@ class CampusTest < ActiveSupport::TestCase
     assert_equal [@course1], @durham.courses
     assert_equal [@course2], @greenville.courses
     assert_equal [@user1], @durham.users
-    assert_equal [@user2], @greenville.users
+    assert_equal [@user3, @user2], @greenville.users
   end
 end

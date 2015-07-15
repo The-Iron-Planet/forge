@@ -14,6 +14,7 @@ class UserTest < ActiveSupport::TestCase
     @google = companies(:two)
     @post1 = job_posts(:one)
     @post2 = job_posts(:two)
+    @user3 = users(:three)
   end
 
   test "should show profile info" do
@@ -67,5 +68,11 @@ class UserTest < ActiveSupport::TestCase
 
     assert good_instructor.save
     refute bad_instructor.save
+  end
+
+  test "different users display different Iron Yard relationships" do
+    assert_equal "Durham: Staff", @user1.tiy_relation #campus director
+    assert_equal "Greenville: Python - July 2015", @user2.tiy_relation #student
+    assert_equal "Greenville: Rails - Instructor", @user3.tiy_relation #instructor
   end
 end
