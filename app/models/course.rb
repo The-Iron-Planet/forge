@@ -7,9 +7,6 @@ class Course < ActiveRecord::Base
   validates :ended_on, presence: true
   validates :campus_id, presence: true
   validates :curriculum_id, presence: true
-  validates :cohort, presence: true
-  validates_uniqueness_of :cohort, scope: [:campus_id, :curriculum_id]
-  validates_numericality_of :cohort, greater_than: 0
   validate :validate_end_date_before_start_date
 
   accepts_nested_attributes_for :users
@@ -41,6 +38,6 @@ class Course < ActiveRecord::Base
   end
 
   def full_description
-    "#{campus.short_name}: #{curriculum.nickname} Cohort #{cohort}"
+    "#{campus.short_name}: #{curriculum.nickname} - #{course.start_date}"
   end
 end

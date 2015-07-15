@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
       result = company.users
     end
     if cohort_class == "My Cohort"
-      courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.cohort == current_user.course.cohort}
+      courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.started_on == current_user.course.started_on}
       result = result.where(course: courses)
     end
     if campus_id != ""

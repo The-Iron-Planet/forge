@@ -14,17 +14,17 @@ class CourseTest < ActiveSupport::TestCase
 
   test "must include all fields" do
     c1=Course.new(started_on: "", ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: 4)
+        campus_id: @durham.id, curriculum_id: @rails.id)
     c2=Course.new(started_on: (Date.today - 1.month), ended_on: "",
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: 4)
+        campus_id: @durham.id, curriculum_id: @rails.id)
     c3=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: nil, curriculum_id: @rails.id, cohort: 4)
+        campus_id: nil, curriculum_id: @rails.id)
     c4=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: nil, cohort: 4)
+        campus_id: @durham.id, curriculum_id: nil)
     c5=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
         campus_id: @durham.id, curriculum_id: @rails.id, cohort: nil)
     c6=Course.new(started_on: (Date.today - 1.month), ended_on: (Date.today + 1.month),
-        campus_id: @durham.id, curriculum_id: @rails.id, cohort: 4)
+        campus_id: @durham.id, curriculum_id: @rails.id)
 
     refute c1.save
     refute c2.save
@@ -34,7 +34,7 @@ class CourseTest < ActiveSupport::TestCase
     assert c6.save
   end
 
-  test "cohort must be unique within scope of campus and curriculum" do
+  test "started_on must be unique within scope of campus and curriculum" do
     c1=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
         curriculum_id: @course1.curriculum_id, cohort: @course1.cohort)
     c2=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course2.campus_id,
@@ -42,7 +42,7 @@ class CourseTest < ActiveSupport::TestCase
     c3=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
         curriculum_id: @course2.curriculum_id, cohort: @course1.cohort)
     c4=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: 4)
+        curriculum_id: @course1.curriculum_id)
 
     refute c1.save
     assert c2.save
@@ -50,19 +50,9 @@ class CourseTest < ActiveSupport::TestCase
     assert c4.save
   end
 
-  test "cohort number must be greater than zero" do
-    c1=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: 0)
-    c2=Course.new(started_on: Date.today, ended_on: (Date.today + 1.day), campus_id: @course2.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: -1)
-
-    refute c1.save
-    refute c2.save
-  end
-
   test "end date must be later than start date" do
     c1=Course.new(started_on: Date.today, ended_on: (Date.today - 1.day), campus_id: @course1.campus_id,
-        curriculum_id: @course1.curriculum_id, cohort: 4)
+        curriculum_id: @course1.curriculum_id)
 
     refute c1.save
   end
