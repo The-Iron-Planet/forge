@@ -42,9 +42,16 @@
           <%= f.text_field :website, :class => "input-field" %>
         </div>
         <div class="field">
-          <%= f.label "When should this post expire? (Default is one month from posting, if left blank)", :class => "input-label" %><br>
-          <%= f.date_field :expires_on %>
+          <%= f.label "When should this post expire?", :class => "input-label" %><br>
+          <%= f.date_field :expires_on, :value => (Date.today + 1.month) %>
         </div>
+        <% if @job_post.active != nil %>
+          <div class="field">
+            <%= f.label "Is this Job Post active?", :class => "input-label" %><br>
+            Yes<%= f.radio_button :active, true %>
+            No<%= f.radio_button :active, false %>
+          </div>
+        <% end %>
       </div>
     </div>
         <div class="actions">

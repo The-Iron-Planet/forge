@@ -1,0 +1,35 @@
+<div class = "container-fluid">
+  <h2>Job Posts</h2>
+  <span><%= link_to 'New Job Post', new_job_post_path %></span>
+  <% @job_posts.each do |job_post| %>
+    <div class="row event-bk">
+      <div class="container col-md-4">
+        <div class="event-details">
+          <% if job_post.user.uploaded_file_file_name.nil? %>
+           <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
+          <% else %>
+            <div> <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}"  %> </div>
+          <% end %>
+          <p> <%= job_post.title %> </p>
+        </div>
+        <div class="container col-md-4">
+          <h5> <%= job_post.company.name_and_location %> </h5>
+          <p> <%= job_post.curriculum.name %>
+          <p> <%= job_post.experience_desired %> </p>
+          <p> <%= job_post.expires_on %> </p>
+          <%= link_to '<i class="glyphicon glyphicon-pencil" title="Job Post"></i>'.html_safe,
+              edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
+          <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+              job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
+        </div>
+        <div class="col-md-4">
+          <p> <%= job_post.description %> </p>
+          <h6> <%= job_post.website if job_post.website != "" %> </h6>
+          <h6> Last updated: <%= job_post.last_update %> </h6>
+          <h6> <%= "This job is inactive" if job_post.active != true %></h6>
+        </div>
+      </div>
+    </div>
+    </br>
+  <% end %>
+</div>

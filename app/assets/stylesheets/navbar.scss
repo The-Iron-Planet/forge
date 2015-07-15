@@ -42,8 +42,8 @@
   width: 800px;
   height: 100px;
   display: inline-block;
-  margin-left: 4em;
-  margin-top: 2em;
+  margin-left: 2em;
+  margin-top: 2.25em;
   z-index: 3;
 }
 .nav {
@@ -54,14 +54,16 @@
   z-index: 4;
   text-transform: uppercase;
   color: #eef1f6;
-  padding: 0 1em 0 0;
+  padding: 0 1.5em 0 0;
   letter-spacing: 1.5px;
   // font-size: 19px;
   // font-weight: 500;
   // letter-spacing: .5px;
 }
 .nav:hover {
+  // padding-bottom: 1em;
   text-decoration: underline;
+  padding-bottom: 1em;
   bottom: 1px;
   color: #eef1f6;
 }
@@ -89,17 +91,18 @@
 .btn-default {
   padding: .3em;
   width: 6em;
-  margin-bottom: .75em;
+  margin-bottom: 1.2em;
 }
 
 .logo-cont {
   float: left;
-  padding: .5em;
+  padding-top: .25em;
+  padding-left: 1.25em;
 }
 
 .tiy {
-  width: 75px;
-  height: 75px;
+  width: 90px;
+  height: 90px;
 }
 
 .logout {

@@ -19,7 +19,15 @@
           <td><%= course.end_date %></td>
           <td><%= course.campus_short %></td>
           <td><%= course.curriculum.name %></td>
-          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= course.cohort %></td>
+          <td><%= link_to "Edit", "mobile-friendly-page.html", "data-mfp-src" => "#edit-course#{course.id}", class: "open-popup-link edit-course" %>
+            <div id="edit-course<%="#{course.id}" %>" class="white-popup mfp-hide">
+            <h2>Edit Course</h2>
+            <%= render partial: 'edit_form', locals: { course: course } %>
+            </div>
+          </td>   
+          <!--<td><%= link_to 'Edit', edit_course_path(course) %></td>-->
+
           <td><%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>

@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20150715170410) do
     t.date     "expires_on"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.boolean  "active"
   end
 
   create_table "positions", force: :cascade do |t|

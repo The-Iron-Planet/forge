@@ -295,13 +295,12 @@ table, th, td {
 }
 
 .text-field {
-  @extend .search;
   padding: .5em;
   width: 204px;
   height: 49px;
   font-color: black;
 }
 
-input {
-  font-color: black;
-}
+// input {
+//   font-color: black;
+// }

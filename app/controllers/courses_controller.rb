@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
 
   # GET /courses
   def index
+    @course = Course.new
     @courses = Course.all
   end
 
