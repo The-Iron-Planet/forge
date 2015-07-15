@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-med-12">
+      <%= form_for(@job_post) do |f| %>
+        <% if @job_post.errors.any? %>
+          <div id="error_explanation">
+            <h4 class="form-val"><%= pluralize(@job_post.errors.count, "error") %> prohibited this job_post from being saved:</h2>
+            <ul class="error">
+            <% @job_post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+
+  <div class="row">
+    <div class="col-md-12 field">
+      <div class="job-post-list">
+        <div class="field">
+          <%= f.label :company, :class => "input-label" %><br>
+          <%= f.collection_select(:company_id, Company.all.ordered, :id, :name_and_location, prompt: "", :class=>"input-field dropdown") %>
+        </div>
+        <div class="field">
+          <%= f.label :title, :class => "input-label" %><br>
+          <%= f.text_field :title, :class => "input-field" %>
+        </div>
+        <div class="field">
+          <%= f.label :description, :class => "input-label" %><br>
+          <%= f.text_area :description, :class => "description" %>
+        </div>
+        <div class="field">
+          <%= f.label :experience_desired, :class => "input-label" %><br>
+          <%= f.text_field :experience_desired, :class => "input-field"%>
+        </div>
+        <div class="field">
+          <%= f.label "Which students would be most well-suited for the position?", :class => "input-label" %><br>
+          <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "", :class=>"input-field dropdown") %>
+        </div>
+        <div class="field">
+          <%= f.label "Link to job description", :class => "input-label" %><br>
+          <%= f.text_field :website, :class => "input-field" %>
+        </div>
+        <div class="field">
+          <%= f.label "When should this post expire? (Default is one month from posting, if left blank)", :class => "input-label" %><br>
+          <%= f.date_field :expires_on %>
+        </div>
+      </div>
+    </div>
+        <div class="actions">
+          <%= f.submit :class=> "btn" %>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

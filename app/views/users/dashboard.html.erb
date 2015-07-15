@@ -1,4 +1,13 @@
 
 <div class="container">
+  <div class="row">
+    <div class="search-box col-med-12">
+      <%= form_tag search_events_path do %>
+        <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
+            :id, :long_name, params[:campus_id]), prompt: "Search by Campus",
+            class: "search" %>
+        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
+      <% end %>
+    </div></br>
   <%= render 'events' %>
 </div>

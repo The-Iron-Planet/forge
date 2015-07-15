@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   def index
 
     if request.post?
-      @users = User.all.ordered.search_results(params[:current_city], params[:current_state],
-          params[:curric_id], params[:campus_id], params[:job_status], params[:company_id])
+      @users = User.all.ordered.search_results(params[:name], params[:current_city], params[:current_state],
+          params[:curric_id], params[:campus_id], params[:job_status], params[:company_id], params[:cohort_class],
+          current_user)
       if @users == User
         @users = User.all.ordered
         flash.now[:notice] = "Please choose specific search parameters."
@@ -33,7 +34,20 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = current_user
-    @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day)
+    if request.post?
+      @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+          search_results(params[:campus_id])
+      if @events.nil?
+        @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+            where(campus_id: current_user.campus_id)
+        flash.now[:notice] = "Please choose specific search parameters."
+        render :dashboard
+      end
+    else
+      @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+          where(campus_id: current_user.campus_id)
+    end
+
   end
 
   # GET /users/new
