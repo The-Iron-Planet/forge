@@ -8,13 +8,17 @@ class CompanyTest < ActiveSupport::TestCase
     @google = companies(:two)
     @tiy_job = positions(:one)
     @google_job = positions(:two)
+    @post1 = job_posts(:one)
+    @post2 = job_posts(:two)
   end
 
-  test "knows users & positions" do
+  test "knows users, posts & positions" do
     assert_equal [@user], @tiy.users
     assert_equal [@user2], @google.users
     assert_equal [@tiy_job], @tiy.positions
     assert_equal [@google_job], @google.positions
+    assert_equal [@post1], @tiy.job_posts
+    assert_equal [@post2], @google.job_posts
   end
 
   test "name options" do

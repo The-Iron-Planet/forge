@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Evening Reading
+  description: If you go home and read this you'll get smart
+  website: masonsreadings.com
+  curriculum: :one
+  user: :one
+
+two:
+  title: Advanced Hash Methods
+  description: You can do soooo much stuff with hashes
+  website: advanced-hash.com
+  curriculum: :two
+  user: :two

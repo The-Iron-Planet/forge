@@ -1,6 +1,8 @@
+
 <div class="container-fluid">
 
   <h2>Alumni Directory</h2>
+
 
   <div class="row">
     <div class="search-box col-med-12 well">
@@ -17,9 +19,12 @@
               <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
               <%= select_tag "current_state", options_for_select(us_states, params[:current_state]), prompt: "Search by State", class: "search-state"%>
               <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search"%>
+
             </div>
-          </div>
-        <% end %>
+          <% end %>
+      </div></br>
+    </div>
+  </div>
       <!-- <ul class="align-search">
 
 
@@ -28,7 +33,7 @@
           <input class=" search search-all" id="search" placeholder="Search..." type="search" type="search"/>
         </li>
         <li> -->
-        
+
     <!--<%= form_tag search_path do %>
     <%= text_field_tag "name", params[:name], class: "search", placeholder: "Name"%>
     <%= text_field_tag "current_city", params[:current_city], class: "search", placeholder: "City"%>
@@ -40,8 +45,7 @@
     <%= select_tag "job_status", options_for_select(["Looking for work", "Hiring"], params[:job_status]), prompt: "Search by Job Status", class: "search"%>
     <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
     <% end %>-->
-    </div></br>
-   </div> 
+
 
 <% @users.each_slice(3) do |slice| -%>
 <div class="row row-centered">
@@ -101,7 +105,7 @@
 
 <% end %>
 </div>
-</div>
+
 
 <% end %>
 

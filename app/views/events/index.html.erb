@@ -1,39 +1,41 @@
-
-<h2>Events</h2><span><%= link_to 'New Event', new_event_path %></span>
-<% @events.each do |event| %>
+<div class="container">
   <div class="row">
-    <div class="image-circle">
-      <% if event.uploaded_file_file_name.nil? %>
-        <div><%= image_tag "event_default.png", size: "100x100" %></div>
-      <% else %>
-        <div> <%= image_tag event.uploaded_file(:thumb) %> </div>
-      <% end %>
-    </div>
-
-    <div class="event-details">
-      <% if event.user.uploaded_file_file_name.nil? %>
-       <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %></div>
-      <% else %>
-        <div> <%=link_to image_tag(event.user.uploaded_file(:thumb)),"users/#{event.user_id}"  %> </div>
-      <% end %>
-      <p> <%= event.name %> </p>
-      <div class="container col-md-4">
-        <div class="col-md-5">
-          <h5> <%= event.event_date %> </h5>
-          <h6> <%= event.event_time %> </h6>
-          <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
-              edit_event_path(event) if event.user_id == current_user.id %>
-          <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-              event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
+    <h2>Events</h2><span><%= link_to 'New Event', new_event_path %></span>
+    <% @events.each do |event| %>
+      <div class="row">
+        <div class="image-circle">
+          <% if event.uploaded_file_file_name.nil? %>
+            <div><%= image_tag "event_default.png", size: "100x100" %></div>
+          <% else %>
+            <div> <%= image_tag event.uploaded_file(:thumb) %> </div>
+          <% end %>
         </div>
-        <div class="col-md-5">
-          <p> <%= event.campus.long_name %> </p>
-          <p> <%= event.description %> </p>
-          <p> <%= event.website %> </p>
+
+        <div class="event-details">
+          <% if event.user.uploaded_file_file_name.nil? %>
+           <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %></div>
+          <% else %>
+            <div> <%=link_to image_tag(event.user.uploaded_file(:thumb)),"users/#{event.user_id}"  %> </div>
+          <% end %>
+          <p> <%= event.name %> </p>
+          <div class="container col-md-4">
+            <div class="col-md-5">
+              <h5> <%= event.event_date %> </h5>
+              <h6> <%= event.event_time %> </h6>
+              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
+                  edit_event_path(event) if event.user_id == current_user.id %>
+              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+                  event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
+            </div>
+            <div class="col-md-5">
+              <p> <%= event.campus.long_name %> </p>
+              <p> <%= event.description %> </p>
+              <p> <%= event.website %> </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+    <br>
   </div>
-<% end %>
-
-<br>
+</div>

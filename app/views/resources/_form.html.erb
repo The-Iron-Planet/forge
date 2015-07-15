@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-med-12">
+      <%= form_for(@resource) do |f| %>
+        <% if @resource.errors.any? %>
+          <div id="error_explanation">
+            <h4 class="form-val"><%= pluralize(@resource.errors.count, "error") %>
+              prohibited this resource from being saved:
+            </h4>
+            <ul class="error">
+              <% @resource.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-md-12 field">
+            <div class="resource-list">
+              <div class="field">
+                <%= f.label :title, class: "input-label" %><br>
+                <%= f.text_field :title, class: "input-field" %>
+              </div>
+              <div class="field">
+                <%= f.label :description, class: "input-label" %><br>
+                <%= f.text_area :description, class: "input-field" %>
+              </div>
+              <div class="field">
+                <%= f.label :website , class: "input-label"%><br>
+                <%= f.text_field :website, class: "input-field" %>
+              </div>
+              <div class="field">
+                <%= f.label :curriculum, class: "input-label" %><br>
+                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :nickname, prompt: "", class: "input-field dropdown") %>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <%= f.submit class: "btn", :value => 'Save Resource'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   has_many :positions
   has_many :users, through: :positions
+  has_many :job_posts
 
   validates :name, presence: true
   validates :city, presence: true
