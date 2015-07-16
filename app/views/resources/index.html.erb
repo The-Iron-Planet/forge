@@ -1,47 +1,31 @@
+<div class="container"
 <div class="container-fluid">
-  <div class="container">
-    <div class="col-md-5 events-column container">
-      <%= form_tag search_resources_path do %>
-        <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
-            :id, :nickname, params[:curriculum_id]), prompt: "Search by Curriculum",
-            class: "search" %>
-        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
-      <% end %>
-    </div><br />
-    <h2>Resources</h2>
-    <div class="btn-add-record-align">
-
-
-
-
-  <%= link_to 'New Resource', new_resource_path, :class=>"btn-add-record" %>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Resources</h2>
+      <div class="btn-add-record-align"><%= link_to 'Add New Resource', new_resource_path, :class=>" btn-add-record"%></div>
+      <!-- My Resources Link goes here...copy from job posts -->
+    </div>
   </div>
-  <% @resources.each do |resource| %>
-    <div class="row event-bk">
-      <div class="col-md-1">
-        <div class="images">
-          <% if resource.user.uploaded_file_file_name.nil? %>
-           <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %></div>
-          <% else %>
-            <div> <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}"  %> </div>
-          <% end %>
+
+  <div class="row">
+    <div class="search-box col-med-12 well">
+      <%= form_tag search_resources_path do %>
+      <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
+          :id, :nickname, params[:curriculum_id]), prompt: "Search by Curriculum",
+          class: "search" %>
+      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
+      <a aria-controls="collapseExample" aria-expanded="false" class="more-options search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample">
+        More options</a>
+      <div class="collapse" id="collapseExample">
+        <div class="list">
+          <!-- More search options -->
         </div>
-        <p> <%= resource.curriculum.nickname %> </p>
-      </div>
-      <div class="resource-details col-md-4">
-        <p> <%= resource.title %></p>
-        <p> <%= link_to "View More", resource_path(resource) %></p>
-        <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
-            edit_resource_path(resource) if resource.user_id == current_user.id %>
-        <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-            resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
-      </div>
-      <div class="container col-md-4">
-        <p> <%= resource.description %> </p>
-        <% unless resource.website.blank? %>
-          <p><%= resource.website_html %></p>
         <% end %>
       </div>
-    </div>
-  <% end %>
+    </br>
+  </div>
+</div>
+<%= render "list" %>
+</div>
 </div>
