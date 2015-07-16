@@ -26,13 +26,16 @@
                 </div>
               <% end %>
             </div>
-            <div class="event-header">
+            <div class="event-details">
               <h4 class="title">
                 <%= event.name %>
               </h4>
               <p class="event-details">
                 Date: <%= event.event_date %>
                 Time: <%= event.event_time %>
+              </p>
+              <p>
+                <%= link_to "View More", event_path(event) %>
               </p>
             </div>
             <div class="edit-delete">
