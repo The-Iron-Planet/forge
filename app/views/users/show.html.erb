@@ -38,7 +38,7 @@
   <div class = "row">
     <h4 class = "profile-title"><%= "#{@user.full_name}'s" %> Work Experience</h1>
   </div>
-  
+
   <div class = "row">
     <div class = "col-md-1"></div>
     <div class = "col-md-10">
@@ -54,7 +54,7 @@
               <!-- <th>Current</th> -->
             </tr>
           </thead>
-      
+
           <tbody>
             <% @user.positions.ordered.each do |position| %>
               <tr>
@@ -75,7 +75,7 @@
 
   <div class = "row">
     <div class = "links">
-      <div class = "link1"><%= link_to 'My Events', events_path if @user.id == current_user.id %></div>
+      <div class = "link1"><%= link_to 'My Events', my_events_path if @user.id == current_user.id %></div>
       <div class = "link1"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></div>
       <div class = "link1"><%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %></div>
     </div>
