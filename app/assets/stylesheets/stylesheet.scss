@@ -192,20 +192,31 @@ col-md-3 {
   padding-left: 10px;
 }
 .icon-box {
-  border-top:solid thin black;
-  border-bottom: solid thin black;
+  border-top:solid thin $dark-gray;
+  border-bottom: solid thin $dark-gray;
   width: 200px;
   text-align: center;
-  background-color: lightgrey;
+  background-color: white;
   margin: 0 auto;
+  line-height: 15px;
+}
 
-}
 .icon {
-  font-size: 35px;
-  padding: 1.5px;
+  font-size: 25px;
+  padding: 3px;
   color: $medium-gray;
-  margin-bottom: 0;
+  text-align: center;
 }
+
+.icon-box a:hover {
+  text-decoration: none;
+  color: $dark-gray;
+}
+
+.icon:hover {
+  color: $dark-gray;
+}
+
 
 
 .spacer{
@@ -295,8 +306,17 @@ table, th, td {
 }
 
 .text-field {
+  border-radius: 4px;
   padding: .5em;
   width: 204px;
   height: 49px;
   font-color: black;
 }
+
+.profile-title {
+  text-align: center;
+}
+
+// .more-options:hover {
+//   text-transform: underline;
+// }
