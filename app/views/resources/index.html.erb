@@ -1,25 +1,36 @@
-<div class="container-fluid">
-  <div class="container">
-    <div class="col-md-5 events-column container">
+<!-- <div class="container-fluid">
+  <div class="row"> -->
+    <h2>Resources</h2>
+    <div class="btn-add-record-align">
+  <%= link_to 'Add New Resource', new_resource_path, :class=>"btn-add-record" %>
+  </div>
+
+  <div class="row res-search">
+    <div class="col-md-12">
       <%= form_tag search_resources_path do %>
         <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :nickname, params[:curriculum_id]), prompt: "Search by Curriculum",
-            class: "search" %>
-        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
+            class: " search-long" %>
+        <%= button_tag "", type: "submit", class: "search-button glyphicon glyphicon-search" %>
       <% end %>
     </div><br />
-    <h2>Resources</h2>
-    <div class="btn-add-record-align">
+    </div>
+  <!-- </div> -->
+<!-- </div> -->
+
+  <!-- <h3>Back End</h3>
+  <h3>Continuing Education</h3>
+  <h3>Design</h3>
+  <h3>Job Search/Interview/Portfolio</h3> -->
+
+  <h3>Front End</h3>
+  <div class="">
 
 
-
-
-  <%= link_to 'New Resource', new_resource_path, :class=>"btn-add-record" %>
-  </div>
   <% @resources.each do |resource| %>
-    <div class="row event-bk">
-      <div class="col-md-1">
-        <div class="images">
+    <div class=" FE">
+      <div class="event-bk">
+        <div class="images  ">
           <% if resource.user.uploaded_file_file_name.nil? %>
            <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %></div>
           <% else %>
@@ -27,20 +38,25 @@
           <% end %>
         </div>
         <p> <%= resource.curriculum.nickname %> </p>
-      </div>
-      <div class="resource-details col-md-4">
+
+      <!-- <div class="resource-details col-md-4"> -->
         <p> <%= resource.title %></p>
         <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
             edit_resource_path(resource) if resource.user_id == current_user.id %>
         <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
             resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
-      </div>
-      <div class="container col-md-4">
+      <!-- </div> -->
+      <!-- <div class="container col-md-4"> -->
         <p> <%= resource.description %> </p>
         <% unless resource.website.blank? %>
           <p><%= resource.website_html %></p>
         <% end %>
-      </div>
+      <!-- </div> -->
     </div>
+
+
+
   <% end %>
-</div>
+
+  </div>
+    </div>
