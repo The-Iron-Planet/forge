@@ -75,4 +75,16 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "Greenville: Python - July 2015", @user2.tiy_relation #student
     assert_equal "Greenville: Rails - Instructor", @user3.tiy_relation #instructor
   end
+
+  test "email event filter selects correct users" do
+    assert_equal [@user1], User.event_email_filter(@durham.id)
+    assert_equal [@user2], User.event_email_filter(@greenville.id)
+    @user3.get_event_email = true
+    @user3.save!
+    assert_equal [@user3, @user2], User.event_email_filter(@greenville.id)
+    @user3.campus_notification_id = @durham.id
+    @user3.save!
+    assert_equal [@user3, @user1], User.event_email_filter(@durham.id)
+    assert_equal [@user2], User.event_email_filter(@greenville.id)
+  end
 end
