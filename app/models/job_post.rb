@@ -42,7 +42,11 @@ class JobPost < ActiveRecord::Base
   end
 
   def is_active?
-    active == true && expires_on >= Date.today
+    active == true && is_expired? == false
+  end
+
+  def is_expired?
+    expires_on <= Date.today
   end
 
   private def user_is_hiring!
