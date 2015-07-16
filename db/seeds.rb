@@ -29,11 +29,11 @@ atl_rails_course = Course.create!(started_on: "2015-05-11", ended_on: "2015-07-3
 
 dur_cd = User.create!(first_name: "Dana", last_name: "Calder", email: "dana@test.com",
     password: "password", current_city: "Durham", current_state: "NC",
-    github_profile: "elise_github", is_cd: true, hiring: true, sign_in_count: 2,
+    github_profile: "elise_github", is_cd: true, hiring: false, sign_in_count: 2,
     campus_id: dur_campus.id)
 atl_cd = User.create!(first_name: "James", last_name: "Douglas", email: "james@test.com",
     password: "password", current_city: "Atlanta", current_state: "GA",
-    github_profile: "james_github", is_cd: true, hiring: true, sign_in_count: 2,
+    github_profile: "james_github", is_cd: true, hiring: false, sign_in_count: 2,
     campus_id: atl_campus.id)
 
 dur_rails_instructor = User.create!(first_name: "Mason", last_name: "Matthews", email: "mason@test.com",
@@ -43,11 +43,11 @@ dur_rails_instructor = User.create!(first_name: "Mason", last_name: "Matthews", 
 dur_python_instructor = User.create!(first_name: "Clinton", last_name: "Dreisbach", email: "clinton@test.com",
     password: "password", current_city: "Durham", current_state: "NC",
     github_profile: "https://github.com/cndreisbach", is_cd: false, is_instructor: true,
-    hiring: true, sign_in_count: 2, campus_id: dur_campus.id, curriculum_id: python.id)
+    hiring: false, sign_in_count: 2, campus_id: dur_campus.id, curriculum_id: python.id)
 dur_fe_instructor = User.create!(first_name: "Chris", last_name: "Davies", email: "chris@test.com",
     password: "password", current_city: "Durham", current_state: "NC",
     github_profile: "https://github.com/chrisdavies", is_cd: false, is_instructor: true,
-    hiring: true, sign_in_count: 2, campus_id: dur_campus.id, curriculum_id: fe.id)
+    hiring: false, sign_in_count: 2, campus_id: dur_campus.id, curriculum_id: fe.id)
 
 
 dur_rails_alum = User.create!(first_name: "John", last_name: "Wilderman", email: "jane@test.com",
@@ -57,7 +57,7 @@ dur_rails_alum = User.create!(first_name: "John", last_name: "Wilderman", email:
     course_id: dur_rails_course.id)
 dur_fe_alum = User.create!(first_name: "John", last_name: "Doe", email: "john@test.com",
     password: "password", current_city: "Durham", current_state: "NC",
-    github_profile: "john_github", is_cd: false, hiring: false, looking: true,
+    github_profile: "john_github", is_cd: false, hiring: true, looking: true,
     campus_id: dur_campus.id, curriculum_id: fe.id, course_id: dur_fe_course.id)
 atl_rails_alum = User.create!(first_name: "Joe", last_name: "Smith", email: "joe@test.com",
     password: "password", current_city: "Decatur", current_state: "GA",
@@ -80,7 +80,14 @@ Event.create!(name: "Atlanta Rails Workshop",
     description: "Join us at The Iron Yard, Atlanta Campus to learn about devise, and do some networking!",
     happens_on: d5, campus_id: atl_campus.id, user_id: atl_rails_alum.id)
 
-
+Resource.create!(title: "Learn Javascript", description: "This is a good intro on javascript...seriously.",
+    website: "https://www.youtube.com/watch?v=FqhZZNUyVFM", user_id: dur_fe_instructor.id,
+    curriculum_id: fe.id)
+Resource.create!(title: "Kuku Kube", description: "This game will fine-tune your eye for color.",
+    website: "http://kuku-kube.com/", user_id: dur_fe_instructor.id, curriculum_id: fe.id)
+Resource.create!(title: "Authenticating API", description: "Ryan Bates is the man!",
+    website: "http://railscasts.com/episodes/352-securing-an-api", user_id: dur_rails_instructor.id,
+    curriculum_id: rails.id)
 Resource.create!(title: "Learn Rails", description: "This is a good intro on rails...I hope",
     website: "https://www.youtube.com/watch?v=PcR6BzeqsG0", user_id: dur_rails_instructor.id,
     curriculum_id: rails.id)
@@ -93,3 +100,21 @@ Resource.create!(title: "Learning Python", description: "This book is pretty gre
 Resource.create!(title: "Fixed vs. Growth Mindsets", description: "How to fine-tune the internal monologue that scores every aspect of our lives, from leadership to love.",
     website: "http://www.brainpickings.org/2014/01/29/carol-dweck-mindset/",
     user_id: dur_rails_instructor.id, curriculum_id: rails.id)
+
+tiy = Company.create!(name: "The Iron Yard", city: "Durham", state: "NC", website: "theironyard.com")
+google = Company.create!(name: "Google", city: "Mountain View", state: "CA", website: "google.com")
+ibm = Company.create!(name: "IBM", city: "Austin", state: "TX", website: "ibm.com")
+apple = Company.create!(name: "Apple", city: "Cupertino", state: "CA", website: "apple.com")
+
+JobPost.create!(company_id: google.id, user_id: dur_fe_alum.id, curriculum_id: fe.id,
+    title: "Front End Engineer", description: "Google is hiring! Those with JavaScript, AJAX, and jQuery experience should apply!",
+    experience_desired: "Intermediate", website: "google.com", expires_on: (Date.today + 1.month), active: true)
+JobPost.create!(company_id: ibm.id, user_id: atl_rails_alum.id, curriculum_id: rails.id,
+    title: "Junior Rails Developer", description: "Seeking junior Rails developers with expertise in Ruby, JavaScript, and SQL queries.",
+    experience_desired: "Junior Developer", website: "ibm.com", expires_on: (Date.today + 1.week), active: true)
+JobPost.create!(company_id: ibm.id, user_id: atl_rails_alum.id, curriculum_id: python.id,
+    title: "Python Developer", description: "Come crunch data for IBM. Python, Django, libraries, and stuff.",
+    experience_desired: "Senior Developer", website: "ibm.com", expires_on: (Date.today + 1.day), active: true)
+JobPost.create!(company_id: apple.id, user_id: dur_rails_instructor.id, curriculum_id: rails.id,
+    title: "Ruby on Rails Developer", description: "We're the most profitable company in the history of the world. You probably want to work for us. And wear our watches.",
+    experience_desired: "Senior Developer", website: "apple.com", expires_on: (Date.today + 4.day), active: true)
