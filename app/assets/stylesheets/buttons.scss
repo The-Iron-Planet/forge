@@ -1,4 +1,7 @@
+
+@import "fonts";
 @import 'stylesheet';
+
 
 .btn {
   font-size: $h4;
@@ -19,6 +22,34 @@
   border: 1px solid $accent-color-dark;
 }
 
+.btn-add-record{
+  color: $white;
+  $font-size: $small-font;
+  padding: 2px 14px;
+  background-color: #8c198c;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $corners;
+  font-family: $font-italic;
+  text-decoration: none;
+  border: 1px solid #800080;
+
+
+}
+
+.btn-add-record-align{
+margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.btn-add-record:hover{
+  background-color: #730073;
+  border-color: #730073;
+  color: $white;
+text-decoration: none;
+}
+
 btn-login {
   display: inline-block;
   border-radius: $corners;
@@ -31,6 +62,9 @@ btn-login {
   color: $white;
   border: 1px solid $base;
 }
+
+
+
 .toggle {
   @extend.btn;
   border: none;

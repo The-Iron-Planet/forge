@@ -19,13 +19,19 @@
 @import 'fonts';
 @import 'fontastic';
 @import 'stylesheet';
-@import 'buttons';
+
 
 @import 'login';
 @import 'navbar';
+@import 'buttons';
 @import 'profile';
 @import 'search';
 @import 'magnific-popup';
 @import 'campuses';
 @import "events";
+@import "job_posts";
+@import "variables";
+@import "mixins";
+@import "component";
 
+@import "positions-collapse";

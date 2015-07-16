@@ -1,13 +1,16 @@
 // Place all the styles related to the JobPosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-jobs-dropdown{
 
-  width: 350px;
-  padding: 6px 0 0 0;
-  border-style: none;
-  border-radius: $corners;
-  text-align: left;
-  font-size: .8em;
-  color: $dark-gray;
+
+// @import 'stylesheet';
+// @import 'search';
+// @import "fonts";
+// @import "buttons";
+//
+//
+//
+//
+.add-company{
+  padding: 20px;
 }

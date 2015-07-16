@@ -19,3 +19,6 @@
 //= require jquery-ui
 //= require magnific-popup
 //= require dialog
+$(function () {
+  $('.collapse-card').paperCollapse()
+})

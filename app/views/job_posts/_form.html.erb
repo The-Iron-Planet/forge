@@ -22,7 +22,7 @@
           <%= f.collection_select(:company_id, Company.all.ordered, :id, :name_and_location, prompt: "", :class=>"input-field dropdown") %>
         </div>
         <% unless @job_post.company %>
-        <div class="field"><%= link_to "Don't see your company here? Add it to the list.", new_company_path %></div>
+        <div class="field add-company"><%= link_to "Don't see your company here? Add it to the list.", new_company_path %></div>
         <% end %>
         <div class="field">
           <%= f.label :title, :class => "input-label" %><br>
