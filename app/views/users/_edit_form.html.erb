@@ -79,6 +79,15 @@
     <!-- <div class="col-md-2 ctr"></div> -->
     <div class="col-md-12 ctr">
       <div class="field ctr">
+        <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for events?'%>
+        Yes<%= f.radio_button :get_event_email, true %>
+        No<%= f.radio_button :get_event_email, false %>
+      </div>
+      <div class="field ctr">
+        <%= f.label :campus_notification_id, :class => "", :value => 'Which campus?'%>
+        <%= f.collection_select(:campus_notification_id, Campus.all, :id, :long_name, prompt: "") %>
+      </div>
+      <div class="field ctr">
         <%= f.label :looking, :class => "", :value => 'Are you looking for a new job?'%>
         Yes<%= f.radio_button :looking, true %>
         No<%= f.radio_button :looking, false %>

@@ -133,7 +133,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
           :current_city, :current_state, :github_profile, :website, :blog,
           :looking, :hiring, :is_cd, :is_instructor, :course_id, :campus_id, :curriculum_id, :email,
-          :password, :password_confirmation, :current_password,
+          :password, :password_confirmation, :current_password, :get_event_email, :campus_notification_id,
           positions_attributes: [:id, :user_id, :company_id, :title, :description, :started_on, :ended_on, :current])
     end
 
