@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :job_posts
   has_many :resources
+  has_many :comments
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :omniauthable, :registerable
