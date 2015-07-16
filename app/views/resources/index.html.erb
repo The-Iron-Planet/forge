@@ -8,7 +8,13 @@
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
       <% end %>
     </div><br />
-    <h2>Resources</h2><span><%= link_to 'New Resource', new_resource_path %></span>
+    <h2>Resources</h2>
+    <div class="btn-add-record-align">
+
+
+
+
+  <%= link_to 'New Resource', new_resource_path, :class=>"btn-add-record" %>
   </div>
   <% @resources.each do |resource| %>
     <div class="row event-bk">

@@ -107,6 +107,40 @@ btn-login{
   border: $white;
 }
 
+---Buttons that add a new record to the site-----
+
+Add the btn-add-record class to the link and then wrap it in a div with the class btn-add-record-align.  The div will center it. All add record buttons should be centered below the heading unless there is a reason for an exception to the rule.
+
+
+HTML/RoR
+<div class="btn-add-record-align"><%= link_to 'Add New Job Post', new_job_post_path, :class=>" btn-add-record"%></div>
+
+CSS
+.btn-add-record{
+  color: $white;
+  $font-size: $small-font;
+  padding: 2px 14px;
+  background-color: #8c198c;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $corners;
+  font-family: $font-italic;
+  text-decoration: none;
+  border: 1px solid #800080;
+
+
+}
+
+.btn-add-record:hover{
+  background-color: #730073;
+  border-color: #730073;
+  color: $white;
+text-decoration: none;
+}
+
+
+
+
 ---------Input Field--------
 
 --(a)--  Input Field

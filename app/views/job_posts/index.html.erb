@@ -1,65 +1,103 @@
 <div class="container-fluid">
-  <!-- <div class="row">
-    <div class="search-box col-med-12">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Job Posts</h2>
+      <div class="btn-add-record-align"><%= link_to 'Add New Job Post', new_job_post_path, :class=>" btn-add-record"%></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="search-box col-med-12 well">
       <%= form_tag search_jobs_path do %>
-        <%= text_field_tag "search_terms", params[:search_terms], class: "search", placeholder: "Search by Keyword"%>
-        <%= text_field_tag "city", params[:city], class: "search", placeholder: "Search by City"%>
-        <%= select_tag "state", options_for_select(us_states, params[:state]), prompt: "Search by State", class: "search-state"%>
-        <%= select_tag "company_id", options_from_collection_for_select((Company.select {|c| c.job_posts.all_active.count != 0}),
-            :id, :name_and_location, params[:company_id]), prompt: "Search by Company",
-            class: "search" %>
-        <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
-            :id, :name, params[:curriculum_id]), prompt: "Search by Curriculum",
-            class: "search" %>
-        <%= select_tag :experience_desired, options_for_select(["Junior Developer", "Intermediate", "Senior Developer"],
-                params[:experience_desired]), prompt: "Search by Experience Level", :class => "search"%>
-        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
-      <% end %>
-    </div></br>
-  </div> -->
+      <%= text_field_tag "search_terms", params[:search_terms], class: "search-boxes-bar search-long search-on-left text-field", placeholder: "Keyword"%>
+      <%= text_field_tag "city", params[:city], class: "text-field input-field", placeholder: "City"%>
+      <%= select_tag "state", options_for_select(us_states, params[:state]), prompt: "State", class: "search-state"%>
+      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
+      <a aria-controls="collapseExample" aria-expanded="false" class="more-options search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample">
+        More options</a>
+      <div class="collapse" id="collapseExample">
+        <div class="list">
+
+          <%= select_tag "company_id", options_from_collection_for_select((Company.select {|c| c.job_posts.all_active.count != 0}),
+            :id, :name_and_location, params[:company_id]), prompt: "Company",
+            class: "search-long search-on-left search-margin"  %>
+          <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
+            :id, :name, params[:curriculum_id]), prompt: "Curriculum",
+            class: "search-reg search-margin" %>
+          <%= select_tag :experience_desired, options_for_select(["Junior Developer", "Intermediate", "Senior Developer"],
+                params[:experience_desired]), prompt: " Experience Level", class: "search-reg search-margin"%>
+        </div>
+        <% end %>
+      </div>
+    </br>
+  </div>
+</div>
+<div class="jobs-background-color">
+<% @job_posts.each do |job_post| %>
+<div class="row card">
 
 
-    <h2>Job Posts</h2>
-    <span><%= link_to 'New Job Post', new_job_post_path%></span>
+  <div class="col-md-12">
 
+    <div class="container job-card">
+      <div class="collapse-card ">
+        <div class="collapse-card__heading job-heading">
+          <h4 class="collapse-card__title">
 
-          <% @job_posts.each do |job_post| %>
-          <div class="row job ">
-                <div class="col-md-6">
-          <div class="job description">
-            <div class="thumbnail2 ">
+            <i class="fa fa-question-circle fa-2x fa-fw"></i>
+            <div class="thumbnail job-img">
               <% if job_post.user.uploaded_file_file_name.nil? %>
-               <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
-               <% else %>
-               <div> <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}"  %>
+              <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
+              <% else %>
+              <div>
+                <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}"  %>
               </div>
 
-            <% end %>
-</div>
-            <h3 class="job-content">Job Title <%= job_post.title %> </h3>
-            <h4> <%= job_post.company.name_and_location %> </h4>
-            <p>Description: <%= job_post.description %> </p>
-              <p>Experience Desired: <%= job_post.experience_desired %> </p>
-            <p> <%= job_post.website if job_post.website != "" %> </p>
-            <h6> Last updated: <%= job_post.last_update %> </h6>
-            <h6 class="footnote">Post Expires:<%= job_post.expires_on %> </h6>
-            <div class="edit-delete">
+              <% end %>
+            </div>
+            <div class="job-header">
 
+
+            <h4 class="title">Job Title
+              <%= job_post.title %>
+            </h4>
+            <p class="employer">
+              <%= job_post.company.name_and_location %>
+            </p>
+  </div>
+          </h4>
+        </div>
+        <div class="collapse-card__body job-details">
+          <p>Description:
+            <%= job_post.description %>
+          </p>
+          <p>Experience Desired:
+            <%= job_post.experience_desired %>
+          </p>
+          <p>
+            <%= job_post.website if job_post.website != "" %>
+          </p>
+          <h6>
+            Last updated:
+            <%= job_post.last_update %>
+          </h6>
+          <h6 class="footnote">Post Expires:<%= job_post.expires_on %>
+          </h6>
+          <div class="edit-delete">
 
             <%= link_to '<i class="glyphicon glyphicon-pencil" title="Job Post"></i>'.html_safe,
-                edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
+                          edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
             <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-                job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
-              </div>
+                          job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
+          </div>
           </div>
         </div>
-        <!-- <div class="col-md-1">
-        </div>
-        <div class="col-md-5">
-        </div> -->
+      </div>
 
-      <!-- </br> -->
+          <% end %>
 
-    <% end %>
-    </div>
+</div>
+
+</div>
+</div>
 </div>
