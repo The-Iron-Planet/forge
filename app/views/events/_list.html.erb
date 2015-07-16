@@ -1,0 +1,63 @@
+<div class="jobs-background-color">
+  <% @events.each do |event| %>
+    <div class="row card">
+      <div class="col-md-12">
+        <div class="container job-card">
+          <div class="collapse-card ">
+            <div class="collapse-card__heading job-heading">
+              <h4 class="collapse-card__title">
+                <i class="fa fa-question-circle fa-2x fa-fw"></i>
+                <div class="thumbnail event-img">
+                  <% if event.user.uploaded_file_file_name.nil? %>
+                    <div>
+                      <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %>
+                    </div>
+                  <% else %>
+                    <div>
+                      <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{event.user_id}"  %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="event-img">
+                  <% if event.uploaded_file_file_name.nil? %>
+                    <div>
+                      <%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %>
+                    </div>
+                  <% else %>
+                    <div>
+                      <%= image_tag event.uploaded_file(:thumb) %>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="event-header">
+                  <h4 class="title">
+                    <%= event.name %>
+                  </h4>
+                  <p class="event-details">
+                    Date: <%= event.event_date %>
+                    Time: <%= event.event_time %>
+                  </p>
+                </div>
+              </h4>
+            </div>
+            <div class="collapse-card__body event-details">
+              <p>Details
+                <ul>
+                  <li>Campus: <%= event.campus.long_name %></li>
+                  <li>Description: <%= event.description %></li>
+                  <li>Website: <%= event.website %></li>
+                </ul>
+              </p>
+              <div class="edit-delete">
+                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+                              edit_event_path(event) if event.user_id == current_user.id %>
+                <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+                              event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
