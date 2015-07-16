@@ -15,6 +15,8 @@ class Event < ActiveRecord::Base
   }
   validates_attachment_content_type :uploaded_file, :content_type => /\Aimage\/.*\Z/
 
+  after_create :send_event_email
+
   def event_date
     happens_on.strftime "%a, %b %e, %Y"
   end
@@ -25,6 +27,12 @@ class Event < ActiveRecord::Base
 
   def self.search_results(campus_id)
     where(campus_id: campus_id.to_i) if campus_id != ""
+  end
+
+  private def send_event_email
+    User.event_email_filter(self.campus_id).each do |user|
+      EventMailer.new_event(user, self).deliver_now
+    end
   end
 
 end

@@ -5,9 +5,9 @@ class EventMailer < ApplicationMailer
   #
   #   en.event_mailer.new_event.subject
   #
-  def new_event
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def new_event(user, event)
+    @user = user
+    @event = event
+    mail(to: "#{@user.full_name} <#{@user.email}>", subject: "#{@user.full_name}, Event Posted on TIY Forge")
   end
 end
