@@ -3,6 +3,7 @@ class Resource < ActiveRecord::Base
 
   belongs_to :curriculum
   belongs_to :user
+  has_many :comments, as: :commentable
 
   scope :ordered, -> { order(updated_at: :desc) }
 

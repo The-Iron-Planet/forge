@@ -24,4 +24,9 @@
       <% end %>
     </div>
   </div>
+  <div class="detailBox">
+    <%= render partial: 'comments/comments', locals: {commentable: @resource} %>
+    <%= render partial: 'comments/form', locals: {commentable: @resource} %>
+  </div>
+
 </div>

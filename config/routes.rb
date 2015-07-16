@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   resources :job_posts, except: [:show]
-  resources :resources
+  resources :resources do
+    resources :comments, module: :resources
+  end
   resources :events, except: [:show]
   resources :companies
   resources :positions
