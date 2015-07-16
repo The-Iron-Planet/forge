@@ -10,10 +10,9 @@
   margin: 30px 20px 20px 20px;
   text-decoration: none;
   border: 1px solid $accent-color-light;
-
 }
 
-.btn:hover {
+.btn-user:hover {
   background: $accent-color-dark;
   color: $white;
   border: 1px solid $accent-color-dark;
@@ -63,4 +62,23 @@ btn-login {
 
 .btn-default {
   text-transform: uppercase;
+}
+
+.btn-user {
+  font-size: $h4;
+  border-radius: $corners;
+  font-family: $font-italic;
+  background: $accent-color-light;
+  color: white;
+  width: 30px;
+  // padding: 10px 30px 15px;
+  // margin: 30px 20px 20px 20px;
+  text-decoration: none;
+  border: 1px solid $accent-color-light;
+}
+
+.btn-user:hover {
+  background: $accent-color-dark;
+  color: $white;
+  border: 1px solid $accent-color-dark;
 }
