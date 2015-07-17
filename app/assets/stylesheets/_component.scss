@@ -11,13 +11,13 @@
     margin: 1rem -1rem;
     .collapse-card__heading:hover {
       &::after {
-        content: "\f066"; // compress icon
+        // content: "\f066"; // compress icon
       }
     }
   }
   .collapse-card__heading:hover {
     &::after {
-      content: "\f065"; // expand icon
+      // content: "\f065"; // expand icon
     }
   }
 }
@@ -31,7 +31,7 @@
   }
   &::after {
     color: $text-color;
-    font-family: 'FontAwesome';
+    // font-family: 'FontAwesome';
     font-size: 1rem;
     line-height: 2rem;
     padding-left: 0.4rem;
