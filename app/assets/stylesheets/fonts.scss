@@ -29,6 +29,16 @@
   src: font-url('TisaPro-MediIta.otf');
 }
 
+@font-face {
+  font-family: Roboto-Regular;
+  src: font-url('Roboto-Regular.ttf');
+}
+
+@font-face{
+  font-family: Roboto-Thin;
+  src: font-url('Roboto-Thin.ttf');
+}
+
 
 $font: 'TisaPro';
 $font-medium: "TisaPro-Medi";
@@ -37,6 +47,10 @@ $font-med-italic: "TisaPro-MediIta";
 $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
+
+
+
+
 
 // Variables for standard fonts
 $h2: 1.563em;
@@ -51,7 +65,7 @@ html {
 body {
   font-size: 1em;
   background-color: white;
-  font-family: $font;
+  font-family: "Roboto-Regular";
   font-weight: 400;
   line-height: 1.45;
   color: #333;
@@ -81,6 +95,7 @@ h3 {
 h4 {
   font-size: 1.25em;
 }
+
 
 label{
   font-size: 1em;

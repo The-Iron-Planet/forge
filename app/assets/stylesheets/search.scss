@@ -23,6 +23,7 @@
   border-style: none;
   background-color: $light-gray;
   color: $dark-gray;
+
 }
 
 .search-reg {
@@ -102,6 +103,7 @@ display: inline-block;
 .search-boxes-bar {
   display: inline-block;
   // margin-left: 100px;
+  width: 500px;
 }
 
 .search-boxes-bar-right {
@@ -116,8 +118,13 @@ display: inline-block;
 
 .well {
   margin-top: 15px;
-  margin-left: 60px;
+margin: 0 auto;
+  // margin-left: 60px;
   width: 90%;
+  margin: 0 auto;
+// background-color: $light-gray;
+  margin-bottom: 40px;
+
 }
 
 .search-on-left {
@@ -160,4 +167,10 @@ margin-right: 0 auto;
 
 
 // height: 500px;
+}
+
+.general-search{
+  width: 500px;
+  height: 50px;
+  border-radius: 0;
 }

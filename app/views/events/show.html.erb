@@ -57,5 +57,7 @@
 
 <div class="detailBox">
   <%= render partial: 'comments/comments', locals: {commentable: @event} %>
+
   <%= render partial: 'comments/form', locals: {commentable: @event, comment: @comment} %>
+
 </div>

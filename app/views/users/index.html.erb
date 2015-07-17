@@ -1,8 +1,8 @@
 
 <div class="container-fluid">
 
-  <h2>Alumni Directory</h2>
-  <div class="align">
+  <!-- <h2>Alumni Directory</h2> -->
+  <div id="header" class="align">
 
 
 <div class="color-indicator-looking"></div><div class="key-code">
@@ -18,9 +18,9 @@
 
 
   <div class="row">
-    <div class="search-box col-med-12 well">
+    <div id="search-box" class="search-box col-med-12 well">
         <%= form_tag search_path do %>
-          <%= text_field_tag "name", params[:name], class: "search-boxes-bar search-long search-on-left text-field", placeholder: "Name"%>
+          <%= text_field_tag "name", params[:name], class: "input-field general-search ", placeholder: "Name"%>
           <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Campus", class: "search-reg search-boxes-bar-mid" %>
           <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
           <a class="more-options search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -69,7 +69,11 @@
 
   <% slice.each do |user| %>
 
-  <div class="col-md-4 profile-content ">
+  <div class="col-md-4 ">
+
+    <div class="profile-content">
+<div class="spacer"><%= link_to '', user, :class=>"spacer" %>
+
     <% if user.uploaded_file_file_name.nil? %>
     <!--looking for a job div below is a test  -->
     <!-- <div  class="looking-for-job"> -->
@@ -88,9 +92,9 @@
     <% end %>
 <div class="color-indicator-mentor"></div>
 
-    <p class="profile-details" style="color: #727d84;"><%= user.tiy_relation %></p>
+    <!-- <p class="profile-details" style="color: #727d84;"><%= user.tiy_relation %></p> -->
     <p class="profile-details" style="color: #727d84;"><%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %></p>
-
+  </div>
     <div class="collapse" data-parent="collapse" id="collapse">
       <% unless user.positions.empty? %>
       <div><%= user.current_position.company_name %></div>
@@ -98,7 +102,12 @@
       <% end %>
     </div>
 
+
+
+
+
   <div class="icon-box">
+
     <a class="icon-mail icon" href="mailto:<%= user.email %>"></a>
     <% unless user.github_profile.blank? %>
     <a href="<%= user.github_profile %>" target="_blank">
@@ -115,12 +124,15 @@
       <span class="icon-blogger icon"></span>
     </a>
     <% end %>
+
   </div>
 
-  <div class="spacer"><%= link_to 'View Full Profile', user %></div>
-
+  </div>
+<!--end of box here  -->
 </div>
+
 <% end %>
+
 </div>
 
 

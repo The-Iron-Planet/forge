@@ -32,6 +32,7 @@ $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
 $corners: 4px 4px 4px 4px;
 
+
 .container-fluid {
   padding: 0;
   width: 100%;
@@ -48,7 +49,9 @@ h1 {
 h2 {
   font-family: $font-bold;
   // font-family: $font-medium;
-  margin: 20px 0 30px;
+
+  margin: 15px 0 20px;
+  text-align: center;
   color: $shield;
 }
 h3 {
@@ -63,8 +66,12 @@ h4 {
 p {
   font-weight: 400;
   line-height: 1.6;
-  font-family: $font;
+  font-family: "Roboto-Regular";
   font-color: #727d84;
+}
+
+body{
+  font-family: "Roboto-Regular";
 }
 
 .header-text {
@@ -123,9 +130,7 @@ textarea, input { outline: none; }
 .input-links {
   width: 300px;
 }
-.profile-card {
 
-}
 .link {
   color: $link;
 }
@@ -133,9 +138,7 @@ textarea, input { outline: none; }
   color: $link-hover;
 }
 
-.profile-card {
-  box-sizing: border-box;
-}
+
 
 col-md-3 {
   border: 1px black solid;
@@ -150,24 +153,7 @@ col-md-3 {
   padding: 1px;
 }
 
-.profile-content {
-  text-align: center;
-  font-family: $font;
-  background-color: white;
-  padding-left: 20px;
-  margin-bottom: 30px;
-  // margin-left: 8.33%;
-  // padding: 5%;
-  font-color: black;
-  box-sizing: border-box;
-  margin-top: 5px;
-}
 
-.profile-page {
-  font-family: $font-bold-italic;
-  // font-size: 2em;
-  color: $black;
-}
 //
 .form-val {
     font-size: .8em;
@@ -189,36 +175,11 @@ col-md-3 {
 .stack-align {
   padding-left: 10px;
 }
-.icon-box {
-  border-top:solid thin $dark-gray;
-  border-bottom: solid thin $dark-gray;
-  width: 200px;
-  text-align: center;
-  background-color: white;
-  margin: 0 auto;
-  line-height: 15px;
-}
-
-.icon {
-  font-size: 25px;
-  padding: 3px;
-  color: $medium-gray;
-  text-align: center;
-}
-
-.icon-box a:hover {
-  text-decoration: none;
-  color: $dark-gray;
-}
-
-.icon:hover {
-  color: $dark-gray;
-}
-
 
 
 .spacer{
-  margin-bottom: 2em;
+
+  // margin-bottom: 2em;
 }
 
 
