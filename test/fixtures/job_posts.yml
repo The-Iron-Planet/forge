@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  company: :one
+  company_name: The Iron Yard
+  city: Durham
+  state: NC
   user: :one
   curriculum: :one
   title: Front End Instructor
@@ -12,7 +14,9 @@ one:
   active: true
 
 two:
-  company: :two
+  company_name: Google
+  city: Mountain View
+  state: CA
   user: :two
   curriculum: :two
   title: Assistant to the Chief YouTube Troll.
@@ -23,7 +27,9 @@ two:
   active: false
 
 three:
-  company: Somewhere
+  company_name: Somewhere
+  city: Somecity
+  state: Somestate
   user: Someone
   curriculum: Something
   title: Mr. No-Job

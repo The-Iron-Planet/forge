@@ -47,23 +47,21 @@
           <thead>
             <tr>
               <th>Company</th>
+              <th>Location</th>
               <th>Title</th>
-              <th>Description</th>
               <th>Started on</th>
               <th>Ended on</th>
-              <!-- <th>Current</th> -->
             </tr>
           </thead>
 
           <tbody>
             <% @user.positions.ordered.each do |position| %>
               <tr>
-                <td><%= position.company.name_and_location %></td>
+                <td><%= position.company_name %></td>
+                <td><%= position.city %>, <%= position.state %></td>
                 <td><%= position.title %></td>
-                <td><%= position.description %></td>
                 <td><%= position.start_date if position.started_on%></td>
                 <td><%= position.end_date if position.ended_on%></td>
-                <!-- <td><%= position.current %></td> -->
               </tr>
             <% end %>
           </tbody>
