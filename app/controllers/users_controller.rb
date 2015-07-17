@@ -129,8 +129,8 @@ class UsersController < ApplicationController
           :current_city, :current_state, :github_profile, :website, :blog,
           :looking, :hiring, :is_cd, :is_instructor, :course_id, :campus_id, :curriculum_id, :email,
           :password, :password_confirmation, :current_password, :get_event_email, :campus_notification_id,
-          :get_job_email, :get_resource_email, positions_attributes: [:id, :user_id, :company_id, :title,
-             :description, :started_on, :ended_on, :current])
+          :get_job_email, :get_resource_email, :get_comment_email, positions_attributes:
+            [:id, :user_id, :company_id, :title, :description, :started_on, :ended_on, :current])
     end
 
     def check_user

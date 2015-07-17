@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716212502) do
+ActiveRecord::Schema.define(version: 20150717044305) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -141,6 +141,7 @@ ActiveRecord::Schema.define(version: 20150716212502) do
     t.integer  "campus_notification_id"
     t.boolean  "get_job_email"
     t.boolean  "get_resource_email"
+    t.boolean  "get_comment_email"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
