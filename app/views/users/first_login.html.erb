@@ -86,6 +86,25 @@
           No<%= f.radio_button :hiring, false %>
         </div>
       </div>
+      <div class="field ctr">
+        <%= f.label :get_job_email, :class => "", :value => 'Would you like to receive email notifications for job posts?'%>
+        Yes<%= f.radio_button :get_job_email, true %>
+        No<%= f.radio_button :get_job_email, false %>
+      </div>
+      <div class="field ctr">
+        <%= f.label :get_resource_email, :class => "", :value => 'Would you like to receive email notifications for resources?'%>
+        Yes<%= f.radio_button :get_resource_email, true %>
+        No<%= f.radio_button :get_resource_email, false %>
+      </div>
+      <div class="field ctr">
+        <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for events?'%>
+        Yes<%= f.radio_button :get_event_email, true %>
+        No<%= f.radio_button :get_event_email, false %>
+      </div>
+      <div class="field ctr">
+        <%= f.label :campus_notification_id, :class => "", :value => 'Which campus?'%>
+        <%= f.collection_select(:campus_notification_id, Campus.all, :id, :long_name, prompt: "") %>
+      </div>
     <div class="col-md-4">
       <div class="field">
         <%= f.label :uploaded_file, "Profile Picture", :class => "input-label" %>

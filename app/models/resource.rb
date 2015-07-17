@@ -5,6 +5,8 @@ class Resource < ActiveRecord::Base
   belongs_to :user
   has_many :comments, as: :commentable
 
+  after_create :send_resource_email
+
   scope :ordered, -> { order(updated_at: :desc) }
 
   validates :title, presence: true
@@ -26,6 +28,12 @@ class Resource < ActiveRecord::Base
 
   def self.search_results(curriculum_id)
     where(curriculum_id: curriculum_id.to_i) if curriculum_id != ""
+  end
+
+  private def send_resource_email
+    User.resource_email_filter(self.curriculum_id).each do |user|
+      UserMailer.new_resource(user, self).deliver_now
+    end
   end
 
 end
