@@ -20,6 +20,7 @@ one:
   campus: :one
   get_event_email: true
   campus_notification_id: 980190962
+  get_resource_email: true
 
 two:
   email: "two@email.com"
@@ -36,6 +37,7 @@ two:
   curriculum: :two
   get_event_email: true
   campus_notification_id: 298486374
+  get_resource_email: true
 
 three:
   email: "three@email.com"
@@ -51,3 +53,4 @@ three:
   curriculum: :one
   get_event_email: false
   campus_notification_id: 298486374
+  get_resource_email: true

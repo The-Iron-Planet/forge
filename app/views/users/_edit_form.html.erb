@@ -79,6 +79,16 @@
     <!-- <div class="col-md-2 ctr"></div> -->
     <div class="col-md-12 ctr">
       <div class="field ctr">
+        <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for job posts?'%>
+        Yes<%= f.radio_button :get_job_email, true %>
+        No<%= f.radio_button :get_job_email, false %>
+      </div>
+      <div class="field ctr">
+        <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for resources?'%>
+        Yes<%= f.radio_button :get_resource_email, true %>
+        No<%= f.radio_button :get_resource_email, false %>
+      </div>
+      <div class="field ctr">
         <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for events?'%>
         Yes<%= f.radio_button :get_event_email, true %>
         No<%= f.radio_button :get_event_email, false %>
