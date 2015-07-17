@@ -11,6 +11,78 @@
 //
 //
 //
-.add-company{
-  padding: 20px;
+// .add-company{
+//   padding: 20px;
+// }
+.jobs-background-color {
+width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #d3d5d7;
+  padding-top: 30px;
+}
+.job-card {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 70%;
+  overflow-y: scroll;
+  margin: 10px;
+  min-width: 300px;
+
+}
+.job-heading {
+  margin: 0 auto;
+  min-width: 300px;
+}
+
+
+.title {
+  margin: 20px 10px 5px 0px;
+  font-family: $font-bold;
+  text-align: left;
+}
+.employer {
+
+  margin: 0 20px 10px 25px;
+}
+
+.job-img {
+  float: left;
+  margin: 20px 40px 25px 35px;
+  width: 60px;
+  height: 60px;
+}
+
+.card {
+
+  // background-color: purple;
+  text-align: center;
+  margin-top: 2px;
+}
+.job-details {
+  margin: -40px 35px 25px 35px;
+
+}
+
+.job-text{
+  padding: 0;
+  margin-top: .75em;
+
+}
+
+.job-footnote{
+  // display: inline-block;
+margin-top: 3em;
+}
+
+.edit-delete{
+  margin-top: -3em;
+  // display: inline-block;
+  float: right;
+  padding: 1em;
+}
+
+.centered-heading{
+
 }

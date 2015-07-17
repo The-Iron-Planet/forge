@@ -2,7 +2,7 @@
   background-color: $white;
   border-bottom: 1px solid $light-gray;
   color: $mid-gray;
-  @include transition(.2s);
+  @include transition(.1s);
   * {
     @include border-box();
   }
@@ -51,47 +51,4 @@
 .collapse-card__body {
   padding: 1rem;
   display: none;
-}
-.job-card {
-  display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  width: 800px;
-
-  // overflow-y: scroll;
-  margin: 10px;
-}
-.job-heading {
-  margin: 0 auto;
-}
-.title {
-  margin: 10px 10px 5px 5px;
-  font-family: $font-bold;
-  padding: 1px;
-  text-align: left;
-}
-.employer {
-  padding: 0 px;
-  margin: 0 10px 10px;
-}
-
-.job-img {
-  float: left;
-  margin: 10px 50px 10px 20px;
-}
-
-.card {
-
-  // background-color: purple;
-  text-align: center;
-  margin-top: 2px;
-}
-.job-details {
-  margin: 0 25px 25px;
-}
-.jobs-background-color {
-  width: 100%;
-  text-align: center;
-  background-color: #d3d5d7;
-  padding: 30px;
 }

@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only: [:edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :destroy]
 
   # GET /events
   def index
-    @events = Event.where(user_id: current_user.id).ordered
+    @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+        where(campus_id: current_user.campus_id)
   end
 
   # GET /events/new
@@ -13,8 +14,16 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  # GET /events/1
+  def show
+  end
+
   # GET /events/1/edit
   def edit
+  end
+
+  def my_events
+    @events = Event.where(user_id: current_user.id).ordered
   end
 
   # POST /events

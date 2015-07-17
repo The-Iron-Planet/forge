@@ -3,7 +3,15 @@
   <div class="row">
     <div class="col-md-12">
       <!-- <h2>Job Posts</h2> -->
-      <div class="btn-add-record-align"><%= link_to 'Add New Job Post', new_job_post_path, :class=>" btn-add-record"%></div>
+
+
+
+
+      <div class="btn-add-record-circle">
+
+        <%= link_to '+', new_job_post_path %></div>
+
+
       <% if current_user.job_posts.count != 0 %>
         <div class="btn-add-record-align"><%= link_to 'My Job Posts', my_job_posts_path, :class=>" btn-add-record"%></div>
       <% end %>

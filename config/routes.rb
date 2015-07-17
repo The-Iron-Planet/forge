@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :resources do
     resources :comments, module: :resources
   end
-  resources :events, except: [:show]
+  resources :events do
+    resources :comments, module: :events
+  end
+  
   resources :companies
   resources :positions
   resources :courses
@@ -21,6 +24,8 @@ Rails.application.routes.draw do
   post 'search_jobs' => 'job_posts#index'
   post 'search_resources' => 'resources#index'
   get 'my_job_posts' => 'job_posts#my_job_posts'
+  get 'my_events' => 'events#my_events'
+
 
   resources :users do
     member do

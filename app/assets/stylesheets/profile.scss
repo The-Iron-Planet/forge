@@ -23,7 +23,7 @@
   padding: 15px 0;
 }
 .uploaded {
-  background-color: grey;
+
   width: 200px;
   height: 200px;
   display: block;
@@ -32,6 +32,7 @@
   margin-top: 20px;
 }
 #user_uploaded_file {
+
   width: 220px;
   text-align: center;
   margin-left: auto;
@@ -82,13 +83,14 @@
 }
 
 .profile-name{
-  margin: 20px 0 5px 0;
-  padding: 2px;
+
+  margin: 20px 0 0px 0;
+  padding: 2px 2px 0px 2px;
 }
 
 .profile-details{
   margin: 0 auto;
-  padding: 2px;
+  // padding: 2px;
 }
 .nav-stacked {
   width: 8em;
@@ -104,43 +106,43 @@
   width: 30px;
 }
 
-.looking-for-job{
-  // color: red;
-}
 
-.profile-content{
 
-}
 
 .color-indicator-looking{
-display: inline-block;
-  height:15px;
-  width: 15px;
+  display: inline-block;
+  height:5px;
+  width: 60px;
+  border-radius: 2px;
   margin-left: auto;
   margin-right: auto;
-  background-color: red;
-  box-shadow: 10px 5px 50px $light-gray;
+  // margin-top: -12px;
+  background-color: #9bb89f;
+
 }
 
 .color-indicator-hiring{
   display: inline-block;
-  height:15px;
-  width: 15px;
+  height:5px;
+  width: 60px;
+  border-radius: 2px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2px;
-  background-color: #6829ba;
+  // margin-top: ;
+  background-color: #3a687e;
 
 }
 
 .color-indicator-mentor{
   display: inline-block;
-  height:15px;
-  width: 15px;
+  height:5px;
+  width: 60px;
+  border-radius: 2px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2px;
-  background-color: #DF9714;
+  // margin-top: 2px;
+  background-color:#ce8c0f;
+
 
 }
 
@@ -150,9 +152,75 @@ display: inline-block;
 text-align: center;
 margin-left: 2px;
 margin-right: 20px;
+margin-bottom: 20px;
+font-size: .8em;
 }
 
 .align{
 
   text-align: center;
+}
+
+.profile-content{
+  margin-top: 20px;
+  box-shadow: 10px 10px 65px #b2b2b2;
+  padding: 30px 10px;
+}
+
+
+
+.icon-box {
+// width: 40px;
+// height: 80px;
+
+  width: 200px;
+  text-align: center;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  line-height: 15px;
+}
+
+.icon {
+  font-size: 25px;
+  padding: 3px;
+  color: $medium-gray;
+  text-align: center;
+}
+
+.icon-box a:hover {
+  text-decoration: none;
+  color: $dark-gray;
+}
+
+.icon:hover {
+  color: $dark-gray;
+}
+
+.profile-card {
+  box-sizing: border-box;
+}
+
+.profile-content {
+  text-align: center;
+  font-family: $font;
+  background-color: white;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  // margin-left: 8.33%;
+  // padding: 5%;
+  font-color: black;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.profile-page {
+  font-family: $font-bold-italic;
+  // font-size: 2em;
+  color: $black;
+}
+
+#dir-header{
+  width: 100%;
+  height: 160px;
 }
