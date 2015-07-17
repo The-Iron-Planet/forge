@@ -71,9 +71,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "different users display different Iron Yard relationships" do
-    assert_equal "Durham: Staff", @user1.tiy_relation #campus director
-    assert_equal "Greenville: Python - July 2015", @user2.tiy_relation #student
-    assert_equal "Greenville: Rails - Instructor", @user3.tiy_relation #instructor
+    assert_equal "Staff", @user1.tiy_relation #campus director
+    assert_equal "Python - July 2015", @user2.tiy_relation #student
+    assert_equal "Rails Instructor", @user3.tiy_relation #instructor
   end
 
   test "email event filter selects correct users" do

@@ -49,11 +49,11 @@ class User < ActiveRecord::Base
 
   def tiy_relation
     if is_cd
-      "#{campus.short_name}: Staff"
+      "Staff"
     elsif is_instructor
-      "#{campus.short_name}: #{curriculum.nickname} - Instructor"
+      "#{curriculum.nickname} Instructor"
     else
-      course.full_description
+      "#{curriculum.nickname} - #{course.start_date}"
     end
   end
 
