@@ -9,32 +9,40 @@
 // }
 
 
+@import 'buttons';
+@import 'fonts';
+@import 'stylesheet';
+
+
+// .events-btn{
+//   text-align: center;
+// }
 .search-db{
   // z-index: 60;
   // width:600px;
   // height: 700px;
-  background-color: green;
+  // background-color: green;
 // top: 0;
 // right: 0;
 
 }
 
 .container-scroll {
-  margin-left: 15%;
+  // margin-left: 15%;
   width: 500px;
 
   margin-top: 10px;
 position: relative;
-  background-color: red;
+  // background-color: red;
 }
 
 // .events-heading {
 //   width: 500px;
-//   top: 0;
-//   right: 0;
-//   height: 200px;
-//   position: fixed;
-//   z-index: 4;
+//   // top: 5;
+//   // right: 0;
+//   height: 100px;
+//   // position: fixed;
+//   // z-index: 4;
 //   background-color: $white;
 //   font-family: $font-bold;
 //
@@ -43,18 +51,17 @@ position: relative;
 //   // overflow-y: hidden;
 // }
 .events-h2 {
-  display: inline-block;
-  // color: red;
   font-family: $font-bold;
-  // margin-top: 120px;
-  margin-left: auto;
-  margin-right: auto;
-  // padding-bottom: 120px;
+  text-align: center;
 }
 
-.events-column{
-  background-color: blue;
-}
+// .events-column{
+//   margin-left: auto;
+//   margin-right: auto;
+//   background-color: blue;
+//   width: 500px;
+//
+// }
 .scroll {
   position: relative;
 
@@ -91,7 +98,7 @@ position: relative;
 }
 
 .scroll:hover .container-scroll{
-  background-color: red;
+  // background-color: red;
    opacity: 0.5;
    filter: Alpha(opacity=50); /* IE8 and earlier */
 }
@@ -202,5 +209,32 @@ display: none;
 
 }
 
-#blanket{background-color:rgba(150,150,150,0.5);
-    width:300px;height:300px;border:2px solid #afa;border-radius:10px;}
+// #blanket{background-color:rgba(150,150,150,0.5);
+//     width:300px;height:300px;border:2px solid #afa;border-radius:10px;}
+//
+    .btn-add-record{
+      color: $white;
+      $font-size: $small-font;
+      padding: 2px 14px;
+      background-color: #8c198c;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: $corners;
+      font-family: $font-italic;
+      text-decoration: none;
+      border: 1px solid #800080;
+
+
+    }
+
+    .btn-add-record:hover{
+      background-color: #730073;
+      border-color: #730073;
+      color: $white;
+    text-decoration: none;
+    }
+    .btn-add-record-align{
+    margin-bottom: 20px;
+      text-align: center;
+
+    }

@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :campus
   belongs_to :user
+  has_many :comments, as: :commentable
 
   validates :campus, presence: true
 

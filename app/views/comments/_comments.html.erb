@@ -4,9 +4,9 @@
     <div class="col-sm-1">
       <div class="thumbnail">
         <% if comment.user.uploaded_file_file_name.nil? %>
-          <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{comment.user_id}" %>
+          <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{comment.user_id}" %>
         <% else %>
-          <%=link_to image_tag(comment.user.uploaded_file(:thumb)),"users/#{comment.user_id}"  %>
+          <%=link_to image_tag(comment.user.uploaded_file(:thumb)),"/users/#{comment.user_id}"  %>
         <% end %>
       </div><!-- /thumbnail -->
     </div><!-- /col-sm-1 -->
@@ -14,9 +14,13 @@
     <div class="col-sm-5">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <strong><%= comment.user.full_name %></strong>
+          <strong><%= link_to comment.user.full_name, "/users/#{comment.user_id}" %></strong>
           <span class="text-muted">
             <%= distance_of_time_in_words(comment.created_at, Time.now) %>
+          </span>
+          <span class="text-muted">
+            <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+                '#' if comment.user_id == current_user.id %>
           </span>
         </div>
         <div class="panel-body">

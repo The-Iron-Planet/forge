@@ -37,18 +37,19 @@
 
 }
 
-.btn-add-record-align{
-margin-bottom: 20px;
-  text-align: center;
-
-}
-
 .btn-add-record:hover{
   background-color: #730073;
   border-color: #730073;
   color: $white;
 text-decoration: none;
 }
+.btn-add-record-align{
+margin-bottom: 20px;
+  text-align: center;
+
+}
+
+
 
 btn-login {
   display: inline-block;
@@ -88,7 +89,7 @@ btn-login {
 
 .search-box a {
   font-size: $h4;
-  font-family: $font-italic;
+  // font-family: $font-italic;
   font-color: black;
   // padding: 10px 20px 15px;
   // margin: 15px 10px 10px 10px;

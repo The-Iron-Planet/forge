@@ -1,20 +1,29 @@
-
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-3"></div>
-    <di
+    <div class="col-md-5 events-column">
+      <div class="events-heading">
 
-    v class="col-md-5 events-column">
-      <h2 class="events-h2">Events</h2>
+        <h2 class="events-h2">Events</h2>
 
-      <%= form_tag search_events_path do %>
-        <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
+        <div class="btn-add-record-align events-btn"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record" %></div>
+
+        <div class= "event-search">
+          <%= form_tag search_events_path do %>
+          <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
             :id, :long_name, params[:campus_id]), prompt: "Search by Campus",
-            class: "search-db" %>
-        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search" %>
-      <% end %>
-    </div></br>
-  <%= render 'events' %>
+            class: "input-field search-long" %>
+          <%= button_tag "", type: "submit", class: "search-button glyphicon glyphicon-search" %>
+        </div>
+          <% end %>
+
+      </br>
+
+
+
+    <%= render 'events' %>
+    <!-- </div> -->
+  </div>
 </div>
 </div>
