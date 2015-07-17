@@ -81,15 +81,17 @@
     <% end %>
 
     <h4 class="profile-name" style="color: #233139;"><%= user.full_name %></h4>
+<div class="indicators">
+
 
     <% if user.looking %>
-    <div class="color-indicator-looking"></div>
+    <span class="color-indicator-looking"></span>
     <% end %>
     <% if user.hiring %>
-    <div class="color-indicator-hiring"></div>
+    <span class="color-indicator-hiring"></span>
     <% end %>
-<div class="color-indicator-mentor"></div>
-
+<span class="color-indicator-mentor"></span>
+</div>
     <!-- <p class="profile-details" style="color: #727d84;"><%= user.tiy_relation %></p> -->
     <p class="profile-details" style="color: #727d84;"><%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %></p>
   </div>
