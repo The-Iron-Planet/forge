@@ -1,6 +1,12 @@
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "col-md-3"></div>
+    <div class = "col-md-3">
+      <ul class="nav nav-tabs nav-stacked">
+        <li role="presentation" class="active"><a href="#">Profile</a></li>
+        <li role="presentation"><%= link_to 'My Events', my_events_path if @user.id == current_user.id %></li>
+        <li role="presentation"><%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %></li>
+      </ul>
+    </div>
     <div class = "col-md-6 profile">
       <% if @user.uploaded_file_file_name.nil? %>
         <div><%= image_tag "default_pic.png", size: "200x200" %></div>
@@ -75,9 +81,7 @@
 
   <div class = "row">
     <div class = "links">
-      <div class = "link1"><%= link_to 'My Events', my_events_path if @user.id == current_user.id %></div>
       <div class = "link1"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></div>
-      <div class = "link1"><%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %></div>
     </div>
   </div>
 

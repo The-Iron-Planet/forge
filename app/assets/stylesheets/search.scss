@@ -1,5 +1,6 @@
 @import "stylesheet";
 
+
 // .search-bar {
 //   border-top: solid thin black;
 //   border-bottom: solid thin black;
@@ -23,14 +24,12 @@
   border-style: none;
   background-color: $light-gray;
   color: $dark-gray;
-
 }
 
 .search-reg {
   @extend .search;
   width: 205px;
   height: 50px;
-
 }
 
 .search-short {
