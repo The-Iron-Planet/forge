@@ -100,4 +100,16 @@ class UserTest < ActiveSupport::TestCase
     assert_equal [@user3, @user2], User.resource_email_filter(@python.id)
     assert_equal [], User.resource_email_filter(@rails.id)
   end
+
+  test "job event filter selects correct users" do
+    assert_equal [@user3], User.job_email_filter(@rails.id)
+    assert_equal [@user2], User.job_email_filter(@python.id)
+    @user3.curriculum_id = @python.id
+    @user3.save!
+    assert_equal [], User.job_email_filter(@rails.id)
+    assert_equal [@user3, @user2], User.job_email_filter(@python.id)
+    @user3.get_job_email = false
+    @user3.save!
+    assert_equal [@user2], User.job_email_filter(@python.id)
+  end
 end

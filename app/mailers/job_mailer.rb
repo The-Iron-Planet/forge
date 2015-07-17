@@ -5,9 +5,9 @@ class JobMailer < ApplicationMailer
   #
   #   en.job_mailer.new_job.subject
   #
-  def new_job
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def new_job(user, job)
+    @user = user
+    @job = job
+    mail(to: "#{@user.full_name} <#{@user.email}>", subject: "#{@user.full_name}, Job Posted on TIY Forge")
   end
 end

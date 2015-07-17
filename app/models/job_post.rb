@@ -4,6 +4,7 @@ class JobPost < ActiveRecord::Base
   belongs_to :curriculum
 
   after_create :user_is_hiring!
+  after_create :send_job_email
   before_destroy :user_is_not_hiring!
 
   scope :ordered, -> { order(updated_at: :desc) }
@@ -61,5 +62,11 @@ class JobPost < ActiveRecord::Base
     job_poster = self.user
     job_poster.hiring = false
     job_poster.save!
+  end
+
+  private def send_job_email
+    User.job_email_filter(self.curriculum_id).each do |user|
+      JobMailer.new_job(user, self).deliver_now
+    end
   end
 end
