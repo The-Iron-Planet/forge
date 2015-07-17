@@ -58,7 +58,8 @@
     </div>
     <div class="field">
       <%= f.label :campus, :class => "input-label" %><br>
-      <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "", :class=>"input-field dropdown") %>
+      <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, {selected: current_user.campus_id}, 
+          :class=>"input-field dropdown") %>
     </div>
     </div>
     <div class=" test">
