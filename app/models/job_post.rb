@@ -66,7 +66,7 @@ class JobPost < ActiveRecord::Base
 
   private def send_job_email
     User.job_email_filter(self.curriculum_id).each do |user|
-      JobMailer.new_job(user, self).deliver_now
+      UserMailer.new_job(user, self).deliver_now
     end
   end
 end

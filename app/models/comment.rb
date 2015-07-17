@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
 
   private def send_comment_email
     if self.commentable.user.get_comment_email
-      CommentMailer.new_comment(self.commentable.user, self).deliver_now
+      UserMailer.new_comment(self.commentable.user, self).deliver_now
     end
   end
 end

@@ -32,7 +32,7 @@ class Event < ActiveRecord::Base
 
   private def send_event_email
     User.event_email_filter(self.campus_id).each do |user|
-      EventMailer.new_event(user, self).deliver_now
+      UserMailer.new_event(user, self).deliver_now
     end
   end
 

@@ -32,7 +32,7 @@ class Resource < ActiveRecord::Base
 
   private def send_resource_email
     User.resource_email_filter(self.curriculum_id).each do |user|
-      ResourceMailer.new_resource(user, self).deliver_now
+      UserMailer.new_resource(user, self).deliver_now
     end
   end
 
