@@ -21,6 +21,8 @@ width: 90%;
   background-color: #d3d5d7;
   padding-top: 30px;
 }
+
+.events-card,
 .job-card {
   display: inline-block;
   text-align: left;
@@ -47,6 +49,7 @@ width: 90%;
   margin: 0 20px 10px 25px;
 }
 
+.event-img,
 .job-img {
   float: left;
   margin: 20px 40px 25px 35px;
@@ -60,6 +63,7 @@ width: 90%;
   text-align: center;
   margin-top: 2px;
 }
+.event-details,
 .job-details {
   margin: -40px 35px 25px 35px;
 

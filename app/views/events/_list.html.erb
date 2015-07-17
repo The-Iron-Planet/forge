@@ -3,7 +3,9 @@
     <div class="row card">
       <div class="col-md-12">
         <div class="container event-card">
-          <div class="collapse-card ">
+          <!-- <div class="collapse-card ">
+            <div class="collapse-card__heading job-heading"> -->
+            <h4 class="collapse-card__title event-heading">
             <div class="thumbnail event-img">
               <% if event.user.uploaded_file_file_name.nil? %>
                 <div>
@@ -30,7 +32,7 @@
               <h4 class="title">
                 <%= event.name %>
               </h4>
-              <p class="event-details">
+              <p class="job-text">
                 Date: <%= event.event_date %>
                 Time: <%= event.event_time %>
               </p>
