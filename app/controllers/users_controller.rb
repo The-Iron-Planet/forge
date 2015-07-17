@@ -23,11 +23,6 @@ class UsersController < ApplicationController
 
   end
 
-  # def results
-  #   @users = User.search_results(params[:current_city], params[:current_state],
-  #       params[:curric_id], params[:campus_id], params[:job_status])
-  # end
-
   # GET /users/1
   def show
   end
@@ -133,8 +128,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
           :current_city, :current_state, :github_profile, :website, :blog,
           :looking, :hiring, :is_cd, :is_instructor, :course_id, :campus_id, :curriculum_id, :email,
-          :password, :password_confirmation, :current_password,
-          positions_attributes: [:id, :user_id, :company_id, :title, :description, :started_on, :ended_on, :current])
+          :password, :password_confirmation, :current_password, :get_event_email, :campus_notification_id,
+          :get_job_email, :get_resource_email, :get_comment_email, positions_attributes:
+            [:id, :user_id, :company_id, :title, :description, :started_on, :ended_on, :current])
     end
 
     def check_user

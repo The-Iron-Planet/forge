@@ -71,8 +71,45 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "different users display different Iron Yard relationships" do
-    assert_equal "Durham: Staff", @user1.tiy_relation #campus director
-    assert_equal "Greenville: Python - July 2015", @user2.tiy_relation #student
-    assert_equal "Greenville: Rails - Instructor", @user3.tiy_relation #instructor
+    assert_equal "Staff", @user1.tiy_relation #campus director
+    assert_equal "Python - July 2015", @user2.tiy_relation #student
+    assert_equal "Rails Instructor", @user3.tiy_relation #instructor
+  end
+
+  test "email event filter selects correct users" do
+    assert_equal [@user1], User.event_email_filter(@durham.id)
+    assert_equal [@user2], User.event_email_filter(@greenville.id)
+    @user3.get_event_email = true
+    @user3.save!
+    assert_equal [@user3, @user2], User.event_email_filter(@greenville.id)
+    @user3.campus_notification_id = @durham.id
+    @user3.save!
+    assert_equal [@user3, @user1], User.event_email_filter(@durham.id)
+    assert_equal [@user2], User.event_email_filter(@greenville.id)
+  end
+
+  test "resource event filter selects correct users" do
+    assert_equal [@user3], User.resource_email_filter(@rails.id)
+    assert_equal [@user2], User.resource_email_filter(@python.id)
+    @user3.get_resource_email = false
+    @user3.save!
+    assert_equal [], User.resource_email_filter(@rails.id)
+    @user3.curriculum_id = @python.id
+    @user3.get_resource_email = true
+    @user3.save!
+    assert_equal [@user3, @user2], User.resource_email_filter(@python.id)
+    assert_equal [], User.resource_email_filter(@rails.id)
+  end
+
+  test "job event filter selects correct users" do
+    assert_equal [@user3], User.job_email_filter(@rails.id)
+    assert_equal [@user2], User.job_email_filter(@python.id)
+    @user3.curriculum_id = @python.id
+    @user3.save!
+    assert_equal [], User.job_email_filter(@rails.id)
+    assert_equal [@user3, @user2], User.job_email_filter(@python.id)
+    @user3.get_job_email = false
+    @user3.save!
+    assert_equal [@user2], User.job_email_filter(@python.id)
   end
 end

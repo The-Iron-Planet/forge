@@ -18,6 +18,10 @@ one:
   looking: true
   hiring: false
   campus: :one
+  get_event_email: true
+  campus_notification_id: 980190962
+  get_resource_email: true
+  get_job_email: true
 
 two:
   email: "two@email.com"
@@ -32,6 +36,10 @@ two:
   hiring: true
   campus: :two
   curriculum: :two
+  get_event_email: true
+  campus_notification_id: 298486374
+  get_resource_email: true
+  get_job_email: true
 
 three:
   email: "three@email.com"
@@ -45,3 +53,7 @@ three:
   hiring: true
   campus: :two
   curriculum: :one
+  get_event_email: false
+  campus_notification_id: 298486374
+  get_resource_email: true
+  get_job_email: true

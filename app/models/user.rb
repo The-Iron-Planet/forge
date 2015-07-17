@@ -49,12 +49,24 @@ class User < ActiveRecord::Base
 
   def tiy_relation
     if is_cd
-      "#{campus.short_name}: Staff"
+      "Staff"
     elsif is_instructor
-      "#{campus.short_name}: #{curriculum.nickname} - Instructor"
+      "#{curriculum.nickname} Instructor"
     else
-      course.full_description
+      "#{curriculum.nickname} - #{course.start_date}"
     end
+  end
+
+  def self.event_email_filter(campus_id)
+    select {|u| u.get_event_email == true && u.campus_notification_id == campus_id}
+  end
+
+  def self.job_email_filter(curric_id)
+    select {|u| u.get_job_email == true && u.curriculum_id == curric_id}
+  end
+
+  def self.resource_email_filter(curric_id)
+    select {|u| u.get_resource_email == true && u.curriculum_id == curric_id}
   end
 
   def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
