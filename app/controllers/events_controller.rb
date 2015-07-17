@@ -16,6 +16,7 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
+    @comment = Comment.new
   end
 
   # GET /events/1/edit

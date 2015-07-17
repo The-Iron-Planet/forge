@@ -25,6 +25,7 @@ class ResourcesController < ApplicationController
 
   # GET /resources/1
   def show
+    @comment = Comment.new
   end
 
   # GET /resources/1/edit
