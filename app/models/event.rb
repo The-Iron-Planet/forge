@@ -31,9 +31,9 @@ class Event < ActiveRecord::Base
   end
 
   private def send_event_email
-    User.event_email_filter(self.campus_id).each do |user|
-      UserMailer.new_event(user, self).deliver_now
-    end
+    # User.event_email_filter(self.campus_id).each do |user|
+    #   UserMailer.new_event(user, self).deliver_now
+    # end
   end
 
 end

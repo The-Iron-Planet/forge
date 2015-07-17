@@ -31,9 +31,9 @@ class Resource < ActiveRecord::Base
   end
 
   private def send_resource_email
-    User.resource_email_filter(self.curriculum_id).each do |user|
-      UserMailer.new_resource(user, self).deliver_now
-    end
+    # User.resource_email_filter(self.curriculum_id).each do |user|
+    #   UserMailer.new_resource(user, self).deliver_now
+    # end
   end
 
 end
