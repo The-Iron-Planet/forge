@@ -7,7 +7,7 @@ class JobPostsController < ApplicationController
   def index
     if request.post? && JobPost.ordered.all_active != []
       @job_posts = JobPost.ordered.search_results(params[:curriculum_id], params[:city], params[:state],
-          params[:company_id], params[:search_terms], params[:experience_desired])
+          params[:company_name], params[:search_terms], params[:experience_desired])
       if @job_posts == []
         flash.now[:notice] = "Your search did not return any results. Please try again."
         render :index
@@ -69,7 +69,7 @@ class JobPostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_post_params
-      params.require(:job_post).permit(:company_id, :user_id, :curriculum_id,
+      params.require(:job_post).permit(:company_name, :city, :state, :user_id, :curriculum_id,
           :title, :description, :experience_desired, :website, :expires_on, :active)
     end
 

@@ -20,9 +20,8 @@ class PositionsControllerTest < ActionController::TestCase
 
   test "should create position" do
     assert_difference('Position.count') do
-      post :create, position: { company_id: @position.company_id,
-          current: @position.current, description: @position.description,
-          ended_on: @position.ended_on, started_on: @position.started_on,
+      post :create, position: { company_name: @position.company_name, city: @position.city, state: @position.state, 
+          current: @position.current, ended_on: @position.ended_on, started_on: @position.started_on,
           title: @position.title, user_id: @position.user_id }
     end
 
@@ -40,9 +39,8 @@ class PositionsControllerTest < ActionController::TestCase
   end
 
   test "should update position" do
-    patch :update, id: @position, position: { company_id: @position.company_id,
-        current: @position.current, description: @position.description,
-        ended_on: @position.ended_on, started_on: @position.started_on,
+    patch :update, id: @position, position: { company_name: @position.company_name,
+        current: @position.current, ended_on: @position.ended_on, started_on: @position.started_on,
         title: @position.title, user_id: @position.user_id }
     assert_redirected_to positions_path
   end
