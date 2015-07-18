@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   post 'search_resources' => 'resources#index'
   get 'my_job_posts' => 'job_posts#my_job_posts'
   get 'my_events' => 'events#my_events'
+  get 'my_resources' => 'resources#my_resources'
 
 
   resources :users do

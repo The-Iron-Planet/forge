@@ -1,31 +1,26 @@
 <div class="container"
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <!-- <h2>Resources</h2> -->
-      <div><%= link_to '+', new_resource_path, :class=>"btn-add-record"%></div>
-      <!-- My Resources Link goes here...copy from job posts -->
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="search-box col-med-12 well">
-      <%= form_tag search_resources_path do %>
-      <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
-          :id, :nickname, params[:curriculum_id]), prompt: "Search by Curriculum",
-          class: "search" %>
-      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
-      <a aria-controls="collapseExample" aria-expanded="false" class="more-options search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample">
-        More options</a>
-      <div class="collapse" id="collapseExample">
-        <div class="list">
-          <!-- More search options -->
-        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h2>Resources</h2> -->
+        <div><%= link_to '+', new_resource_path, :class=>"btn-add-record"%></div>
+        <% if current_user.resources.count != 0 %>
+          <div class="btn-add-record-align"><%= link_to 'My Resources', my_resources_path, :class=>" btn-add-record"%></div>
         <% end %>
       </div>
-    </br>
+    </div>
+
+    <div class="row">
+      <div class="search-box col-med-12 well">
+        <%= form_tag search_resources_path, remote: true do %>
+        <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
+        <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
+          <% end %>
+        </div>
+      </br>
+    </div>
   </div>
-</div>
-<%= render "list" %>
-</div>
+  <div id="resource-list">
+    <%= render "resource_list" %>
+  </div>
 </div>
