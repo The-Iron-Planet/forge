@@ -20,10 +20,8 @@
 
   <div class="row">
     <div class="search-box col-med-12 well">
-      <%= form_tag search_jobs_path do %>
-      <%= text_field_tag "search_terms", params[:search_terms], class: "search-boxes-bar search-med search-on-left text-field input-field", placeholder: "Keyword"%>
-      <%= text_field_tag "city", params[:city], class: "text-field input-field", placeholder: "City"%>
-      <%= select_tag "state", options_for_select(us_states, params[:state]), prompt: "State", class: "search-state"%>
+      <%= form_tag search_jobs_path, remote: true do %>
+      <%= text_field_tag "query", params[:query], class: "search-boxes-bar search-med search-on-left text-field input-field", placeholder: "Search"%>
       <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search job-search-boxes-bar-right search-button" %>
       <a aria-controls="collapseExample" aria-expanded="false" class="more-options job-search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample">
         More options
@@ -45,6 +43,8 @@
     </br>
   </div>
 </div>
-<%= render "list" %>
+<div id="job-post-list">
+  <%= render "job_post_list" %>
+</div>
 </div>
 </div>
