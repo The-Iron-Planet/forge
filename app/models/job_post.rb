@@ -4,7 +4,8 @@ class JobPost < ActiveRecord::Base
 
   after_create :user_is_hiring!
   after_create :send_job_email
-  before_destroy :user_is_not_hiring!
+  after_update :check_user_status
+  after_destroy :user_is_not_hiring!
 
   scope :ordered, -> { order(updated_at: :desc) }
 
@@ -13,10 +14,9 @@ class JobPost < ActiveRecord::Base
   validates :state, presence: true
   validates :curriculum_id, presence: true
   validates :title, presence: true
-  # validates :description, presence: true
   validates :experience_desired, presence: true
-  # validates :expires_on, presence: true
-  # validate :validate_expire_date_after_current_date
+  validates :expires_on, presence: true, :if => Proc.new { |j| j.active == true }
+  validate :validate_expire_date_after_current_date, :if => Proc.new { |j| j.active == true }
 
   validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix,
       message: "Invalid website format.  Must be http(s)://website_url",
@@ -28,11 +28,11 @@ class JobPost < ActiveRecord::Base
     simple_format
   end
 
-  # def validate_expire_date_after_current_date
-  #   if expires_on
-  #     errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
-  #   end
-  # end
+  def validate_expire_date_after_current_date
+    if expires_on
+      errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
+    end
+  end
 
   def last_update
     updated_at.strftime "%B %e, %Y"
@@ -71,10 +71,21 @@ class JobPost < ActiveRecord::Base
   end
 
   private def user_is_not_hiring!
-    return if self.user.job_posts.count > 1
+    return if self.user.job_posts.all_active.count != 0
     job_poster = self.user
     job_poster.hiring = false
     job_poster.save!
+  end
+
+  private def check_user_status
+    job_poster = self.user
+    if job_poster.job_posts.all_active.count == 0
+      job_poster.hiring = false
+      job_poster.save!
+    else
+      job_poster.hiring = true
+      job_poster.save!
+    end
   end
 
   private def send_job_email

@@ -16,7 +16,7 @@ one:
   course: :one
   sign_in_count: 2
   looking: true
-  hiring: false
+  hiring: true
   campus: :one
   get_event_email: true
   campus_notification_id: 980190962
@@ -34,7 +34,7 @@ two:
   is_cd: false
   is_instructor: false
   course: :two
-  hiring: true
+  hiring: false
   campus: :two
   curriculum: :two
   get_event_email: true
