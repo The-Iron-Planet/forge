@@ -18,6 +18,12 @@ class JobPost < ActiveRecord::Base
   # validates :expires_on, presence: true
   # validate :validate_expire_date_after_current_date
 
+  auto_html_for :website do
+    html_escape
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
+
   # def validate_expire_date_after_current_date
   #   if expires_on
   #     errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
