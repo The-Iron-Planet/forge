@@ -18,6 +18,13 @@ class Event < ActiveRecord::Base
 
   after_create :send_event_email
 
+  auto_html_for :website do
+    html_escape
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
+
+
   def event_date
     happens_on.strftime "%a, %b %e, %Y"
   end

@@ -29,11 +29,21 @@ class User < ActiveRecord::Base
   # validates :curriculum, presence: true proc { unless cd }
   # validates :course_id, presence: true proc { if student }
 
+  validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix,
+      message: "Invalid website format.  Must be http(s)://website_url",
+      allow_blank: true
+
   scope :ordered, -> { order(:last_name, :first_name) }
 
   accepts_nested_attributes_for :positions, reject_if: proc { |attributes| attributes['company_id'].blank? && attributes['title'].blank? }
 
   after_create :send_account_email
+
+  auto_html_for :website do
+    html_escape
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
@@ -41,6 +51,14 @@ class User < ActiveRecord::Base
 
   def current_location
     "#{current_city}, #{current_state}"
+  end
+
+  def twitter_link
+    "https://www.twitter.com/#{twitter}"
+  end
+
+  def github_link
+    "https://github.com/#{github_profile}"
   end
 
   def current_position
@@ -103,5 +121,4 @@ class User < ActiveRecord::Base
     def send_account_email
       # UserMailer.account_created(self).deliver_now
     end
-
 end

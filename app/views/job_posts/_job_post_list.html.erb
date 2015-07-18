@@ -37,7 +37,7 @@
               <%= job_post.experience_desired %>
             </p>
             <p class="job-text">
-              <%= job_post.website if job_post.website != "" %>
+              <%= job_post.website_html unless job_post.website.blank? %>
             </p>
             <h6 class="job-footnote">
               Last updated:
@@ -48,9 +48,9 @@
             <h6> <%= "This post has expired" if job_post.is_expired? %></h6>
             <div class="edit-delete">
               <%= link_to '<i class="glyphicon glyphicon-pencil" title="Job Post"></i>'.html_safe,
-                            edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
+                  edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
               <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-                            job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
+                  job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
             </div>
             </div>
           </div>

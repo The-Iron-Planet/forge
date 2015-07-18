@@ -50,7 +50,7 @@
                 <%= event.campus.long_name %>
               </p>
               <p class="event-details link">
-                <%= event.website %>
+                <%= event.website_html unless event.website.blank? %>
               </p>
 
             </div>

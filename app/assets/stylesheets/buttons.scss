@@ -1,4 +1,3 @@
-
 @import "fonts";
 @import 'stylesheet';
 
@@ -6,7 +5,7 @@
 .btn {
   font-size: $h4;
   border-radius: $corners;
-  font-family: $font-italic;
+  font-family: $font;
   background: $accent-color-light;
   color: white;
   padding: 10px 20px 15px;
@@ -99,4 +98,5 @@ btn-login {
 
 .btn-default {
   text-transform: uppercase;
+  padding: 7.5px 15px 10px;
 }

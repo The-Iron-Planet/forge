@@ -21,6 +21,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "Durham, NC", @user1.current_location
     assert_equal nil, @user1.website
     assert_equal "github", @user1.github_profile
+    assert_equal "https://www.twitter.com/firstname", @user1.twitter_link
   end
 
   test "associations" do
