@@ -45,6 +45,29 @@ class JobPostTest < ActiveSupport::TestCase
     refute j7.save
   end
 
+  test "can't have no expires_on date unless job is inactive" do
+    @job1.expires_on = nil #active
+    @job2.expires_on = nil #inactive
+
+    refute @job1.save
+    assert @job2.save
+
+    @job2.active = true
+    refute @job2.save
+  end
+
+
+  test "expires_on must be later than today unless job is inactive" do
+    @job1.expires_on = Date.today - 1.day #active
+    @job2.expires_on = Date.today - 1.day #inactive
+
+    refute @job1.save
+    assert @job2.save
+
+    @job2.active = true
+    refute @job2.save
+  end
+
   test "scope ordered by last update" do
     assert_equal [@job3, @job2, @job1], JobPost.all.ordered
     @job1.description = "Updated Description!"
