@@ -60,11 +60,14 @@
 
             <div class="thumbnail ">
               <% if event.user.uploaded_file_file_name.nil? %>
-              <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %>
+              <div>
+                <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %>
+                <%=link_to event.user.first_name, "/users/#{event.user_id}" %>
               </div>
               <% else %>
               <div>
-                <%=link_to image_tag(event.user.uploaded_file(:thumb)),"users/#{event.user_id}"  %>
+                <%=link_to image_tag(event.user.uploaded_file(:thumb)),"users/#{event.user_id}" %>
+                <%=link_to event.user.first_name, "/users/#{event.user_id}" %>
               </div>
             </div>
 

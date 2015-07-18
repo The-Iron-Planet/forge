@@ -18,6 +18,10 @@ class JobPost < ActiveRecord::Base
   # validates :expires_on, presence: true
   # validate :validate_expire_date_after_current_date
 
+  validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix,
+      message: "Invalid website format.  Must be http(s)://website_url",
+      allow_blank: true
+
   auto_html_for :website do
     html_escape
     link :target => "_blank", :rel => "nofollow"
