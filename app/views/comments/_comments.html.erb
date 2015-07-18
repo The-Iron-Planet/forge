@@ -21,10 +21,10 @@
           <% unless comment.user_id != current_user.id %>
             <span>
               <% if "#{comment.commentable_type.downcase}" == "event" %>
-                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Comment"></i>'.html_safe,
                     edit_event_comment_path(comment, event_id: commentable.id) %>
               <% elsif "#{comment.commentable_type.downcase}" == "resource" %>
-                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Comment"></i>'.html_safe,
                     edit_resource_comment_path(comment, resource_id: commentable.id) %>
               <% end %>
             </span>
