@@ -26,8 +26,13 @@ class Resource < ActiveRecord::Base
     simple_format
   end
 
-  def self.search_results(curriculum_id)
-    where(curriculum_id: curriculum_id.to_i) if curriculum_id != ""
+  def self.search_results(query)
+    relation = self
+    queries = query.split(/\W+/)
+    queries.each do |q|
+      relation = relation.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+    end
+    relation
   end
 
   private def send_resource_email
