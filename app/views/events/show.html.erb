@@ -13,10 +13,12 @@
               <% if @event.user.uploaded_file_file_name.nil? %>
                 <div>
                   <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{@event.user_id}" %>
+                  <%=link_to @event.user.first_name, "/users/#{@event.user_id}" %>
                 </div>
               <% else %>
                 <div>
-                  <%=link_to image_tag(@event.user.uploaded_file(:small)),"users/#{@event.user_id}"  %>
+                  <%=link_to image_tag(@event.user.uploaded_file(:small)),"users/#{@event.user_id}" %>
+                  <%=link_to @event.user.first_name, "/users/#{@event.user_id}" %>
                 </div>
               <% end %>
             </div>
@@ -43,9 +45,9 @@
               </p>
             </div>
             <div class="edit-delete">
-              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Event"></i>'.html_safe,
                   edit_event_path(@event) if @event.user_id == current_user.id %>
-              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
                   @event, method: :delete, data: { confirm: 'Are you sure?' } if @event.user_id == current_user.id %>
             </div>
           </div>

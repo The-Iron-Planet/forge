@@ -18,6 +18,10 @@ class JobPost < ActiveRecord::Base
   # validates :expires_on, presence: true
   # validate :validate_expire_date_after_current_date
 
+  validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix,
+      message: "Invalid website format.  Must be http(s)://website_url",
+      allow_blank: true
+
   auto_html_for :website do
     html_escape
     link :target => "_blank", :rel => "nofollow"
@@ -34,15 +38,17 @@ class JobPost < ActiveRecord::Base
     updated_at.strftime "%B %e, %Y"
   end
 
-  def self.search_results(curric_id, city, state, company_name, search_terms, experience_desired)
-    result = self.all_active
-    result = result.select {|j| j.curriculum_id == curric_id.to_i} if curric_id != ""
-    result = result.select {|j| j.company.city.downcase.match(city.downcase)} if city != ""
-    result = result.select {|j| j.company.state == state} if state != ""
-    # result = result.select {|j| j.company_id == company_id.to_i} if company_id != ""
-    result = result.select {|j| j.description.downcase.match(search_terms.downcase) || j.title.downcase.match(search_terms.downcase)} if search_terms != ""
-    result = result.select {|j| j.experience_desired == experience_desired} if experience_desired != ""
-    result
+  def self.search_results(query, experience, curric_id)
+    relation = self
+    if query != ""
+      queries = query.split(/\W+/)
+      queries.each do |q|
+        relation = relation.where("city LIKE '%#{q}%' OR state LIKE '%#{q}%' OR title LIKE '%#{q}%' OR company_name LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+      end
+    end
+    relation = relation.where(experience_desired: experience) if experience != ""
+    relation = relation.where(curriculum_id: curric_id) if curric_id != ""
+    relation
   end
 
   def self.all_active

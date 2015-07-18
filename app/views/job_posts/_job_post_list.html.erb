@@ -10,9 +10,11 @@
               <div class="thumbnail  job-img">
                 <% if job_post.user.uploaded_file_file_name.nil? %>
                   <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
+                  <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
                 <% else %>
                   <div>
-                    <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}"  %>
+                    <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}" %>
+                    <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
                   </div>
                 <% end %>
               </div>
@@ -47,9 +49,9 @@
             <h6> <%= "This post is inactive" if job_post.active != true %></h6>
             <h6> <%= "This post has expired" if job_post.is_expired? %></h6>
             <div class="edit-delete">
-              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Job Post"></i>'.html_safe,
+              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Job Post"></i>'.html_safe,
                   edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
-              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Job Post"></i>'.html_safe,
                   job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
             </div>
             </div>

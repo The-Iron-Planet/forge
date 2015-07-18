@@ -1,13 +1,10 @@
 <div class="container-fluid">
-
-
-
-<div class="jobs-background-color">
-  <% @events.each do |event| %>
-    <div class="row card">
-<h2 class="test-delete">  event listing</h2>
-      <div class="col-md-12">
-        <div class="event-card">
+  <div class="jobs-background-color">
+    <% @events.each do |event| %>
+      <div class="row card">
+        <h2 class="test-delete">  event listing</h2>
+        <div class="col-md-12">
+          <div class="event-card">
           <!-- <div class="collapse-card ">
             <div class="collapse-card__heading job-heading">-->
             <!-- <h4 class="collapse-card__title"> -->
@@ -15,10 +12,12 @@
               <% if event.user.uploaded_file_file_name.nil? %>
                 <div>
                   <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{event.user_id}" %>
+                  <%=link_to event.user.first_name, "/users/#{event.user_id}" %>
                 </div>
               <% else %>
                 <div>
-                  <%=link_to image_tag(event.user.uploaded_file(:thumb)),"/users/#{event.user_id}"  %>
+                  <%=link_to image_tag(event.user.uploaded_file(:thumb)),"/users/#{event.user_id}" %>
+                  <%=link_to event.user.first_name, "/users/#{event.user_id}" %>
                  </div>
               <% end %>
             </div>
@@ -46,16 +45,14 @@
               </p>
             </div>
             <div class="edit-delete">
-              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Event"></i>'.html_safe,
                             edit_event_path(event) if event.user_id == current_user.id %>
-              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
+              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
                             event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
             </div>
           </div>
         </div>
       </div>
-
-
-  <% end %>
+    <% end %>
   </div>
 </div>
