@@ -4,6 +4,8 @@ class Comment < ActiveRecord::Base
 
   after_create :send_comment_email
 
+  validates_presence_of :body
+
   private def send_comment_email
     # if self.commentable.user.get_comment_email
     #   UserMailer.new_comment(self.commentable.user, self).deliver_now

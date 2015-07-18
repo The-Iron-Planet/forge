@@ -34,10 +34,6 @@
 
       <div class="collapse" id="collapseExample">
         <div class="list">
-
-          <%= select_tag "company_id", options_from_collection_for_select((Company.select {|c| c.job_posts.all_active.count != 0}),
-            :id, :name_and_location, params[:company_id]), prompt: "Company",
-            class: "search-long search-on-left search-margin"  %>
           <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :name, params[:curriculum_id]), prompt: "Curriculum",
             class: "search-reg search-margin" %>

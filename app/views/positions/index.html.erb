@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Company</th>
+      <th>Location</th>
       <th>Title</th>
-      <th>Description</th>
       <th>Started on</th>
       <th>Ended on</th>
       <th>Current</th>
@@ -19,13 +19,12 @@
     <% @positions.each do |position| %>
       <tr>
 
-        <td><%= position.company.name_and_location %></td>
+        <td><%= position.company_name %></td>
+        <td><%= position.city %>, <%= position.state %></td>
         <td><%= position.title %></td>
-        <td><%= position.description %></td>
         <td><%= position.started_on %></td>
         <td><%= position.ended_on %></td>
         <td><%= position.current %></td>
-        <td><%= link_to 'Show', position %></td>
         <td><%= link_to 'Edit', edit_position_path(position) %></td>
         <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

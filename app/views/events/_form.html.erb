@@ -58,7 +58,7 @@
     </div>
     <div class="field">
       <%= f.label :campus, :class => "input-label" %><br>
-      <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, {selected: current_user.campus_id}, 
+      <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, {selected: current_user.campus_id},
           :class=>"input-field dropdown") %>
     </div>
     </div>
@@ -73,3 +73,5 @@
     </div>
 </div>
 <% end %>
+<!--added to close container-fluid  -->
+</div>

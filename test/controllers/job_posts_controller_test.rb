@@ -19,7 +19,10 @@ class JobPostsControllerTest < ActionController::TestCase
 
   test "should create job_post" do
     assert_difference('JobPost.count') do
-      post :create, job_post: { company_id: @job_post.company_id, curriculum_id: @job_post.curriculum_id, description: @job_post.description, experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month), title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }
+      post :create, job_post: { company_name: @job_post.company_name, city: @job_post.city, state: @job_post.state,
+          curriculum_id: @job_post.curriculum_id, description: @job_post.description,
+          experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month),
+          title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }
     end
 
     assert_redirected_to job_posts_path
@@ -37,7 +40,10 @@ class JobPostsControllerTest < ActionController::TestCase
   end
 
   test "should update job_post" do
-    patch :update, id: @job_post, job_post: { company_id: @job_post.company_id, curriculum_id: @job_post.curriculum_id, description: @job_post.description, experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month), title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }
+    patch :update, id: @job_post, job_post: { company_name: @job_post.company_name,
+        curriculum_id: @job_post.curriculum_id, description: @job_post.description,
+        experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month),
+        title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }
     assert_redirected_to job_posts_path
   end
 

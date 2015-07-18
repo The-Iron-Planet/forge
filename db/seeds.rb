@@ -101,20 +101,15 @@ Resource.create!(title: "Fixed vs. Growth Mindsets", description: "How to fine-t
     website: "http://www.brainpickings.org/2014/01/29/carol-dweck-mindset/",
     user_id: dur_rails_instructor.id, curriculum_id: rails.id)
 
-tiy = Company.create!(name: "The Iron Yard", city: "Durham", state: "NC", website: "theironyard.com")
-google = Company.create!(name: "Google", city: "Mountain View", state: "CA", website: "google.com")
-ibm = Company.create!(name: "IBM", city: "Austin", state: "TX", website: "ibm.com")
-apple = Company.create!(name: "Apple", city: "Cupertino", state: "CA", website: "apple.com")
-
-JobPost.create!(company_id: google.id, user_id: dur_fe_alum.id, curriculum_id: fe.id,
+JobPost.create!(company_name: "Google", city: "Mountain View", state: "CA", user_id: dur_fe_alum.id, curriculum_id: fe.id,
     title: "Front End Engineer", description: "Google is hiring! Those with JavaScript, AJAX, and jQuery experience should apply!",
-    experience_desired: "Intermediate", website: "google.com", expires_on: (Date.today + 1.month), active: true)
-JobPost.create!(company_id: ibm.id, user_id: atl_rails_alum.id, curriculum_id: rails.id,
+    experience_desired: "Intermediate", website: "http://www.google.com", expires_on: (Date.today + 1.month), active: true)
+JobPost.create!(company_name: "IBM", city: "Austin", state: "TX", user_id: atl_rails_alum.id, curriculum_id: rails.id,
     title: "Junior Rails Developer", description: "Seeking junior Rails developers with expertise in Ruby, JavaScript, and SQL queries.",
-    experience_desired: "Junior Developer", website: "ibm.com", expires_on: (Date.today + 1.week), active: true)
-JobPost.create!(company_id: ibm.id, user_id: atl_rails_alum.id, curriculum_id: python.id,
+    experience_desired: "Junior Developer", website: "http://www.ibm.com", expires_on: (Date.today + 1.week), active: true)
+JobPost.create!(company_name: "IBM", city: "Austin", state: "TX", user_id: atl_rails_alum.id, curriculum_id: python.id,
     title: "Python Developer", description: "Come crunch data for IBM. Python, Django, libraries, and stuff.",
-    experience_desired: "Senior Developer", website: "ibm.com", expires_on: (Date.today + 1.day), active: true)
-JobPost.create!(company_id: apple.id, user_id: dur_rails_instructor.id, curriculum_id: rails.id,
+    experience_desired: "Senior Developer", website: "http://www.ibm.com", expires_on: (Date.today + 1.day), active: true)
+JobPost.create!(company_name: "Apple", city: "Cupertino", state: "CA", user_id: dur_rails_instructor.id, curriculum_id: rails.id,
     title: "Ruby on Rails Developer", description: "We're the most profitable company in the history of the world. You probably want to work for us. And wear our watches.",
-    experience_desired: "Senior Developer", website: "apple.com", expires_on: (Date.today + 4.day), active: true)
+    experience_desired: "Senior Developer", website: "http://www.apple.com", expires_on: (Date.today + 4.day), active: true)

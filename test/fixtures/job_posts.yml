@@ -1,34 +1,40 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  company: :one
+  company_name: The Iron Yard
+  city: Durham
+  state: NC
   user: :one
   curriculum: :one
   title: Front End Instructor
   description: Teach Iron Yard students about HTML, CSS, JavaScript, and jQuery.
   experience_desired: 5-7 years experience in front-end development
-  website: theironyard.com
+  website: http://www.theironyard.com
   expires_on: <%= Date.today + 1.month %>
   active: true
 
 two:
-  company: :two
+  company_name: Google
+  city: Mountain View
+  state: CA
   user: :two
   curriculum: :two
   title: Assistant to the Chief YouTube Troll.
   description: Learn the ropes at Google. Take over the world.
   experience_desired: 2 years experience trolling YouTube.
-  website: google.com
+  website: http://www.google.com
   expires_on: <%= Date.today + 1.month %>
   active: false
 
 three:
-  company: Somewhere
+  company_name: Somewhere
+  city: Somecity
+  state: Somestate
   user: Someone
   curriculum: Something
   title: Mr. No-Job
   description: No One Knows!
   experience_desired: No One Cares!
-  website: google.com
+  website: http://www.google.com
   expires_on: <%= Date.today - 1.month %>
   active: false

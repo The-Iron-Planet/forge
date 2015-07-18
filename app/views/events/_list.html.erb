@@ -1,9 +1,16 @@
+<div class="container-fluid">
+
+
+
 <div class="jobs-background-color">
   <% @events.each do |event| %>
     <div class="row card">
+<h2 class="test-delete">  event listing</h2>
       <div class="col-md-12">
-        <div class="container event-card">
-          <div class="collapse-card ">
+        <div class="event-card">
+          <!-- <div class="collapse-card ">
+            <div class="collapse-card__heading job-heading">-->
+            <!-- <h4 class="collapse-card__title"> -->
             <div class="thumbnail event-img">
               <% if event.user.uploaded_file_file_name.nil? %>
                 <div>
@@ -12,7 +19,7 @@
               <% else %>
                 <div>
                   <%=link_to image_tag(event.user.uploaded_file(:thumb)),"/users/#{event.user_id}"  %>
-                </div>
+                 </div>
               <% end %>
             </div>
             <div class="event-img">
@@ -30,7 +37,7 @@
               <h4 class="title">
                 <%= event.name %>
               </h4>
-              <p class="event-details">
+              <p class="job-text">
                 Date: <%= event.event_date %>
                 Time: <%= event.event_time %>
               </p>
@@ -47,6 +54,8 @@
           </div>
         </div>
       </div>
-    </div>
+
+
   <% end %>
+  </div>
 </div>

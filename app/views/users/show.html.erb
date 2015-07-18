@@ -23,10 +23,27 @@
       <% end %>
       <div>Email Icon: <%= @user.email %></div>
       <% unless @user.github_profile.blank? %>
-        <div>Github: <%= @user.github_profile %></div>
+        <div>
+          Github: <%= link_to "#{@user.github_profile}", @user.github_link, target: "_blank" %>
+        </div>
+      <% end %>
+      <% unless @user.twitter.blank? %>
+        <div>
+          Twitter: <%= link_to "@#{@user.twitter}", @user.twitter_link, target: "_blank" %>
+        </div>
+      <% end %>
+      <% unless @user.slack_handle.blank? %>
+        <div>
+          Slack: <%= "@#{@user.slack_handle}" %>
+        </div>
+      <% end %>
+      <% unless @user.linked_in.blank? %>
+        <div>
+          Linked In: <%= link_to @user.linked_in, @user.linked_in, target: "_blank" %>
+        </div>
       <% end %>
       <% unless @user.website.blank? %>
-        <div>Website: <%= @user.website %></div>
+        <div>Website: <%= @user.website_html %></div>
       <% end %>
       <% unless @user.blog.blank? %>
         <div>Blog: <%= @user.blog %></div>
@@ -53,23 +70,21 @@
           <thead>
             <tr>
               <th>Company</th>
+              <th>Location</th>
               <th>Title</th>
-              <th>Description</th>
               <th>Started on</th>
               <th>Ended on</th>
-              <!-- <th>Current</th> -->
             </tr>
           </thead>
 
           <tbody>
             <% @user.positions.ordered.each do |position| %>
               <tr>
-                <td><%= position.company.name_and_location %></td>
+                <td><%= position.company_name %></td>
+                <td><%= position.city %>, <%= position.state %></td>
                 <td><%= position.title %></td>
-                <td><%= position.description %></td>
                 <td><%= position.start_date if position.started_on%></td>
                 <td><%= position.end_date if position.ended_on%></td>
-                <!-- <td><%= position.current %></td> -->
               </tr>
             <% end %>
           </tbody>

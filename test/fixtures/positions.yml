@@ -2,18 +2,20 @@
 
 one:
   user: :one
-  company: :one
+  company_name: The Iron Yard
+  city: Durham
+  state: NC
   title: Potato Master
-  description: Master of all things tuber.
   started_on: 2015-07-24
   ended_on: 2015-08-01
   current: true
 
 two:
   user: :two
-  company: :two
+  company_name: Google
+  city: Mountain View
+  state: CA
   title: Chief YouTube Troll
-  description: Exactly what it sounds like.
   started_on: 2015-07-23
   ended_on: 2015-07-25
   current: false

@@ -1,5 +1,4 @@
 class JobPost < ActiveRecord::Base
-  belongs_to :company
   belongs_to :user
   belongs_to :curriculum
 
@@ -9,30 +8,38 @@ class JobPost < ActiveRecord::Base
 
   scope :ordered, -> { order(updated_at: :desc) }
 
-  validates :company_id, presence: true
+  validates :company_name, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
   validates :curriculum_id, presence: true
   validates :title, presence: true
-  validates :description, presence: true
+  # validates :description, presence: true
   validates :experience_desired, presence: true
-  validates :expires_on, presence: true
-  validate :validate_expire_date_after_current_date
+  # validates :expires_on, presence: true
+  # validate :validate_expire_date_after_current_date
 
-  def validate_expire_date_after_current_date
-    if expires_on
-      errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
-    end
+  auto_html_for :website do
+    html_escape
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
   end
+
+  # def validate_expire_date_after_current_date
+  #   if expires_on
+  #     errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
+  #   end
+  # end
 
   def last_update
     updated_at.strftime "%B %e, %Y"
   end
 
-  def self.search_results(curric_id, city, state, company_id, search_terms, experience_desired)
+  def self.search_results(curric_id, city, state, company_name, search_terms, experience_desired)
     result = self.all_active
     result = result.select {|j| j.curriculum_id == curric_id.to_i} if curric_id != ""
     result = result.select {|j| j.company.city.downcase.match(city.downcase)} if city != ""
     result = result.select {|j| j.company.state == state} if state != ""
-    result = result.select {|j| j.company_id == company_id.to_i} if company_id != ""
+    # result = result.select {|j| j.company_id == company_id.to_i} if company_id != ""
     result = result.select {|j| j.description.downcase.match(search_terms.downcase) || j.title.downcase.match(search_terms.downcase)} if search_terms != ""
     result = result.select {|j| j.experience_desired == experience_desired} if experience_desired != ""
     result

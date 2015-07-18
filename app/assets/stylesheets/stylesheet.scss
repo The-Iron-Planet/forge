@@ -31,7 +31,7 @@ $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
 $corners: 4px 4px 4px 4px;
-
+$sans-serif:"Roboto-Regular";
 
 .container-fluid {
   padding: 0;
@@ -52,7 +52,7 @@ h2 {
 
   margin: 15px 0 20px;
   text-align: center;
-  color: $shield;
+  color: #28394c;
 }
 h3 {
   // font-size: 28px;
@@ -70,9 +70,7 @@ p {
   font-color: #727d84;
 }
 
-body{
-  font-family: "Roboto-Regular";
-}
+
 
 .header-text {
   position: absolute;
@@ -283,4 +281,7 @@ table, th, td {
 
 .active {
   text-transform: underline;
+
+.test-delete{
+  font-family: $sans-serif;
 }

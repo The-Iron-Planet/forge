@@ -38,9 +38,9 @@
               </p>
               <div class="edit-delete">
                 <%= link_to '<i class="glyphicon glyphicon-pencil" title="Resource"></i>'.html_safe,
-                              edit_resource_path(resource) if resource.user_id == current_user.id %>
+                    edit_resource_path(resource) if resource.user_id == current_user.id %>
                 <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-                              resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
+                    resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
               </div>
             </div>
           </div>

@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :comments, module: :events
   end
   
-  resources :companies
   resources :positions
   resources :courses
   resources :curricula
