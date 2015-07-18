@@ -26,8 +26,16 @@ class Event < ActiveRecord::Base
     happens_on.strftime "%l:%M %p"
   end
 
-  def self.search_results(campus_id)
-    where(campus_id: campus_id.to_i) if campus_id != ""
+  def self.search_results(query, campus_id)
+    relation = self
+    if query != ""
+      queries = query.split(/\W+/)
+      queries.each do |q|
+        relation = relation.where("name LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+      end
+    end
+    relation = relation.where(campus_id: campus_id.to_i) if campus_id != ""
+    relation
   end
 
   private def send_event_email

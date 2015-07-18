@@ -5,8 +5,19 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+    if request.post?
+      @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+          search_results(params[:query], params[:campus_id])
+      if @events.nil?
+        @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+            where(campus_id: current_user.campus_id)
+        flash.now[:notice] = "Please choose specific search parameters."
+        render :index
+      end
+    else
+      @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
         where(campus_id: current_user.campus_id)
+    end
   end
 
   # GET /events/new
@@ -16,9 +27,7 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
-
     @comment = Comment.new
-
   end
 
   # GET /events/1/edit

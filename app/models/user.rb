@@ -70,10 +70,12 @@ class User < ActiveRecord::Base
   end
 
   def self.search_results(query, campus_id, curric_id, job_status)
-    queries = query.split(/\W+/)
     relation = self
-    queries.each do |q|
-      relation = relation.where("first_name LIKE '%#{q}%' OR last_name LIKE '%#{q}%' OR current_city LIKE '%#{q}%' OR current_state LIKE '%#{q}%'")
+    if query != ""
+      queries = query.split(/\W+/)
+      queries.each do |q|
+        relation = relation.where("first_name LIKE '%#{q}%' OR last_name LIKE '%#{q}%' OR current_city LIKE '%#{q}%' OR current_state LIKE '%#{q}%'")
+      end
     end
     relation = relation.where(campus_id: campus_id) if campus_id != ""
     relation = relation.where(curriculum_id: curric_id) if curric_id != ""
@@ -92,23 +94,9 @@ class User < ActiveRecord::Base
   #     courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.started_on == current_user.course.started_on}
   #     result = result.where(course: courses)
   #   end
-  #   if campus_id != ""
-  #     courses = Course.select {|c| c.campus_id == campus_id.to_i}
-  #     result = result.where(course: courses)
-  #   end
-  #   if curric_id != ""
-  #     courses = Course.select {|c| c.curriculum_id == curric_id.to_i}
-  #     result = result.where(course: courses)
-  #   end
   #   if cohort_class == "My Classmates"
   #     result = result.select {|u| u.course_id == current_user.course_id}
   #   end
-  #   result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
-  #   result = result.select {|u| u.current_city.downcase.match(city.downcase) } if city != ""
-  #   result = result.select {|u| u.looking} if job_status == "Looking for work"
-  #   result = result.select {|u| u.hiring} if job_status == "Hiring"
-  #   result = result.select {|u| u.full_name.downcase.match(name.downcase)} if name != ""
-  #   result
   # end
 
   private
