@@ -37,7 +37,7 @@
               <%= job_post.experience_desired %>
             </p>
             <p class="job-text">
-              <%= link_to job_post.website if job_post.website != "" %>
+              <%= job_post.website_html unless job_post.website.blank? %>
             </p>
             <h6 class="job-footnote">
               Last updated:
