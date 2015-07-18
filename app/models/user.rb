@@ -69,34 +69,47 @@ class User < ActiveRecord::Base
     select {|u| u.get_resource_email == true && u.curriculum_id == curric_id}
   end
 
-  def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
-    result = self
-    if company_id != ""
-      company = Company.find_by_id(company_id)
-      result = company.users
+  def self.search_results(query, campus_id, curric_id, job_status)
+    queries = query.split(/\W+/)
+    relation = self
+    queries.each do |q|
+      relation = relation.where("first_name LIKE '%#{q}%' OR last_name LIKE '%#{q}%' OR current_city LIKE '%#{q}%' OR current_state LIKE '%#{q}%'")
     end
-    if cohort_class == "My Cohort"
-      courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.started_on == current_user.course.started_on}
-      result = result.where(course: courses)
-    end
-    if campus_id != ""
-      courses = Course.select {|c| c.campus_id == campus_id.to_i}
-      result = result.where(course: courses)
-    end
-    if curric_id != ""
-      courses = Course.select {|c| c.curriculum_id == curric_id.to_i}
-      result = result.where(course: courses)
-    end
-    if cohort_class == "My Classmates"
-      result = result.select {|u| u.course_id == current_user.course_id}
-    end
-    result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
-    result = result.select {|u| u.current_city.downcase.match(city.downcase) } if city != ""
-    result = result.select {|u| u.looking} if job_status == "Looking for work"
-    result = result.select {|u| u.hiring} if job_status == "Hiring"
-    result = result.select {|u| u.full_name.downcase.match(name.downcase)} if name != ""
-    result
+    relation = relation.where(campus_id: campus_id) if campus_id != ""
+    relation = relation.where(curriculum_id: curric_id) if curric_id != ""
+    relation = relation.where(looking: true) if job_status == "Looking for work"
+    relation = relation.where(hiring: true) if job_status == "Hiring"
+    relation
   end
+
+  # def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
+  #   result = self
+  #   if company_id != ""
+  #     company = Company.find_by_id(company_id)
+  #     result = company.users
+  #   end
+  #   if cohort_class == "My Cohort"
+  #     courses = Course.select {|c| c.campus_id == current_user.course.campus.id && c.started_on == current_user.course.started_on}
+  #     result = result.where(course: courses)
+  #   end
+  #   if campus_id != ""
+  #     courses = Course.select {|c| c.campus_id == campus_id.to_i}
+  #     result = result.where(course: courses)
+  #   end
+  #   if curric_id != ""
+  #     courses = Course.select {|c| c.curriculum_id == curric_id.to_i}
+  #     result = result.where(course: courses)
+  #   end
+  #   if cohort_class == "My Classmates"
+  #     result = result.select {|u| u.course_id == current_user.course_id}
+  #   end
+  #   result = result.select {|u| u.current_state.downcase == state.downcase } if state != ""
+  #   result = result.select {|u| u.current_city.downcase.match(city.downcase) } if city != ""
+  #   result = result.select {|u| u.looking} if job_status == "Looking for work"
+  #   result = result.select {|u| u.hiring} if job_status == "Hiring"
+  #   result = result.select {|u| u.full_name.downcase.match(name.downcase)} if name != ""
+  #   result
+  # end
 
   private
     def send_account_email
