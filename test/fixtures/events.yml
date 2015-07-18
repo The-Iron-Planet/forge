@@ -4,7 +4,7 @@ one:
   name: First Event
   happens_on: 2015-07-10 14:03:13
   description: Fun Times
-  website: MyAwesomeSite
+  website: http://www.eventsite.com
   user: :one
   campus: :one
 
@@ -12,6 +12,6 @@ two:
   name: Second Event
   happens_on: 2015-07-10 14:05:13
   description: Bad Times
-  website: MySite
+  website: https://www.event2.com
   user: :two
   campus: :two

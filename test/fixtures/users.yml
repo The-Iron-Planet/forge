@@ -10,7 +10,7 @@ one:
   last_name: "lastname"
   current_city: "Durham"
   current_state: "NC"
-  github_profile: "github"
+  github_profile: github
   is_cd: true
   is_instructor: false
   course: :one
@@ -22,6 +22,7 @@ one:
   campus_notification_id: 980190962
   get_resource_email: true
   get_job_email: true
+  twitter: firstname
 
 two:
   email: "two@email.com"
@@ -40,6 +41,7 @@ two:
   campus_notification_id: 298486374
   get_resource_email: true
   get_job_email: true
+
 
 three:
   email: "three@email.com"
