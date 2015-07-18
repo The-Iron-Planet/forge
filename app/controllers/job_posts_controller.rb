@@ -39,7 +39,6 @@ class JobPostsController < ApplicationController
     @job_post = JobPost.new(job_post_params)
     @job_post.user_id = current_user.id
     @job_post.active = true
-    @job_post.expires_on = Date.today + 1.month
     if @job_post.save
       redirect_to job_posts_path, notice: 'Job post was successfully created.'
     else

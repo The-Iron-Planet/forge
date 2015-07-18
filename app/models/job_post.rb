@@ -14,10 +14,9 @@ class JobPost < ActiveRecord::Base
   validates :state, presence: true
   validates :curriculum_id, presence: true
   validates :title, presence: true
-  # validates :description, presence: true
   validates :experience_desired, presence: true
-  # validates :expires_on, presence: true
-  # validate :validate_expire_date_after_current_date
+  validates :expires_on, presence: true, :if => Proc.new { |j| j.active == true }
+  validate :validate_expire_date_after_current_date, :if => Proc.new { |j| j.active == true }
 
   auto_html_for :website do
     html_escape
@@ -25,11 +24,11 @@ class JobPost < ActiveRecord::Base
     simple_format
   end
 
-  # def validate_expire_date_after_current_date
-  #   if expires_on
-  #     errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
-  #   end
-  # end
+  def validate_expire_date_after_current_date
+    if expires_on
+      errors.add(:expires_on, "date must be later than today.") if expires_on <= Date.today
+    end
+  end
 
   def last_update
     updated_at.strftime "%B %e, %Y"
