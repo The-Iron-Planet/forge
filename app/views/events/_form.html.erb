@@ -44,14 +44,17 @@
       <%= f.datetime_select :happens_on, class: "form-control" %>
     </div>
     <div class="field">
-      <%= f.label :name, :class => "input-label" %><br>
-      <%= f.text_field :name, :class => "input-field" %>
+      <%= f.label :title, :class => "input-label" %><br>
+      <%= f.text_field :title, :class => "input-field" %>
+    </div>
+    <div class="field">
+      <%= f.label :location, :class => "input-label" %><br>
+      <%= f.text_area :location, :class => "input-field" %>
     </div>
     <div class="field">
       <%= f.label :description, :class => "input-label" %><br>
       <%= f.text_area :description, :class => "description" %>
     </div>
-
     <div class="field">
       <%= f.label :website , :class => "input-label"%><br>
       <%= f.text_field :website, :class => "input-field" %>

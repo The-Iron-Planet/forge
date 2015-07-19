@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   after_create :send_event_email
 
   validates :campus, presence: true
+  validates :location, presence: true
   validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix,
       message: "Invalid website format.  Must be http(s)://website_url",
       allow_blank: true
