@@ -1,6 +1,6 @@
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "col-med-3">
+    <div class = "col-md-2">
       <ul class="nav nav-left nav-tabs nav-stacked">
         <li role="presentation"><%= link_to 'My Profile', user_path(current_user) %></li>
         <li role="presentation" class="active"><a href="#">My Events</a></li>
@@ -9,7 +9,7 @@
       </ul>
     </div>
 
-    <div class="col-md-9 events-list">
+    <div class="col-md-10 events-list">
         <h2>My Events</h2>
         <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
     </div>

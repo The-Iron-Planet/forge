@@ -100,6 +100,7 @@
 
 .profile {
   background-color: lightgrey;
+  height: 350px;
 }
 
 .input-field-company {
@@ -226,4 +227,29 @@ font-size: .8em;
 #dir-header{
   width: 100%;
   height: 160px;
+}
+
+.float-right {
+  float: right;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: .9em;
+}
+
+.image-pic-down {
+  margin-top: 20px;
+  float: left;
+  display: inline-block;
+}
+
+.first-name-bold {
+  font-style: bold;
+}
+
+#table-right-column {
+  style: "display:none";
+}
+
+.link1-profile {
+ 
 }
