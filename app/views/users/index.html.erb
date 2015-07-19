@@ -18,7 +18,7 @@
       <%= form_tag search_path, remote: true do %>
         <%= text_field_tag "query", params[:query], class: "input-field-search general-search", placeholder: "Search by Name or City, State"%>
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
-        <a class="more-options search-boxes-bar-more"" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <a class="more-options search-boxes-bar-more" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
           More options
         </a>
         <div class="collapse" id="collapseExample">
