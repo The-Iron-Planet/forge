@@ -3,15 +3,8 @@
   <div class="row">
     <div class="col-md-12">
       <!-- <h2>Job Posts</h2> -->
-
-
-
-
       <div class="btn-add-record-circle">
-
         <%= link_to '+', new_job_post_path %></div>
-
-
       <% if current_user.job_posts.count != 0 %>
         <div class="btn-add-record-align"><%= link_to 'My Job Posts', my_job_posts_path, :class=>" btn-add-record"%></div>
       <% end %>
@@ -21,8 +14,8 @@
   <div class="row">
     <div class="search-box col-med-12 well">
       <%= form_tag search_jobs_path, remote: true do %>
-      <%= text_field_tag "query", params[:query], class: "search-boxes-bar search-med search-on-left text-field input-field", placeholder: "Search"%>
-      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search job-search-boxes-bar-right search-button" %>
+      <%= text_field_tag "query", params[:query], class: "job-search-boxes-bar search-on-left input-field-search", placeholder: "Search"%>
+      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
       <a aria-controls="collapseExample" aria-expanded="false" class="more-options job-search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample">
         More options
         <!--<button type="button" class="btn btn-default btn-background">
@@ -34,9 +27,9 @@
         <div class="list">
           <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :name, params[:curriculum_id]), prompt: "Curriculum",
-            class: "search-reg search-margin" %>
+            class: "job-search-reg search-margin" %>
           <%= select_tag :experience_desired, options_for_select(["Junior Developer", "Mid-Level", "Senior Developer"],
-                params[:experience_desired]), prompt: " Experience Level", class: "search-reg search-margin"%>
+                params[:experience_desired]), prompt: " Experience Level", class: "job-search-reg search-margin"%>
         </div>
         <% end %>
       </div>

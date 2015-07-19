@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   after_create :send_event_email
 
   validates :campus, presence: true
+  validates :location, presence: true
   validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?\z/ix,
       message: "Invalid website format.  Must be http(s)://website_url",
       allow_blank: true
@@ -40,7 +41,7 @@ class Event < ActiveRecord::Base
     if query != ""
       queries = query.split(/\W+/)
       queries.each do |q|
-        relation = relation.where("name LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+        relation = relation.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
       end
     end
     relation = relation.where(campus_id: campus_id.to_i) if campus_id != ""

@@ -47,22 +47,17 @@
 
       <div class="event-details-edit-delete">
         <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
-                  edit_event_path(@event) if @event.user_id == current_user.id %>
+            edit_event_path(@event) if @event.user_id == current_user.id %>
         <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
-                  @event, method: :delete, data: { confirm: 'Are you sure?' } if @event.user_id == current_user.id %>
+            @event, method: :delete, data: { confirm: 'Are you sure?' } if @event.user_id == current_user.id %>
       </div>
     </div>
 
     <div class="col-md-4">
       <div class="chat-column">
         <%= render partial: 'comments/comments', locals: {commentable: @event} %>
-
         <%= render partial: 'comments/form', locals: {commentable: @event, comment: @comment} %>
-
       </div>
-<!-- close chat column -->
-    </div>
-<!-- close row -->
-  </div>
-<!-- fluid container closer -->
-</div>
+    </div><!-- close chat column -->
+  </div><!-- close row -->
+</div><!-- fluid container closer -->

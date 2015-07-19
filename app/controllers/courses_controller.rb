@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :user_is_cd?
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :add_students]
 
   # GET /courses
   def index
@@ -23,6 +23,10 @@ class CoursesController < ApplicationController
     @course.users.build
   end
 
+  def add_students
+    @course.users.build
+  end
+
   # POST /courses
   def create
     @course = Course.new(course_params)
@@ -36,16 +40,21 @@ class CoursesController < ApplicationController
 
   # PATCH/PUT /courses/1
   def update
-    # byebug
     unless params[:course][:users_attributes] == nil
       params[:course][:users_attributes].each do |k, v|
         v[:password] = "theironyard" unless v[:id]
       end
     end
     if @course.update(course_params)
-      redirect_to courses_path, notice: 'Course was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to courses_path, notice: 'Course was successfully updated.'}
+        format.js { redirect_to add_students_path(@course), notice: 'Student was successfully added.' }
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js { redirect_to add_students_path }
+      end
     end
   end
 
@@ -64,6 +73,6 @@ class CoursesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def course_params
       params.require(:course).permit(:started_on, :ended_on, :campus_id, :curriculum_id,
-          users_attributes: [:id, :first_name, :last_name, :email, :password])
+          users_attributes: [:id, :first_name, :last_name, :email, :password, :campus_id, :curriculum_id])
     end
 end

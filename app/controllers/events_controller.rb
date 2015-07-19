@@ -43,7 +43,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
-      redirect_to root_path, notice: 'Event was successfully created.'
+      redirect_to my_events_path, notice: 'Event was successfully created.'
     else
       render :new
     end
@@ -52,7 +52,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   def update
     if @event.update(event_params)
-      redirect_to root_path, notice: 'Event was successfully updated.'
+      redirect_to my_events_path, notice: 'Event was successfully updated.'
     else
       render :edit
     end
@@ -72,8 +72,8 @@ class EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:name, :happens_on, :description, :website,
-          :campus_id, :user_id, :uploaded_file)
+      params.require(:event).permit(:title, :happens_on, :description, :website,
+          :campus_id, :user_id, :uploaded_file, :location)
     end
 
     def check_user

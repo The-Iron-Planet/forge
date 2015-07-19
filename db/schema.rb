@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718143720) do
+ActiveRecord::Schema.define(version: 20150719145013) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 20150718143720) do
     t.text     "body"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-  end
-
-  create_table "companies", force: :cascade do |t|
-    t.string   "name"
-    t.string   "city"
-    t.string   "state"
-    t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -55,7 +46,6 @@ ActiveRecord::Schema.define(version: 20150718143720) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name"
     t.datetime "happens_on"
     t.text     "description"
     t.string   "website"
@@ -68,6 +58,8 @@ ActiveRecord::Schema.define(version: 20150718143720) do
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
     t.string   "website_html"
+    t.string   "title"
+    t.string   "location"
   end
 
   create_table "job_posts", force: :cascade do |t|
