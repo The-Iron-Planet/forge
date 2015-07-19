@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def index
 
     if request.post?
-      @users = User.search_results(params[:query], params[:campus_id], params[:curric_id], params[:job_status])
+      @users = User.search_results(params[:query], params[:campus_id], params[:curric_id], params[:job_status]).ordered
       if @users == User
         @users = User.all.ordered
         flash.now[:notice] = "Please choose specific search parameters."
@@ -27,20 +27,8 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = current_user
-    if request.post?
-      @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
-          search_results(params[:campus_id])
-      if @events.nil?
-        @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
-            where(campus_id: current_user.campus_id)
-        flash.now[:notice] = "Please choose specific search parameters."
-        render :dashboard
-      end
-    else
-      @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
-          where(campus_id: current_user.campus_id)
-    end
-
+    @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
+      where(campus_id: current_user.campus_id)
   end
 
   # GET /users/new
@@ -124,8 +112,8 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def user_params
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
-          :current_city, :current_state, :github_profile, :website, :blog,
-          :looking, :hiring, :is_cd, :is_instructor, :course_id, :campus_id, :curriculum_id, :email,
+          :current_city, :current_state, :github_profile, :twitter, :slack_handle, :website, :blog,
+          :looking, :hiring, :is_cd, :is_instructor, :is_mentor, :course_id, :campus_id, :curriculum_id, :email,
           :password, :password_confirmation, :current_password, :get_event_email, :campus_notification_id,
           :get_job_email, :get_resource_email, :get_comment_email, positions_attributes:
             [:id, :user_id, :company_name, :title, :city, :state, :started_on, :ended_on, :current])

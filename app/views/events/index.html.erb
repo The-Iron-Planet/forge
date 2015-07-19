@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container-fluid">
-<!--this page is done and only needs the new round add button  -->
+<!--this page is done for now and needs the new round add button ES  -->
     <div class="row">
       <div class="col-md-12 event-list-heading">
         <h2 class="events-heading">Events for <%= current_user.campus.long_name %></h2>
@@ -11,6 +11,18 @@
       <!-- </div> -->
 
     </div>
-    <%= render 'list' %>
+    <div class= "event-search">
+      <%= form_tag search_events_path, remote: true do %>
+      <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
+      <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
+        :id, :long_name, params[:campus_id]), prompt: "Search by Campus",
+        class: "search-reg search-boxes-bar-mid" %>
+      <%= button_tag "", type: "submit", class: "search-button glyphicon glyphicon-search" %>
+      <% end %>
+    </div>
+    </br>
+    <div id="event-list">
+      <%= render 'event_list' %>
+    </div>
   </div>
 </div>

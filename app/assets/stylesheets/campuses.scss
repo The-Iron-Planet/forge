@@ -11,6 +11,15 @@
   margin: 20px auto;
 }
 
-.new-campus .new-course {
+.new-campus .new-course .edit-campus{
   text-align: center;
+}
+
+.dropdown-styling {
+  -webkit-appearance: none;
+  font: $font;
+  border-radius: 4px;
+  border-style: none;
+  background-color: $light-gray;
+  color: $dark-gray;
 }

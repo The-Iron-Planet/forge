@@ -27,12 +27,12 @@
   z-index: 5;
 }
 
-.field {
-}
 
 .login-page {
   font-size: 20px;
   font-family: $font;
+  color: white;
+  text-align: left;
 }
 
 .login-boxes {
@@ -100,4 +100,5 @@
 
 .forgot-password-text {
   color: white;
+  font-size: 12pt;
 }

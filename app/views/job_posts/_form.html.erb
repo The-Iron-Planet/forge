@@ -39,20 +39,35 @@
         </div>
         <div class="field">
           <%= f.label :experience_desired, :class => "input-label" %><br>
-          <%= f.select :experience_desired, options_for_select(["Junior Developer", "Intermediate", "Senior Developer"],
-              f.object.experience_desired), :include_blank => true, :class => "input-field"%>
+          Junior <%= f.radio_button :experience_desired, "Junior" %>
+          Mid-Level <%= f.radio_button :experience_desired, "Mid-Level" %>
+          Senior <%= f.radio_button :experience_desired, "Senior" %>
         </div>
         <div class="field">
           <%= f.label :curriculum_id, "Which students would be most well-suited for the position?", :class => "input-label" %><br>
-          <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "", :class=>"input-field dropdown") %>
+          <% Curriculum.all.map do |c| %>
+          <%= "#{c.name}" %> <%= f.radio_button :curriculum_id, "#{c.id}" %>
+          <% end %>
         </div>
         <div class="field">
           <%= f.label :website, "Link to job description", :class => "input-label" %><br>
           <%= f.text_field :website, :class => "input-field" %>
         </div>
-        <div class="field">
-          This post will expire after one month.
-        </div>
+        <% if @job_post.expires_on == nil %>
+          <div class="field">
+            <%= f.label :expires_on, "When should this post expire? (Posts expire one month after creation unless otherwise specified.)", :class => "input-label" %><br>
+            <%= f.date_field :expires_on, :value => (Date.today + 1.month) %>
+          </div>
+        <% elsif @job_post.expires_on < Date.today %>
+          <div class="field">
+            <%= f.label :expires_on, "This post has expired. Please update the expiration date if you would like to reactivate it.", :class => "input-label" %><br>
+            <%= f.date_field :expires_on %>
+        <% else %>
+          <div class="field">
+            <%= f.label :expires_on, "When should this post expire?", :class => "input-label" %><br>
+            <%= f.date_field :expires_on %>
+          </div>
+        <% end %>
         <% if @job_post.active != nil %>
           <div class="field">
             <%= f.label :active, "Is this Job Post active?", :class => "input-label" %><br>

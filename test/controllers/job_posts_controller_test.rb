@@ -40,7 +40,7 @@ class JobPostsControllerTest < ActionController::TestCase
   end
 
   test "should update job_post" do
-    patch :update, id: @job_post, job_post: { company_name: @job_post.company_name, 
+    patch :update, id: @job_post, job_post: { company_name: @job_post.company_name,
         curriculum_id: @job_post.curriculum_id, description: @job_post.description,
         experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month),
         title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }

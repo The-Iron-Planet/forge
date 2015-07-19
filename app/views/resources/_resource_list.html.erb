@@ -9,10 +9,14 @@
                 <i class="fa fa-question-circle fa-2x fa-fw"></i>
                 <div class="thumbnail resource-img">
                   <% if resource.user.uploaded_file_file_name.nil? %>
-                    <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %></div>
+                    <div>
+                      <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %>
+                      <%=link_to resource.user.first_name, "/users/#{resource.user_id}" %>
+                    </div>
                   <% else %>
                     <div>
-                      <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}"  %>
+                      <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}" %>
+                      <%=link_to resource.user.first_name, "/users/#{resource.user_id}" %>
                     </div>
                   <% end %>
                 </div>
@@ -37,10 +41,10 @@
                 <%= resource.website_html unless resource.website.blank? %>
               </p>
               <div class="edit-delete">
-                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Resource"></i>'.html_safe,
-                              edit_resource_path(resource) if resource.user_id == current_user.id %>
-                <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-                              resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
+                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Resource"></i>'.html_safe,
+                    edit_resource_path(resource) if resource.user_id == current_user.id %>
+                <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Resource"></i>'.html_safe,
+                    resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
               </div>
             </div>
           </div>

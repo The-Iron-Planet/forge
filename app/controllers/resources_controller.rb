@@ -7,8 +7,8 @@ class ResourcesController < ApplicationController
   # GET /resources
   def index
     if request.post?
-      @resources = Resource.all.ordered.search_results(params[:curriculum_id])
-      if @resources.nil?
+      @resources = Resource.all.ordered.search_results(params[:query])
+      if @resources.nil? || @resources == Resource
         @resources = Resource.all.ordered.first(5)
         flash.now[:notice] = "Please choose specific search parameters."
         render :index
@@ -16,6 +16,10 @@ class ResourcesController < ApplicationController
     else
       @resources = Resource.all.ordered.first(5)
     end
+  end
+
+  def my_resources
+    @resources = Resource.where(user_id: current_user.id)
   end
 
   # GET /resources/new

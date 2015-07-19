@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717175751) do
+ActiveRecord::Schema.define(version: 20150718143720) do
 
   create_table "campuses", force: :cascade do |t|
     t.string   "city"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20150717175751) do
     t.text     "body"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -58,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150717175751) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
+    t.string   "website_html"
   end
 
   create_table "job_posts", force: :cascade do |t|
@@ -74,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150717175751) do
     t.string   "company_name"
     t.string   "city"
     t.string   "state"
+    t.string   "website_html"
   end
 
   create_table "positions", force: :cascade do |t|
@@ -137,6 +148,11 @@ ActiveRecord::Schema.define(version: 20150717175751) do
     t.boolean  "get_job_email"
     t.boolean  "get_resource_email"
     t.boolean  "get_comment_email"
+    t.string   "website_html"
+    t.boolean  "is_mentor"
+    t.string   "twitter"
+    t.string   "slack_handle"
+    t.string   "linked_in"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

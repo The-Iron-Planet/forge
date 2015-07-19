@@ -1,6 +1,12 @@
 <div class = "container-fluid">
   <div class = "row">
-    <div class = "col-md-3"></div>
+    <div class = "col-md-3">
+      <ul class="nav nav-tabs nav-stacked">
+        <li role="presentation" class="active"><a href="#">Profile</a></li>
+        <li role="presentation"><%= link_to 'My Events', my_events_path if @user.id == current_user.id %></li>
+        <li role="presentation"><%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %></li>
+      </ul>
+    </div>
     <div class = "col-md-6 profile">
       <% if @user.uploaded_file_file_name.nil? %>
         <div><%= image_tag "default_pic.png", size: "200x200" %></div>
@@ -17,10 +23,27 @@
       <% end %>
       <div>Email Icon: <%= @user.email %></div>
       <% unless @user.github_profile.blank? %>
-        <div>Github: <%= @user.github_profile %></div>
+        <div>
+          Github: <%= link_to "#{@user.github_profile}", @user.github_link, target: "_blank" %>
+        </div>
+      <% end %>
+      <% unless @user.twitter.blank? %>
+        <div>
+          Twitter: <%= link_to "@#{@user.twitter}", @user.twitter_link, target: "_blank" %>
+        </div>
+      <% end %>
+      <% unless @user.slack_handle.blank? %>
+        <div>
+          Slack: <%= "@#{@user.slack_handle}" %>
+        </div>
+      <% end %>
+      <% unless @user.linked_in.blank? %>
+        <div>
+          Linked In: <%= link_to @user.linked_in, @user.linked_in, target: "_blank" %>
+        </div>
       <% end %>
       <% unless @user.website.blank? %>
-        <div>Website: <%= @user.website %></div>
+        <div>Website: <%= @user.website_html %></div>
       <% end %>
       <% unless @user.blog.blank? %>
         <div>Blog: <%= @user.blog %></div>
@@ -73,9 +96,7 @@
 
   <div class = "row">
     <div class = "links">
-      <div class = "link1"><%= link_to 'My Events', my_events_path if @user.id == current_user.id %></div>
       <div class = "link1"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></div>
-      <div class = "link1"><%= link_to 'Change Password', edit_password_user_path(@user) if @user.id == current_user.id %></div>
     </div>
   </div>
 

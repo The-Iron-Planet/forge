@@ -16,12 +16,12 @@
     <% if user_signed_in? %>
       <div class="nav-links">
         <!--<%= link_to 'Home', root_path, class: "nav" %>-->
-        <%= link_to 'Alumni Directory', users_path, class: "nav" %>
-        <%= link_to 'Resources', resources_path, class: "nav" %>
-        <%= link_to 'Jobs', job_posts_path, class: "nav" %>
-        <%= link_to 'Events', events_path, class: "nav" %>
+        <%= link_to 'Alumni Directory', users_path, class: "nav-ind" %>
+        <%= link_to 'Resources', resources_path, class: "nav-ind" %>
+        <%= link_to 'Jobs', job_posts_path, class: "nav-ind" %>
+        <%= link_to 'Events', events_path, class: "nav-ind" %>
         <% if current_user.is_cd %>
-          <div class = "admin-header nav">
+          <div class = "admin-header nav-ind">
             <div class="dropdown">
               <div class="dropdown-toggle" type="text"
               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"

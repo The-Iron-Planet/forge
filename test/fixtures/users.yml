@@ -10,18 +10,19 @@ one:
   last_name: "lastname"
   current_city: "Durham"
   current_state: "NC"
-  github_profile: "github"
+  github_profile: github
   is_cd: true
   is_instructor: false
   course: :one
   sign_in_count: 2
   looking: true
-  hiring: false
+  hiring: true
   campus: :one
   get_event_email: true
   campus_notification_id: 980190962
   get_resource_email: true
   get_job_email: true
+  twitter: firstname
 
 two:
   email: "two@email.com"
@@ -33,13 +34,14 @@ two:
   is_cd: false
   is_instructor: false
   course: :two
-  hiring: true
+  hiring: false
   campus: :two
   curriculum: :two
   get_event_email: true
   campus_notification_id: 298486374
   get_resource_email: true
   get_job_email: true
+
 
 three:
   email: "three@email.com"

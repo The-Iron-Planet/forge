@@ -9,7 +9,7 @@
   right: 0;
   height: 100px;
   width: 100%;
-  border: 1px #567a89 solid;
+  border: 1px $nav-bar-green solid;
   background-color: $nav-bar-green;
   z-index: 50;
 }
@@ -17,15 +17,10 @@
 
 .header-text {
   position: absolute;
-  bottom: 0.75em;
   left: 85%;
   // font-size: 1em;
   text-align: right;
 }
-
-
-
-
 
 .logout-header {
   // z-index: 100;
@@ -33,10 +28,8 @@
   right: 3em;
   // top: 1.5em;
   position: absolute;
-
   // right: 3em;
 }
-
 
 .nav-links {
   width: 800px;
@@ -46,7 +39,7 @@
   margin-top: 2.25em;
   z-index: 3;
 }
-.nav {
+.nav-ind {
   font-size: 1.10em;
   font-family: $font;
   font-weight: 900;
@@ -60,7 +53,7 @@
   // font-weight: 500;
   // letter-spacing: .5px;
 }
-.nav:hover {
+.nav-ind:hover {
   // padding-bottom: 1em;
   text-decoration: underline;
   padding-bottom: 1em;
@@ -89,9 +82,7 @@
 }
 
 .btn-default {
-  padding: .3em;
   width: 6em;
-  margin-bottom: 1.2em;
 }
 
 .logo-cont {
@@ -105,6 +96,10 @@
   height: 90px;
 }
 
-.logout {
-  font-family: $font;
+.nav {
+  border: none;
+  z-index: 100;
+  margin-top: 40px;
 }
+
+

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :comments, module: :events
   end
-  
+
   resources :positions
   resources :courses
   resources :curricula
@@ -19,11 +19,12 @@ Rails.application.routes.draw do
 
   root 'users#dashboard'
   post 'search' => 'users#index'
-  post 'search_events' => 'users#dashboard'
+  post 'search_events' => 'events#index'
   post 'search_jobs' => 'job_posts#index'
   post 'search_resources' => 'resources#index'
   get 'my_job_posts' => 'job_posts#my_job_posts'
   get 'my_events' => 'events#my_events'
+  get 'my_resources' => 'resources#my_resources'
 
 
   resources :users do
