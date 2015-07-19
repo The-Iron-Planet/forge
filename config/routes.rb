@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   get 'my_resources' => 'resources#my_resources'
   get 'add_students/:id' => 'courses#add_students', as: :add_students
   patch 'add_students/:id' => 'courses#add_students'
-
+  get 'work_history/:id' => 'users#work_history', as: :work_history
+  patch 'work_history/:id' => 'users#work_history'
 
 
   resources :users do
