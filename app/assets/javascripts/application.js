@@ -19,9 +19,7 @@
 //= require jquery-ui
 //= require magnific-popup
 //= require dialog
-$(function () {
-  $('.collapse-card').paperCollapse()
-})
+//= require navbar
 
 
 // var header = document.getElementById("#dir-header");

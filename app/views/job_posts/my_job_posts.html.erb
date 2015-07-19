@@ -1,12 +1,18 @@
-<div class="container">
-  <div class="container-fluid">
-
-    <div class="row">
-      <div class="col-md-12">
+<div class="container-fluid">
+  <div class="row">
+    <div class = "col-md-3">
+       <ul class="nav nav-tabs nav-stacked">
+          <li role="presentation"><%= link_to 'My Profile', user_path(current_user) %></li>
+          <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
+          <li role="presentation" class="active"><a href="#">My Job Posts</a></li>
+          <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
+        </ul>
+    </div>
+    <div class="col-md-9">
         <h2 class="centered-heading">My Job Posts</h2>
         <div class="btn-add-record-align"><%= link_to 'Add New Job Post', new_job_post_path, :class=>" btn-add-record"%></div>
-      </div>
+        <%= render 'job_post_list' %>
     </div>
-    <%= render 'job_post_list' %>
   </div>
 </div>
+

@@ -14,20 +14,20 @@
       <%= link_to image_tag("TIY-logo-500px.png", alt: "logo", class: "tiy"), root_path %>
     </div>
     <% if user_signed_in? %>
-      <div class="nav-links">
+      <ul class="nav-links" id = "nav-links">
         <!--<%= link_to 'Home', root_path, class: "nav" %>-->
-        <%= link_to 'Alumni Directory', users_path, class: "nav-ind" %>
-        <%= link_to 'Resources', resources_path, class: "nav-ind" %>
-        <%= link_to 'Jobs', job_posts_path, class: "nav-ind" %>
-        <%= link_to 'Events', events_path, class: "nav-ind" %>
+        <li><%= link_to 'Alumni Directory', users_path, class: "nav-ind" %></li>
+        <li><%= link_to 'Resources', resources_path, class: "nav-ind" %></li>
+        <li><%= link_to 'Jobs', job_posts_path, class: "nav-ind" %></li>
+        <li><%= link_to 'Events', events_path, class: "nav-ind" %></li>
         <% if current_user.is_cd %>
           <div class = "admin-header nav-ind">
             <div class="dropdown">
               <div class="dropdown-toggle" type="text"
-              id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="true">
+               id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="true">
                 Admin
-                <span class="caret"></span>
+               <span class="caret"></span>
               </div>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                 <li><%= link_to 'New User', new_user_path %></li>
@@ -38,7 +38,7 @@
             </div>
           </div>
         <% end %>
-      </div>
+      </ul>
 
       <div class = "header-text">
         <div class="dropdown">
@@ -49,7 +49,7 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-            <li><%= link_to 'View Profile', user_path(current_user) %></li>
+            <li><%= link_to 'My Account', user_path(current_user) %></li>
             <li><a href="#">Another action</a></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class=>"logout" %></li>
           </ul>
