@@ -9,7 +9,7 @@
         </div>
             <% else %>
         <div>
-          <%= image_tag @event.uploaded_file(:thumb) %>
+          <%= image_tag @event.uploaded_file(:square), :class=>"default-img" %>
         </div>
             <% end %>
       </div>
