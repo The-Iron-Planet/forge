@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/first_login' => 'users#first_login', as: :first_login
   # get '/dashboard' => 'users#dashboard', as: :dashboard
 
+
   root 'users#dashboard'
   post 'search' => 'users#index'
   post 'search_events' => 'events#index'
@@ -25,6 +26,9 @@ Rails.application.routes.draw do
   get 'my_job_posts' => 'job_posts#my_job_posts'
   get 'my_events' => 'events#my_events'
   get 'my_resources' => 'resources#my_resources'
+  get 'add_students/:id' => 'courses#add_students', as: :add_students
+  patch 'add_students/:id' => 'courses#add_students'
+
 
 
   resources :users do
