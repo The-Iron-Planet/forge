@@ -29,6 +29,17 @@ class UsersController < ApplicationController
     @user = current_user
     @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
       where(campus_id: current_user.campus_id)
+    if @user.is_cd
+      @job_posts = JobPost.all.ordered.all_active.first(5)
+      @resources = Resource.all.ordered.first(3)
+    elsif @user.is_instructor
+      @job_posts = JobPost.all.ordered.where(curriculum_id: current_user.curriculum_id).all_active.first(5)
+      @resources = Resource.all.ordered.where(curriculum_id: current_user.curriculum_id).first(3)
+    else
+      @job_posts = JobPost.ordered.where(curriculum_id: current_user.curriculum_id).all_active.first(5)
+      @resources = Resource.ordered.where(curriculum_id: current_user.curriculum_id).first(5)
+    end
+
   end
 
   # GET /users/new

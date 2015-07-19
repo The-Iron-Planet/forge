@@ -2,21 +2,27 @@
 <!-- Dashboard  -->
 
 <div class="container-fluid">
+  <div class="row dashboard-row fixed-header">
+    <div class="col-md-4">
+      <h2>Resources</h2>
+    </div>
+    <div class="col-md-4">
+      <h2>Jobs</h2>
+    </div>
+    <div class="col-md-4">
+      <h2>Events</h2>
+    </div>
+  </div>
+
   <div class="row dashboard-row">
     <div class="col-md-4">
-      Resources
-
+      <%= render 'resources' %>
+    </div>
+    <div class="col-md-4">
+      <%= render 'job_posts' %>
     </div>
 
     <div class="col-md-4">
-      Jobs
-
-    </div>
-
-    <div class="col-md-4">
-      <div class="dashboard-events-header">
-        <h2 class="fixed-header">Events</h2>
-      </div>
       <%= render 'events' %>
     </div>
   </div>

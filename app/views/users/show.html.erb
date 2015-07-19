@@ -11,7 +11,7 @@
       <% if @user.uploaded_file_file_name.nil? %>
         <div><%= image_tag "default_pic.png", size: "200x200" %></div>
       <% else %>
-        <div><%= image_tag @user.uploaded_file(:medium) %></div>
+        <div><%= image_tag @user.uploaded_file(:square) %></div>
       <% end %>
 
       </br>
