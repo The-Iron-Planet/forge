@@ -41,7 +41,7 @@ class Event < ActiveRecord::Base
     if query != ""
       queries = query.split(/\W+/)
       queries.each do |q|
-        relation = relation.where("name LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+        relation = relation.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
       end
     end
     relation = relation.where(campus_id: campus_id.to_i) if campus_id != ""
