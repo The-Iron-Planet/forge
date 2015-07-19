@@ -82,7 +82,7 @@
 
 // event listing page css
 .margin-top{
-  margin-top: 90px;
+  margin-top: 10px;
 }
 
 
@@ -177,4 +177,58 @@ box-shadow: 0 10px 50px $white;
   height: auto;
   background-color: $events-color;
   border: solid thick black;
+}
+
+
+
+
+
+
+// event details page
+
+
+.event-detail-page{
+  display: inline-block;
+float: left;
+  margin: -30px 20px 20px 20px;
+  padding: 20px;
+
+}
+
+
+.detail-event-img{
+  float: left;
+  margin: 30px 20px 20px 100px;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  z-index: 10;
+  background-color: blue;
+}
+
+.thumbnail-event-img{
+  float: left;
+  margin: 155px 20px 185px 120px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 10;
+
+
+}
+
+.event-page-heading{
+  position: fixed;
+  z-index: 10;
+padding-top: 150px;
+top: 0;
+  background-color: green;
+
+}
+.event-details{
+  text-align: left;
+    list-style-type: none;
+padding-top: 180px;
+// padding-left: -200px;
+
 }

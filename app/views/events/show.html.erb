@@ -1,66 +1,90 @@
+<!-- <div class="container"> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
 
-<div class="container">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-4">
-        <h2 class="event-page-heading"><%= @event.name %>this is indiv events detail page</h2>
+
+    <div class="detail-event-img">
+      <% if @event.uploaded_file_file_name.nil? %>
+      <div>
+        <%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %>
       </div>
+      <% else %>
+      <div>
+        <%= image_tag @event.uploaded_file(:thumb) %>
+      </div>
+      <% end %>
     </div>
-    <div class="events-background-color">
-        <div class="row card">
-          <div class="col-md-12">
-
-            <div class="event-img">
-              <% if @event.uploaded_file_file_name.nil? %>
-                <div>
-                  <%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %>
-                </div>
-              <% else %>
-                <div>
-                  <%= image_tag @event.uploaded_file(:thumb) %>
-                </div>
-              <% end %>
-            </div>
-            <div class="thumbnail event-img">
-              <% if @event.user.uploaded_file_file_name.nil? %>
-                <div>
-                  <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{@event.user_id}" %>
-                </div>
-              <% else %>
-                <div>
-                  <%=link_to image_tag(@event.user.uploaded_file(:small)),"users/#{@event.user_id}"  %>
-                </div>
-              <% end %>
-            </div>
-            <div class="event-details">whattheheck
-              <p>Details
-                <ul>
-                  <li>Date: <%= @event.event_date %></li>
-                  <li>Time: <%= @event.event_time %></li>
-                  <li>Campus: <%= @event.campus.long_name %></li>
-                  <li>Description: <%= @event.description %></li>
-                  <li class="event-link">Website: <%= @event.website %></li>
-                </ul>
-              </p>
-            </div>
+    <div class="thumbnail-event-img">
+      <% if @event.user.uploaded_file_file_name.nil? %>
+      <div>
+        <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{@event.user_id}" %>
+      </div>
+      <% else %>
+      <div>
+        <%=link_to image_tag(@event.user.uploaded_file(:small)),"users/#{@event.user_id}"  %>
+      </div>
+      <% end %>
+    </div>
+  </div >
 
 
-            <!-- <div class="edit-delete">
-              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
+
+
+
+
+
+
+
+
+
+    <div class="col-md-6">
+      <div class="event-detail-page">
+
+
+      <h2 class="event-page-heading"><%= @event.name %></h2>
+
+
+
+
+
+
+
+          <ul class="event-details">
+            <li>
+              <%= @event.event_date %></li>
+            <li>
+              <%= @event.event_time %></li>
+            <li>Campus:
+              <%= @event.campus.long_name %></li>
+            <li>
+              <%= @event.description %></li>
+            <li class="event-link">Website:
+              <%= @event.website %></li>
+          </ul>
+
+      </div>
+
+      <div class="edit-delete">
+        <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
                   edit_event_path(@event) if @event.user_id == current_user.id %>
-              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
+        <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
                   @event, method: :delete, data: { confirm: 'Are you sure?' } if @event.user_id == current_user.id %>
-            </div> -->
-          </div>
-        </div>
-    </div>
+      </div>
   </div>
-</div>
 
 
-<div class="detailBox">
-  <%= render partial: 'comments/comments', locals: {commentable: @event} %>
+    <div class= col-md-4>
 
-  <%= render partial: 'comments/form', locals: {commentable: @event, comment: @comment} %>
+      <div class="chat-column">
+        <%= render partial: 'comments/comments', locals: {commentable: @event} %>
 
+        <%= render partial: 'comments/form', locals: {commentable: @event, comment: @comment} %>
+
+      </div>
+<!-- close chat column -->
+    </div>
+<!-- close row -->
+  </div>
+<!-- fluid container closer -->
 </div>
