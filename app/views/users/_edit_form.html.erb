@@ -16,7 +16,6 @@
   </div>
   
   <div class="row new-user-form">
-
     <div class="col-xs-1"></div>
     <div class="col-md-3">
         <div class="field">
@@ -66,12 +65,10 @@
     </div>
     <div class="col-xs-1"></div>
   </div>
-    
-    <hr>
-
-  <div class="row">
-    <!-- <div class="col-md-2 ctr"></div> -->
-    <div class="col-md-12 ctr">
+  
+  <div class = "row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
       <div class="field ctr">
         <%= f.label :get_job_email, :class => "", :value => 'Would you like to receive email notifications for job posts?'%></br>
         Yes <%= f.radio_button :get_job_email, true %>
@@ -107,11 +104,10 @@
         Yes<%= f.radio_button :hiring, true %>
         No<%= f.radio_button :hiring, false %>
       </div>
-    <!-- <div class="col-md-2 ctr"></div> -->
-    </div>
+    <div class="col-md-3"></div>
   </div>
-
-  <%= f.fields_for :positions do |ff| %>
+    
+  <!--<%= f.fields_for :positions do |ff| %>
     <div class="field">
       <%= ff.label :title, :class => "input-label" %><br>
       <%= ff.text_field :title, :class => "input-field" %>
@@ -135,12 +131,12 @@
     <div class="field">
       <%= ff.label :ended_on, :class => "input-lable" %><br>
       <%= ff.date_field :ended_on, :class => "input-field" %>
-    </div>
+    </div>-->
     <!-- <div class = "field">----------------</div> -->
   <% end %>
   <div class="row">
     <div class="col-md-12 actions field ">
-      <%= f.submit :class=> "btn ", :value => 'Submit'%>
+      <%= f.submit :class=> "btn btn-profile", :value => 'Submit'%>
     </div>
   </div>
   <% end %>
