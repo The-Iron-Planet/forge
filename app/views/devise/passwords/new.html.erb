@@ -1,15 +1,17 @@
 <div class="logo-continued">
   <%= image_tag "home-hero.jpg", :id => "bg", alt: "", :class=> "background-image" %>
+    <div class = "error-message-login">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= devise_error_messages! %>
+    </div>
     <div class = "forgot-password-box">
       <h2 class = "login-page">Forgot Password?</h2>
       <p class = "forgot-password-text">Enter the account email address you signed up with in the box below. 
           We will send password reset instructions to this address.
       </p>
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-        <%= devise_error_messages! %>
     
         <div class="field">
-          <%= f.email_field :email, autofocus: true, :class => "input-field-login login-page", :placeholder => "Email" %>
+          <%= f.email_field :email, autofocus: true, :class => "input-field-login login-page-text", :placeholder => "Email" %>
         </div>
     
         <div class="actions">
