@@ -187,7 +187,11 @@ box-shadow: 0 10px 50px $white;
 
 
 // event details page
+.col-md-6{
+  // background-color: blue;
+  // height: 700px;
 
+}
 
 .event-detail-page{
   display: inline-block;
@@ -200,17 +204,17 @@ float: left;
 
 .detail-event-img{
   float: left;
-  margin: 30px 20px 20px 100px;
+  margin: 110px 20px 20px 100px;
   width: 100px;
   height: 100px;
   position: fixed;
   z-index: 10;
-  background-color: blue;
+  // background-color: blue;
 }
 
 .thumbnail-event-img{
   float: left;
-  margin: 155px 20px 185px 120px;
+  margin: 240px 20px 185px 120px;
   width: 50px;
   height: 50px;
   position: fixed;
@@ -224,13 +228,38 @@ float: left;
   z-index: 10;
 padding-top: 150px;
 top: 0;
-  background-color: green;
+background-color: $white;
+box-shadow: 0 10px 50px $white;
+
 
 }
-.event-details{
+.indiv-event-details{
+  width: 600px;
+  min-width: 300px;
+  position: fixed;
   text-align: left;
     list-style-type: none;
-padding-top: 180px;
+margin-top: 110px;
+margin-left: -40px;
+margin-right: 40px;
+font-size: $h4;
+
+  border-left: 10px solid $events-color;
 // padding-left: -200px;
+
+}
+
+
+.bold-sans-serif{
+  font-family: $sans-serif-bold;
+}
+
+.event-description{
+  margin-top: 20px;
+  margin-right: 40px;
+}
+
+.event-details-edit-delete{
+  float: right;
 
 }

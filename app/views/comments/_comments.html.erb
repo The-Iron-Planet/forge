@@ -1,7 +1,13 @@
-<h3> Comments </h3>
+<div class="container-fluid">
+<div class="chat-box">
+
+<h4 class="chat-heading"> Chat About This Event </h4>
+
+
+
 <% commentable.comments.each do |comment| %>
   <div class="row">
-    <div class="col-sm-1">
+    <div class="col-sm-1 ">
       <div class="thumbnail">
         <% if comment.user.uploaded_file_file_name.nil? %>
           <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{comment.user_id}" %>
@@ -35,5 +41,8 @@
         </div><!-- /panel-body -->
       </div><!-- /panel panel-default -->
     </div><!-- /col-sm-5 -->
+
   </div><!-- /row -->
 <% end %>
+</div>
+</div>

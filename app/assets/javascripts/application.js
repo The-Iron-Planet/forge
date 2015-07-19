@@ -22,29 +22,3 @@
 $(function () {
   $('.collapse-card').paperCollapse()
 })
-
-
-// var header = document.getElementById("#dir-header");
-// var searchbox = document.getElementById("#search-box");
-// var stuck = false;
-// var stickPoint = header.offsetTop;
-// getDistance();
-
-// function getDistance() {
-//   var topDist = header.offsetTop;
-//   return topDist;
-// }
-
-// window.onscroll = function(e) {
-//   var distance = getDistance() - window.pageYOffset;
-//   var offset = window.pageYOffset;
-//   readout.innerHTML = stickPoint + '   ' + distance + '   ' + offset + '   ' + stuck;
-//   if ( (distance <= 0) && !stuck) {
-//     header.style.position = 'fixed';
-//     header.style.top = '0px';
-//     stuck = true;
-//   } else if (stuck && (offset <= stickPoint)){
-//     header.style.position = 'static';
-//     stuck = false;
-//   }
-// }
