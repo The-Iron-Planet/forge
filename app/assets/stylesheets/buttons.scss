@@ -100,3 +100,9 @@ btn-login {
   text-transform: uppercase;
   padding: 7.5px 15px 10px;
 }
+
+.chat-btn{
+  @extend .btn;
+  height: 50px;
+  width: 50px;
+}
