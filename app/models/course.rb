@@ -10,7 +10,7 @@ class Course < ActiveRecord::Base
   validates :curriculum_id, presence: true
   validate :validate_end_date_before_start_date
 
-  accepts_nested_attributes_for :users
+  accepts_nested_attributes_for :users, reject_if: :all_blank
 
   def validate_end_date_before_start_date
     if started_on && ended_on

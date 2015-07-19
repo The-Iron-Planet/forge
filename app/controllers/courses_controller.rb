@@ -53,7 +53,7 @@ class CoursesController < ApplicationController
     else
       respond_to do |format|
         format.html { render :edit }
-        format.js { redirect_to add_students_path }
+        format.js { render :add_students }
       end
     end
   end
