@@ -1,6 +1,6 @@
 
 // Colors
-
+$heading-color:#28394c;
 $black: #000;
 $shield: #233139;
 $base: #727d84;
@@ -17,12 +17,7 @@ $accent-color-dark: #009278;
 $link: #158cbd;
 $link-hover: grey;
 
-//Fonts
 
-// @font-face {
-//     font-family: "TisaPro-BoldIta";
-//     url:(assets/fonts/TisaPro-BoldIta);
-// }
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
@@ -32,6 +27,8 @@ $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
 $corners: 4px 4px 4px 4px;
 $sans-serif:"Roboto-Regular";
+$events-color:#e1ba6f;
+$off-white:#e7e3da;
 
 .container-fluid {
   padding: 0;
@@ -55,12 +52,13 @@ h2 {
   color: #28394c;
 }
 h3 {
-  // font-size: 28px;
+    font-family: $font-bold;
   line-height: 1.4;
+  color: $heading-color;
 }
 h4 {
   font-family: $font-bold;
-  // font-size: 22px;
+
   font-color: $shield;
 }
 p {
@@ -97,7 +95,12 @@ p {
 }
 
 
-textarea, input { outline: none; }
+textarea,
+input {
+  outline: none;
+  }
+
+
 #input-field,
 .input-field {
   -webkit-appearance:none;
@@ -138,10 +141,6 @@ textarea, input { outline: none; }
 
 
 
-col-md-3 {
-  border: 1px black solid;
-}
-
 .icon-mail {
   font-size: 25px;
   padding: 1px;
@@ -151,13 +150,11 @@ col-md-3 {
   padding: 1px;
 }
 
-
-//
+// Form Validation/error msgs
 .form-val {
-    font-size: .8em;
+  font-size: .8em;
   color: red;
   text-align: center;
-
 }
 
 .error{
@@ -170,6 +167,14 @@ col-md-3 {
   font-style: italic;
   color: red;
 }
+
+
+
+
+col-md-3 {
+  border: 1px black solid;
+}
+
 .stack-align {
   padding-left: 10px;
 }
@@ -213,20 +218,7 @@ table, th, td {
 }
 
 
-// .image-circle{
-//   z-index: -10;
-//   width: 150px;
-//   height: 150px;
-//   border-radius: 50%;
-//   background-color: #677f9a;
-//   color: white;
-// }
-// .event-details{
-//   background-color: #26496f;
-//   width: 500px;
-//   height: 160px;
-//   color: $white;
-// }
+
 
 .links {
   text-align: center;

@@ -10,9 +10,12 @@
 </div>
 <div class="container">
   <div class="container-fluid">
-    <div class="col-md-10">
-      <h2>My Events</h2>
-      <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
+<!-- This page is done except the add button -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>My Events</h2>
+        <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
+      </div>
     </div>
  </div>
  <%= render 'event_list' %>
