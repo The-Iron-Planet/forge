@@ -35,7 +35,7 @@
           <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :name, params[:curriculum_id]), prompt: "Curriculum",
             class: "search-reg search-margin" %>
-          <%= select_tag :experience_desired, options_for_select(["Junior Developer", "Intermediate", "Senior Developer"],
+          <%= select_tag :experience_desired, options_for_select(["Junior Developer", "Mid-Level", "Senior Developer"],
                 params[:experience_desired]), prompt: " Experience Level", class: "search-reg search-margin"%>
         </div>
         <% end %>

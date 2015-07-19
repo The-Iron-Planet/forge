@@ -103,7 +103,7 @@ Resource.create!(title: "Fixed vs. Growth Mindsets", description: "How to fine-t
 
 JobPost.create!(company_name: "Google", city: "Mountain View", state: "CA", user_id: dur_fe_alum.id, curriculum_id: fe.id,
     title: "Front End Engineer", description: "Google is hiring! Those with JavaScript, AJAX, and jQuery experience should apply!",
-    experience_desired: "Intermediate", website: "http://www.google.com", expires_on: (Date.today + 1.month), active: true)
+    experience_desired: "Mid-Level", website: "http://www.google.com", expires_on: (Date.today + 1.month), active: true)
 JobPost.create!(company_name: "IBM", city: "Austin", state: "TX", user_id: atl_rails_alum.id, curriculum_id: rails.id,
     title: "Junior Rails Developer", description: "Seeking junior Rails developers with expertise in Ruby, JavaScript, and SQL queries.",
     experience_desired: "Junior Developer", website: "http://www.ibm.com", expires_on: (Date.today + 1.week), active: true)

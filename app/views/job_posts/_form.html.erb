@@ -40,13 +40,13 @@
         <div class="field">
           <%= f.label :experience_desired, :class => "input-label" %><br>
           Junior <%= f.radio_button :experience_desired, "Junior" %>
-          Intermediate <%= f.radio_button :experience_desired, "Intermediate" %>
+          Mid-Level <%= f.radio_button :experience_desired, "Mid-Level" %>
           Senior <%= f.radio_button :experience_desired, "Senior" %>
         </div>
         <div class="field">
           <%= f.label :curriculum_id, "Which students would be most well-suited for the position?", :class => "input-label" %><br>
           <% Curriculum.all.map do |c| %>
-          <%= "#{c.name}" %> <%= f.radio_button :experience_desired, "#{c.id}" %>
+          <%= "#{c.name}" %> <%= f.radio_button :curriculum_id, "#{c.id}" %>
           <% end %>
         </div>
         <div class="field">
