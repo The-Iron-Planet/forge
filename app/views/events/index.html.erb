@@ -1,24 +1,26 @@
 <div class="container">
   <div class="container-fluid">
-<!--this page is done for now and needs the new round add button ES  -->
+<!--this page needs the search bar and needs the new round add button ES  -->
     <div class="row">
       <div class="col-md-12 event-list-heading">
-        <h2 class="events-heading">Events for <%= current_user.campus.long_name %></h2>
+        <div class="search-box col-med-12 well">
+            <%= form_tag search_events_path, remote: true do %>
+              <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
+              <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
+                :id, :long_name, params[:campus_id]), prompt: "Search by Campus",
+                class: "search-reg search-boxes-bar-mid" %>
+              <%= button_tag "", type: "submit", class: "search-button glyphicon glyphicon-search" %>
+            <% end %>
+        </div>
       </div>
-      <!-- <div class="col-md-6"> -->
+      <br />
+      <br />
+      <br />
 
+      <!-- <div class="col-md-6"> -->
         <!-- <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div> -->
       <!-- </div> -->
 
-    </div>
-    <div class= "event-search">
-      <%= form_tag search_events_path, remote: true do %>
-      <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
-      <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
-        :id, :long_name, params[:campus_id]), prompt: "Search by Campus",
-        class: "search-reg search-boxes-bar-mid" %>
-      <%= button_tag "", type: "submit", class: "search-button glyphicon glyphicon-search" %>
-      <% end %>
     </div>
     </br>
     <div id="event-list">

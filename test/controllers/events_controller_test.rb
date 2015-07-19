@@ -21,11 +21,11 @@ class EventsControllerTest < ActionController::TestCase
   test "should create event" do
     assert_difference('Event.count') do
       post :create, event: { campus_id: @event.campus_id, description: @event.description,
-          happens_on: @event.happens_on, name: @event.name, user_id: @event.user_id,
-          website: @event.website }
+          happens_on: @event.happens_on, title: @event.title, user_id: @event.user_id,
+          website: @event.website, location: @event.location }
     end
 
-    assert_redirected_to root_path
+    assert_redirected_to my_events_path
   end
 
   test "should get edit" do
@@ -36,8 +36,9 @@ class EventsControllerTest < ActionController::TestCase
   test "should update event" do
     patch :update, id: @event, event: { campus_id: @event.campus_id,
         description: @event.description, happens_on: @event.happens_on,
-        name: @event.name, user_id: @event.user_id, website: @event.website }
-    assert_redirected_to root_path
+        title: @event.title, user_id: @event.user_id, website: @event.website,
+        location: @event.location }
+    assert_redirected_to my_events_path
   end
 
   test "should destroy event" do
