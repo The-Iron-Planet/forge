@@ -1,64 +1,56 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-3"></div>
-    <div class="col-md-5 events-column">
-      <!-- <h2>Events</h2>
-      <div class="btn-add-record-align events-btn"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record" %> -->
+<!-- this page is done for now -->
+<div class="scroll-container">
 
-        <% @events.each do |event| %>
-      </div>
 
 
 
-      <div class="container-scroll">
-
-        <div class="scroll">
-
+        <% @events.each do |event| %>
           <div class="event-block">
-            <div class="event-images-bk">
-              <div>
-                <% if event.uploaded_file_file_name.nil? %>
-                <div><%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %></div>
-                <% else %>
-                <div>
-                  <%= image_tag event.uploaded_file(:thumb) %>
-                </div>
-                <% end %>
-              </div>
-
-            </div>
-
-            <div class="event-dates ">
-              <h5>
+            <p class="dashboard-event-title">
+              <%= event.name%>
+            </p>
+              <p class="dashboard-event-details">
                 <%= event.event_date %>
-              </h5>
-              <h6>
-                <%= event.event_time %>
-              </h6>
-              <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
-                    edit_event_path(event) if event.user_id == current_user.id %>
-              <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-                    event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
-            </div>
-            <div class=>
-
-              <p class="event-details event-details-padding">
-                <%= event.name%>
               </p>
-              <p class="event-details">
+              <p class="dashboard-event-details">
+                <%= event.event_time %>
+              </p>
+              <!-- <p class="link">
+                <%= event.website %>
+              </p> -->
+
+
+
+
+              <p class="dashboard-event-details">
                 <%= event.campus.long_name %>
               </p>
-              <p class="event-details link">
-                <%= event.website %>
-              </p>
 
-            </div>
+              <!-- <p>
+                <%= event.description %>
+              </p> -->
 
-          </div>
-          <div class="details-block">
 
-            <div class="thumbnail ">
+            <div class="dashboard-edit-delete">
+              <%= link_to '<i class="glyphicon glyphicon-pencil"  title="Event"></i>'.html_safe,
+                    edit_event_path(event) if event.user_id == current_user.id %>
+              <%= link_to '<i class="glyphicon glyphicon-remove " title="Delete"></i>'.html_safe,
+                    event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
+              </div>
+                    <!-- <div class="event-images-bk">
+                      <div>
+                        <% if event.uploaded_file_file_name.nil? %>
+                        <div><%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %></div>
+                        <% else %>
+                        <div>
+                          <%= image_tag event.uploaded_file(:thumb) %>
+                        </div>
+                        <% end %>
+                      </div>
+
+                    </div> -->
+
+            <!-- <div class="thumbnail ">
               <% if event.user.uploaded_file_file_name.nil? %>
               <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{event.user_id}" %>
               </div>
@@ -66,27 +58,20 @@
               <div>
                 <%=link_to image_tag(event.user.uploaded_file(:thumb)),"users/#{event.user_id}"  %>
               </div>
-            </div>
+            </div>-->
 
-            <% end %>
+      <!-- <% end %> -->
 
-          </div>
-          <div class="event-desc">
 
-            <p class="event-desc-text">
-              <%= event.description %>
-            </p>
-          </div>
-        </br>
-      </br>
 
-    </div>
 
-  </div>
+
+
+
+</div>
 
   <% end %>
-
 </div>
+  <!-- </div>
 </div>
-</br>
-</div>
+</div> -->

@@ -1,11 +1,15 @@
 <div class="container">
   <div class="container-fluid">
-
+<!--this page is done and only needs the new round add button  -->
     <div class="row">
-      <div class="col-md-12">
-        <h2>Events for <%= current_user.campus.long_name %></h2>
-        <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
+      <div class="col-md-12 event-list-heading">
+        <h2 class="events-heading">Events for <%= current_user.campus.long_name %></h2>
       </div>
+      <!-- <div class="col-md-6"> -->
+
+        <!-- <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div> -->
+      <!-- </div> -->
+
     </div>
     <%= render 'list' %>
   </div>

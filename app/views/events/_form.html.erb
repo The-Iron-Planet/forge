@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-med-12">
-
+<!-- this is the add new event form -->
       <%= form_for(@event) do |f| %>
       <% if @event.errors.any? %>
       <div id="error_explanation">
@@ -32,9 +32,9 @@
       <%= f.label :uploaded_file, class: "uploaded" %>
 
       <%= f.file_field :uploaded_file, class: "uploaded choose"%>
-      <!-- <span class="input-group-addon"> -->
-      <!-- <span  class="glyphicon glyphicon-calendar default-img"></span> -->
-      <!-- </span> -->
+      <!-- <span class="input-group-addon">
+     <span  class="glyphicon glyphicon-calendar default-img"></span>
+    </span> -->
 </div>
 
 
@@ -73,5 +73,3 @@
     </div>
 </div>
 <% end %>
-<!--added to close container-fluid  -->
-</div>

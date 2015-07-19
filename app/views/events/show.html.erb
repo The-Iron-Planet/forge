@@ -2,24 +2,14 @@
 <div class="container">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
-        <h2><%= @event.name %></h2>
+      <div class="col-md-4">
+        <h2 class="event-page-heading"><%= @event.name %>this is indiv events detail page</h2>
       </div>
     </div>
     <div class="events-background-color">
         <div class="row card">
           <div class="col-md-12">
-            <div class="thumbnail event-img">
-              <% if @event.user.uploaded_file_file_name.nil? %>
-                <div>
-                  <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{@event.user_id}" %>
-                </div>
-              <% else %>
-                <div>
-                  <%=link_to image_tag(@event.user.uploaded_file(:small)),"users/#{@event.user_id}"  %>
-                </div>
-              <% end %>
-            </div>
+
             <div class="event-img">
               <% if @event.uploaded_file_file_name.nil? %>
                 <div>
@@ -31,23 +21,36 @@
                 </div>
               <% end %>
             </div>
-            <div class="event-details">
+            <div class="thumbnail event-img">
+              <% if @event.user.uploaded_file_file_name.nil? %>
+                <div>
+                  <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{@event.user_id}" %>
+                </div>
+              <% else %>
+                <div>
+                  <%=link_to image_tag(@event.user.uploaded_file(:small)),"users/#{@event.user_id}"  %>
+                </div>
+              <% end %>
+            </div>
+            <div class="event-details">whattheheck
               <p>Details
                 <ul>
                   <li>Date: <%= @event.event_date %></li>
                   <li>Time: <%= @event.event_time %></li>
                   <li>Campus: <%= @event.campus.long_name %></li>
                   <li>Description: <%= @event.description %></li>
-                  <li>Website: <%= @event.website %></li>
+                  <li class="event-link">Website: <%= @event.website %></li>
                 </ul>
               </p>
             </div>
-            <div class="edit-delete">
+
+
+            <!-- <div class="edit-delete">
               <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
                   edit_event_path(@event) if @event.user_id == current_user.id %>
               <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
                   @event, method: :delete, data: { confirm: 'Are you sure?' } if @event.user_id == current_user.id %>
-            </div>
+            </div> -->
           </div>
         </div>
     </div>
