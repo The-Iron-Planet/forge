@@ -57,10 +57,10 @@
       </div>
     <% end %>
   </div>
-  <div class="top-header">
-     <p class="notice"><%= notice %></p>
-    <%= yield %>
+  <div class="top-header" id="notice">
+    <%= render 'layouts/notice' %>
   </div>
+    <%= yield %>
 </body>
 
 </html>

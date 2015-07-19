@@ -1,0 +1,34 @@
+<%= form_for(@course, remote: true) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="form-val"><%= pluralize(@course.errors.count, "error") %>
+        prohibited this course from being saved:</h4>
+
+      <ul class="error">
+        <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class ="table">
+    <%= f.fields_for :users do |ff| %><br>
+      <%= ff.hidden_field :campus_id, :value => f.object.campus_id %>
+      <%= ff.hidden_field :curriculum_id, :value => f.object.curriculum_id %>
+        <tr>
+          <td>
+            <%= ff.text_field :first_name, :class => "input-field", :placeholder => "First Name" %>
+          </td>
+          <td>
+            <%= ff.text_field :last_name,:class => "input-field", :placeholder => "Last Name"%>
+          </td>
+          <td>
+            <%= ff.text_field :email, :class => "input-field", :placeholder => "Email" %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+    <div class="actions">
+      <%= f.submit :class=> "btn ctr-btn", :value => 'Add Student' %>
+    </div>
+<% end %>

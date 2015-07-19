@@ -46,3 +46,8 @@
 //     stuck = false;
 //   }
 // }
+
+$(function () {
+  $('.collapse-card').paperCollapse()
+})
+

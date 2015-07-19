@@ -103,6 +103,14 @@ btn-login {
 
 .chat-btn{
   @extend .btn;
-  height: 50px;
-  width: 50px;
+  height: 54px;
+  width: 54px;
+  position: fixed;
+border-radius: 0 4px 4px 0;
+  bottom: 0;
+  right: 0px;
+  margin-right: 34px;
+  margin-bottom: 20px;
+  // margin-left: -25px;
+  z-index: 10;
 }

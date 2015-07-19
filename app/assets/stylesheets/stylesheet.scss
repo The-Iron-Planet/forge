@@ -1,23 +1,20 @@
-
 // Colors
-$heading-color:#28394c;
+$heading-color: #28394c;
 $black: #000;
 $shield: #233139;
 $base: #727d84;
-$nav-bar-green:  #33485f;
-$dark-gray:#646769;
+$nav-bar-green: #33485f;
+$dark-gray: #646769;
 $medium-gray: #a7acaf;
 $light-gray: #d3d5d7;
 $field-focus-gray: #e0e1e3;
 $white: #fff;
-$form:#92AAFF;
+$form: #92aaff;
 $accent-color: #00b796;
-$accent-color-light:#32c5ab;
+$accent-color-light: #32c5ab;
 $accent-color-dark: #009278;
 $link: #158cbd;
 $link-hover: grey;
-
-
 $font: "TisaPro";
 $font-medium: "TisaPro-Medi";
 $font-italic: "TisaPro-Ita";
@@ -26,39 +23,37 @@ $font-bold: "TisaPro-Bold";
 $font-bold-italic: "TisaPro-BoldIta";
 $font-logo: "SFIronsidesExtended";
 $corners: 4px 4px 4px 4px;
-$sans-serif:"Roboto-Regular";
-$events-color:#e1ba6f;
-$off-white:#e7e3da;
+$sans-serif: "Roboto-Regular";
+$sans-serif-bold: "Roboto-Bold";
 
+
+$events-color: #e1ba6f;
+$off-white: #e7e3da;
 .container-fluid {
   padding: 0;
   width: 100%;
 }
-
 .paragraphs {
   text-align: center;
-
 }
-
 h1 {
   width: 100%;
 }
 h2 {
   font-family: $font-bold;
-  // font-family: $font-medium;
 
+  // font-family: $font-medium;
   margin: 15px 0 20px;
   text-align: center;
   color: #28394c;
 }
 h3 {
-    font-family: $font-bold;
+  font-family: $font-bold;
   line-height: 1.4;
   color: $heading-color;
 }
 h4 {
   font-family: $font-bold;
-
   font-color: $shield;
 }
 p {
@@ -67,9 +62,6 @@ p {
   font-family: "Roboto-Regular";
   font-color: #727d84;
 }
-
-
-
 .header-text {
   position: absolute;
   bottom: 0.3em;
@@ -88,29 +80,25 @@ p {
   margin-top: 18px;
   font-size: 60px;
 }
-
 .paragraphs {
   text-align: center;
   font-size: 20px;
 }
-
-
 textarea,
 input {
   outline: none;
-  }
-
-
+}
 #input-field,
 .input-field {
-  -webkit-appearance:none;
+  -webkit-appearance: none;
   outline: none;
   width: 350px;
+
   // font-size: 16px;
   padding: 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
-  margin: 5px 0 20px 0;
+  margin: 5px 0 20px;
   background-color: $light-gray;
   color: $dark-gray;
 }
@@ -121,26 +109,22 @@ input {
 #input-lable,
 .input-label {
   width: 350px;
-  padding: 6px 0 0 0;
+  padding: 6px 0 0;
   border-style: none;
   border-radius: $corners;
   text-align: left;
-  font-size: .8em;
+  font-size: 0.8em;
   color: $dark-gray;
 }
 .input-links {
   width: 300px;
 }
-
 .link {
   color: $link;
 }
 .link:hover {
   color: $link-hover;
 }
-
-
-
 .icon-mail {
   font-size: 25px;
   padding: 1px;
@@ -152,105 +136,81 @@ input {
 
 // Form Validation/error msgs
 .form-val {
-  font-size: .8em;
+  font-size: 0.8em;
   color: red;
   text-align: center;
 }
-
-.error{
+.error {
   margin-bottom: 20px;
   text-align: center;
 }
-
 .error>li {
   list-style-type: none;
   font-style: italic;
   color: red;
 }
-
-
-
-
 col-md-3 {
   border: 1px black solid;
 }
-
 .stack-align {
   padding-left: 10px;
 }
-
-
-.spacer{
+.spacer {
 
   // margin-bottom: 2em;
 }
-
-.form-bk{
+.form-bk {
   background-color: white;
 }
-
-.name{
+.name {
   background-color: white;
   border-radius: $corners;
   padding: 100px;
 }
-
 .container {
-    display: table;
-    vertical-align: middle;
+  display: table;
+  vertical-align: middle;
 }
 .vertical-center-row {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
-
-
-.company-tble-th::nth-child(1){
+.company-tble-th::nth-child(1) {
   width: 500px;
 }
-table, th, td {
-    border: 1px solid black;
+table,
+th,
+td {
+  border: 1px solid black;
 }
-
-.description{
+.description {
   @extend .input-field;
   width: 350px;
 }
-
-
-
-
 .links {
   text-align: center;
 }
-
 .link1 {
   padding: 1em;
   display: inline-block;
 }
-
 .radio-button {
   display: inline-block;
   padding: 1em;
 }
-
-
-
-.choose{
+.choose {
   background-color: white;
   height: 20px;
   width: 350px;
   margin-bottom: 30px;
 }
-
 .text-field {
   border-radius: 4px;
-  padding: .5em;
+  padding: 0.5em;
   width: 204px;
   height: 49px;
   font-color: black;
 }
-
 .profile-title {
   text-align: center;
 }
@@ -258,7 +218,6 @@ table, th, td {
 // .more-options:hover {
 //   text-transform: underline;
 // }
-
 .glyphicon-plus {
   background-color: red;
   padding: 1.5em;
@@ -266,16 +225,13 @@ table, th, td {
   margin-right: 200px;
   margin-top: 50px;
 }
-
 .edit-password {
   text-align: center;
 }
-
 .active {
   text-transform: underline;
 }
-
-.test-delete{
+.test-delete {
   font-family: $sans-serif;
 }
 

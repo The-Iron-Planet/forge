@@ -40,7 +40,7 @@ class UserMailerTest < ActionMailer::TestCase
     assert_equal ["one@email.com"], mail.to
     assert_equal ["tiy.forge@gmail.com"], mail.from
     assert_match "#{@user.full_name}", mail.body.encoded
-    assert_match "#{@event.name}", mail.body.encoded
+    assert_match "#{@event.title}", mail.body.encoded
   end
 
   test "new_comment" do

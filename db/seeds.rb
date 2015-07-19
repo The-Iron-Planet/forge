@@ -64,19 +64,19 @@ atl_rails_alum = User.create!(first_name: "Joe", last_name: "Smith", email: "joe
     github_profile: "joe_github", is_cd: false, hiring: true, looking: true,
     campus_id: atl_campus.id, curriculum_id: rails.id, course_id: atl_rails_course.id)
 
-Event.create!(name: "July Alumni Meetup",
+Event.create!(title: "July Alumni Meetup", location: "Durham Iron Yard Campus--Student Lounge",
     description: "Join us at The Iron Yard, Durham AU Campus for some good company, some bites to eat, some networking, and maybe a couple of drinks",
     happens_on: d1, campus_id: dur_campus.id, user_id: dur_cd.id)
-Event.create!(name: "Rails Hackathon",
+Event.create!(title: "Rails Hackathon", location: "Smashing Boxes",
     description: "Bring your projects and let's hack them up.  And by hack, I mean make them better",
     happens_on: d2, campus_id: dur_campus.id, user_id: dur_rails_alum.id)
-Event.create!(name: "Front End Meetup",
+Event.create!(title: "Front End Meetup", location: "Guglhupf--Durham, NC",
     description: "Come to the coffee shop and work on some Javascript!  It'll be fun...I promise!",
     happens_on: d3, campus_id: dur_campus.id, user_id: dur_fe_alum.id)
-Event.create!(name: "August Alumni Meetup",
+Event.create!(title: "August Alumni Meetup", location: "Durham Iron Yard Campus--Student Lounge",
     description: "Join us at The Iron Yard, Durham AU Campus for some good company, some bites to eat, some networking, and maybe a couple of drinks",
     happens_on: d4, campus_id: dur_campus.id, user_id: dur_cd.id)
-Event.create!(name: "Atlanta Rails Workshop",
+Event.create!(title: "Atlanta Rails Workshop", location: "Atlanta Iron Yard Campus--Rails Classroom",
     description: "Join us at The Iron Yard, Atlanta Campus to learn about devise, and do some networking!",
     happens_on: d5, campus_id: atl_campus.id, user_id: atl_rails_alum.id)
 

@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: First Event
+  title: First Event
   happens_on: 2015-07-10 14:03:13
   description: Fun Times
   website: http://www.eventsite.com
   user: :one
   campus: :one
+  location: That one place
 
 two:
-  name: Second Event
+  title: Second Event
   happens_on: 2015-07-10 14:05:13
   description: Bad Times
   website: https://www.event2.com
   user: :two
   campus: :two
+  location: That other place
