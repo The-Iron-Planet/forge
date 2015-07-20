@@ -13,7 +13,6 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require moment
-//= require bootstrap-datetimepicker
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui
@@ -50,4 +49,3 @@
 $(function () {
   $('.collapse-card').paperCollapse()
 })
-

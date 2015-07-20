@@ -1,72 +1,61 @@
 <div class="container-fluid">
   <div class="row form-val">
     <%= form_for @user, html: {multipart: true} do |f| %>
-    <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <p class="form-val"><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</p>
-      <ul class="error">
-        <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+      <div class="row form-val">
+        <%= render "shared/error_messages", :target => @user %>
+      </div>
+
+      <div class="row new-user-form">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 label-column">
+
+          <div class="field ">
+            <%= f.label :first_name, :class => "input-label" %>
+            <%= f.text_field :first_name, :class => "input-field" %>
+          </div>
+          <div class="field">
+            <%= f.label :last_name, :class => "input-label" %>
+            <%= f.text_field :last_name, :class => "input-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email, :class => "input-label" %>
+            <%= f.text_field :email, :class => "input-field" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :campus, :class => "input-label" %>
+            <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
+          </div>
+          <div class="field">
+            <%= f.label :curriculum, :class => "input-label" %>
+            <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "") %>
+          </div>
+          <div class="field">
+            <%= f.label :course, :class => "input-label" %>
+            <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
+          </div>
+
+          <div class="field">
+            <%= f.label :is_instructor, "Iron Yard Instructor?", :class => "input-label" %></br>
+              <div class = "radio-button">Yes <%= f.radio_button :is_instructor, true %></div>
+              <div class = "radio-button">No <%= f.radio_button :is_instructor, false %></div>
+          </div>
+
+          <div class="field">
+            <%= f.label :is_cd, "Campus Director or other Iron Yard Staff?", :class => "input-label" %></br>
+              <div class = "radio-button">Yes <%= f.radio_button :is_cd, true %></div>
+              <div class = "radio-button">No <%= f.radio_button :is_cd, false %></div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 actions field ">
+          <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
+        </div>
+      </div>
     <% end %>
   </div>
-
-  <div class="row new-user-form">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 label-column">
-
-      <div class="field ">
-        <%= f.label :first_name, :class => "input-label" %>
-        <%= f.text_field :first_name, :class => "input-field" %>
-      </div>
-      <div class="field">
-        <%= f.label :last_name, :class => "input-label" %>
-        <%= f.text_field :last_name, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :email, :class => "input-label" %>
-        <%= f.text_field :email, :class => "input-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :campus, :class => "input-label" %>
-        <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
-      </div>
-      <div class="field">
-        <%= f.label :curriculum, :class => "input-label" %>
-        <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "") %>
-      </div>
-      <div class="field">
-        <%= f.label :course, :class => "input-label" %>
-        <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
-      </div>
-
-      <div class="field">
-        <%= f.label :is_instructor, "Iron Yard Instructor?", :class => "input-label" %></br>
-          <div class = "radio-button">Yes <%= f.radio_button :is_instructor, true %></div>
-          <div class = "radio-button">No <%= f.radio_button :is_instructor, false %></div>
-      </div>
-
-      <div class="field">
-        <%= f.label :is_cd, "Campus Director or other Iron Yard Staff?", :class => "input-label" %></br>
-          <div class = "radio-button">Yes <%= f.radio_button :is_cd, true %></div>
-          <div class = "radio-button">No <%= f.radio_button :is_cd, false %></div>
-      </div>
-    </div>
-  <div class="col-md-4"></div>
-</div>
-
-<div class="row">
-
-  <div class="col-md-12 actions field ">
-
-    <%= f.submit :class=> "btn ctr-btn", :value => 'Submit' %>
-
-  </div>
-</div>
-<% end %>
 </div>
