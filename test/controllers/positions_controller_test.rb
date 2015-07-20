@@ -20,7 +20,7 @@ class PositionsControllerTest < ActionController::TestCase
 
   test "should create position" do
     assert_difference('Position.count') do
-      post :create, position: { company_name: @position.company_name, city: @position.city, state: @position.state, 
+      post :create, position: { company_name: @position.company_name, location: @position.location, 
           current: @position.current, ended_on: @position.ended_on, started_on: @position.started_on,
           title: @position.title, user_id: @position.user_id }
     end

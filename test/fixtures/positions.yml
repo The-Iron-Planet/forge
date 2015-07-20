@@ -3,8 +3,7 @@
 one:
   user: :one
   company_name: The Iron Yard
-  city: Durham
-  state: NC
+  location: Durham, NC
   title: Potato Master
   started_on: 2015-07-24
   ended_on: 2015-08-01
@@ -13,8 +12,7 @@ one:
 two:
   user: :two
   company_name: Google
-  city: Mountain View
-  state: CA
+  location: Mountain View, CA
   title: Chief YouTube Troll
   started_on: 2015-07-23
   ended_on: 2015-07-25

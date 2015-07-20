@@ -10,8 +10,7 @@ class JobPost < ActiveRecord::Base
   scope :ordered, -> { order(updated_at: :desc) }
 
   validates :company_name, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
+  validates :location, presence: true
   validates :curriculum_id, presence: true
   validates :title, presence: true
   validates :experience_desired, presence: true
@@ -43,7 +42,7 @@ class JobPost < ActiveRecord::Base
     if query != ""
       queries = query.downcase.split(/\W+/)
       queries.each do |q|
-        relation = relation.where("lower(city) LIKE '%#{q}%' OR lower(state) LIKE '%#{q}%' OR lower(title) LIKE '%#{q}%' OR lower(company_name) LIKE '%#{q}%' OR lower(description) LIKE '%#{q}%'")
+        relation = relation.where("lower(location) LIKE '%#{q}%' OR lower(title) LIKE '%#{q}%' OR lower(company_name) LIKE '%#{q}%' OR lower(description) LIKE '%#{q}%'")
       end
     end
     relation = relation.where(experience_desired: experience) if experience != nil

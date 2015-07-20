@@ -137,7 +137,7 @@ class UsersController < ApplicationController
           :looking, :hiring, :is_cd, :is_instructor, :is_mentor, :course_id, :campus_id, :curriculum_id, :email,
           :password, :password_confirmation, :current_password, :get_event_email, :campus_notification_id,
           :get_job_email, :get_resource_email, :get_comment_email, positions_attributes:
-            [:id, :user_id, :company_name, :title, :city, :state, :started_on, :ended_on, :current])
+            [:id, :user_id, :company_name, :title, :location, :started_on, :ended_on, :current])
     end
 
     def check_user

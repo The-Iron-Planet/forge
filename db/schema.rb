@@ -74,8 +74,7 @@ ActiveRecord::Schema.define(version: 20150719145013) do
     t.datetime "updated_at",         null: false
     t.boolean  "active"
     t.string   "company_name"
-    t.string   "city"
-    t.string   "state"
+    t.string   "location"
     t.string   "website_html"
   end
 
@@ -89,8 +88,7 @@ ActiveRecord::Schema.define(version: 20150719145013) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "company_name"
-    t.string   "city"
-    t.string   "state"
+    t.string   "location"
   end
 
   create_table "resources", force: :cascade do |t|

@@ -6,7 +6,7 @@
         <li role="presentation" class="active"><a href="#">My Profile</a></li>
         <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
         <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
-        <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>    
+        <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
       </ul>
        <% end %>
     </div>
@@ -20,7 +20,7 @@
           <button class = "btn-edit-profile"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></button>
           <!--<button class = "btn-edit-profile link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
       </div>
-      
+
       <div class = "float-right">
         <div class = "first-name-bold"><%= @user.full_name %></div>
         </br>
@@ -61,7 +61,7 @@
         <% if @user.looking %>
           <div>Looking: Yes</div>
         <% end %>
-        </div> 
+        </div>
     </div>
     <div class = "col-md-6">
       <div class = "table-responsive">
@@ -80,7 +80,7 @@
             <% @user.positions.ordered.each do |position| %>
               <tr>
                 <td><%= position.company_name %></td>
-                <td><%= position.city %>, <%= position.state %></td>
+                <td><%= position.location %></td>
                 <td><%= position.title %></td>
                 <td><%= position.start_date if position.started_on%></td>
                 <td><%= position.end_date if position.ended_on%></td>
@@ -94,7 +94,7 @@
 
   <div class = "row">
     <div class = "links">
-      
+
     </div>
   </div>
 
