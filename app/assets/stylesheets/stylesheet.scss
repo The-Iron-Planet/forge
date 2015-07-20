@@ -234,3 +234,16 @@ td {
 .test-delete {
   font-family: $sans-serif;
 }
+
+
+
+.bar-wrap{
+  width: 70%;
+  height: 15px;
+  background-color: blue;
+}
+.bars{
+  height: 10px;
+  width: 800px;
+  background-color:$events-color;
+}
