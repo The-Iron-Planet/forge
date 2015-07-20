@@ -17,8 +17,8 @@
         <% else %>
           <div><%= image_tag @user.uploaded_file(:square) %></div>
         <% end %>
-          <button class = "btn link1-profile"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></button>
-          <!--<button class = "btn link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
+          <button class = "btn-edit-profile"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></button>
+          <!--<button class = "btn-edit-profile link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
       </div>
       
       <div class = "float-right">
@@ -76,7 +76,6 @@
               <th id = "table-right-column"></th>
             </tr>
           </thead>
-
           <tbody>
             <% @user.positions.ordered.each do |position| %>
               <tr>

@@ -239,7 +239,6 @@ font-size: .8em;
 .image-pic-down {
   margin-top: 20px;
   float: left;
-  display: inline-block;
 }
 
 .first-name-bold {
@@ -250,6 +249,11 @@ font-size: .8em;
   style: "display:none";
 }
 
-.link1-profile {
- 
+.spacing-profile {
+ margin-top: 7px;
 }
+
+.btn-center {
+  text-align: center;
+}
+
