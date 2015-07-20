@@ -1,4 +1,3 @@
-<!-- this page is done for now -->
 <div class="scroll-container">
   <% @resources.each do |resource| %>
     <a href='/resources/<%= resource.id %>' class='dashboard-box-link'>
@@ -6,7 +5,7 @@
         <p class="dashboard-event-title"><%= resource.title %></p>
         <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
         <p class="dashboard-event-details"><%= resource.description %></p>
-        <p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>
+        <!--<p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>-->
       </div>
     </a>
   <% end %>
