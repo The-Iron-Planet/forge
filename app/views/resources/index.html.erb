@@ -12,7 +12,7 @@
     </div>
 
     <div class="row">
-      <div class="search-box col-med-12 well directory-search">
+      <div class="search-box col-md-12 well directory-search">
         <%= form_tag search_resources_path, remote: true do %>
         <%= text_field_tag "query", params[:query], class: "input-field-search resources-search-boxes-bar", placeholder: "Search"%>
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
