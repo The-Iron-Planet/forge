@@ -166,10 +166,11 @@ box-shadow: 0 10px 50px $white;
 
 
 }
-.events-heading{
 
-  text-align: left;
-  margin-left: 220px;
+.my-events-scroll-header{
+
+}
+.my-events-heading{
 
 }
 
@@ -180,7 +181,6 @@ box-shadow: 0 10px 50px $white;
   background-color: $events-color;
   border: solid thick black;
 }
-
 
 
 
@@ -262,4 +262,14 @@ font-size: $h4;
 .event-details-edit-delete{
   float: right;
 
+}
+
+
+
+
+
+// my events page on profile
+.my-events-header{
+  margin-left: 0;
+  text-align: left;
 }

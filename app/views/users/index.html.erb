@@ -1,17 +1,5 @@
 <div class="container-fluid">
-  <!-- <h2>Alumni Directory</h2> -->
-  <div id="header" class="align">
-    <div class="color-indicator-looking"></div>
-    <div class="key-code">
-      Looking for a job
-    </div>
-    <div class="color-indicator-hiring"></div>
-    <div class="key-code">
-      My company is hiring
-    </div>
-    <div class="color-indicator-mentor"></div>
-    <div class="key-code">I'm available to mentor or tutor</div>
-  </div>
+
 
   <div class="row">
     <div class="search-box col-med-12 well">
@@ -33,6 +21,23 @@
     </div>
   </div>
     <!-- <%= select_tag "cohort_class", options_for_select(["My Classmates", "My Cohort"], params[:cohort_class]), prompt: "Search within your Cohort", class: "search"%>-->
+
+    <div id="header" class="align">
+      <div class="color-indicator-looking"></div>
+      <div class="key-code">
+        Looking for a job
+      </div>
+      <div class="color-indicator-hiring"></div>
+      <div class="key-code">
+        My company is hiring
+      </div>
+      <div class="color-indicator-mentor"></div>
+      <div class="key-code">I'm available to mentor or tutor</div>
+    </div>
+
+
+
+
 
   <div class="container" id="directory-search-results">
     <%= render partial: 'alumni_list' %>
