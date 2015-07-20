@@ -1,12 +1,13 @@
 <!-- this page is done for now -->
 <div class="scroll-container">
   <% @resources.each do |resource| %>
-    <div class="event-block">
-      <p class="dashboard-event-title"><%= resource.title%></p>
-      <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
-      <p class="dashboard-event-details"><%= resource.description %></p>
-      <p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>
-
-    </div>
+    <a href='/resources/<%= resource.id %>' class='dashboard-box-link'>
+      <div class="event-block">
+        <p class="dashboard-event-title"><%= resource.title %></p>
+        <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
+        <p class="dashboard-event-details"><%= resource.description %></p>
+        <p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>
+      </div>
+    </a>
   <% end %>
 </div>
