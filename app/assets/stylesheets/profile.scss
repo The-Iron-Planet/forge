@@ -11,6 +11,29 @@
     padding: 0;
   }
 }
+
+.container-fluid{
+  // background-color: blue;
+}
+.directory-search{
+// background-color: orange;
+margin-top: 30px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 90%;
+z-index: 10;
+
+
+
+}
+
+
+
+
 .course-form,
 .new-user {
 
@@ -215,6 +238,7 @@ font-size: .8em;
   font-color: black;
   box-sizing: border-box;
   margin-top: 5px;
+
 }
 
 .profile-page {
@@ -226,4 +250,10 @@ font-size: .8em;
 #dir-header{
   width: 100%;
   height: 160px;
+}
+
+#header{
+  margin-top: 100px;
+  // padding-top: 100px;
+
 }

@@ -49,7 +49,10 @@
 }
 
 
-
+ctr-btn{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 btn-login {
   display: inline-block;
@@ -121,26 +124,26 @@ border-radius: 0 4px 4px 0;
 //   border-radius: 50%;
 //   background-color: #983c30;
 // }
-.add-btn-icon{
-  font-weight: 900;
-  font-size: 5em;
-  color: $white;
-  display: inline-block;
-text-align: center;
-width: 70px;
-height: 70px;
-border-radius: 50%;
-background-color:  #70558d;
-text-decoration: none;
-padding: 0;
+// .add-btn-icon{
+//   font-weight: 900;
+//   font-size: 5em;
+//   color: $white;
+//   display: inline-block;
+// text-align: center;
+// width: 70px;
+// height: 70px;
+// border-radius: 50%;
+// background-color:  #70558d;
+// text-decoration: none;
+// padding: 0;
+//
+// }
 
-}
-
-.add-btn-icon:hover{
-  background-color: #70558d;
-  color: $white;
-}
-
-.float-btn{
-  float: right;
-}
+// .add-btn-icon:hover{
+//   background-color: #70558d;
+//   color: $white;
+// }
+//
+// .float-btn{
+//   float: right;
+// }

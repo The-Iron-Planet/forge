@@ -1,11 +1,12 @@
 <div class="container">
   <div class="container-fluid">
+
     <div class="row">
       <div class="col-md-12">
         <h2><%= @resource.title %></h2>
       </div>
     </div>
-    <div class="events-background-color">
+    
         <div class="row card">
           <div class="col-md-12">
             <div class="thumbnail event-img">
@@ -21,7 +22,7 @@
                 </div>
               <% end %>
             </div>
-            <div class="resource-header">
+
               <p class="event-details">
                 <%= @resource.curriculum.nickname %>
               </p>
@@ -37,7 +38,7 @@
                     @resource, method: :delete, data: { confirm: 'Are you sure?' } if @resource.user_id == current_user.id %>
               </div>
           </div>
-        </div>
+
     </div>
   </div>
 </div>

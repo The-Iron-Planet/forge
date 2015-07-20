@@ -5,7 +5,7 @@
         <div class="row form-val">
           <%= render "shared/error_messages", :target => @job_post %>
         </div>
-        
+
         <div class="row">
           <div class="col-md-12 field">
             <div class="job-post-list">
@@ -29,27 +29,33 @@
                 <%= f.label :state, :class => "input-label" %><br>
                 <%= f.select :state, options_for_select(us_states, @job_post.state), :include_blank => true, :class => "input-field" %>
               </div>
+            </div>
+<div class="job-post-list2">
+
 
             <div class="form"
               <div class="field">
-                <%= f.label :experience_desired, :class => "input-label" %><br>
-                Junior <%= f.radio_button :experience_desired, "Junior" %>
-                Mid-Level <%= f.radio_button :experience_desired, "Mid-Level" %>
-                Senior <%= f.radio_button :experience_desired, "Senior" %>
+                <%= f.label :experience_desired, :class => "input-label question-label" %><br>
+                Junior <%= f.radio_button :experience_desired, "Junior" , :class=>" radio-answer"%>
+                Mid-Level <%= f.radio_button :experience_desired, "Mid-Level", :class=>"radio-answer" %>
+                Senior <%= f.radio_button :experience_desired, "Senior", :class=>"radio-answer" %>
               </div>
               <div class="field">
-                <%= f.label :curriculum_id, "Which students would be most well-suited for the position?", :class => "input-label" %><br>
+                <%= f.label :curriculum_id, "Which students would be most well-suited for the position?", :class => "question-label" %><br>
                 <% Curriculum.all.map do |c| %>
-                <%= "#{c.name}" %> <%= f.radio_button :curriculum_id, "#{c.id}" %>
+                <%= "#{c.name}" %> <%= f.radio_button :curriculum_id, "#{c.id}", :class=>"radio-answer" %>
                 <% end %>
               </div>
               <div class="field">
-                <%= f.label :website, "Link to job description", :class => "input-label" %><br>
+                <%= f.label :website, "Link to job description", :class => "question-label" %><br>
                 <%= f.text_field :website, :class => "input-field" %>
               </div>
               <% if @job_post.expires_on == nil %>
                 <div class="field">
-                  <%= f.label :expires_on, "When should this post expire? (Posts expire one month after creation unless otherwise specified.)", :class => "input-label" %><br>
+                  <%= f.label :expires_on, "When should this post expire? ", :class => "question-label" %><br>
+                  <p class="question-label">
+                    (Posts expire one month after creation unless otherwise specified.)
+                  </p>
                   <%= f.date_field :expires_on, :value => (Date.today + 1.month) %>
                 </div>
               <% elsif @job_post.expires_on < Date.today %>
@@ -58,21 +64,21 @@
                   <%= f.date_field :expires_on %>
               <% else %>
                 <div class="field">
-                  <%= f.label :expires_on, "When should this post expire?", :class => "input-label" %><br>
-                  <%= f.date_field :expires_on %>
+                  <%= f.label :expires_on, "When should this post expire?", :class => "question-label" %><br>
+                  <%= f.date_field :expires_on, :class => "input-field-dropdown" %>
                 </div>
               <% end %>
               <% if @job_post.active != nil %>
                 <div class="field">
                   <%= f.label :active, "Is this Job Post active?", :class => "input-label" %><br>
-                  Yes<%= f.radio_button :active, true %>
+                  Yes<%= f.radio_button :active, true,:class=>"radio-answer"%>
                   No<%= f.radio_button :active, false %>
                 </div>
               <% end %>
             </div>
           </div>
           <div class="actions">
-            <%= f.submit :class=> "btn", value: "Save Job Post" %>
+            <%= f.submit :class=> "btn ctr-btn", value: "Save Job Post" %>
           </div>
         </div>
       <% end %>

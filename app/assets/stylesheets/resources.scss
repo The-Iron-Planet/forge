@@ -31,7 +31,29 @@
   overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
-  border-bottom: solid 10px #5d6e5f;
+  border-bottom: solid 10px black;
+  border-color: #9bb89f;
+
+}
+
+
+
+
+#jobs-header{
+  left: 0;
+  right: 0;
+  height: 100px;
+  // background-color: purple;
+z-index: 0;
+}
+
+
+
+
+#resources-header{
+  left: 0;
+  right: 0;
+  height: 10px;
 
 
 }

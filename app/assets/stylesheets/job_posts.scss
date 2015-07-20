@@ -94,7 +94,7 @@
 
 .card {
 
-  // background-color: purple;
+
   text-align: center;
   margin-top: 2px;
 
@@ -145,4 +145,25 @@ margin-top: 3em;
   margin: 0 auto;
 
 
+}
+
+
+.job-post-list{
+  display: inline-block;
+vertical-align: top;
+}
+
+
+.job-post-list2{
+  display: inline-block;
+margin: 0 20px 0 50px;
+vertical-align: top;
+}
+
+#jobs-header{
+  left: 0;
+  right: 0;
+  height: 100px;
+  // background-color: purple;
+z-index: 0;
 }
