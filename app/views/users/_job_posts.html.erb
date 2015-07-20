@@ -1,13 +1,22 @@
 
 <div class="scroll-container">
   <% @job_posts.each do |job_post| %>
-    <div class="event-block">
-      <p class="dashboard-event-title"><%= job_post.title%></p>
-      <p class="dashboard-event-details">
-        <strong><%= job_post.company_name %></strong> - <%= job_post.city %>, <%= job_post.state %>
-      </p>
-      <p class="dashboard-event-details"><%= job_post.experience_desired %></p>
-      <p class="dashboard-event-details"><%= job_post.description %></p>
+    <div class="job-post-block">
+      <div class = "job-post-image">
+           <% if job_post.user.uploaded_file_file_name.nil? %>
+              <div><%= link_to image_tag("default_pic.png", size: "80x80"), "/users/#{job_post.user.id}" %></div>
+            <% else %>
+              <div><%= link_to image_tag(job_post.user.uploaded_file(:small)), "/users/#{job_post.user.id}" %></div>
+            <% end %>
+      </div>
+      <div class = "job-post-text">
+        <p class="dashboard-job-title"><%= job_post.title%></p>
+        <p class="dashboard-job-details">
+          <strong><%= job_post.company_name %></strong> - <%= job_post.city %>, <%= job_post.state %>
+        </p>
+        <p class="dashboard-event-details"><%= job_post.experience_desired %></p>
+        <p class="dashboard-event-details"><%= job_post.description %></p>
+      </div>
     </div>
   <% end %>
 </div>

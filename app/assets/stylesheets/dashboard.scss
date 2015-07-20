@@ -1,0 +1,109 @@
+@import "stylesheet";
+
+.event-block {
+  // position: relative;
+  min-width: 320px;
+  // width: 320px;
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 20px;
+  color: black;
+  height: 110px;
+}
+
+.resource-block {
+  // position: relative;
+  min-width: 320px;
+  // width: 320px;
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 20px;
+  color: black;
+  height: 125px;
+}
+
+.job-post-block {
+  // position: relative;
+  min-width: 320px;
+  // width: 320px;
+  background-color: white;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 20px;
+  color: black;
+  height: 110px;
+}
+
+.dashboard-background {
+  background-color: lightgrey;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fixed-header-dashboard {
+  background-color: lightgrey;
+  height: 100px;
+}
+
+.dashboard-event-details {
+  padding: 4px;
+  margin: 0;
+  line-height: 1em;
+  font-size: $small-font;
+}
+
+.dashboard-edit-delete {
+  position: relative;
+  text-align: right;
+  color: $events-color;
+}
+
+.dashboard-event-title {
+  color: $black;
+  padding-top: 8px;
+  margin: 0;
+  font-family: $sans-serif;
+}
+
+.content-up {
+  margin-top: -300px;
+}
+
+.text-dash {
+  padding: 1em;
+}
+
+.job-post-image {
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+
+.dashboard-job-title {
+  color: $black;
+  padding-top: 6px;
+  margin: 0;
+  font-family: $sans-serif;
+}
+
+.dashboard-job-details {
+  padding: 4px;
+  margin: 0;
+  line-height: 1em;
+  font-size: $small-font;
+}
+
+.job-post-text {
+  margin-bottom: 10px;
+}
+
+.event-post-image {
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}
+

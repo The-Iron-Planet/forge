@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :uploaded_file, styles: {
     thumb: '50x50>',
+    small: '80x80#',
     square: '175x175#',
     medium: '300x300>'
   }
@@ -90,9 +91,9 @@ class User < ActiveRecord::Base
   def self.search_results(query, campus_id, curric_id, status)
     relation = self
     if query != ""
-      queries = query.split(/\W+/)
+      queries = query.downcase.split(/\W+/)
       queries.each do |q|
-        relation = relation.where("first_name LIKE '%#{q}%' OR last_name LIKE '%#{q}%' OR current_city LIKE '%#{q}%' OR current_state LIKE '%#{q}%'")
+        relation = relation.where("lower(first_name) LIKE '%#{q}%' OR lower(last_name) LIKE '%#{q}%' OR lower(current_city) LIKE '%#{q}%' OR lower(current_state) LIKE '%#{q}%'")
       end
     end
     relation = relation.where(campus_id: campus_id) if campus_id != ""

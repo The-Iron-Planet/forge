@@ -39,9 +39,9 @@ class Event < ActiveRecord::Base
   def self.search_results(query, campus_id)
     relation = self
     if query != ""
-      queries = query.split(/\W+/)
+      queries = query.downcase.split(/\W+/)
       queries.each do |q|
-        relation = relation.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+        relation = relation.where("lower(title) LIKE '%#{q}%' OR lower(description) LIKE '%#{q}%'")
       end
     end
     relation = relation.where(campus_id: campus_id.to_i) if campus_id != ""
