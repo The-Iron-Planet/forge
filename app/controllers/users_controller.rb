@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :first_login_setup, except: [:first_login, :update]
   before_action :set_user, only: [:show, :edit, :edit_password, :update, :destroy, :work_history]
-  before_action :check_user, only: [:edit, :edit_password]
+  before_action :check_user, only: [:edit, :edit_password, :work_history]
   before_action :user_is_cd?, only: [:new]
 
   # GET /users
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user.positions.build
   end
 
   def dashboard
@@ -133,7 +134,7 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def user_params
       params.require(:user).permit(:id, :uploaded_file, :first_name, :last_name,
-          :current_city, :current_state, :github_profile, :twitter, :slack_handle, :website, :blog,
+          :current_city, :current_state, :github_profile, :twitter, :slack_handle, :linked_in, :website, :blog,
           :looking, :hiring, :is_cd, :is_instructor, :is_mentor, :course_id, :campus_id, :curriculum_id, :email,
           :password, :password_confirmation, :current_password, :get_event_email, :campus_notification_id,
           :get_job_email, :get_resource_email, :get_comment_email, positions_attributes:

@@ -126,11 +126,16 @@ btn-login {
   border-radius: $corners;
   font-family: $font;
   background: $accent-color-light;
-  color: white;
+  color: #eef1f6;
   padding: 5px 10px 7.5px;
   margin: 30px 20px 20px 20px;
   text-decoration: none;
   border: 1px solid $accent-color-light;
+}
+
+.button-link{
+  color: #eef1f6;
+  text-decoration: none;
 }
 
 // .add-btn{
@@ -162,4 +167,3 @@ btn-login {
 // .float-btn{
 //   float: right;
 // }
-

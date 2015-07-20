@@ -42,7 +42,7 @@ gem 'american_date'
 gem 'faker'
 gem 'auto_html'
 gem 'magnific-popup-rails'
-
+gem 'font-awesome-rails'
 
 
 group :development, :test do

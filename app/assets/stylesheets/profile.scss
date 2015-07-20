@@ -26,13 +26,7 @@ margin-top: 30px;
 
     width: 90%;
 z-index: 10;
-
-
-
 }
-
-
-
 
 .course-form,
 .new-user {
@@ -124,6 +118,7 @@ z-index: 10;
 .profile {
   background-color: lightgrey;
   height: 350px;
+  margin-top: 15px;
 }
 
 .input-field-company {
@@ -284,4 +279,15 @@ font-size: .8em;
 #header {
   margin-top: 100px;
   // padding-top: 100px;
+}
+
+.well-profile {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  // margin-left: 60px;
+  width: 99%;
+  // margin: 0 auto;
+// background-color: $light-gray;
+  margin-bottom: 10px;
 }

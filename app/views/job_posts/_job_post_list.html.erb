@@ -13,11 +13,11 @@
                   <!-- <i class="fa fa-question-circle fa-2x fa-fw"></i> -->
                     <div class="thumbnail  job-img">
                       <% if job_post.user.uploaded_file_file_name.nil? %>
-                        <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
+                        <div><%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{job_post.user_id}" %></div>
                         <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
                       <% else %>
                         <div>
-                          <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}" %>
+                          <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"/users/#{job_post.user_id}" %>
                           <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
                         </div>
                       <% end %>
