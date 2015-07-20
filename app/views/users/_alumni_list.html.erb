@@ -23,44 +23,43 @@
             <p class="profile-details" style="color: #727d84;">
               <%= user.tiy_relation %>
             </p>
-            <p class="profile-details" style="color: #727d84;">
+            <p style="color: #727d84;">
               <% if user.current_city.blank? || user.current_state.blank? %>
-              </br>
               <% else %>
                 <%= user.current_location %>
               <% end %>
             </p>
           </div>
           <div class="icon-box">
-            <a class="fa fa-envelope-square" href="mailto:<%= user.email %>"></a>
+            <a class="fa fa-envelope-square fa-lg" href="mailto:<%= user.email %>"></a>
 
             <% unless user.github_profile.blank? %>
               <a href="<%= user.github_link %>" target="_blank">
-                <span class="fa fa-github-square"></span>
+                <span class="fa fa-github-square fa-lg"></span>
               </a>
             <% end %>
 
             <% unless user.twitter.blank? %>
               <a href="<%= user.twitter_link %>" target="_blank">
-                <span class="fa fa-twitter-square"></span>
+                <span class="fa fa-twitter-square fa-lg"></span>
               </a>
             <% end %>
 
             <% unless user.linked_in.blank? %>
               <a href="<%= user.linked_in %>" target="_blank">
-                <span class="fa fa-linkedin-square"></span>
+                <span class="fa fa-linkedin-square fa-lg"></span>
               </a>
             <% end %>
 
             <% unless user.website.blank? %>
               <a href="<%= user.website %>" target="_blank">
-                <span class="fa fa-external-link-square"></span>
+                <span class="fa fa-external-link-square fa-lg"></span>
               </a>
             <% end %>
 
             <% unless user.blog.blank? %>
               <a href="<%= user.blog %>" target="_blank">
-                <span class="fa fa-rss-square "></span>
+                <span class="fa fa-rss-square fa-lg"></span>
               </a>
             <% end %>
           </div>
