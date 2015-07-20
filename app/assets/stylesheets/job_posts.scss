@@ -156,8 +156,7 @@ vertical-align: top;
 
 .job-post-list2{
   display: inline-block;
-margin: 0 20px 0 50px;
-vertical-align: top;
+  vertical-align: top;
 }
 
 #jobs-header{
@@ -166,4 +165,37 @@ vertical-align: top;
   height: 100px;
   // background-color: purple;
 z-index: 0;
+}
+
+#new-job-form{
+  width: 68%;
+}
+
+#job_post_title{
+  margin: auto;
+}
+#job_post_company_name{
+  margin: auto;
+}
+#job_post_city{
+  margin: auto;
+}
+#job_post_experience_desired{
+  margin: auto;
+}
+#job_post_company_name{
+  margin: auto;
+}
+#job_post_city{
+  margin: auto;
+}
+#save-job-post{
+  margin-top: 0;
+  padding: 0;
+}
+#job_post_curriculum_id{
+  margin: auto;
+}
+#job_post_expires_on{
+  margin: auto;
 }
