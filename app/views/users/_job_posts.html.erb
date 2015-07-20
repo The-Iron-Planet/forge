@@ -1,7 +1,6 @@
-<!-- this page is done for now -->
 <div class="scroll-container">
   <% @job_posts.each do |job_post| %>
-    <div class="event-block">
+    <div class="job-post-block">
       <p class="dashboard-event-title"><%= job_post.title%></p>
       <p class="dashboard-event-details">
         <strong><%= job_post.company_name %></strong> - <%= job_post.city %>, <%= job_post.state %>
