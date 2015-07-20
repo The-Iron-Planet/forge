@@ -1,26 +1,33 @@
-<div class="container"
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
+<div class="container-fluid">
+  <div class="search-box-back">
+  <div class="row">
+    <div class="col-md-12">
         <!-- <h2>Resources</h2> -->
-        <div><%= link_to '+', new_resource_path, :class=>"btn-add-record"%></div>
+      <div><%= link_to '+', new_resource_path, :class=>"btn-add-record"%></div>
         <% if current_user.resources.count != 0 %>
-          <div class="btn-add-record-align"><%= link_to 'My Resources', my_resources_path, :class=>" btn-add-record"%></div>
+        <div class="btn-add-record-align"><%= link_to 'My Resources', my_resources_path, :class=>" btn-add-record"%></div>
         <% end %>
-      </div>
+
+      </div> -->
     </div>
 
     <div class="row">
-      <div class="search-box col-med-12 well">
+      <div class="search-box col-med-12 well directory-search">
         <%= form_tag search_resources_path, remote: true do %>
-        <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
+        <%= text_field_tag "query", params[:query], class: "input-field-search resources-search-boxes-bar", placeholder: "Search"%>
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
           <% end %>
-        </div>
-      </br>
+      </div>
     </div>
   </div>
-  <div id="resource-list">
-    <%= render "resource_list" %>
+  
+  <div class = "row">
+    <div class="col-md-1"></div>
+    <div class = "col-md-10">
+      <div id="resource-list">
+        <%= render "resource_list" %>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
   </div>
 </div>

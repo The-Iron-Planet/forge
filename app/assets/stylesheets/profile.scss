@@ -11,6 +11,29 @@
     padding: 0;
   }
 }
+
+.container-fluid{
+  // background-color: blue;
+}
+.directory-search{
+// background-color: orange;
+margin-top: 30px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 90%;
+z-index: 10;
+
+
+
+}
+
+
+
+
 .course-form,
 .new-user {
 
@@ -100,6 +123,7 @@
 
 .profile {
   background-color: lightgrey;
+  height: 350px;
 }
 
 .input-field-company {
@@ -215,6 +239,7 @@ font-size: .8em;
   font-color: black;
   box-sizing: border-box;
   margin-top: 5px;
+
 }
 
 .profile-page {
@@ -227,3 +252,37 @@ font-size: .8em;
   width: 100%;
   height: 160px;
 }
+
+.float-right {
+  float: right;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: .9em;
+}
+
+.image-pic-down {
+  margin-top: 20px;
+  float: left;
+}
+
+.first-name-bold {
+  font-style: bold;
+}
+
+#table-right-column {
+  style: "display:none";
+}
+
+.spacing-profile {
+ margin-top: 7px;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+#header {
+  margin-top: 100px;
+  // padding-top: 100px;
+}
+

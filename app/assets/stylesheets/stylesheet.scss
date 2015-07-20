@@ -25,8 +25,6 @@ $font-logo: "SFIronsidesExtended";
 $corners: 4px 4px 4px 4px;
 $sans-serif: "Roboto-Regular";
 $sans-serif-bold: "Roboto-Bold";
-
-
 $events-color: #e1ba6f;
 $off-white: #e7e3da;
 .container-fluid {
@@ -95,7 +93,7 @@ input {
   width: 350px;
 
   // font-size: 16px;
-  padding: 6px;
+  padding: 0 6px 6px 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
   margin: 5px 0 20px;
@@ -109,7 +107,7 @@ input {
 #input-lable,
 .input-label {
   width: 350px;
-  padding: 6px 0 0;
+  padding: 6px 0 0 0;
   border-style: none;
   border-radius: $corners;
   text-align: left;
@@ -119,6 +117,7 @@ input {
 .input-links {
   width: 300px;
 }
+
 .link {
   color: $link;
 }
@@ -190,10 +189,7 @@ td {
 .links {
   text-align: center;
 }
-.link1 {
-  padding: 1em;
-  display: inline-block;
-}
+
 .radio-button {
   display: inline-block;
   padding: 1em;
@@ -234,18 +230,57 @@ td {
 .test-delete {
   font-family: $sans-serif;
 }
-
-
-
-.bar-wrap{
+.bar-wrap {
   width: 70%;
   height: 15px;
   background-color: blue;
 }
-.bars{
+.bars {
   height: 10px;
   width: 800px;
-  background-color:$events-color;
+  background-color: $events-color;
+}
+
+
+
+.question-label {
+  font-size: 0.8em;
+  padding: 0 0 10px 0;
+  border-style: none;
+  border-radius: $corners;
+  text-align: left;
+  // font-size: 0.8em;
+  color: $dark-gray;
+  margin: 6px 0 0 0;
+}
+
+.radio-answer[type="radio"] {
+  margin: 0 0.75em 1.75em;
+  display: inline-block;
+  background-color: none;
+  font-size: 0.8em;
+  padding: 6px;
+  color: $dark-gray;
+  font:$sans-serif;
+}
+.input-field-dropdown[type="date"] {
+
+  padding: 0 6px 6px 6px;
+  border-style: none;
+  border-radius: 4px 4px 4px 4px;
+  margin: 5px 0 20px;
+  background-color: $light-gray;
+  color: $dark-gray;
+}
+
+.input-field [type="select"]{
+  padding: 0 6px 6px 6px;
+  border-style: none;
+  border-radius: 4px 4px 4px 4px;
+  margin: 5px 0 20px;
+  background-color: $light-gray;
+  color: $dark-gray;
+
 }
 
 .field_with_errors {

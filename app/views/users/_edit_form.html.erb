@@ -64,55 +64,74 @@
       <div class="col-md-2">
         <%= f.label :uploaded_file, :class => "uploaded"  %>
         <%= f.file_field :uploaded_file %>
+    </div>
+    <div class="col-xs-1"></div>
+  </div>
+
+  <div class = "row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+      <div class="field ctr">
+        <%= f.label :get_job_email, :class => "", :value => 'Would you like to receive email notifications for job posts?'%></br>
       </div>
-      <div class="col-xs-1"></div>
-    </div>
-
-    <div class = "row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="field ctr">
-          <%= f.label :get_job_email, :class => "", :value => 'Would you like to receive email notifications for job posts?'%></br>
-          Yes <%= f.radio_button :get_job_email, true %>
-          No <%= f.radio_button :get_job_email, false %>
-        </div>
-        <div class="field ctr">
-          <%= f.label :get_reseource_email, :class => "", :value => 'Would you like to receive email notifications for resources?'%></br>
-          Yes <%= f.radio_button :get_resource_email, true %>
-          No <%= f.radio_button :get_resource_email, false %>
-        </div>
-        <div class="field ctr">
-          <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for events?'%></br>
-          Yes <%= f.radio_button :get_event_email, true %>
-          No <%= f.radio_button :get_event_email, false %>
-        </div>
-        <div class="field ctr">
-          <%= f.label :campus_notification_id, :class => "", :value => 'Which campus?'%>
-          <%= f.collection_select(:campus_notification_id, Campus.all, :id, :long_name, prompt: "") %>
-        </div>
-        <div class="field ctr">
-          <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications when other users comment on your events and resources?'%>
-          Yes <%= f.radio_button :get_comment_email, true %>
-          No <%= f.radio_button :get_comment_email, false %>
-        </div>
-        <div class="field ctr">
-          <%= f.label :looking, :class => "", :value => 'Are you looking for a new job?'%>
-          Yes<%= f.radio_button :looking, true %>
-          No<%= f.radio_button :looking, false %>
-        </div>
-
-        <div class="field ctr">
-          <%= f.label :hiring, :class => "radio-title", :value => 'Is your company hiring?' %>
-          Yes<%= f.radio_button :hiring, true %>
-          No<%= f.radio_button :hiring, false %>
-        </div>
-      <div class="col-md-3"></div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 actions field ">
-        <%= f.submit :class=> "btn btn-profile", :value => 'Submit'%>
+      <div class="field ctr">
+        <%= f.label :get_reseource_email, :class => "", :value => 'Would you like to receive email notifications for resources?'%></br>
+      </div>
+      <div class="field ctr">
+        <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications for events?'%></br>
+      </div>
+      <div class="field ctr">
+        <%= f.label :campus_notification_id, :class => "", :value => 'Which campus?'%>
+      </div>
+      <div class="field ctr">
+        <%= f.label :get_event_email, :class => "", :value => 'Would you like to receive email notifications when other users comment on your events and resources?'%>
+      </div>
+      <div class="field ctr">
+        <%= f.label :looking, :class => "", :value => 'Are you looking for a new job?'%>
+      </div>
+      <div class="field ctr">
+        <%= f.label :hiring, :class => "radio-title", :value => 'Is your company hiring?' %>
       </div>
     </div>
+    <div class="col-md-2">
+      <div class="field ctr">
+        Yes <%= f.radio_button :get_job_email, true %>
+        No <%= f.radio_button :get_job_email, false %>
+      </div>
+      <div class="field ctr spacing-profile">
+        Yes <%= f.radio_button :get_resource_email, true %>
+        No <%= f.radio_button :get_resource_email, false %>
+      </div>
+      <div class="field ctr spacing-profile">
+        Yes <%= f.radio_button :get_event_email, true %>
+        No <%= f.radio_button :get_event_email, false %>
+      </div>
+      <div class="field ctr">
+        <%= f.collection_select(:campus_notification_id, Campus.all, :id, :long_name, prompt: "") %>
+      </div>
+      <div class="field ctr spacing-profile">
+        Yes <%= f.radio_button :get_comment_email, true %>
+        No <%= f.radio_button :get_comment_email, false %>
+      </div>
+      <div class="field ctr spacing-profile">
+        Yes<%= f.radio_button :looking, true %>
+        No<%= f.radio_button :looking, false %>
+      </div>
+      <div class="field ctr spacing-profile">
+        Yes<%= f.radio_button :hiring, true %>
+        No<%= f.radio_button :hiring, false %>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2 actions field">
+      <%= f.submit :class=> "btn btn-profile btn-center", :value => 'Submit'%>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
   <% end %>
 </div>

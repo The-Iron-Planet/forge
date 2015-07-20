@@ -1,6 +1,9 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="search-box col-med-12 well">
+    <div class="search-box-back">
+
+    </div>
+    <div class="search-box col-med-12 well directory-search">
       <%= form_tag search_path, remote: true do %>
         <%= text_field_tag "query", params[:query], class: "input-field-search general-search", placeholder: "Search by Name or City, State"%>
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
