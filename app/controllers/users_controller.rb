@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :first_login_setup, except: [:first_login, :update]
-  before_action :set_user, only: [:show, :edit, :edit_password, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :edit_password, :update, :destroy, :work_history]
   before_action :check_user, only: [:edit, :edit_password]
   before_action :user_is_cd?, only: [:new]
 
   # GET /users
   def index
-
     if request.post?
       @users = User.search_results(params[:query], params[:campus_id], params[:curric_id], params[:job_status]).ordered
       if @users == User
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
     else
       @users = User.all.ordered
     end
-
   end
 
   # GET /users/1
@@ -29,6 +27,17 @@ class UsersController < ApplicationController
     @user = current_user
     @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
       where(campus_id: current_user.campus_id)
+    if @user.is_cd
+      @job_posts = JobPost.all.ordered.all_active.first(5)
+      @resources = Resource.all.ordered.first(3)
+    elsif @user.is_instructor
+      @job_posts = JobPost.all.ordered.where(curriculum_id: current_user.curriculum_id).all_active.first(5)
+      @resources = Resource.all.ordered.where(curriculum_id: current_user.curriculum_id).first(3)
+    else
+      @job_posts = JobPost.ordered.where(curriculum_id: current_user.curriculum_id).all_active.first(5)
+      @resources = Resource.ordered.where(curriculum_id: current_user.curriculum_id).first(5)
+    end
+
   end
 
   # GET /users/new
@@ -38,6 +47,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def work_history
     @user.positions.build
   end
 
@@ -65,9 +77,15 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         # Sign in the user by passing validation in case their password changed
         sign_in :user, @user, bypass: true
-        redirect_to user_path, notice: 'User was successfully updated.'
+        respond_to do |format|
+          format.html { redirect_to user_path, notice: 'User was successfully updated.' }
+          format.js { redirect_to work_history_path(@user), notice: 'Work History was successfully updated.' }
+        end
       else
-        render :edit
+        respond_to do |format|
+          format.html { render :edit }
+          format.js { render :work_history }
+        end
       end
     else
       @user.sign_in_count += 1

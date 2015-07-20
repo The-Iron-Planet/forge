@@ -48,12 +48,12 @@ class CoursesController < ApplicationController
     if @course.update(course_params)
       respond_to do |format|
         format.html { redirect_to courses_path, notice: 'Course was successfully updated.'}
-        format.js { redirect_to add_students_path(@course), notice: 'Student was successfully added.' }
+        format.js { redirect_to add_students_path(@course), notice: 'Student was successfuly added.' }
       end
     else
       respond_to do |format|
         format.html { render :edit }
-        format.js { redirect_to add_students_path }
+        format.js { render :add_students }
       end
     end
   end

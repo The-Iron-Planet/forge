@@ -14,7 +14,7 @@
     </div>
     <% end %>
   </div>
-  
+
   <div class="row new-user-form">
     <div class="col-xs-1"></div>
     <div class="col-md-3">
@@ -42,12 +42,20 @@
     <div class="col-xs-1"></div>
     <div class="col-md-3 contact">
         <div class="field">
-          <%= f.label "Github", :class => "input-label" %>
+          <%= f.label "Github Username", :class => "input-label" %>
           <%= f.text_field :github_profile, :class => "input-field" %>
         </div>
         <div class="field">
           <%= f.label "Twitter Handle", :class => "input-label" %>
           <%= f.text_field :twitter, :class => "input-field" %>
+        </div>
+        <div class="field">
+          <%= f.label "Slack Handle", :class => "input-label" %>
+          <%= f.text_field :slack_handle, :class => "input-field" %>
+        </div>
+        <div class="field">
+          <%= f.label "Linked In", :class => "input-label" %>
+          <%= f.text_field :linked_in, :class => "input-field" %>
         </div>
         <div class="field">
           <%= f.label :website , :class => "input-label"%>
@@ -65,7 +73,7 @@
     </div>
     <div class="col-xs-1"></div>
   </div>
-  
+
   <div class = "row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
@@ -106,34 +114,7 @@
       </div>
     <div class="col-md-3"></div>
   </div>
-    
-  <!--<%= f.fields_for :positions do |ff| %>
-    <div class="field">
-      <%= ff.label :title, :class => "input-label" %><br>
-      <%= ff.text_field :title, :class => "input-field" %>
-    </div>
-    <div class="field">
-      <%= ff.label :company_name, :class => "input-label" %><br>
-      <%= ff.text_field :company_name, :class => "company_name" %>
-    </div>
-    <div class="field">
-      <%= ff.label :city, :class => "input-label" %><br>
-      <%= ff.text_field :city, :class => "city" %>
-    </div>
-    <div class="field">
-      <%= ff.label :state, :class => "input-label" %><br>
-      <%= ff.select :state, options_for_select(us_states, ff.object.state), :include_blank => true, :class => "input-field" %>
-    </div>
-    <div class="field">
-      <%= ff.label :started_on, :class => "input-lable" %><br>
-      <%= ff.date_field :started_on, :class => "input-field" %>
-    </div>
-    <div class="field">
-      <%= ff.label :ended_on, :class => "input-lable" %><br>
-      <%= ff.date_field :ended_on, :class => "input-field" %>
-    </div>-->
-    <!-- <div class = "field">----------------</div> -->
-  <% end %>
+
   <div class="row">
     <div class="col-md-12 actions field ">
       <%= f.submit :class=> "btn btn-profile", :value => 'Submit'%>

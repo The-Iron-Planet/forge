@@ -1,12 +1,17 @@
-<div class="container">
-  <div class="container-fluid">
-
+<div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
+      <div class = "col-med-3">
+        <ul class="nav nav-left nav-tabs nav-stacked">
+          <li role="presentation"><%= link_to 'My Profile', user_path(current_user) %></li>
+          <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
+          <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
+          <li role="presentation" class="active"><a href="#">My Resources</a></li>
+        </ul>
+      </div>
+      <div class="col-md-9 my-resources">
         <h2>My Resources</h2>
+        <%= render 'resource_list' %>
         <div class="btn-add-record-align"><%= link_to 'Add New Resource', new_resource_path, :class=>" btn-add-record"%></div>
       </div>
     </div>
-    <%= render 'resource_list' %>
-  </div>
 </div>

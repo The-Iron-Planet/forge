@@ -7,7 +7,7 @@
             <% if event.uploaded_file_file_name.nil? %>
               <%= image_tag "event_default.png", size: "100x100", :class=>"event-list-img" %>
             <% else %>
-              <%= image_tag event.uploaded_file(:thumb) %>
+              <%= image_tag event.uploaded_file(:square), :class=>"event-list-img" %>
             <% end %>
           </div>
           <div class="col-med-6">

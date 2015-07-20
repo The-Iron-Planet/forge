@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :uploaded_file, styles: {
     thumb: '50x50>',
-    square: '200x200#',
+    square: '175x175#',
     medium: '300x300>'
   }
   validates_attachment_content_type :uploaded_file, :content_type => /\Aimage\/.*\Z/

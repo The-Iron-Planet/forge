@@ -35,7 +35,7 @@
   width: 800px;
   height: 100px;
   display: inline-block;
-  margin-left: 2em;
+  // margin-left: 2em;
   margin-top: 2.25em;
   z-index: 3;
 }
@@ -100,6 +100,16 @@
   border: none;
   z-index: 100;
   margin-top: 40px;
+}
+
+.nav-left {
+  margin-left: 14px;
+}
+
+ul#nav-links li {
+   list-style-type: none; 
+   display: inline-block;
+   vertical-align: top;
 }
 
 

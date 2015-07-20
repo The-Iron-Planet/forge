@@ -9,7 +9,7 @@
         </div>
             <% else %>
         <div>
-          <%= image_tag @event.uploaded_file(:thumb) %>
+          <%= image_tag @event.uploaded_file(:square), :class=>"default-img" %>
         </div>
             <% end %>
       </div>
@@ -31,18 +31,14 @@
 
         <h2 class="event-page-heading"><%= @event.title %></h2>
         <ul class="indiv-event-details">
-          <li class="bold-sans-serif">
-            <%= @event.event_date %></li>
-          <li class="bold">
-            <%= @event.event_time %></li>
-          <li>Campus:
-            <%= @event.campus.long_name %></li>
-          <li class="event-link">Website:
-            <%= @event.website %></li>
-          <li class="event-description">
-            <%= @event.description %></li>
+          <li class="bold-sans-serif"><%= @event.event_date %></li>
+          <li class="bold"><%= @event.event_time %></li>
+          <li>Location: <%= @event.location %></li>
+          <% unless @event.website.blank? %>
+            <li class="event-link">Website:<%= @event.website_html %></li>
+          <% end %>
+          <li class="event-description"><%= @event.description %></li>
         </ul>
-
       </div>
 
       <div class="event-details-edit-delete">

@@ -55,7 +55,8 @@
 .btn-login{
   display: inline-block;
   border-radius: 4px;
-  width: 125px;
+  width: 135px;
+  padding: 4px;
   // margin: auto;
   margin-top: 20px;
   font-size: 16px;
@@ -99,6 +100,36 @@
 }
 
 .forgot-password-text {
-  color: white;
   font-size: 12pt;
+  color: white;
+}
+
+.remember-me {
+  color: white;
+  font-weight: thin;
+}
+
+.text-center {
+  text-align: left;
+  margin-left: 18px;
+}
+
+.login-page-text {
+  font-size: 20px;
+  font-family: $font;
+  color: black;
+  text-align: left;
+}
+
+.error-message-login {
+  text-align: center;
+  color: white;
+}
+
+.login-page-header {
+  font-size: 20px;
+  font-family: $font;
+  color: white;
+  text-align: left;
+  margin-left: 17px;
 }
