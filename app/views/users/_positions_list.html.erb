@@ -1,0 +1,56 @@
+<%= form_for(@user, remote: true) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h4 class="form-val"><%= pluralize(@user.errors.count, "error") %>
+        prohibited this position from being saved:</h4>
+
+      <ul class="error">
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Title</th>
+          <th>Started On</th>
+          <th>Ended On</th>
+        </tr>
+      </thead>
+      <tbody>
+      <%= f.fields_for :positions do |ff| %>
+        <%= ff.hidden_field :user_id, :value => f.object.id %>
+        <tr>
+          <td>
+            <%= ff.text_field :company_name, :placeholder => "Company Name" %>
+          </td>
+          <td>
+            <%= ff.text_field :city, :placeholder => "City" %>
+          </td>
+          <td>
+            <%= ff.select :state, options_for_select(us_states, ff.object.state), :prompt => "State" %>
+          </td>
+          <td>
+            <%= ff.text_field :title, :placeholder => "Title"%>
+          </td>
+          <td>
+            <!-- <%= ff.label :started_on, :class => "input-label" %> -->
+            <%= ff.date_field :started_on, :prompt => "Started On" %>
+          </td>
+          <td>
+            <!-- <%= ff.label :ended_on, :class => "input-label" %> -->
+            <%= ff.date_field :ended_on, :prompt => "Ended On" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+    <div class="actions">
+      <%= f.submit :class=> "btn ctr-btn", :value => 'Update Work History' %>
+    </div>
+<% end %>

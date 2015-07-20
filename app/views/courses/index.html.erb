@@ -1,6 +1,6 @@
 
 <div class = "container-fluid">
-  <h2>Course Listing</h2>
+  <h2>Courses for <%= @campus.long_name %></h2>
   <div class = "row">
     <div class = "col-md-2"></div>
     <div class = "col-md-8">
@@ -42,7 +42,7 @@
 
       <a href="mobile-friendly-page.html" data-mfp-src="#new-course" class="open-popup-link new-campus"><span class="glyphicon glyphicon-plus" aria-hidden="true"></a>
       <div id="new-course" class="white-popup mfp-hide">
-        <h2>Add New Course</h2>
+        <h2>Add New Course for <%= @campus.short_name %></h2>
 
         <%= render 'form' %>
       </div>

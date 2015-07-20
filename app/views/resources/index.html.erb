@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <div class="search-box-back">
   <div class="row">
     <div class="col-md-12">
         <!-- <h2>Resources</h2> -->
@@ -6,9 +7,12 @@
         <% if current_user.resources.count != 0 %>
         <div class="btn-add-record-align"><%= link_to 'My Resources', my_resources_path, :class=>" btn-add-record"%></div>
         <% end %>
-      </div>
 
-      <div class="search-box well">
+      </div> -->
+    </div>
+
+    <div class="row">
+      <div class="search-box col-med-12 well directory-search">
         <%= form_tag search_resources_path, remote: true do %>
         <%= text_field_tag "query", params[:query], class: "input-field-search resources-search-boxes-bar", placeholder: "Search"%>
         <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>

@@ -1,17 +1,19 @@
 <!-- this page is done for now -->
 <div class="scroll-container">
   <% @events.each do |event| %>
-    <div class="event-block">
-      <p class="dashboard-event-title"><%= event.title%></p>
-      <p class="dashboard-event-details"><%= event.event_date %></p>
-      <p class="dashboard-event-details"><%= event.event_time %></p>
-      <p class="dashboard-event-details"><%= event.location %></p>
-      <div class="dashboard-edit-delete">
-        <%= link_to '<i class="glyphicon glyphicon-pencil"  title="Event"></i>'.html_safe,
-            edit_event_path(event) if event.user_id == current_user.id %>
-        <%= link_to '<i class="glyphicon glyphicon-remove " title="Delete"></i>'.html_safe,
-            event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
+    <a href='/events/<%= event.id %>' class='dashboard-box-link'>
+      <div class="event-block">
+        <p class="dashboard-event-title"><%= event.title %></p>
+        <p class="dashboard-event-details"><%= event.event_date %></p>
+        <p class="dashboard-event-details"><%= event.event_time %></p>
+        <p class="dashboard-event-details"><%= event.location %></p>
+        <div class="dashboard-edit-delete">
+          <%= link_to '<i class="glyphicon glyphicon-pencil"  title="Event"></i>'.html_safe,
+              edit_event_path(event) if event.user_id == current_user.id %>
+          <%= link_to '<i class="glyphicon glyphicon-remove " title="Delete"></i>'.html_safe,
+              event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
+        </div>
       </div>
-    </div>
+    </a>
   <% end %>
 </div>
