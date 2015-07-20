@@ -46,6 +46,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @courses = Course.where(campus_id: current_user.campus_id)
   end
 
   # GET /users/1/edit

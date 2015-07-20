@@ -42,7 +42,7 @@
       </div>
       <div class="field">
         <%= f.label :course, :class => "input-label" %>
-        <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
+        <%= f.collection_select(:course_id, @courses, :id, :full_description, prompt: "") %>
       </div>
 
       <div class="field">
