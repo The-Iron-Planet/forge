@@ -13,7 +13,6 @@ This app was created in Ruby version 2.2.2 with Rails 4.2.1
 * Paperclip
 * AWS-SDK
 * Bootstrap
-  * Bootstrap Datetimepicker
 * [American Date](https://github.com/jeremyevans/ruby-american_date)
 * MailGun
 * AutoHTML

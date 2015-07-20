@@ -110,7 +110,6 @@ class UsersController < ApplicationController
       sign_in :user, @user, bypass: true
       redirect_to @user, notice: 'Password was successfully updated'
     else
-      flash.now[:notice] = 'Current password was invalid. Please try again'
       render :edit_password
     end
   end

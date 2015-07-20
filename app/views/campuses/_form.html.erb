@@ -1,15 +1,7 @@
 <%= form_for(@campus) do |f| %>
-  <% if @campus.errors.any? %>
-    <div id="error_explanation">
-      <h4 class="form-val"><%= pluralize(@campus.errors.count, "error") %> prohibited this campus from being saved:</h4>
-
-      <ul class="error">
-      <% @campus.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="row form-val">
+    <%= render "shared/error_messages", :target => @campus %>
+  </div>
 
   <div class="field">
     <%= f.label :city, :class => "input-label" %><br>
