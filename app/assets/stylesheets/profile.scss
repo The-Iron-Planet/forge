@@ -264,6 +264,7 @@ font-size: .8em;
 
 .first-name-bold {
   font-style: bold;
+  font-size: 1.1em;
 }
 
 #table-right-column {
@@ -292,4 +293,19 @@ font-size: .8em;
   // margin: 0 auto;
 // background-color: $light-gray;
   margin-bottom: 10px;
+}
+
+.work-history {
+  margin-top: 3px;
+}
+// 
+// .row, .work-history-row {
+//   margin-left: 5px;
+//   margin-right: 5px;
+// }
+
+.contact-info, a {
+  font-size: 0.95em;
+  color: #383838;
+  text-decoration: none;
 }
