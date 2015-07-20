@@ -31,13 +31,46 @@
 .scroll-container {
   margin-top: 90px;
 }
+.event-block {
 
+  // position: relative;
+  min-width: 320px;
+
+  // width: 320px;
+  background-color: $events-color;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 20px;
+  color: $white;
+}
+.dashboard-event-title {
+  color: $white;
+  padding-top: 10px;
+  margin: 0;
+  font-family: $font-bold;
+}
+.dashboard-event-details {
+  padding: 4px;
+  margin: 0;
+  line-height: 1em;
+  font-size: $small-font;
+}
+.dashboard-edit-delete {
+  position: relative;
+  text-align: right;
+  color: $events-color;
+}
 .glyphicon-remove,
 .glyphicon-pencil {
   color: orange;
   background-color: white;
   padding: 0.25em;
 }
+
+
+
+
+
 
 // event listing page css
 .margin-top{
@@ -239,12 +272,4 @@ z-index: 100;
   margin:0 auto;
   text-align: left;
   background-color: red;
-}
-.events-background-color{
-width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #d3d5d7;
-  padding-top: 30px;
-  margin-top: 180px;
 }
