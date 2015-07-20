@@ -1,0 +1,50 @@
+@import "stylesheet";
+
+.event-block {
+  // position: relative;
+  min-width: 320px;
+  // width: 320px;
+  background-color: pink;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 20px;
+  color: black;
+  height: 100px;
+}
+
+.resource-block {
+  // position: relative;
+  min-width: 320px;
+  // width: 320px;
+  background-color: pink;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 20px;
+  color: black;
+  height: 100px;
+}
+
+.job-post-block {
+  // position: relative;
+  min-width: 320px;
+  // width: 320px;
+  background-color: pink;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 20px;
+  color: black;
+  height: 150px;
+}
+
+.dashboard-background {
+  background-color: lightgrey;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fixed-header-dashboard {
+  background-color: lightgrey;
+}
+
