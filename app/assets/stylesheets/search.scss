@@ -11,7 +11,7 @@
 // }
 
 .search-box{
-top: 84px;
+top: 170px;
 // left: 0;
   // position: fixed;
 // z-index: 50;
@@ -28,7 +28,7 @@ margin-right: auto;
   margin-left: auto;
   margin-right: auto;
   // margin-left: 60px;
-  width: 80%;
+  min-width: 80%;
   // margin: 0 auto;
 // background-color: $light-gray;
   margin-bottom: 10px;
@@ -227,7 +227,7 @@ display: inline-block;
 
 .directory-search{
 // background-color: orange;
-margin-top: 30px;
+margin-top: 10px;
     position: fixed;
     right: 0;
     left: 0;
@@ -236,7 +236,7 @@ margin-top: 30px;
 
     width: 90%;
 z-index: 10;
-box-shadow: 0 20px 50px $white;
+// box-shadow: 0 20px 50px $white;
 
 
 
@@ -246,9 +246,36 @@ box-shadow: 0 20px 50px $white;
   position: fixed;
   left: 0;
   right: 0;
-  height: 180px;
+  height: 230px;
   z-index: 10;
-margin-top: -100px;
+margin-top: -50px;
 // background-color: red;
   background-color: $white;
+}
+
+
+.h2-align{
+padding-top: 60px;
+}
+
+.jobs-search{
+// background-color: orange;
+margin-top: 10px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    width: 90%;
+z-index: 10;
+// box-shadow: 0 20px 50px $white;
+
+
+
+}
+
+.jobs-btn{
+  padding-bottom: 50px;
+  z-index: 100;
 }

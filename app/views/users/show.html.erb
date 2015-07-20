@@ -1,103 +1,145 @@
 <div class = "container-fluid">
-  <div class = "row">
-    <div class = "col-md-2">
-      <% if @user.id == current_user.id %>
-      <ul class="nav nav-tabs nav-stacked">
-        <li role="presentation" class="active"><a href="#">My Profile</a></li>
-        <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
-        <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
-        <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
-      </ul>
-       <% end %>
-    </div>
-    <div class = "col-md-4 profile">
-      <div class = "image-pic-down">
-        <% if @user.uploaded_file_file_name.nil? %>
-          <div><%= image_tag "default_pic.png", size: "175x175" %></div>
-        <% else %>
-          <div><%= image_tag @user.uploaded_file(:square) %></div>
-        <% end %>
-          <button class = "btn-edit-profile"><%= link_to 'Edit Profile', edit_user_path(@user) if @user.id == current_user.id %></button>
-          <!--<button class = "btn-edit-profile link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
+  <div class = "container-fluid">
+    <% if @user.id == current_user.id %>
+      <div class="col-md-2">
+        <ul class="nav nav-tabs nav-stacked">
+          <li role="presentation" class="active"><a href="#">My Profile</a></li>
+          <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
+          <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
+          <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
+        </ul>
       </div>
-
-      <div class = "float-right">
-        <div class = "first-name-bold"><%= @user.full_name %></div>
-        </br>
-        <div>Role: <%= @user.tiy_relation %></div>
-        <% unless @user.current_city.blank? || @user.current_state.blank? %>
-          <div>Location: <%= @user.current_location %></div>
-        <% end %>
-        <div>Email: <%= @user.email %></div>
-        <% unless @user.github_profile.blank? %>
-          <div>
-            Github: <%= link_to "#{@user.github_profile}", @user.github_link, target: "_blank" %>
+    <% else %>
+      <div class="col-md-1"></div>
+    <% end %>
+    <div class="col-md-4 profile">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5">
+            <div class = "image-pic-down">
+              <% if @user.uploaded_file_file_name.nil? %>
+                <div><%= image_tag "default_pic.png", size: "175x175" %></div>
+              <% else %>
+                <div><%= image_tag @user.uploaded_file(:square) %></div>
+              <% end %>
+              <div class = "first-name-bold"><strong><%= @user.full_name %></strong></div>
+              <div><%= @user.tiy_relation %></div>
+                <!--<button class = "btn-edit-profile link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
+            </div>
           </div>
-        <% end %>
-        <% unless @user.twitter.blank? %>
-          <div>
-            Twitter: <%= link_to "@#{@user.twitter}", @user.twitter_link, target: "_blank" %>
+          <div class="col-md-7 contact-info">
+            <br/>
+            <% unless @user.current_city.blank? || @user.current_state.blank? %>
+              <div>
+                <i class="fa fa-map-marker" title="Github"></i>
+                <%= @user.current_location %>
+              </div>
+            <% end %>
+            <div>
+              <i class="fa fa-envelope-square" title="Github"></i>
+              <%= @user.email %>
+            </div>
+            <% unless @user.github_profile.blank? %>
+              <div>
+                <i class="fa fa-github-square" title="Github"></i>
+                <%= link_to "#{@user.github_profile}", @user.github_link, target: "_blank" %>
+              </div>
+            <% end %>
+            <% unless @user.twitter.blank? %>
+              <div>
+                <i class="fa fa-twitter-square" title="Github"></i>
+                <%= link_to "@#{@user.twitter}", @user.twitter_link, target: "_blank" %>
+              </div>
+            <% end %>
+            <% unless @user.slack_handle.blank? %>
+              <div>
+                <i class="fa fa-slack" title="Github"></i>
+                <%= "@#{@user.slack_handle}" %>
+              </div>
+            <% end %>
+            <% unless @user.linked_in.blank? %>
+              <div>
+                <i class="fa fa-linkedin-square" title="Github"></i>
+                <%= link_to @user.linked_in, @user.linked_in, target: "_blank" %>
+              </div>
+            <% end %>
+            <% unless @user.website.blank? %>
+              <div>
+                <i class="fa fa-external-link-square" title="Github"></i>
+                <%= link_to "Website", @user.website, target: "_blank" %>
+              </div>
+            <% end %>
+            <% unless @user.blog.blank? %>
+              <div>
+                <i class="fa fa-rss-square" title="Github"></i>
+                <%= link_to "Blog", @user.blog, target: "_blank" %>
+              </div>
+            <% end %>
+            <% if @user.hiring %>
+              <div>Hiring: Yes</div>
+            <% end %>
+            <% if @user.looking %>
+              <div>Looking: Yes</div>
+            <% end %>
           </div>
-        <% end %>
-        <% unless @user.slack_handle.blank? %>
-          <div>
-            Slack: <%= "@#{@user.slack_handle}" %>
-          </div>
-        <% end %>
-        <% unless @user.linked_in.blank? %>
-          <div>
-            Linked In: <%= link_to @user.linked_in, @user.linked_in, target: "_blank" %>
-          </div>
-        <% end %>
-        <% unless @user.website.blank? %>
-          <div>Website: <%= @user.website_html %></div>
-        <% end %>
-        <% unless @user.blog.blank? %>
-          <div>Blog: <%= @user.blog %></div>
-        <% end %>
-        <% if @user.hiring %>
-          <div>Hiring: Yes</div>
-        <% end %>
-        <% if @user.looking %>
-          <div>Looking: Yes</div>
-        <% end %>
         </div>
+        <div class="row">
+          <br/>
+          <br/>
+          <% if @user.id == current_user.id %>
+            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn-edit-profile"%>
+            <%= link_to 'Change Password', edit_password_user_path(@user), class: "btn-edit-profile" %>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class = "col-md-6">
-      <div class = "table-responsive">
-        <table class = "table table-condensed table-on-right">
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Location</th>
-              <th>Title</th>
-              <th>Started on</th>
-              <th>Ended on</th>
-              <th id = "table-right-column"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @user.positions.ordered.each do |position| %>
-              <tr>
-                <td><%= position.company_name %></td>
-                <td><%= position.location %></td>
-                <td><%= position.title %></td>
-                <td><%= position.start_date if position.started_on%></td>
-                <td><%= position.end_date if position.ended_on%></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <div class="well well-profile">
+        <div class="row work-history-row">
+          <div class="col-md-6">
+            <h3 class="work-history"> Work History </h3>
+          </div>
+          <% if @user.id == current_user.id %>
+            <div class="col-md-6">
+              <button class="btn-edit-work-history float-right"><%= link_to 'Update Work History', work_history_path(@user), class: "button-link" %></button>
+            </div>
+          <% end %>
+        </div>
+        <div class="row">
+          <div class = "table-responsive">
+            <table class = "table table-condensed">
+              <colgroup>
+                <col class="col-md-2">
+                <col class="col-md-2">
+                <col class="col-md-4">
+                <col class="col-md-2">
+                <col class="col-md-2">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Location</th>
+                  <th>Title</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user.positions.ordered.each do |position| %>
+                  <tr>
+                    <td><%= position.company_name %></td>
+                    <td><%= position.location %></td>
+                    <td><%= position.title %></td>
+                    <td><%= position.start_date if position.started_on%></td>
+                    <td><%= position.end_date if position.ended_on%></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class = "row">
-    <div class = "links">
-
-    </div>
-  </div>
-
-
   </br>
 </div>

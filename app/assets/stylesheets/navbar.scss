@@ -101,7 +101,7 @@
 .nav {
   border: none;
   z-index: 100;
-  margin-top: 40px;
+  margin-top: 15px;
 }
 
 .nav-left {
@@ -112,4 +112,8 @@ ul#nav-links li {
    list-style-type: none;
    display: inline-block;
    vertical-align: top;
+}
+
+.nav-width {
+  min-width: 100%;
 }

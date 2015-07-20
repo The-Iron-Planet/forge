@@ -13,11 +13,11 @@
                   <!-- <i class="fa fa-question-circle fa-2x fa-fw"></i> -->
                     <div class="thumbnail  job-img">
                       <% if job_post.user.uploaded_file_file_name.nil? %>
-                        <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
+                        <div><%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{job_post.user_id}" %></div>
                         <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
                       <% else %>
                         <div>
-                          <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}" %>
+                          <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"/users/#{job_post.user_id}" %>
                           <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
                         </div>
                       <% end %>
@@ -61,6 +61,39 @@
                   </div>
                 </div>
 
+  <% @job_posts.each do |job_post| %>
+  <div class="row card">
+    <div class="col-md-12">
+      <div class="container job-card">
+
+
+        <div class="collapse-card ">
+          <div class="collapse-card__heading ">
+            <h4 class="collapse-card__title">
+
+              <div class="thumbnail job-img">
+                        <% if job_post.user.uploaded_file_file_name.nil? %>
+                          <div>
+                            <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %>
+                            <!-- <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %> -->
+                          </div>
+                        <% else %>
+                          <div>
+                            <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}" %>
+                            <!-- <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %> -->
+                          </div>
+                        <% end %>
+                      </div>
+              <div class="job-header">
+                <h4 class="title">
+                  <%= job_post.title %>
+                </h4>
+                <p class="employer">
+                  <%= job_post.company_name %>
+                </p>
+                <p class="employer">
+                  <%= job_post.city %>, <%= job_post.state %>
+                </p>
               </div>
             </h4>
           </div>
@@ -90,6 +123,5 @@
           </div>
            <% end %>
       </div>
-    </div>
-  </div>
-</div>
+    <!-- </div>
+  </div> -->
