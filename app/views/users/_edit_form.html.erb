@@ -38,6 +38,11 @@
           <%= f.label :current_state, :class => "input-label" %>
           <%= f.select :current_state, options_for_select(us_states, @user.current_state), :include_blank => true, :class => "input-field" %>
         </div>
+        <div class="field">
+          <%= f.label :is_mentor, :class => "", :value => 'Available to mentor others?'%></br>
+          Yes <%= f.radio_button :is_mentor, true %>
+          No <%= f.radio_button :is_mentor, false %>
+        </div>
     </div>
     <div class="col-xs-1"></div>
     <div class="col-md-3 contact">
