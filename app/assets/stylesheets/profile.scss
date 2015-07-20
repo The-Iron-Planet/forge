@@ -123,6 +123,7 @@ z-index: 10;
 
 .profile {
   background-color: lightgrey;
+  height: 350px;
 }
 
 .input-field-company {
@@ -252,8 +253,39 @@ font-size: .8em;
   height: 160px;
 }
 
+<<<<<<< HEAD
+.float-right {
+  float: right;
+  display: inline-block;
+  margin-top: 25px;
+  font-size: .9em;
+}
+
+.image-pic-down {
+  margin-top: 20px;
+  float: left;
+}
+
+.first-name-bold {
+  font-style: bold;
+}
+
+#table-right-column {
+  style: "display:none";
+}
+
+.spacing-profile {
+ margin-top: 7px;
+}
+
+.btn-center {
+  text-align: center;
+}
+
+=======
 #header{
   margin-top: 100px;
   // padding-top: 100px;
 
 }
+>>>>>>> 44160e095bdadc186e658e230e49527aeba3a0de

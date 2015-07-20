@@ -1,37 +1,66 @@
-<div class="jobs-background-color">
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-md-2"></div>
+    <div class = "col-md-10">
+      <div class="jobs-background-color">
+        <% @job_posts.each do |job_post| %>
+        <div class="row card">
+          <div class="col-md-12">
+            <div class="container job-card">
+              <div class="collapse-card ">
+                <div class="collapse-card__heading job-heading">
+                  <h4 class="collapse-card__title">
+                  <!-- <i class="fa fa-question-circle fa-2x fa-fw"></i> -->
+                    <div class="thumbnail  job-img">
+                      <% if job_post.user.uploaded_file_file_name.nil? %>
+                        <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %></div>
+                        <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
+                      <% else %>
+                        <div>
+                          <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}" %>
+                          <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <div class="job-header">
+                      <h4 class="title">
+                        <%= job_post.title %>
+                      </h4>
+                      <p class="employer">
+                        <%= job_post.company_name %>
+                      </p>
+                      <p class="employer">
+                        <%= job_post.city %>, <%= job_post.state %>
+                      </p>
+                    </div>
+                  </h4>
+                </div>
+                <div class="collapse-card__body job-details">
+                  <p class="job-text">
+                    <%= job_post.description %>
+                  </p>
+                  <p class="job-text">Experience Desired:
+                    <%= job_post.experience_desired %>
+                  </p>
+                  <p class="job-text">
+                    <%= job_post.website_html unless job_post.website.blank? %>
+                  </p>
+                  <h6 class="job-footnote">
+                    Last updated:
+                    <%= job_post.last_update %>
+                  </h6>
+                  <h6 >Post Expires: <%= job_post.expires_on %> </h6>
+                  <h6> <%= "This post is inactive" if job_post.active != true %></h6>
+                  <h6> <%= "This post has expired" if job_post.is_expired? %></h6>
+                  <div class="edit-delete ">
+                    <%= link_to '<i class="glyphicon glyphicon-pencil jobs-edit-delete" title="Job Post"></i>'.html_safe,
+                                  edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
+                    <%= link_to '<i class="glyphicon glyphicon-remove jobs-edit-delete" title="Delete"></i>'.html_safe,
+                                  job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
+                  </div>
+                  </div>
+                </div>
 
-  <% @job_posts.each do |job_post| %>
-  <div class="row card">
-    <div class="col-md-12">
-      <div class="container job-card">
-        <div class="collapse-card ">
-          <div class="collapse-card__heading job-heading">
-            <h4 class="collapse-card__title">
-            <!-- <i class="fa fa-question-circle fa-2x fa-fw"></i> -->
-            <!-- <div class="img-and-name-box" -->
-              <div class="thumbnail job-img">
-                        <% if job_post.user.uploaded_file_file_name.nil? %>
-                          <div>
-                            <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{job_post.user_id}" %>
-                            <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
-                          </div>
-                        <% else %>
-                          <div>
-                            <%=link_to image_tag(job_post.user.uploaded_file(:thumb)),"users/#{job_post.user_id}" %>
-                            <%=link_to job_post.user.first_name, "/users/#{job_post.user_id}" %>
-                          </div>
-                        <% end %>
-                      </div>
-              <div class="job-header">
-                <h4 class="title">
-                  <%= job_post.title %>
-                </h4>
-                <p class="employer">
-                  <%= job_post.company_name %>
-                </p>
-                <p class="employer">
-                  <%= job_post.city %>, <%= job_post.state %>
-                </p>
               </div>
             </h4>
           </div>
@@ -58,17 +87,8 @@
               <%= link_to '<i class="glyphicon glyphicon-remove jobs-edit-delete" title="Delete"></i>'.html_safe,
                             job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
             </div>
-            </div>
           </div>
-        </div>
-        <!-- <div class="bar-wrap">
 
-
-        <span class="bars">
-
-        </span>
-        </div> -->
-        <% end %>
       </div>
     </div>
   </div>

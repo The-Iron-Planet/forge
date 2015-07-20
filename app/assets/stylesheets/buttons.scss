@@ -109,7 +109,7 @@ btn-login {
   height: 54px;
   width: 54px;
   position: fixed;
-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
   bottom: 0;
   right: 0px;
   margin-right: 34px;
@@ -118,6 +118,22 @@ border-radius: 0 4px 4px 0;
   z-index: 10;
 }
 
+<<<<<<< HEAD
+.btn-profile {
+}
+
+.btn-edit-profile {
+  font-size: $h4;
+  border-radius: $corners;
+  font-family: $font;
+  background: $accent-color-light;
+  color: white;
+  padding: 5px 10px 7.5px;
+  margin: 30px 20px 20px 20px;
+  text-decoration: none;
+  border: 1px solid $accent-color-light;
+}
+=======
 // .add-btn{
 //   width: 60px;
 //   height: 60px;
@@ -147,3 +163,4 @@ border-radius: 0 4px 4px 0;
 // .float-btn{
 //   float: right;
 // }
+>>>>>>> 44160e095bdadc186e658e230e49527aeba3a0de
