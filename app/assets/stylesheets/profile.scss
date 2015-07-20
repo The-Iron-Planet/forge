@@ -185,7 +185,7 @@ font-size: .8em;
 
 .profile-content{
   margin-top: 20px;
-  box-shadow: 10px 10px 65px #b2b2b2;
+  box-shadow: 10px 10px 90px #d7d7d7;
   padding: 30px 10px;
 }
 
@@ -221,6 +221,7 @@ font-size: .8em;
 
 .profile-card {
   box-sizing: border-box;
+  height: 300px;
 }
 
 .profile-content {
@@ -248,36 +249,8 @@ font-size: .8em;
   height: 160px;
 }
 
-.float-right {
-  float: right;
-  display: inline-block;
-  margin-top: 25px;
-  font-size: .9em;
-}
-
-.image-pic-down {
-  margin-top: 20px;
-  float: left;
-}
-
-.first-name-bold {
-  font-style: bold;
-}
-
-#table-right-column {
-  style: "display:none";
-}
-
-.spacing-profile {
- margin-top: 7px;
-}
-
-.btn-center {
-  text-align: center;
-}
-
-#header {
-  margin-top: 100px;
+#header{
+  margin-top: 220px;
   // padding-top: 100px;
 }
 
