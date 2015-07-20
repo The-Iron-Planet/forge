@@ -8,8 +8,11 @@ class UsersController < ApplicationController
   # GET /users
   def index
     if request.post?
-      @users = User.search_results(params[:query], params[:campus_id], params[:curric_id], params[:job_status]).ordered
-      if @users == User
+      @users = User.ordered.search_results(params[:query], params[:campus_id], params[:curric_id], params[:job_status])
+      if @users.blank?
+        flash.now[:notice] = "Your search did not return any results. Please try again."
+        render :index
+      elsif @users == User
         @users = User.all.ordered
         flash.now[:notice] = "Please choose specific search parameters."
         render :index

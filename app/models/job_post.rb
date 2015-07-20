@@ -48,7 +48,11 @@ class JobPost < ActiveRecord::Base
     end
     relation = relation.where(experience_desired: experience) if experience != ""
     relation = relation.where(curriculum_id: curric_id) if curric_id != ""
-    relation
+    if relation == self
+      relation
+    else
+      relation.all_active
+    end
   end
 
   def self.all_active
