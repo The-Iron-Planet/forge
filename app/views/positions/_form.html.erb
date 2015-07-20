@@ -1,16 +1,7 @@
 <%= form_for(@position) do |f| %>
-  <% if @position.errors.any? %>
-    <div id="error_explanation">
-      <h4 class="form-val"><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h4>
-
-      <ul class="error">
-      <% @position.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-
-  <% end %>
-</div>
+  <div class="row form-val">
+    <%= render "shared/error_messages", :target => @position %>
+  </div>
   <div class="field">
     <%= f.label :title, :class => "input-label"%><br>
     <%= f.text_field :title, :class => "input-field" %>

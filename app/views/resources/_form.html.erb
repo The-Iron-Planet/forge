@@ -2,19 +2,9 @@
   <div class="row">
     <div class="col-med-12">
       <%= form_for(@resource) do |f| %>
-        <% if @resource.errors.any? %>
-          <div id="error_explanation">
-            <h4 class="form-val"><%= pluralize(@resource.errors.count, "error") %>
-              prohibited this resource from being saved:
-            </h4>
-            <ul class="error">
-              <% @resource.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
+        <div class="row form-val">
+          <%= render "shared/error_messages", :target => @resource %>
+        </div>
         <div class="row">
           <div class="col-md-12 field">
             <div class="resource-list">
