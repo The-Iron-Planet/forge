@@ -46,7 +46,9 @@
 
 .fixed-header-dashboard {
   background-color: lightgrey;
-  height: 100px;
+  height: 80px;
+  // margin-left: 10px;
+  margin-top: -40px;
 }
 
 .dashboard-event-details {
@@ -74,7 +76,7 @@
 }
 
 .text-dash {
-  padding: 1em;
+  padding-left: 2.25em;
 }
 
 .job-post-image {
