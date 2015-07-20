@@ -1,15 +1,17 @@
 <div class = "container-fluid">
-  <div class = "row">
-    <div class = "col-md-2">
-      <% if @user.id == current_user.id %>
-      <ul class="nav nav-tabs nav-stacked">
-        <li role="presentation" class="active"><a href="#">My Profile</a></li>
-        <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
-        <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
-        <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
-      </ul>
-       <% end %>
-    </div>
+  <div class = "container-fluid">
+    <% if @user.id == current_user.id %>
+      <div class="col-md-2">
+        <ul class="nav nav-tabs nav-stacked">
+          <li role="presentation" class="active"><a href="#">My Profile</a></li>
+          <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
+          <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
+          <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
+        </ul>
+      </div>
+    <% else %>
+      <div class="col-md-1"></div>
+    <% end %>
     <div class="col-md-4 profile">
       <div class="container-fluid">
         <div class="row">
@@ -99,7 +101,7 @@
           </div>
           <% if @user.id == current_user.id %>
             <div class="col-md-6">
-              <button class="btn-edit-profile"><%= link_to 'Update Work History', work_history_path(@user), class: "button-link" %></button>
+              <button class="btn-edit-profile float-right"><%= link_to 'Update Work History', work_history_path(@user), class: "button-link" %></button>
             </div>
           <% end %>
         </div>
