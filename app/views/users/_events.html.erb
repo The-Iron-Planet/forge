@@ -1,7 +1,7 @@
 <!-- this page is done for now -->
 <div class="scroll-container">
   <% @events.each do |event| %>
-    <a href='/events/<%= event.id% >' class='dashboard-box-link'>
+    <a href='/events/<%= event.id %>' class='dashboard-box-link'>
       <div class="event-block">
         <p class="dashboard-event-title"><%= event.title %></p>
         <p class="dashboard-event-details"><%= event.event_date %></p>
