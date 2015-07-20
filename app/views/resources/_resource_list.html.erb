@@ -1,70 +1,60 @@
-<div class = "container-fluid">
-  <div id="jobs-header">
+ <div class="resources-background-color">
 
-  </div>
-  <!-- <div id="resources-header">
+    <% @resources.each do |resource| %>
 
-  </div> -->
-  <div class = "row">
-    <!-- <div class = "col-md-3"></div>
-    <div class = "col-md-9"> -->
+    <div class="row card">
+      <div class="col-md-12">
+        <div class="container resources-card">
+
+          <div class="collapse-card ">
+            <div class="collapse-card__heading job-heading">
+              <h4 class="collapse-card__title">
 
 
-        <% @resources.each do |resource| %>
-
-          <div class="row card">
-            <div class="col-md-12">
-              <div class="container job-card resources-card">
-                <div class="collapse-card ">
-                  <div class="collapse-card__heading job-heading">
-                    <h4 class="collapse-card__title">
-                      <i class="fa fa-question-circle fa-2x fa-fw"></i>
-                      <div class="thumbnail resource-img">
-                        <% if resource.user.uploaded_file_file_name.nil? %>
-                          <div>
-                            <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %>
-                            <%=link_to resource.user.first_name, "/users/#{resource.user_id}" %>
-                          </div>
-                        <% else %>
-                          <div>
-                            <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}" %>
-                            <%=link_to resource.user.first_name, "/users/#{resource.user_id}" %>
-                          </div>
-                        <% end %>
-                      </div>
-                      <div class="resource-header">
-                        <h4 class="title">
-                          <%= resource.title %>
-                        </h4>
-                        <p class="curriculum">
-                          <%= resource.curriculum.nickname %>
-                        </p>
-                      </div>
-                    </h4>
+                <div class="thumbnail resource-img">
+                  <% if resource.user.uploaded_file_file_name.nil? %>
+                  <div>
+                    <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %>
+                    <%=link_to resource.user.full_name, "/users/#{resource.user_id}" %>
                   </div>
-                  <div class="collapse-card__body job-details">
-                    <p>Description:
-                      <%= resource.description %>
-                    </p>
-                    <p>
-                      <%= link_to "View More", resource_path(resource) %>
-                    </p>
-                    <p>
-                      <%= resource.website_html unless resource.website.blank? %>
-                    </p>
-                    <div class="edit-delete">
-                      <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Resource"></i>'.html_safe,
-                          edit_resource_path(resource) if resource.user_id == current_user.id %>
-                      <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Resource"></i>'.html_safe,
-                          resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
-                    </div>
+                  <% else %>
+                  <div>
+                    <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}" %>
+                    <%=link_to resource.user.first_name, "/users/#{resource.user_id}" %>
                   </div>
+                  <% end %>
                 </div>
+                <div class="resource-header">
+                  <h4 class="title">
+                    <%= resource.title %>
+                  </h4>
+                  <p class="curriculum">
+                    <%= resource.curriculum.nickname %>
+                  </p>
+                </div>
+              </h4>
+            </div>
+            <div class="collapse-card__body job-details">
+              <p>Description:
+                <%= resource.description %>
+              </p>
+              <p>
+                <%= link_to "View More", resource_path(resource) %>
+              </p>
+              <p>
+                <%= resource.website_html unless resource.website.blank? %>
+              </p>
+              <div class="edit-delete">
+                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Resource"></i>'.html_safe,
+                          edit_resource_path(resource) if resource.user_id == current_user.id %>
+                <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Resource"></i>'.html_safe,
+                          resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
               </div>
             </div>
           </div>
-        <% end %>
-
+        </div>
+      </div>
     </div>
+    <% end %>
+
   </div>
-</div>

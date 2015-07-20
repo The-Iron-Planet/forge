@@ -12,16 +12,6 @@
 @import 'stylesheet';
 
 
-#db {
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* Preserve aspet ratio */
-  max-width: 100%;
-  max-height: 100%;
-  z-index: -5;
-  background-size: cover;
-}
 .dashboard-events-header {
   margin: 0 auto;
   width: 33.333%;
@@ -93,9 +83,10 @@
   // background-color: $off-white;
 // border-right: solid 10px $events-color;
   padding: 30px 40px;
-  border-bottom: 10px solid $events-color;
+  // border-bottom: 10px solid $events-color;
   margin: 30px 120px;
   color: $dark-gray;
+  background-color: $white;
 }
 .event-list-img {
   color: $light-gray;
@@ -269,7 +260,24 @@ box-shadow: 0 10px 50px $white;
 
 
 // my events page on profile
-.my-events-header{
-  margin-left: 0;
+// .my-events-header{
+//   margin-left: 0;
+//   text-align: left;
+// }
+
+.events-header-box{
+z-index: 100;
+  width: 90%;
+
+  margin:0 auto;
   text-align: left;
+  background-color: red;
+}
+.events-background-color{
+width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #d3d5d7;
+  padding-top: 30px;
+  margin-top: 180px;
 }

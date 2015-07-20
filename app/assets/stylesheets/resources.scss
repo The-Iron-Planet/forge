@@ -12,17 +12,6 @@
   overflow-y: scroll;
   text-align: left;
 }
-.FE{
-
-    //   width: 100%;
-    //   height: 320px;
-    //   overflow: scroll;
-    // direction:rtl;
-
-
-// height: 500px;
-}
-
 .resources-card {
   display: inline-block;
   text-align: left;
@@ -31,20 +20,6 @@
   overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
-  border-bottom: solid 10px black;
-  border-color: #9bb89f;
-
-}
-
-
-
-
-#jobs-header{
-  left: 0;
-  right: 0;
-  height: 100px;
-  // background-color: purple;
-z-index: 0;
 }
 
 
@@ -53,7 +28,7 @@ z-index: 0;
 #resources-header{
   left: 0;
   right: 0;
-  height: 10px;
-
-
+  height: 100px;
+  background-color: purple;
+z-index: 0;
 }

@@ -26,20 +26,20 @@
   color: $white;
   $font-size: $small-font;
   padding: 2px 14px;
-  background-color: #8c198c;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: $accent-color-light;
+  margin-left: 70%;
+  // margin-right: auto;
   border-radius: $corners;
   font-family: $font-italic;
   text-decoration: none;
-  border: 1px solid #800080;
+  border: 1px solid $accent-color-light;
 
-
+display: inline-block;
 }
 
 .btn-add-record:hover{
-  background-color: #730073;
-  border-color: #730073;
+  background-color: $accent-color-dark;
+  border-color: $accent-color-dark;
   color: $white;
   text-decoration: none;
 }
