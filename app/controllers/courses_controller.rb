@@ -8,6 +8,7 @@ class CoursesController < ApplicationController
   def index
     @course = Course.new
     @courses = Course.all.where(campus_id: current_user.campus_id)
+    @campus = current_user.campus
   end
 
   # GET /courses/1
@@ -17,6 +18,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @campus = current_user.campus
   end
 
   # GET /courses/1/edit
@@ -31,7 +33,7 @@ class CoursesController < ApplicationController
   # POST /courses
   def create
     @course = Course.new(course_params)
-
+    @course.campus_id = current_user.campus_id
     if @course.save
       redirect_to courses_path, notice: 'Course was successfully created.'
     else

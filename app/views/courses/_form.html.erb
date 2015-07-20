@@ -21,10 +21,6 @@
         <%= f.date_field :ended_on,:class => "input-field" %>
       </div>
       <div class="field">
-        <%= f.label :campus, :class => "input-label" %><br>
-        <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
-      </div>
-      <div class="field">
         <%= f.label :curriculum, :class => "input-label" %><br>
         <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, prompt: "") %>
       </div>
