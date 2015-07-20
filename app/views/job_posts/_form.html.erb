@@ -5,7 +5,7 @@
         <div class="row form-val">
           <%= render "shared/error_messages", :target => @job_post %>
         </div>
-        
+
         <div class="row">
           <div class="col-md-12 field">
             <div class="job-post-list">
@@ -33,9 +33,9 @@
             <div class="form"
               <div class="field">
                 <%= f.label :experience_desired, :class => "input-label" %><br>
-                Junior <%= f.radio_button :experience_desired, "Junior" %>
+                Junior <%= f.radio_button :experience_desired, "Junior Developer" %>
                 Mid-Level <%= f.radio_button :experience_desired, "Mid-Level" %>
-                Senior <%= f.radio_button :experience_desired, "Senior" %>
+                Senior <%= f.radio_button :experience_desired, "Senior Developer" %>
               </div>
               <div class="field">
                 <%= f.label :curriculum_id, "Which students would be most well-suited for the position?", :class => "input-label" %><br>
