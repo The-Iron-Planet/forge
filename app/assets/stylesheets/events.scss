@@ -12,16 +12,6 @@
 @import 'stylesheet';
 
 
-#db {
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* Preserve aspet ratio */
-  max-width: 100%;
-  max-height: 100%;
-  z-index: -5;
-  background-size: cover;
-}
 .dashboard-events-header {
   margin: 0 auto;
   width: 33.333%;
@@ -41,13 +31,46 @@
 .scroll-container {
   margin-top: 90px;
 }
+.event-block {
 
+  // position: relative;
+  min-width: 320px;
+
+  // width: 320px;
+  background-color: $events-color;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 20px;
+  color: $white;
+}
+.dashboard-event-title {
+  color: $white;
+  padding-top: 10px;
+  margin: 0;
+  font-family: $font-bold;
+}
+.dashboard-event-details {
+  padding: 4px;
+  margin: 0;
+  line-height: 1em;
+  font-size: $small-font;
+}
+.dashboard-edit-delete {
+  position: relative;
+  text-align: right;
+  color: $events-color;
+}
 .glyphicon-remove,
 .glyphicon-pencil {
   color: orange;
   background-color: white;
   padding: 0.25em;
 }
+
+
+
+
+
 
 // event listing page css
 .margin-top{
@@ -60,9 +83,10 @@
   // background-color: $off-white;
 // border-right: solid 10px $events-color;
   padding: 30px 40px;
-  border-bottom: 10px solid $events-color;
+  // border-bottom: 10px solid $events-color;
   margin: 30px 120px;
   color: $dark-gray;
+  background-color: $white;
 }
 .event-list-img {
   color: $light-gray;
@@ -236,7 +260,16 @@ box-shadow: 0 10px 50px $white;
 
 
 // my events page on profile
-.my-events-header{
-  margin-left: 0;
+// .my-events-header{
+//   margin-left: 0;
+//   text-align: left;
+// }
+
+.events-header-box{
+z-index: 100;
+  width: 90%;
+
+  margin:0 auto;
   text-align: left;
+  background-color: red;
 }
