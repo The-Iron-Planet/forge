@@ -32,9 +32,7 @@ margin-right: auto;
   // margin: 0 auto;
 // background-color: $light-gray;
   margin-bottom: 10px;
-
 }
-
 
 .search {
   font: $font;
@@ -178,6 +176,18 @@ display: inline-block;
   border-radius: 0;
 }
 
+.general-search-events{
+  width: 65%;
+  height: 50px;
+  border-radius: 0;
+}
+
+.general-search-resources{
+  width: 65%;
+  height: 50px;
+  border-radius: 0;
+}
+
 .input-field-search {
     -webkit-appearance:none;
   outline: none;
@@ -266,16 +276,23 @@ margin-top: 10px;
     left: 0;
     margin-right: auto;
     margin-left: auto;
-
     width: 90%;
-z-index: 10;
+    z-index: 10;
 // box-shadow: 0 20px 50px $white;
-
-
-
 }
 
 .jobs-btn{
   padding-bottom: 50px;
   z-index: 100;
+}
+
+.well-short {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 70%;
+  // margin: 0 auto;
+// background-color: $light-gray;
+  z-index: 10;
+  margin-bottom: 10px;
 }

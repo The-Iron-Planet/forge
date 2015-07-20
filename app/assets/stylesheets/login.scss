@@ -1,3 +1,5 @@
+@import "stylesheet";
+
 #db,
 #bg {
   position: fixed;
@@ -12,8 +14,8 @@
 
 .login-box {
   width: 375px;
-  height: 400px;
-  padding:30px;
+  height: 390px;
+  padding: 30px;
   // margin-left: auto;
   // margin-right: auto;
   // border: 1px black solid;
@@ -100,13 +102,13 @@
 }
 
 .forgot-password-text {
-  font-size: 12pt;
+  font-size: 10pt;
   color: white;
 }
 
 .remember-me {
   color: white;
-  font-weight: thin;
+  font-weight: 300;
 }
 
 .text-center {
@@ -127,9 +129,10 @@
 }
 
 .login-page-header {
+  margin-top: -45px;
   font-size: 20px;
-  font-family: $font;
+  font-family: $sans-serif;
   color: white;
   text-align: left;
-  margin-left: 17px;
+  margin-left: 20px;
 }
