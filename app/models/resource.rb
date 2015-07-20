@@ -32,9 +32,9 @@ class Resource < ActiveRecord::Base
 
   def self.search_results(query)
     relation = self
-    queries = query.split(/\W+/)
+    queries = query.downcase.split(/\W+/)
     queries.each do |q|
-      relation = relation.where("title LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+      relation = relation.where("lower(title) LIKE '%#{q}%' OR lower(description) LIKE '%#{q}%'")
     end
     relation
   end

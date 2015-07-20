@@ -41,12 +41,12 @@ class JobPost < ActiveRecord::Base
   def self.search_results(query, experience, curric_id)
     relation = self
     if query != ""
-      queries = query.split(/\W+/)
+      queries = query.downcase.split(/\W+/)
       queries.each do |q|
-        relation = relation.where("city LIKE '%#{q}%' OR state LIKE '%#{q}%' OR title LIKE '%#{q}%' OR company_name LIKE '%#{q}%' OR description LIKE '%#{q}%'")
+        relation = relation.where("lower(city) LIKE '%#{q}%' OR lower(state) LIKE '%#{q}%' OR lower(title) LIKE '%#{q}%' OR lower(company_name) LIKE '%#{q}%' OR lower(description) LIKE '%#{q}%'")
       end
     end
-    relation = relation.where(experience_desired: experience) if experience != ""
+    relation = relation.where(experience_desired: experience) if experience != nil
     relation = relation.where(curriculum_id: curric_id) if curric_id != ""
     if relation == self
       relation
