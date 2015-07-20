@@ -32,9 +32,15 @@
           <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :name, params[:curriculum_id]), prompt: "Curriculum",
             class: "job-search-reg search-margin" %>
-          Junior Developer <%= radio_button_tag :experience_desired, "Junior Developer", params[:experience_desired] %>
-          Mid-Level <%= radio_button_tag :experience_desired, "Mid-Level", params[:experience_desired] %>
-          Senior Developer <%= radio_button_tag :experience_desired, "Senior Developer", params[:experience_desired] %>
+          <span class="profile-details" style="color: #727d84;">
+            Junior Developer <%= radio_button_tag :experience_desired, "Junior Developer", params[:experience_desired] %>
+          </span>
+          <span class="profile-details" style="color: #727d84;">
+            Mid-Level <%= radio_button_tag :experience_desired, "Mid-Level", params[:experience_desired] %>
+          </span>
+          <span class="profile-details" style="color: #727d84;">
+            Senior Developer <%= radio_button_tag :experience_desired, "Senior Developer", params[:experience_desired] %>
+          </span>
         </div>
         <% end %>
       </div>
