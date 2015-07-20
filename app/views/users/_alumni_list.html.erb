@@ -12,9 +12,7 @@
             <% else %>
               <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
             <% end %>
-            <h4 class="profile-name" style="color: #233139;">
-              <%= user.full_name %>
-            </h4>
+            <h4 class="profile-name" style="color: #233139;"><%= user.full_name %></h4>
             <% if user.looking %>
               <div class="color-indicator-looking"></div>
             <% end %>
@@ -22,7 +20,9 @@
               <div class="color-indicator-hiring"></div>
             <% end %>
             <div class="color-indicator-mentor"></div>
-            <p class="profile-details" style="color: #727d84;"><%= user.tiy_relation %></p>
+            <p class="profile-details" style="color: #727d84;">
+              <%= user.tiy_relation %>
+            </p>
             <p class="profile-details" style="color: #727d84;">
               <%= user.current_location unless user.current_city.blank? || user.current_state.blank?  %>
             </p>
