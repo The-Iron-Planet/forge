@@ -14,13 +14,14 @@
 // .add-company{
 //   padding: 20px;
 // }
-.jobs-background-color {
-width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #d3d5d7;
-  padding-top: 30px;
-}
+// .jobs-background-color {
+// width: 90%;
+//   // margin: 0 auto;
+//   // text-align: center;
+//   background-color: #d3d5d7;
+//   padding-top: 30px;
+// }
+
 
 .events-card,
 .job-card {
@@ -29,10 +30,16 @@ width: 90%;
   margin: 0 auto;
   width: 70%;
   overflow-y: scroll;
-  margin: 10px;
+  margin-bottom: 20px;
   min-width: 300px;
+  border-bottom: solid 10px #b0c5cb;
+
 
 }
+
+
+
+
 .job-heading {
   margin: 0 auto;
   min-width: 300px;
@@ -46,8 +53,21 @@ width: 90%;
 }
 .employer {
 
-  margin: 0 20px 10px 25px;
+  margin: 0 20px 0px 25px;
+  padding-bottom: 0px;
+  // line-height: 1.5em;
 }
+
+// .img-and-name-box{
+//   width: 80px;
+//   height:100px;
+//   background-color: green;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+
 
 .event-img,
 .job-img {
@@ -57,11 +77,27 @@ width: 90%;
   height: 60px;
 }
 
+.jobs-name{
+  // display: inline-block;
+  // float: left;
+  // clear: both;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // position: absolute;
+  color:red;              /* 2 */
+  // top: 50%;                         /* 3 */
+  // transform: translate(0, -50%)
+}
+
+
+
 .card {
 
   // background-color: purple;
   text-align: center;
   margin-top: 2px;
+
 }
 .event-details,
 .job-details {
@@ -80,14 +116,33 @@ width: 90%;
 margin-top: 3em;
 }
 
+
 .jobs-edit-delete{
   margin-top: -3em;
-  // display: inline-block;
+  display: inline-block;
   float: right;
   padding: 1em;
-  color: $dark-gray;
+  color: $dark-gray !important;
+  // background-color: blue;
+}
+
+.jobs-edit{
+  margin-top: -3em;
+  margin-right: 2.2em;
+  display: inline-block;
+  float: right;
+  padding: 1em;
+  color: $dark-gray !important;
+  // background-color: red;
 }
 
 .centered-heading{
+
+}
+
+
+.job-card {
+  margin: 0 auto;
+
 
 }
