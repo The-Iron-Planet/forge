@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :uploaded_file, styles: {
     thumb: '50x50>',
+    small: '80x80#',
     square: '175x175#',
     medium: '300x300>'
   }
