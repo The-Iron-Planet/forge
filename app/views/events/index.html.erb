@@ -1,9 +1,12 @@
 <div class="container">
   <div class="container-fluid">
 <!--this page needs the search bar and needs the new round add button ES  -->
+<div class="search-box-back">
+
+</div>
     <div class="row">
       <div class="col-md-12 event-list-heading">
-        <div class="search-box col-med-12 well">
+        <div class="search-box col-med-12 well directory-search">
             <%= form_tag search_events_path, remote: true do %>
               <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
               <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
