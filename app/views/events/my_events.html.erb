@@ -1,48 +1,23 @@
-<<<<<<< HEAD
-<div class = "container-fluid">
-  <div class = "row">
+<div class="container-fluid">
+  <div class="container-fluid">
     <div class = "col-md-2">
-      <ul class="nav nav-left nav-tabs nav-stacked">
+      <ul class="nav nav-tabs nav-stacked">
         <li role="presentation"><%= link_to 'My Profile', user_path(current_user) %></li>
         <li role="presentation" class="active"><a href="#">My Events</a></li>
         <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
         <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
       </ul>
     </div>
-
-    <div class="col-md-10 events-list">
-        <h2>My Events</h2>
-        <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
+    <div class="col-md-10 my-event-header ">
+          <div class="col-md-7">
+            <h3> My Events </h3>
+          </div>
+          <div class="col-md-5">
+            <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
+          </div>
+        <div class="row">
+          <%= render 'event_list' %>
+        </div>
     </div>
-=======
-
-<div class="row ">
-<div class="my-events-scroll-header">
-
-
-  <div class = "col-md-2">
-      <ul class="nav nav-tabs nav-stacked">
-        <li role="presentation"><%= link_to 'View Profile', user_path(current_user) %></li>
-        <li role="presentation" class="active my-events-header"><a href="#">My Events</a></li>
-        <li role="presentation"><%= link_to 'Change Password', edit_password_user_path(current_user) %></li>
-      </ul>
   </div>
-  <div class="col-md-10">
-  <h2 class="my-events-heading">My Events</h2>
->>>>>>> 44160e095bdadc186e658e230e49527aeba3a0de
-  </div>
-  </div>
-</div>
-<div class="container">
-  <div class="container-fluid">
-<!-- This page is done except the add button -->
-    <div class="row">
-      <!-- <div class="col-md-2"></div> -->
-      <!-- <div class="col-md-12"> -->
-
-        <!-- <div class="btn-add-record-align"><%= link_to 'Add New Event', new_event_path, :class=>" btn-add-record"%></div>
-      </div> -->
-    <!-- </div> -->
- </div>
- <%= render 'event_list' %>
 </div>
