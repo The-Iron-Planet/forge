@@ -3,47 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// @import 'stylesheet';
-// @import 'search';
-// @import "fonts";
-// @import "buttons";
-//
-//
+@import 'stylesheet';
+@import 'search';
+@import "fonts";
+@import "buttons";
+
+
 //
 //
 // .add-company{
 //   padding: 20px;
 // }
-// .jobs-background-color {
-// width: 90%;
-//   // margin: 0 auto;
-//   // text-align: center;
-//   background-color: #d3d5d7;
-//   padding-top: 30px;
+
+
+
+
+// .events-card,
+// .job-card {
+//   display: inline-block;
+//   text-align: left;
+//   margin: 0 auto;
+//   width: 70%;
+//   overflow-y: scroll;
+//   margin-bottom: 20px;
+//   min-width: 300px;
+//   // border-bottom: solid 10px #b0c5cb;
+//
+//
 // }
 
 
-.events-card,
-.job-card {
-  display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  width: 70%;
-  overflow-y: scroll;
-  margin-bottom: 20px;
-  min-width: 300px;
-  border-bottom: solid 10px #b0c5cb;
 
 
-}
-
-
-
-
-.job-heading {
-  margin: 0 auto;
-  min-width: 300px;
-}
+// .job-heading {
+//   margin: 0 auto;
+//   min-width: 300px;
+// }
 
 
 .title {
@@ -96,7 +91,7 @@
 
 
   text-align: center;
-  margin-top: 2px;
+  margin-top: 30px;
 
 }
 .event-details,
@@ -136,9 +131,6 @@ margin-top: 3em;
   // background-color: red;
 }
 
-.centered-heading{
-
-}
 
 
 .job-card {
@@ -166,4 +158,13 @@ vertical-align: top;
   height: 100px;
   // background-color: purple;
 z-index: 0;
+}
+
+.jobs-header-box{
+
+  width: 82%;
+  // align-content: flex-end;
+  margin:0 auto;
+  text-align: left;
+  background-color: red;
 }
