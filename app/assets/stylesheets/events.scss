@@ -42,16 +42,15 @@
   margin-top: 90px;
 }
 .event-block {
-
   // position: relative;
   min-width: 320px;
-
   // width: 320px;
   background-color: $events-color;
-  text-align: center;
+  text-align: left;
   padding: 10px;
   margin: 10px 20px;
   color: $white;
+  height: 100px;
 }
 .dashboard-event-title {
   color: $white;

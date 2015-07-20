@@ -2,7 +2,7 @@
 <div class="scroll-container">
   <% @resources.each do |resource| %>
     <a href='/resources/<%= resource.id %>' class='dashboard-box-link'>
-      <div class="event-block">
+      <div class="resource-block">
         <p class="dashboard-event-title"><%= resource.title %></p>
         <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
         <p class="dashboard-event-details"><%= resource.description %></p>
