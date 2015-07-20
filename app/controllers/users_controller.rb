@@ -8,8 +8,11 @@ class UsersController < ApplicationController
   # GET /users
   def index
     if request.post?
-      @users = User.search_results(params[:query], params[:campus_id], params[:curric_id], params[:job_status]).ordered
-      if @users == User
+      @users = User.ordered.search_results(params[:query], params[:campus_id], params[:curric_id], params[:status])
+      if @users.blank?
+        flash.now[:notice] = "Your search did not return any results. Please try again."
+        render :index
+      elsif @users == User
         @users = User.all.ordered
         flash.now[:notice] = "Please choose specific search parameters."
         render :index
@@ -43,6 +46,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @courses = Course.where(campus_id: current_user.campus_id)
   end
 
   # GET /users/1/edit

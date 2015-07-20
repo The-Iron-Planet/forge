@@ -8,7 +8,9 @@ class ResourcesController < ApplicationController
   def index
     if request.post?
       @resources = Resource.ordered.search_results(params[:query])
-      if @resources.nil? || @resources == Resource
+      if @resources.blank?
+        flash.now[:notice] = "Your search returned no results. Please try again."
+      elsif @resources == Resource
         @resources = Resource.ordered.first(5)
         flash.now[:notice] = "Please choose specific search parameters."
         render :index

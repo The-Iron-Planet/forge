@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
     select {|u| u.get_resource_email == true && u.curriculum_id == curric_id}
   end
 
-  def self.search_results(query, campus_id, curric_id, job_status)
+  def self.search_results(query, campus_id, curric_id, status)
     relation = self
     if query != ""
       queries = query.split(/\W+/)
@@ -97,12 +97,13 @@ class User < ActiveRecord::Base
     end
     relation = relation.where(campus_id: campus_id) if campus_id != ""
     relation = relation.where(curriculum_id: curric_id) if curric_id != ""
-    relation = relation.where(looking: true) if job_status == "Looking for work"
-    relation = relation.where(hiring: true) if job_status == "Hiring"
+    relation = relation.where(looking: true) if status == "Looking for work"
+    relation = relation.where(hiring: true) if status == "Hiring"
+    relation = relation.where(is_mentor: true) if status == "Available to Mentor"
     relation
   end
 
-  # def self.search_results(name, city, state, curric_id, campus_id, job_status, company_id, cohort_class, current_user)
+  # def self.search_results(name, city, state, curric_id, campus_id, status, company_id, cohort_class, current_user)
   #   result = self
   #   if company_id != ""
   #     company = Company.find_by_id(company_id)

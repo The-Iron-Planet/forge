@@ -22,7 +22,6 @@
             <%= f.label :email, :class => "input-label" %>
             <%= f.text_field :email, :class => "input-field" %>
           </div>
-
           <div class="field">
             <%= f.label :campus, :class => "input-label" %>
             <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, prompt: "") %>
@@ -33,7 +32,7 @@
           </div>
           <div class="field">
             <%= f.label :course, :class => "input-label" %>
-            <%= f.collection_select(:course_id, Course.all, :id, :full_description, prompt: "") %>
+            <%= f.collection_select(:course_id, @courses, :id, :full_description, prompt: "") %>
           </div>
 
           <div class="field">

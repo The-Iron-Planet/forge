@@ -2,11 +2,13 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!
   before_action :user_is_cd?
   before_action :set_course, only: [:show, :edit, :update, :destroy, :add_students]
+  before_action :check_campus, only: [:show, :edit, :add_students]
 
   # GET /courses
   def index
     @course = Course.new
-    @courses = Course.all
+    @courses = Course.all.where(campus_id: current_user.campus_id)
+    @campus = current_user.campus
   end
 
   # GET /courses/1
@@ -16,6 +18,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @campus = current_user.campus
   end
 
   # GET /courses/1/edit
@@ -30,7 +33,7 @@ class CoursesController < ApplicationController
   # POST /courses
   def create
     @course = Course.new(course_params)
-
+    @course.campus_id = current_user.campus_id
     if @course.save
       redirect_to courses_path, notice: 'Course was successfully created.'
     else
@@ -68,6 +71,10 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+    end
+
+    def check_campus
+      redirect_to root_path, notice: "You don't have access to that page!" unless @course.campus_id == current_user.campus_id
     end
 
     # Only allow a trusted parameter "white list" through.
