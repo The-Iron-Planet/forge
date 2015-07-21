@@ -18,19 +18,19 @@
 
 
 
-// .events-card,
-// .job-card {
-//   display: inline-block;
-//   text-align: left;
-//   margin: 0 auto;
-//   width: 70%;
-//   overflow-y: scroll;
-//   margin-bottom: 20px;
-//   min-width: 300px;
-//   // border-bottom: solid 10px #b0c5cb;
-//
-//
-// }
+.events-card,
+.job-card {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 70%;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  min-width: 300px;
+  // border-bottom: solid 10px #b0c5cb;
+
+
+}
 
 
 
@@ -42,17 +42,35 @@
 
 
 .title {
-  margin: 20px 10px 5px 0px;
+  display: inline-block;
+  margin: 20px 30px 5px 0px;
   font-family: $font-bold;
   text-align: left;
 }
 .employer {
-//   display: inline-block;
-// text-align: left;
-//   margin: 0 20px 0px 25px;
-//   padding-bottom: 0px;
+display: inline-block;
+float: left;
+  margin: 21px 8px 0px 0px;
+
+  // padding-bottom: 0px;
   // line-height: 1.5em;
 }
+.employer-location {
+display: inline-block;
+float: left;
+  margin: 21px 20px 0px 0px;
+  // padding-bottom: 0px;
+  // line-height: 1.5em;
+}
+
+.experience{
+  // display: inline-block;
+  // float: left;
+    margin: 30px 20px 0px 0px;
+
+}
+
+
 
 // .img-and-name-box{
 //   width: 80px;
@@ -152,13 +170,13 @@ margin-top: 3em;
   vertical-align: top;
 }
 
-#jobs-header{
-  left: 0;
-  right: 0;
-  height: 100px;
-  // background-color: purple;
-z-index: 0;
-}
+// #jobs-header{
+//   left: 0;
+//   right: 0;
+//   height: 500px;
+//   background-color: purple;
+// z-index: 0;
+// }
 
 #new-job-form{
   width: 50%;
@@ -194,18 +212,23 @@ z-index: 0;
   margin: auto;
 }
 
-.jobs-header-box {
-  width: 82%;
-  // align-content: flex-end;
-  margin: 0 auto;
-  text-align: left;
-  // background-color: red;
-}
+// .jobs-header-box {
+//   width: 82%;
+//   // align-content: flex-end;
+//   margin: 0 auto;
+//   text-align: left;
+//   // background-color: red;
+// }
 
 #job-post-page-header {
   text-align: center;
   margin: auto;
 }
+
+
+// #job-post-list {
+//   // margin-top: 250px;
+// }
 
 #job-post-modal-header {
   text-align: left;
@@ -215,4 +238,3 @@ z-index: 0;
 #job-post-list {
   margin-top: 250px;
 }
-
