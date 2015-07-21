@@ -18,8 +18,7 @@
 //= require jquery-ui
 //= require dialog
 //= require navbar
-//= require magnific-popup.min.js
-//= require alert.js
+//= require magnific-popup
 
 
 // var header = document.getElementById("#dir-header");
@@ -49,4 +48,4 @@
 
 $(function () {
   $('.collapse-card').paperCollapse()
-})
+});
