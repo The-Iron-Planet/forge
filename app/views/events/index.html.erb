@@ -1,18 +1,20 @@
 <div class="container">
   <div class="container-fluid">
     <div class="search-box-back">
+      <h2 class = "page-header">Events</h2>
     </div>
     <div class="row">
       <div class="col-md-12 event-list-heading">
-        <div class="search-box col-med-12 well directory-search">
-            <%= form_tag search_events_path, remote: true do %>
+
+            <div class="search-box col-med-12 well directory-search">
+              <%= form_tag search_events_path, remote: true do %>
               <%= text_field_tag "query", params[:query], class: "input-field-search general-search-events", placeholder: "Search"%>
               <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
                 :id, :long_name, params[:campus_id]), prompt: "Search by Campus",
                 class: "search-reg" %>
               <%= button_tag "", type: "submit", class: "search-button glyphicon glyphicon-search" %>
-            <% end %>
-        </div>
+              <% end %>
+            </div>
       </div>
       <br />
       <br />
@@ -24,8 +26,10 @@
 
     </div>
     </br>
+    
     <div id="event-list">
       <%= render 'event_list' %>
     </div>
+  
   </div>
 </div>

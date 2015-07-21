@@ -22,13 +22,43 @@
   min-width: 300px;
 }
 
-
-
+.resources-header-box{
+  width: 82%;
+  // align-content: flex-end;
+  margin: 0 auto;
+  text-align: left;
+  background-color: red;
+  height: 80px;
+}
 
 #resources-header{
   left: 0;
   right: 0;
   height: 100px;
   background-color: purple;
-z-index: 0;
+  z-index: 0;
+}
+
+.resources-head-text {
+ margin-top: -20px;
+ margin-left: 15px;
+ position: fixed;
+}
+
+.line-up-header {
+  margin-top: 35px;
+}
+
+.fa-plus {
+  color: white;
+  background-color: #CE8531;
+  border: 1px solid #CE8531;
+}
+
+#resource-list {
+  z-index: -10;
+}
+
+.fill-background {
+  background-color: white;
 }
