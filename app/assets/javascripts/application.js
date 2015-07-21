@@ -16,7 +16,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui
-//= require magnific-popup
+//= require magnific-popup.min.js
 //= require dialog
 //= require navbar
 
