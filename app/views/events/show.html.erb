@@ -1,58 +1,37 @@
-<div class="container">
-  <div class="container-fluid">
+<div class = "container-fluid" id="profile-container">
+  <div class = "container-fluid">
     <div class="row">
-      <br/>
+      <div class="col-md-1"></div>
+      <div class="col-md-10 event-show-box">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2">
+              <div class = "image-pic-down">
+                <% if @event.uploaded_file_file_name.nil? %>
+                  <div>
+                    <%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %>
+                  </div>
+                <% else %>
+                  <div>
+                    <%= image_tag @event.uploaded_file(:small), :class=>"default-img" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-7 contact-info">
+              <h3 class="profile-name-header"><%= @event.title %></h3>
+              <div id="user-profile-tiy-relation"><%= @event.event_date %></div>
+              <div id="user-profile-tiy-relation"><%= @event.event_time %></div>
+              <div id="user-profile-tiy-relation"><%= @event.location %></div>
+              <% unless @event.website.blank? %>
+                <div id="user-profile-tiy-relation"><%= @event.website_html %></div>
+              <% end %>
+              <div id="user-profile-tiy-relation"><%= @event.description %></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <div class="detail-event-img">
-          <% if @event.uploaded_file_file_name.nil? %>
-            <div>
-              <%= image_tag "event_default.png", size: "100x100", :class=>"default-img" %>
-            </div>
-          <% else %>
-            <div>
-              <%= image_tag @event.uploaded_file(:small), :class=>"default-img" %>
-            </div>
-          <% end %>
-        </div>
-        <div class="thumbnail-event-img">
-          <% if @event.user.uploaded_file_file_name.nil? %>
-            <div>
-              <%=link_to image_tag("default_pic.png", size: "80x80"), "/users/#{@event.user_id}" %>
-            </div>
-          <% else %>
-            <div>
-              <%=link_to image_tag(@event.user.uploaded_file(:small)),"/users/#{@event.user_id}"  %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="event-detail-page">
-          <h2 class="event-page-heading"><%= @event.title %></h2>
-          <ul class="indiv-event-details">
-            <li class="bold-sans-serif"><%= @event.event_date %></li>
-            <li class="bold"><%= @event.event_time %></li>
-            <li>Location: <%= @event.location %></li>
-            <% unless @event.website.blank? %>
-              <li class="event-link">Website:<%= @event.website_html %></li>
-            <% end %>
-            <li class="event-description"><%= @event.description %></li>
-          </ul>
-        </div>
-
-        <div class="event-details-edit-delete">
-          <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
-              edit_event_path(@event) if @event.user_id == current_user.id %>
-          <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
-              @event, method: :delete, data: { confirm: 'Are you sure?' } if @event.user_id == current_user.id %>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div><!-- close row -->
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
@@ -66,4 +45,5 @@
       <div class="col-md-1"></div>
     </div><!-- close row -->
   </div>
-</div><!-- fluid container closer -->
+  </br>
+</div>
