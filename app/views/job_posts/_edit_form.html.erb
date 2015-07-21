@@ -1,4 +1,4 @@
-
+<div class="well" id="new-job-form">
   <div class="row">
     <div class="col-med-12">
       <%= form_for(@job_post) do |f| %>
@@ -43,7 +43,7 @@
               </div>
               <div class="field">
                 <%= f.label :curriculum_id, "Which students would be the best fit for the position?", :class => "input-label" %><br>
-                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, {include_blank: true},
+                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, {prompt: "Which students?"},
                     :class=>"input-field dropdown") %>
               </div>
                 <div class="field">
@@ -72,11 +72,12 @@
               <% end %>
             </div>
           </div>
-          <div class="actions">
-            <%= f.submit :class=> "btn ctr-btn", value: "Save Job Post", id: "save-job-post" %>
+          <div class="actions float-left" id="save-job-post">
+            <%= f.submit :class=> "btn ctr-btn", value: "Save Job Post" %>
           </div>
         </div>
       <% end %>
     </div>
+</div>
 </div>
 </div>
