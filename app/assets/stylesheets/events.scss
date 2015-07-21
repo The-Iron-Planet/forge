@@ -38,12 +38,12 @@
   text-align: right;
   color: $dark-gray;
 }
-// .glyphicon-remove,
-// .glyphicon-pencil {
-//   color: $dark-gray;
-//   background-color: white;
-//   padding: 0.25em;
-// }
+.glyphicon-remove,
+.glyphicon-pencil {
+  color: $dark-gray;
+  background-color: white;
+  padding: 0.25em;
+}
 
 
 
@@ -119,29 +119,15 @@ display: inline-block;
   height: 50px;
 }
 
-.event-listing-edit-delete{
-  float: right;
-  clear: both;
-  text-align: right;
-  font-size: 1.2em;
-  margin-top: -1.2em;
-}
 
-.event-listing-edit-delete{
-  margin-top: -3em;
-  display: inline-block;
-  float: right;
-  padding: 1em;
-  color: $dark-gray !important;
 
-}
 
 .events-edit{
-  margin-top: -3em;
-  margin-right: 2.2em;
+  // margin-top: -3em;
+  margin-right: 0;
   display: inline-block;
   float: right;
-  padding: 1em;
+  padding-right: 0;
   color: $dark-gray !important;
 
 }
@@ -205,8 +191,8 @@ background-color: red;
 
 }
 
-.resources-delete{
-  margin-top: -3em;
+.events-delete{
+  // margin-top: -3em;
   display: inline-block;
   float: right;
   padding: 1em;
@@ -214,9 +200,9 @@ background-color: red;
 
 }
 
-.resources-edit{
-  margin-top: -3em;
-  margin-right: 2.2em;
+.events-edit{
+  // margin-top: -3em;
+  // margin-right: 2.2em;
   display: inline-block;
   float: right;
   padding: 1em;
