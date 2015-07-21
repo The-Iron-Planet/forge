@@ -9,7 +9,7 @@
   padding: 10px;
   margin: 10px 20px;
   color: black;
-  height: 110px;
+  height: 125px;
 }
 
 .resource-block {
@@ -21,7 +21,7 @@
   padding: 10px;
   margin: 10px 20px;
   color: black;
-  height: 125px;
+  height: 140px;
 }
 
 .job-post-block {
@@ -46,7 +46,9 @@
 
 .fixed-header-dashboard {
   background-color: lightgrey;
-  height: 100px;
+  height: 80px;
+  // margin-left: 10px;
+  margin-top: -40px;
 }
 
 .dashboard-event-details {
@@ -70,11 +72,11 @@
 }
 
 .content-up {
-  margin-top: -300px;
+  margin-top: -90px;
 }
 
 .text-dash {
-  padding: 1em;
+  padding-left: 2.25em;
 }
 
 .job-post-image {
@@ -107,3 +109,17 @@
   margin-right: 10px;
 }
 
+.fa-calendar {
+   color: grey;
+}
+
+.fa-lg {
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.resource-post-image {
+  float: left;
+  margin-top: 6px;
+  margin-right: 10px;
+}

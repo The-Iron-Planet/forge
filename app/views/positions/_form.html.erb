@@ -11,12 +11,8 @@
     <%= f.text_field :company_name, :class => "company_name" %>
   </div>
   <div class="field">
-    <%= f.label :city, :class => "input-label" %><br>
-    <%= f.text_field :city, :class => "city" %>
-  </div>
-  <div class="field">
-    <%= f.label :state, :class => "input-label" %><br>
-    <%= f.select :state, options_for_select(us_states, f.object.state), :include_blank => true, :class => "input-field" %>
+    <%= f.label :location, :class => "input-label" %><br>
+    <%= f.text_field :location, :class => "city" %>
   </div>
   <div class="field">
     <%= f.label :started_on, :class => "input-label" %><br>

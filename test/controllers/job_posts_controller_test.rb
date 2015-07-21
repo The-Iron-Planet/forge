@@ -19,7 +19,7 @@ class JobPostsControllerTest < ActionController::TestCase
 
   test "should create job_post" do
     assert_difference('JobPost.count') do
-      post :create, job_post: { company_name: @job_post.company_name, city: @job_post.city, state: @job_post.state,
+      post :create, job_post: { company_name: @job_post.company_name, location: @job_post.location,
           curriculum_id: @job_post.curriculum_id, description: @job_post.description,
           experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month),
           title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }
