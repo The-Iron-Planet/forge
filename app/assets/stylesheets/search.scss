@@ -182,8 +182,9 @@ z-index: 500;
 }
 
 .general-search-jobs{
-  width: 60%;
-  height: 50px;
+  position: fixed;
+  margin-left: 11%;
+  margin-top: 5%;
   border-radius: 0;
 }
 
@@ -301,6 +302,8 @@ margin-top: 10px;
 
 .search-well {
   margin-top: 2%;
+  width: 65%;
+  height: 50px;
 }
 
 
@@ -315,4 +318,10 @@ margin-top: 10px;
   margin-bottom: 10px;
   background-color: #F5F5F5;
   border: 1px solid #ECECEC;
+}
+
+.jobs-head-text {
+  position: fixed;
+  margin-top: -10px;
+  margin-left: 15px;
 }
