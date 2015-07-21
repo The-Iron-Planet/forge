@@ -1,11 +1,16 @@
 <div class="container-fluid">
    <div class="row">
-      <div class="col-md-1"></div>  
+      <div class="col-md-1"></div>
       <div class="col-md-6 fill-background">
         <h2 class = "jobs-head-text">Job Posts</h2>
       </div>
       <div class = "col-md-4 line-up-header">
-        <%= link_to '', new_job_post_path, :class=>"fa fa-plus fa-lg btn-add-record-long line-up-header"  %>
+        <a href="#new-job-post" data-toggle="modal" class="open-popup-link new-campus">
+        <span class="fa fa-plus fa-lg btn-add-record-long line-up-header" aria-hidden="true"></span></a>
+        <div id="new-job-post" class="white-popup mfp-hide">
+          <h2 id="job-post-modal-header">New Job Post</h2>
+            <%= render 'form' %>
+        </div>
       </div>
       <div class="col-md-1"></div>
    </div>
@@ -44,5 +49,5 @@
   <div id="job-post-list">
     <%= render "job_post_list" %>
   </div>
-  
+
 </div>

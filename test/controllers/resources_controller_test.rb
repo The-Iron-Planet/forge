@@ -33,6 +33,11 @@ class ResourcesControllerTest < ActionController::TestCase
     assert_redirected_to resources_path
   end
 
+  test "should get show" do
+    get :show, id: @resource
+    assert_response :success
+  end
+
   test "should get edit" do
     get :edit, id: @resource
     assert_response :success
