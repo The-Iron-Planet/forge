@@ -47,5 +47,5 @@
 // }
 
 $(function () {
-  $('.collapse-card').paperCollapse()
+  $('.collapse-card').paperCollapse();
 });
