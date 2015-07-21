@@ -10,7 +10,7 @@
               <!-- <div  class="looking-for-job"> -->
               <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
             <% else %>
-              <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
+              <div><%= link_to image_tag(user.uploaded_file(:medium)), "/users/#{user.id}" %></div>
             <% end %>
             <h4 class="profile-name" style="color: #233139;"><%= user.full_name %></h4>
             <% if !user.looking && !user.hiring && !user.is_mentor %>
