@@ -148,9 +148,9 @@ input {
   font-style: italic;
   color: red;
 }
-col-md-3 {
-  border: 1px black solid;
-}
+// col-md-3 {
+//   border: 1px black solid;
+// }
 .stack-align {
   padding-left: 10px;
 }
@@ -304,24 +304,30 @@ td {
 // events jobs and resources
 
 .resources-background-color,
-.jobs-background-color,
-.events-background-color{
+.jobs-background-color{
   width: 80%;
   margin: 0 auto;
   text-align: center;
   background-color: #d3d5d7;
   padding-top: 30px;
-  margin-top: 180px;
+  // margin-top: 180px;
 }
 
 .resources-card,
-.events-card,
+.event-card,
 .job-card {
   display: inline-block;
   text-align: left;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
+}
+
+
+.posted-by{
+  display: inline-block;
+  text-align: right;
+  font:$small-font;
 }

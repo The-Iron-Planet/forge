@@ -1,39 +1,24 @@
-<div class="container"
 <div class="container-fluid">
-  <!-- <div class="row">
-
-  </div> -->
-  <div class="search-box-back">
-  </div>
-    <div class="col-md-12">
-      <div class="jobs-header-box">
-
-
-      <h2 >Job Posts</h2>
-
-        <%= link_to 'Add New Job', new_job_post_path, :class=>"btn-add-recordjobs-btn"  %>
-
-      <% if current_user.job_posts.count != 0 %>
-          <%= link_to 'My Job Posts', my_job_posts_path, :class=>" btn-add-record jobs-btn"%>
-
-      <% end %>
-          </div>
-    </div>
-  </div>
+   <div class="row">
+      <div class="col-md-1"></div>  
+      <div class="col-md-6 fill-background">
+        <h2 class = "resources-head-text">Job Posts</h2>
+      </div>
+      <div class = "col-md-4 line-up-header">
+        <%= link_to '', new_job_post_path, :class=>"fa fa-plus fa-lg btn-add-record-long line-up-header"  %>
+      </div>
+      <div class="col-md-1"></div>
+   </div>
 
   <div class="row">
-    <div class="search-box col-med-12 well jobs-search ">
+    <div class = "col-md-1"></div>
+    <div class="search-box col-md-10 well directory-search">
       <%= form_tag search_jobs_path, remote: true do %>
-      <%= text_field_tag "query", params[:query], class: "job-search-boxes-bar search-on-left input-field-search", placeholder: "Search"%>
+      <%= text_field_tag "query", params[:query], class: "input-field-search general-search-jobs search-well", placeholder: "Search"%>
       <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
-      <a aria-controls="collapseExample" aria-expanded="false" class="more-options job-search-boxes-bar-mid" data-toggle="collapse" href="#collapseExample">
+      <a class="more-options search-boxes-bar-more" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         More options
-        <!--<button type="button" class="btn btn-default btn-background">
-          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-        </button>-->
       </a>
-
-
       <div class="collapse" id="collapseExample">
         <div class="list">
           <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
@@ -49,16 +34,15 @@
             Senior Developer <%= radio_button_tag :experience_desired, "Senior Developer", params[:experience_desired] %>
           </span>
         </div>
-        <% end %>
       </div>
-    </br>
+      </br>
+      <% end %>
+    </div>
+    <div class = "col-md-1"></div>
   </div>
-</div>
-<!-- <div id="jobs-header">
 
-</div> -->
-<div id="job-post-list">
-  <%= render "job_post_list" %>
-</div>
-</div>
+  <div id="job-post-list">
+    <%= render "job_post_list" %>
+  </div>
+  
 </div>

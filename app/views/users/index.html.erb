@@ -4,8 +4,8 @@
 
     <div class="search-box-back">
       <div class="jobs-header-box">
- <h2 class="h2-align">Alumni Directory</h2>
-    </div>
+        <h2 class="h2-align">Alumni Directory</h2>
+      </div>
     <div class="search-box col-med-12 well directory-search">
       <%= form_tag search_path, remote: true do %>
         <%= text_field_tag "query", params[:query], class: "input-field-search general-search", placeholder: "Search by Name or City, State"%>
@@ -17,13 +17,13 @@
           <div class="list">
             <%= select_tag "campus_id", options_from_collection_for_select(Campus.all, :id, :long_name, params[:campus_id]), prompt: "Campus", class: "search-reg search-boxes-bar-mid" %>
             <%= select_tag "curric_id", options_from_collection_for_select(Curriculum.all, :id, :name, params[:curric_id]), prompt: "Curriculum", class: "search-reg search-boxes-bar-right" %>
-            <span class="profile-details" style="color: #727d84;">
+            <span class="profile-details-checkbox" style="color: #727d84;">
               Looking for Work <%= radio_button_tag "status", "Looking for work", params[:status] %>
             </span>
-            <span class="profile-details" style="color: #727d84;">
+            <span class="profile-details-checkbox-left" style="color: #727d84;">
               Hiring <%= radio_button_tag "status", "Hiring", params[:status] %>
             </span>
-            <span class="profile-details" style="color: #727d84;">
+            <span class="profile-details-checkbox-left" style="color: #727d84;">
               Available to Mentor <%= radio_button_tag "status", "Available to Mentor", params[:status] %>
             </span>
           </div>

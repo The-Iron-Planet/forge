@@ -58,11 +58,11 @@
 .dashboard-edit-delete {
   position: relative;
   text-align: right;
-  color: $events-color;
+  color: $dark-gray;
 }
 .glyphicon-remove,
 .glyphicon-pencil {
-  color: orange;
+  color: $dark-gray;
   background-color: white;
   padding: 0.25em;
 }
@@ -73,41 +73,37 @@
 
 
 // event listing page css
-.margin-top{
-  margin-top: 10px;
-}
+// .margin-top{
+//   margin-top: 10px;
+// }
 
 
 .event-card {
-
-  // background-color: $off-white;
-// border-right: solid 10px $events-color;
-  padding: 30px 40px;
-  // border-bottom: 10px solid $events-color;
-  margin: 30px 120px;
+  padding: 30px 30px;
+  margin: 30px 50px;
   color: $dark-gray;
   background-color: $white;
 }
+
 .event-list-img {
   color: $light-gray;
   display: inline-block;
   float: left;
-    // z-index: 10;
-  // margin: 20px 20px 20px 20px;
-  // background-color: blue;
+
+
 }
 
 .event-list-content{
-  // padding: 20px;
 
-
+text-align: left;
   display: inline-block;
   float: left;
 }
 .event-list-details {
     color: $dark-gray;
-  padding-top: 0;
-  margin: 0;
+  padding-bottom: 10px;
+  // width: 400px;
+width: 320px;
 display: inline-block;
   text-align: left;
   margin: 0 10px 0 40px;
@@ -138,6 +134,7 @@ display: inline-block;
   clear: both;
   text-align: right;
   font-size: 1.2em;
+  margin-top: -1.2em;
 }
 
 .event-list-heading{
@@ -271,5 +268,15 @@ z-index: 100;
 
   margin:0 auto;
   text-align: left;
-  background-color: red;
+  // background-color: red;
+}
+
+.events-background-color{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #d3d5d7;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  // margin-top: 180px;
 }
