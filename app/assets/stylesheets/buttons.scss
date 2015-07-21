@@ -190,6 +190,8 @@ btn-login {
   text-decoration: none;
   border: 1px solid $accent-color-light;
   display: inline-block;
+  position: fixed;
+  z-index: 1000;
 }
 
 .btn-add-record-long:hover{
