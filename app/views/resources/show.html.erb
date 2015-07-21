@@ -1,87 +1,58 @@
-<!-- <div class="container">
-  <div class="container-fluid">
-    <div class="events-background-color">
-
-    <div class="row card">
-      <div class="col-md-12">
-        <div class="thumbnail event-img">
-          <% if @resource.user.uploaded_file_file_name.nil? %>
-          <div>
-            <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{@resource.user_id}" %>
-            <%=link_to @resource.user.first_name, "/users/#{@resource.user_id}" %>
+<div class = "container-fluid" id="profile-container">
+  <div class = "container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10 resource-show-box">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-2">
+              <div class = "image-pic-down">
+                <% if @resource.curriculum.nickname == "Rails" %>
+                  <div>
+                    <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
+                  </div>
+                   <% elsif @resource.curriculum.nickname == "Python" %>
+                  <div>
+                    <%= image_tag("data-science-icon.png", size: "80x80") %>
+                  </div>
+                <% elsif @resource.curriculum.nickname == "Front End" %>
+                  <div>
+                    <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-7 contact-info">
+              <h3 class="resource-show-title-header"><%= @resource.title %></h3>
+              <div class="resource-edit-delete-links">
+                <% if @resource.user_id == current_user.id %>
+                  <%= link_to '<i class="fa fa-pencil" title="Event"></i>'.html_safe,
+                      edit_resource_path(@resource) %>
+                  <%= link_to '<i class="fa fa-times" title="Delete"></i>'.html_safe,
+                      @resource, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </div>
+              <div class="resource-show-details"><%= @resource.description %></div>
+              <% unless @resource.website.blank? %>
+                <div class="resource-show-details"><%= @resource.website_html %></div>
+              <% end %>
+            </div>
           </div>
-          <% else %>
-          <div>
-            <%=link_to image_tag(@resource.user.uploaded_file(:thumb)),"/users/#{@resource.user_id}" %>
-            <%=link_to @resource.user.first_name, "/users/#{@resource.user_id}" %>
-          </div>
-          <% end %>
         </div>
-
-        <p class="event-details">
-          <%= @resource.curriculum.nickname %>
-        </p>
-      </div>
-      <p>
-        <%= @resource.description %>
-      </p>
-      <% unless @resource.website.blank? %>
-      <p><%= @resource.website_html %></p>
-      <% end %>
-      <div class="edit-delete">
-        <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Resource"></i>'.html_safe,
-                    edit_resource_path(@resource) if @resource.user_id == current_user.id %>
-        <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Resource"></i>'.html_safe,
-                    @resource, method: :delete, data: { confirm: 'Are you sure?' } if @resource.user_id == current_user.id %>
       </div>
     </div>
-
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <%= render partial: 'comments/comments', locals: {commentable: @resource} %>
+        </div>
+        <div class="row">
+          <%= render partial: 'comments/form', locals: {commentable: @resource, comment: @comment} %>
+        </div>
+      </div><!-- close chat column -->
+      <div class="col-md-1"></div>
+    </div><!-- close row -->
   </div>
-</div>
-
-</div>
-
-
-
-
-<div class="detailBox">
-<%= render partial: 'comments/comments', locals: {commentable: @resource} %>
-
-<%= render partial: 'comments/form', locals: {commentable: @resource, comment: @comment} %>
-
-</div> -->
-
-
-
-<div class="container-fluid">
-  <div class="row event-bk">
-    <div class="col-md-1">
-      <div class="images">
-        <% if @resource.user.uploaded_file_file_name.nil? %>
-         <div><%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{@resource.user_id}" %></div>
-        <% else %>
-          <div> <%=link_to image_tag(@resource.user.uploaded_file(:thumb)),"users/#{@resource.user_id}"  %> </div>
-        <% end %>
-      </div>
-      <p> <%= @resource.curriculum.nickname %> </p>
-    </div>
-    <div class="resource-details col-md-4">
-      <p> <%= @resource.title %></p>
-      <%= link_to '<i class="glyphicon glyphicon-pencil" title="Event"></i>'.html_safe,
-          edit_resource_path(@resource) if @resource.user_id == current_user.id %>
-      <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete"></i>'.html_safe,
-          @resource, method: :delete, data: { confirm: 'Are you sure?' } if @resource.user_id == current_user.id %>
-    </div>
-    <div class="container col-md-4">
-      <p> <%= @resource.description %> </p>
-      <% unless @resource.website.blank? %>
-        <p><%= @resource.website_html %></p>
-      <% end %>
-    </div>
-  </div>
-  <div class="detailBox">
-    <%= render partial: 'comments/comments', locals: {commentable: @resource} %>
-    <%= render partial: 'comments/form', locals: {commentable: @resource, comment: @comment} %>
-  </div>
-
+  </br>
 </div>

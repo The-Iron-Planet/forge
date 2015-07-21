@@ -333,6 +333,32 @@ background-color: red;
   height: auto;
   margin-top: 15px;
 }
+
+.event-show-title {
+  margin: 0px;
+  font-family: $font-bold;
+  text-align: left;
+  color: #3B3B3B;
+}
+
+.event-show-details {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3B3B3B;
+  font-size: 1em;
+  margin-bottom: 0px;
+}
+
+.event-show-title-header {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+
+.event-edit-delete-links{
+  display: inline-block;
+  font-size: 1.2em;
+}
+
 // #events-list {
 //   // z-index: -10;
 //   margin-top: 160px;

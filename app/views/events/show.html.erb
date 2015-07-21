@@ -19,14 +19,22 @@
               </div>
             </div>
             <div class="col-md-7 contact-info">
-              <h3 class="profile-name-header"><%= @event.title %></h3>
-              <div id="user-profile-tiy-relation"><%= @event.event_date %></div>
-              <div id="user-profile-tiy-relation"><%= @event.event_time %></div>
-              <div id="user-profile-tiy-relation"><%= @event.location %></div>
+              <h3 class="event-show-title-header"><%= @event.title %></h3>
+              <div class="event-edit-delete-links">
+                <% if @event.user_id == current_user.id %>
+                  <%= link_to '<i class="fa fa-pencil" title="Event"></i>'.html_safe,
+                      edit_resource_path(@event) %>
+                  <%= link_to '<i class="fa fa-times" title="Delete"></i>'.html_safe,
+                      @event, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </div>
+              <div class="event-show-details"><%= @event.event_date %></div>
+              <div class="event-show-details"><%= @event.event_time %></div>
+              <div class="event-show-details"><%= @event.location %></div>
               <% unless @event.website.blank? %>
-                <div id="user-profile-tiy-relation"><%= @event.website_html %></div>
+                <div class="event-show-details"><%= @event.website_html %></div>
               <% end %>
-              <div id="user-profile-tiy-relation"><%= @event.description %></div>
+              <div class="event-show-details"><%= @event.description %></div>
             </div>
           </div>
         </div>
