@@ -5,7 +5,7 @@
         <div class="row form-val">
           <%= render "shared/error_messages", :target => @job_post %>
         </div>
-          <div class="col-md-12 field">
+          <div class="col-md-10 field">
             <div class="job-post-list">
               <div class="field">
                 <%= f.label :title, :class => "input-label" %><br>
@@ -23,13 +23,24 @@
                 <%= f.label :location, :class => "input-label" %><br>
                 <%= f.text_field :location, :class => "input-field" %>
               </div>
+                <% if @job_post.expires_on && @job_post.expires_on < Date.today %>
+                  <div class="field">
+                    <%= f.label :expires_on, "This post expired on", :class => "input-label" %><br>
+                    <%= f.date_field :expires_on, :class => "input-field-dropdown"%>
+                <% elsif @job_post.expires_on && @job_post.expires_on > Date.today%>
+                  <div class="field">
+                    <%= f.label :expires_on, "This post will expire on", :class => "input-label" %><br>
+                    <%= f.date_field :expires_on, :class => "input-field-dropdown" %>
+                  </div>
+                <% end %>
+              </div>
+
+            <div class="job-post-list2">
+              <div class="form"
               <div class="field">
                 <%= f.label :website, "Link to job description", :class => "input-label" %><br>
                 <%= f.text_field :website, :class => "input-field" %>
               </div>
-            </div>
-            <div class="job-post-list2">
-              <div class="form"
               <div class="field">
                 <%= f.label :curriculum_id, "Which students would be the best fit for the position?", :class => "input-label" %><br>
                 <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, {include_blank: true},
@@ -48,17 +59,6 @@
                   </span>
                 </div>
 
-
-              <% if @job_post.expires_on && @job_post.expires_on < Date.today %>
-                <div class="field">
-                  <%= f.label :expires_on, "This post expired on", :class => "input-label" %><br>
-                  <%= f.date_field :expires_on, :class => "input-field-dropdown"%>
-              <% elsif @job_post.expires_on && @job_post.expires_on > Date.today%>
-                <div class="field">
-                  <%= f.label :expires_on, "This post will expire on", :class => "input-label" %><br>
-                  <%= f.date_field :expires_on, :class => "input-field-dropdown" %>
-                </div>
-              <% end %>
               <% if @job_post.active != nil %>
                 <div class="field">
                   <%= f.label :active, "Is this Job Post active?", :class => "input-label" %><br>
@@ -72,7 +72,7 @@
               <% end %>
             </div>
           </div>
-          <div class="actions float-right" id="save-job-post">
+          <div class="actions float-left" id="save-job-post">
             <%= f.submit :class=> "btn ctr-btn", value: "Save Job Post" %>
           </div>
         </div>

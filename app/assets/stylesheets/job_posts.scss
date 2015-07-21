@@ -142,7 +142,7 @@ margin-top: 3em;
 
 .job-post-list{
   display: inline-block;
-vertical-align: top;
+  vertical-align: top;
 }
 
 
@@ -160,12 +160,13 @@ z-index: 0;
 }
 
 #new-job-form{
-  width: 68%;
+  width: 50%;
 }
 
 #job_post_title{
   margin: auto;
 }
+
 #job_post_company_name{
   margin: auto;
 }
@@ -179,6 +180,9 @@ z-index: 0;
   margin: auto;
 }
 
+#job_post_website{
+  margin: auto;
+}
 #save-job-post{
   margin-top: 0;
   padding: 0;
@@ -197,4 +201,9 @@ z-index: 0;
   margin:0 auto;
   text-align: left;
   background-color: red;
+}
+
+#job-post-page-header {
+  text-align: center;
+  margin: auto;
 }
