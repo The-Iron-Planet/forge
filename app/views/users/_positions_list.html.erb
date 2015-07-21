@@ -15,8 +15,7 @@
       <thead>
         <tr>
           <th>Company Name</th>
-          <th>City</th>
-          <th>State</th>
+          <th>Location</th>
           <th>Title</th>
           <th>Started On</th>
           <th>Ended On</th>
@@ -30,10 +29,7 @@
             <%= ff.text_field :company_name, :placeholder => "Company Name" %>
           </td>
           <td>
-            <%= ff.text_field :city, :placeholder => "City" %>
-          </td>
-          <td>
-            <%= ff.select :state, options_for_select(us_states, ff.object.state), :prompt => "State" %>
+            <%= ff.text_field :location, :placeholder => "Location" %>
           </td>
           <td>
             <%= ff.text_field :title, :placeholder => "Title"%>

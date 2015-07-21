@@ -136,6 +136,18 @@ btn-login {
   text-decoration: none;
 }
 
+.btn-edit-work-history {
+  font-size: $h4;
+  border-radius: $corners;
+  font-family: $font;
+  background: $accent-color-light;
+  color: #eef1f6;
+  padding: 5px 10px 7.5px;
+  margin: 0px;
+  text-decoration: none;
+  border: 1px solid $accent-color-light;
+}
+
 // .add-btn{
 //   width: 60px;
 //   height: 60px;
