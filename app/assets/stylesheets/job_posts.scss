@@ -251,13 +251,37 @@ margin-top: 3em;
 
 #job-post-modal-header {
   text-align: left;
-  padding-top: 30px;
+  padding-top: 0px;
+  padding-left: 30px;
+  margin-bottom: 0px;
 }
 
 #job-post-list {
   margin-top: 20px;
 }
 
+.job-modal-well {
+  min-height: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 5%;
+  width: 450px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+
+#job-post-form {
+  padding-left: 20px;
+}
+
+.modal-body {
+  padding-bottom: 5px;
+}
+
 .jobs-head-text {
   display: inline-block;
+
 }

@@ -16,9 +16,9 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui
-//= require magnific-popup
 //= require dialog
 //= require navbar
+//= require magnific-popup
 
 
 // var header = document.getElementById("#dir-header");
@@ -47,5 +47,5 @@
 // }
 
 $(function () {
-  $('.collapse-card').paperCollapse()
-})
+  $('.collapse-card').paperCollapse();
+});

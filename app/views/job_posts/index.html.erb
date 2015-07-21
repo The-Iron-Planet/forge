@@ -5,11 +5,11 @@
         <h2 class = "jobs-head-text">Job Posts</h2>
       </div>
       <div class = "col-md-4 line-up-header">
-        <a href="#new-job-post" data-mfp-src="#new-job-post" class="open-popup-link new-campus">
-        <button class="fa fa-plus fa-lg btn-add-record-long-jobs" data-toggle = "tooltip" data-placement = "left" title = "Add New" aria-hidden="true"></button></a>
-        <div id="new-job-post" class="white-popup mfp-hide">
-          <h2 id="job-post-modal-header">New Job Post</h2>
-            <%= render 'form' %>
+        <a href="#new-job-post" data-toggle="modal" aria-hidden="true">
+          <button class="fa fa-plus fa-lg btn-add-record-long-jobs" data-toggle = "tooltip" data-placement = "left" title = "Add New" aria-hidden="true"></button>
+        </a>
+        <div id="new-job-post" class="modal fade">
+          <%= render 'form' %>
         </div>
       </div>
       <div class="col-md-1"></div>
