@@ -1,11 +1,9 @@
-<!-- <div class="container-fluid"> -->
-  <!-- <div class="search-box-back-resources"></div> -->
-  <div class="row">
-    <!-- <div class="col-md-2"></div> -->
-    <!-- <div class="col-md-12"> -->
+
       <div class="jobs-background-color">
         <% @job_posts.each do |job_post| %>
         <div class="row card">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
           <div class="container job-card">
             <div class="collapse-card ">
               <div class="collapse-card__heading job-heading">
@@ -29,8 +27,11 @@
                     <p class="employer">
                       <%= job_post.company_name %>
                     </p>
-                    <p class="employer">
+                    <p class="employer-location">
                       <%= job_post.location %>
+                    </p></br>
+                    <p class="experience">Experience Desired:
+                      <%= job_post.experience_desired %>
                     </p>
                   </div>
                 </h4>
@@ -39,9 +40,7 @@
                 <p class="job-text">
                   <%= job_post.description %>
                 </p>
-                <p class="job-text">Experience Desired:
-                  <%= job_post.experience_desired %>
-                </p>
+
                 <p class="job-text">
                   <%= job_post.website_html unless job_post.website.blank? %>
                 </p>
@@ -63,14 +62,11 @@
                                   job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
                 </div>
               </div>
-
+              </div>
+              </div>
             </div>
-
+<div class="col-md-1"></div>
           </div>
           <% end %>
 
         </div>
-      </div>
-    </div>
-  </div>
-</div>
