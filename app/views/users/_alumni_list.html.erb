@@ -10,16 +10,21 @@
               <!-- <div  class="looking-for-job"> -->
               <div><%= link_to image_tag("default_pic.png", size: "200x200"), "/users/#{user.id}" %></div>
             <% else %>
-              <div><%= link_to image_tag(user.uploaded_file(:square)), "/users/#{user.id}" %></div>
+              <div><%= link_to image_tag(user.uploaded_file(:medium)), "/users/#{user.id}" %></div>
             <% end %>
             <h4 class="profile-name" style="color: #233139;"><%= user.full_name %></h4>
+            <% if !user.looking && !user.hiring && !user.is_mentor %>
+              <p> </p>
+            <% end %>
             <% if user.looking %>
               <div class="color-indicator-looking"></div>
             <% end %>
             <% if user.hiring %>
               <div class="color-indicator-hiring"></div>
             <% end %>
-            <div class="color-indicator-mentor"></div>
+            <% if user.is_mentor %>
+              <div class="color-indicator-mentor"></div>
+            <% end %>
             <p class="profile-details" style="color: #727d84;">
               <%= user.tiy_relation %>
             </p>

@@ -31,12 +31,12 @@
             <br/>
             <% unless @user.current_city.blank? || @user.current_state.blank? %>
               <div>
-                <i class="fa fa-map-marker" title="Github"></i>
+                <i class="fa fa-map-marker" title="Location"></i>
                 <%= @user.current_location %>
               </div>
             <% end %>
             <div>
-              <i class="fa fa-envelope-square" title="Github"></i>
+              <i class="fa fa-envelope-square" title="Email"></i>
               <%= @user.email %>
             </div>
             <% unless @user.github_profile.blank? %>
@@ -47,40 +47,40 @@
             <% end %>
             <% unless @user.twitter.blank? %>
               <div>
-                <i class="fa fa-twitter-square" title="Github"></i>
+                <i class="fa fa-twitter-square" title="Twitter"></i>
                 <%= link_to "@#{@user.twitter}", @user.twitter_link, target: "_blank" %>
               </div>
             <% end %>
             <% unless @user.slack_handle.blank? %>
               <div>
-                <i class="fa fa-slack" title="Github"></i>
+                <i class="fa fa-slack" title="Slack"></i>
                 <%= "@#{@user.slack_handle}" %>
               </div>
             <% end %>
             <% unless @user.linked_in.blank? %>
               <div>
-                <i class="fa fa-linkedin-square" title="Github"></i>
+                <i class="fa fa-linkedin-square" title="Linked In"></i>
                 <%= link_to @user.linked_in, @user.linked_in, target: "_blank" %>
               </div>
             <% end %>
             <% unless @user.website.blank? %>
               <div>
-                <i class="fa fa-external-link-square" title="Github"></i>
+                <i class="fa fa-external-link-square" title="Website"></i>
                 <%= link_to "Website", @user.website, target: "_blank" %>
               </div>
             <% end %>
             <% unless @user.blog.blank? %>
               <div>
-                <i class="fa fa-rss-square" title="Github"></i>
+                <i class="fa fa-rss-square" title="Blog"></i>
                 <%= link_to "Blog", @user.blog, target: "_blank" %>
               </div>
             <% end %>
-            <% if @user.hiring %>
+            <!-- <% if @user.hiring %>
               <div>Hiring: Yes</div>
             <% end %>
             <% if @user.looking %>
               <div>Looking: Yes</div>
-            <% end %>
+            <% end %> -->
           </div>
         </div>
         <div class="row">
