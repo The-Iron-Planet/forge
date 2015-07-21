@@ -1,6 +1,6 @@
 
  <div class="resources-background-color">
- 
+
     <% @resources.each do |resource| %>
 
     <div class="row card">
@@ -41,7 +41,7 @@
                   <% end %>
                 </div>
                 <div class="resource-header">
-                  <h4>
+                  <h4 class="events-index-header">
                     <%= resource.title %>
                   </h4>
                   <!-- <p class="curriculum">
@@ -68,9 +68,9 @@
               <%=link_to resource.user.full_name, "/users/#{resource.user_id}", :class=>"posted-by" %>
 
               <div class="edit-delete">
-                <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Resource"></i>'.html_safe,
+                <%= link_to '<i class="glyphicon glyphicon-pencil resources-edit" title="Edit Resource"></i>'.html_safe,
                           edit_resource_path(resource) if resource.user_id == current_user.id %>
-                <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Resource"></i>'.html_safe,
+                <%= link_to '<i class="glyphicon glyphicon-remove resources-delete" title="Delete Resource"></i>'.html_safe,
                           resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
               </div>
             </div>
