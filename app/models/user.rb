@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
     thumb: '50x50>',
     small: '80x80#',
     square: '175x175#',
-    medium: '300x300>'
+    medium: '200x200>'
   }
   validates_attachment_content_type :uploaded_file, :content_type => /\Aimage\/.*\Z/
 
