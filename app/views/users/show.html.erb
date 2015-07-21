@@ -1,4 +1,4 @@
-<div class = "container-fluid">
+<div class = "container-fluid" id="profile-container">
   <div class = "container-fluid">
     <% if @user.id == current_user.id %>
       <div class="col-md-2">
@@ -7,6 +7,7 @@
           <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
           <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
           <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
+          <li role="presentation"><%= link_to 'My Preferences', '#' %></li>
         </ul>
       </div>
     <% else %>
@@ -22,13 +23,18 @@
               <% else %>
                 <div><%= image_tag @user.uploaded_file(:square) %></div>
               <% end %>
-              <div class = "first-name-bold"><strong><%= @user.full_name %></strong></div>
-              <div><%= @user.tiy_relation %></div>
-                <!--<button class = "btn-edit-profile link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
             </div>
+            <% if @user.id == current_user.id %>
+              <div>
+                <%= link_to "Edit Profile", edit_user_path(@user), class: "btn-edit-profile"%>
+                <!-- <%= link_to 'Change Password', edit_password_user_path(@user), class: "btn-edit-profile" %> -->
+              </div>
+            <% end %>
           </div>
           <div class="col-md-7 contact-info">
-            <br/>
+            <h3 class="profile-name-header"><%= @user.full_name %></h3>
+            <!-- <div class = "first-name-bold"><strong><%= @user.full_name %></strong></div> -->
+            <div id="user-profile-tiy-relation"><%= @user.tiy_relation %></div>
             <% unless @user.current_city.blank? || @user.current_state.blank? %>
               <div>
                 <i class="fa fa-map-marker" title="Location"></i>
@@ -83,63 +89,36 @@
             <% end %> -->
           </div>
         </div>
-        <div class="row">
-          <br/>
-          <br/>
-          <% if @user.id == current_user.id %>
-            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn-edit-profile"%>
-            <%= link_to 'Change Password', edit_password_user_path(@user), class: "btn-edit-profile" %>
-          <% end %>
-        </div>
       </div>
     </div>
-    <div class = "col-md-6">
-      <div class="well well-profile">
-        <div class="row work-history-row">
-          <div class="col-md-6">
-            <h3 class="work-history"> Work History </h3>
-          </div>
-          <% if @user.id == current_user.id %>
-            <div class="col-md-6">
-              <button class="btn-edit-work-history float-right">
-                <%= link_to 'Update Work History', work_history_path(@user), class: "button-link" %>
-              </button>
-            </div>
-          <% end %>
+    <div class = "col-md-5 profile-work-history">
+      <div class="row work-history-row">
+        <div class="col-md-6">
+          <h3 class="work-history"> Positions </h3>
         </div>
+      </div>
+      <% @user.positions.ordered.each do |position| %>
         <div class="row">
-          <div class = "table-responsive">
-            <table class = "table table-condensed">
-              <colgroup>
-                <col class="col-md-2">
-                <col class="col-md-2">
-                <col class="col-md-4">
-                <col class="col-md-2">
-                <col class="col-md-2">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th>Company</th>
-                  <th>Location</th>
-                  <th>Title</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @user.positions.ordered.each do |position| %>
-                  <tr>
-                    <td><%= position.company_name %></td>
-                    <td><%= position.location %></td>
-                    <td><%= position.title %></td>
-                    <td><%= position.start_date if position.started_on%></td>
-                    <td><%= position.end_date if position.ended_on%></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
+          <div class="position-block">
+            <div class = "job-post-text">
+              <h4 class="position-title"><%= position.title%></h4>
+              <p class="position-details" id="position-dates">
+                  (<%= position.start_date if position.started_on %> - <%= position.ended_on ? position.end_date : "Present" %>)
+              </p>
+              <p class="position-details" id="position-company">
+                <%= position.company_name %> - <%= position.location %>
+              </p>
+            </div>
           </div>
         </div>
+      <% end %>
+      <div class="row">
+        <% if @user.id == current_user.id %>
+          <div>
+            <%= link_to "Edit Positions", work_history_path(@user), class: "btn-edit-positions"%>
+            <!-- <%= link_to 'Change Password', edit_password_user_path(@user), class: "btn-edit-profile" %> -->
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
