@@ -191,8 +191,9 @@ btn-login {
   text-decoration: none;
   border: 1px solid $accent-color-light;
   display: inline-block;
-  position: fixed;
-  z-index: 50;
+  // position: fixed;
+  z-index: 500;
+  margin-top: -40px;
 }
 
 .btn-add-record-long:hover{

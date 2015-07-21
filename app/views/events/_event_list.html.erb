@@ -1,13 +1,27 @@
 <div class="events-background-color">
+  <div class="search-box-back-events"></div>
   <% @events.each do |event| %>
   <div class="row event-card">
     <div class="">
       <% if event.uploaded_file_file_name.nil? %>
-      <%= image_tag "event_default.png", size: "200x200", :class=>"event-list-img" %>
+
+          <i class="fa fa-calendar fa-5x event-list-img img-200px"  title="calendar" alt="calendar-icon"></i>
+
+      <!-- <%= image_tag "event_default.png", size: "200x200", :class=>"event-list-img" %> -->
       <% else %>
       <%= image_tag event.uploaded_file(:square), :class=>"event-list-img" %>
       <% end %>
     </div>
+
+
+
+
+
+
+
+
+
+
 
     <div class="col-med-8">
       <div class="event-list-content">
