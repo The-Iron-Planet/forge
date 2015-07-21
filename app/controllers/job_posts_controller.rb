@@ -18,6 +18,7 @@ class JobPostsController < ApplicationController
     else
       @job_posts = JobPost.ordered.all_active
     end
+    @job_post = JobPost.new
   end
 
   def my_job_posts

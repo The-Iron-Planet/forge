@@ -18,7 +18,7 @@
 .directory-search{
 // background-color: orange;
 margin-top: 30px;
-    position: fixed;
+    // position: fixed;
     right: 0;
     left: 0;
     margin-right: auto;
@@ -108,6 +108,7 @@ z-index: 10;
 .profile-details{
   margin: 0 auto;
   padding-top: 5px;
+  padding-right: 1em;
 }
 
 .nav-stacked {
@@ -203,7 +204,7 @@ font-size: .8em;
 
 .profile-content{
   margin-top: 20px;
-  box-shadow: 10px 10px 90px #d7d7d7;
+  box-shadow: 10px 10px 30px #cecece;
   padding: 30px 10px;
 }
 
