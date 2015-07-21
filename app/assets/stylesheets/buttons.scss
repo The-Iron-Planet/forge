@@ -217,26 +217,26 @@ btn-login {
 //   float: right;
 // }
 
-.btn-add-record-long {
+.btn-add-record-long-jobs {
   color: $white;
   $font-size: 1em;
-  padding: 8px 12px;
-  background-color: $accent-color-light;
-  margin-left: 70%;
+  padding: 10px 14px;
+  background-color: #f29c3a;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font;
   text-decoration: none;
-  border: 1px solid $accent-color-light;
-  display: inline-block;
+  border: 1px solid #f29c3a;
   // position: fixed;
   z-index: 500;
-  margin-top: -40px;
+  float: right;
+  margin-right: 25px;
 }
 
-.btn-add-record-long:hover{
-  background-color: $accent-color-dark;
-  border-color: $accent-color-dark;
+.btn-add-record-long-jobs:hover{
+  background-color: orange;
+  border-color: orange;
   color: $white;
   text-decoration: none;
 }
+

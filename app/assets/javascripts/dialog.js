@@ -4,6 +4,10 @@ $(document).ready(function() {
     midClick: true});
 });
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 
 // $('.open-popup-link').magnificPopup({
 //   type:'inline',
