@@ -147,6 +147,29 @@ btn-login {
   text-align: center;
 }
 
+.btn-edit-positions{
+  color: $white;
+  $font-size: $small-font;
+  padding: 2px 14px;
+  background-color: $accent-color-light;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  // margin-right: auto;
+  border-radius: $corners;
+  font-family: $font-italic;
+  text-decoration: none;
+  border: 1px solid $accent-color-light;
+  display: inline-block;
+}
+
+.btn-edit-positions:hover{
+  background-color: $accent-color-dark;
+  border-color: $accent-color-dark;
+  color: $white;
+  text-decoration: none;
+}
+
 .button-link{
   color: #eef1f6;
   text-decoration: none;
