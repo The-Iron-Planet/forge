@@ -120,16 +120,30 @@ btn-login {
 .btn-profile {
 }
 
-.btn-edit-profile {
-  font-size: $h4;
+.btn-edit-profile{
+  color: $white;
+  $font-size: $small-font;
+  padding: 2px 14px;
+  background-color: $accent-color-light;
+  margin-left: 15px;
+  // margin-right: auto;
   border-radius: $corners;
-  font-family: $font;
-  background: $accent-color-light;
-  color: #eef1f6;
-  padding: 5px 10px 7.5px;
-  margin: 30px 20px 20px 20px;
+  font-family: $font-italic;
   text-decoration: none;
   border: 1px solid $accent-color-light;
+  display: inline-block;
+}
+
+.btn-edit-profile:hover{
+  background-color: $accent-color-dark;
+  border-color: $accent-color-dark;
+  color: $white;
+  text-decoration: none;
+}
+
+.btn-edit-profile-align{
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .button-link{
