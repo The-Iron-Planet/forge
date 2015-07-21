@@ -14,10 +14,10 @@
       <%= link_to image_tag("TIY-FORGE_logo_shield_500.png", alt: "logo", class: "tiy"), root_path %>
     </div>
     <% if user_signed_in? %>
-      <div class = "nav-width">
+      <div class = "nav-width" id = "nav-width">
       <ul class="nav-links" id = "nav-links">
         <!--<%= link_to 'Home', root_path, class: "nav" %>-->
-        <li><%= link_to 'Alumni Directory', users_path, class: "nav-ind" %></li>
+        <li class="nav-list"><%= link_to 'Alumni Directory', users_path, class: "nav-ind" %></li>
         <li><%= link_to 'Resources', resources_path, class: "nav-ind" %></li>
         <li><%= link_to 'Jobs', job_posts_path, class: "nav-ind" %></li>
         <li><%= link_to 'Events', events_path, class: "nav-ind" %></li>

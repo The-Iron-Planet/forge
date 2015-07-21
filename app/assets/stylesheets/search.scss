@@ -30,7 +30,7 @@
   margin-left: auto;
   margin-right: auto;
   // margin-left: 60px;
-  width: 80%;
+  width: 78%;
   // margin: 0 auto;
 // background-color: $light-gray;
   margin-bottom: 10px;
@@ -182,8 +182,8 @@
 }
 
 .general-search-jobs{
-  margin-left: 1.75%;
   margin-top: -1%;
+  margin-left: -85px;
 }
 
 .input-field-search {
@@ -337,4 +337,9 @@ margin-top: 10px;
   // position: fixed;
   margin-top: -25px;
   margin-left: 15px;
+}
+
+.h2-align-directory {
+  margin-left: 60px;
+  margin-top: -15px;
 }

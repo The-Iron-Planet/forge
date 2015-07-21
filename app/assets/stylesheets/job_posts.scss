@@ -156,7 +156,7 @@ margin-top: 3em;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
-  // background-color: blue;
+
 }
 
 .jobs-edit{
@@ -166,7 +166,7 @@ margin-top: 3em;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
-  // background-color: red;
+
 }
 
 
@@ -279,4 +279,9 @@ margin-top: 3em;
 
 .modal-body {
   padding-bottom: 5px;
+}
+
+.jobs-head-text {
+  display: inline-block;
+
 }

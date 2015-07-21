@@ -303,6 +303,15 @@ font-size: .8em;
 }
 
 .well-profile {
+  z-index: 500;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  // margin-left: 60px;
+  width: 80%;
+  // margin: 0 auto;
+// background-color: $light-gray;
+  margin-bottom: 10px;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -330,7 +339,7 @@ font-size: .8em;
 .fa-twitter-square, .fa-linkedin-square,
 .fa-github-square, .fa-envelope-square,
 .fa-external-link-square, .fa-rss-square,
-.fa-slack, .fa-map-marker {
+.fa-slack, .fa-map-marker, .fa-pencil, .fa-times {
   color: grey;
 }
 
@@ -399,3 +408,11 @@ font-size: .8em;
 #profile-container {
   padding-top: 15px;
 }
+
+.color-list {
+  margin-top: -205px;
+}
+
+#directory-search-results {
+}
+

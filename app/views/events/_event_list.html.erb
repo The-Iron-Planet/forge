@@ -6,7 +6,7 @@
       <div class=col-med-1></div>
 
       <div class="col-md-10">
-        <div class="container job-card">
+        <div class="container event-card">
           <div class="collapse-card ">
             <div class="collapse-card__heading job-heading">
               <h4 class="collapse-card__title">
@@ -47,9 +47,9 @@
           </div>
         </div>
         <div class="event-listing-edit-delete">
-          <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Event"></i>'.html_safe,
+          <%= link_to '<i class="glyphicon glyphicon-pencil event-listing-edit-delete events-edit" title="Edit Event"></i>'.html_safe,
                     edit_event_path(event) if event.user_id == current_user.id %>
-          <%= link_to '<i class="glyphicon glyphicon-remove" title="Delete Event"></i>'.html_safe,
+          <%= link_to '<i class="glyphicon glyphicon-remove events-edit events-delete" title="Delete Event"></i>'.html_safe,
                     event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
         </div>
 <!-- </div> -->

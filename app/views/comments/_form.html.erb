@@ -1,7 +1,12 @@
-<%= form_for [commentable, comment] do |f| %>
-  <div class="form-group">
-    <%= f.text_area :body, class: "form-control", placeholder: "Add a Comment" %>
-
-  <%= f.submit "Save Comment", class: "chat-btn " %>
-<% end %>
+<div class="container-fluid">
+  <%= form_for [commentable, comment] do |f| %>
+  <div class="row">
+    <div class="col-md-10">
+      <%= f.text_area :body, class: "form-control", placeholder: "Add a Comment" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit "Save Comment", class: "btn comment-btn" %>
+    </div>
+  </div>
+  <% end %>
 </div>
