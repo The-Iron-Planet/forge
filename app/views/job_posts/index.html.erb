@@ -14,7 +14,7 @@
     <div class = "col-md-1"></div>
     <div class="general-search-jobs col-md-10 well">
       <%= form_tag search_jobs_path, remote: true do %>
-      <%= text_field_tag "query", params[:query], class: "input-field-search search-well", placeholder: "Search"%>
+      <%= text_field_tag "query", params[:query], class: "input-field-search search-well-jobs", placeholder: "Search"%>
       <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
       <a class="more-options search-boxes-bar-more" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         More options
