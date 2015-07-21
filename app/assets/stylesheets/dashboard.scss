@@ -10,6 +10,7 @@
   margin: 10px 20px;
   color: black;
   height: 125px;
+  box-shadow: 2.5px 2.5px 7.5px grey;
 }
 
 .resource-block {
@@ -21,6 +22,7 @@
   padding: 10px;
   margin: 10px 20px;
   color: black;
+  box-shadow: 2.5px 2.5px 7.5px grey;
   height: 140px;
 }
 
@@ -34,6 +36,7 @@
   margin: 10px 20px;
   color: black;
   height: 110px;
+  box-shadow: 2.5px 2.5px 7.5px grey;
 }
 
 .dashboard-background {
@@ -54,6 +57,7 @@
 .dashboard-event-details {
   padding: 4px;
   margin: 0;
+  color: $gray;
   line-height: 1em;
   font-size: $small-font;
 }
@@ -65,10 +69,10 @@
 }
 
 .dashboard-event-title {
-  color: $black;
+  color: black;
   padding-top: 8px;
   margin: 0;
-  font-family: $sans-serif;
+  font-family: $font;
 }
 
 .content-up {
@@ -89,12 +93,13 @@
   color: $black;
   padding-top: 6px;
   margin: 0;
-  font-family: $sans-serif;
+  font-family: $font;
 }
 
 .dashboard-job-details {
   padding: 4px;
   margin: 0;
+  color: $gray;
   line-height: 1em;
   font-size: $small-font;
 }
@@ -122,4 +127,12 @@
   float: left;
   margin-top: 6px;
   margin-right: 10px;
+}
+
+.event-details-spacing {
+  line-height: 14px;
+}
+
+.scroll-container a:hover {
+  text-decoration: none;
 }

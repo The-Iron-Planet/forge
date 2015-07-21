@@ -6,8 +6,7 @@
               <i class="fa fa-calendar fa-5x"  title="calendar"></i>
           </div>
         <p class="dashboard-event-title"><%= event.title %></p>
-        <p class="dashboard-event-details"><%= event.event_date %></p>
-        <p class="dashboard-event-details"><%= event.event_time %></p>
+        <p class="dashboard-event-details"><%= event.event_date %> - <%=event.event_time %></p>
         <p class="dashboard-event-details"><%= event.location %></p>
         <!--<div class="dashboard-edit-delete">
           <%= link_to '<i class="glyphicon glyphicon-pencil"  title="Event"></i>'.html_safe,
