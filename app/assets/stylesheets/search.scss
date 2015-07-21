@@ -13,9 +13,9 @@
 .search-box{
   top: 170px;
   // margin-bottom: 250px;
-// left: 0;
+  // left: 0;
   // position: fixed;
-z-index: 500;
+  z-index: 500;
 // border: none;
   // background-color: red;
   // height: 90px;
@@ -25,7 +25,7 @@ z-index: 500;
 }
 
 .well {
-z-index: 500;
+  z-index: 500;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -330,4 +330,18 @@ margin-top: 10px;
   position: fixed;
   margin-top: -10px;
   margin-left: 15px;
+}
+
+.well-events {
+  z-index: 500;
+  margin-top: 15px;
+  margin-left: 15%;
+  margin-right: auto;
+  // margin-left: 60px;
+  width: 100%;
+  // margin: 0 auto;
+// background-color: $light-gray;
+  margin-bottom: 10px;
+  background-color: #F5F5F5;
+  border: 1px solid #ECECEC;
 }
