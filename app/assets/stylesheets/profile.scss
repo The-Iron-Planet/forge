@@ -120,6 +120,10 @@ z-index: 10;
   width: 135px;
 }
 
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  border: none;
+}
+
 .profile {
   background-color: lightgrey;
   height: auto;
@@ -364,5 +368,33 @@ font-size: .8em;
   padding: 10px;
   margin: 10px 20px;
   color: black;
-  height: 110px;
+  height: auto;
+}
+
+.position-title {
+  margin: 0px;
+  font-family: $font-bold;
+  text-align: left;
+  color: #3B3B3B;
+}
+
+.position-details {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3B3B3B;
+  font-size: 1em;
+}
+
+#position-dates {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: #676767;
+  margin-bottom: 0px;
+}
+
+#position-company{
+  margin-bottom: 0px;
+}
+
+#profile-container {
+  padding-top: 15px;
 }
