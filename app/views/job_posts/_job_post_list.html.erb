@@ -23,10 +23,13 @@
                   <div class="job-header">
                     <h4 class="title">
                       <%= job_post.title %>
-                    </h4>
+                    </h4></br>
                     <p class="employer">
                       <%= job_post.company_name %>
                     </p>
+                    <p class="pipe">|</p>
+
+                    
                     <p class="employer-location">
                       <%= job_post.location %>
                     </p></br>
@@ -56,7 +59,7 @@
                 <h6>
                   <%= "This post has expired" if job_post.is_expired? %></h6>
                 <div class="edit-delete ">
-                  <%= link_to '<i class="glyphicon glyphicon-pencil jobs-edit-delete" title="Job Post"></i>'.html_safe,
+                  <%= link_to '<i class="glyphicon glyphicon-pencil jobs-edit" title="Job Post"></i>'.html_safe,
                                   edit_job_post_path(job_post) if job_post.user_id == current_user.id %>
                   <%= link_to '<i class="glyphicon glyphicon-remove jobs-edit-delete" title="Delete"></i>'.html_safe,
                                   job_post, method: :delete, data: { confirm: 'Are you sure?' } if job_post.user_id == current_user.id %>
