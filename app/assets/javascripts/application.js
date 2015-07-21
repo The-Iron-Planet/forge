@@ -19,6 +19,7 @@
 //= require dialog
 //= require navbar
 //= require magnific-popup.min.js
+//= require alert.js
 
 
 // var header = document.getElementById("#dir-header");
