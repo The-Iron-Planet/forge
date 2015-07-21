@@ -31,29 +31,26 @@ class PositionTest < ActiveSupport::TestCase
   test "current position based on start date" do
     assert_equal @tiy_job, @user.current_position
     new_job = Position.create!(user_id: @user.id, company_name: @google_job.company_name, title: "Googler",
-        started_on: "2015-08-01", city: @google_job.city, state: @google_job.state)
+        started_on: "2015-08-01", location: @google_job.location)
     assert_equal new_job, @user.current_position
   end
 
-  test "can't create without company, title, start date, city/state" do
+  test "can't create without company, title, start date, location" do
     job1 = Position.new(user_id: @user.id, company_name: @google_job.company_name, title: "Googler",
-        started_on: "2015-08-01", city: @google_job.city, state: @google_job.state)
+        started_on: "2015-08-01", location: @google_job.location)
     job2 = Position.new(user_id: @user.id, title: "Googler",
-        started_on: "2015-08-01", city: @google_job.city, state: @google_job.state)
+        started_on: "2015-08-01", location: @google_job.location)
     job3 = Position.new(user_id: @user.id, company_name: @google_job.company_name,
-        started_on: "2015-08-01", city: @google_job.city, state: @google_job.state)
+        started_on: "2015-08-01", location: @google_job.location)
     job4 = Position.new(user_id: @user.id, company_name: @google_job.company_name, title: "Googler",
-        city: @google_job.city, state: @google_job.state)
+        location: @google_job.location)
     job5 = Position.new(user_id: @user.id, company_name: @google_job.company_name, title: "Googler",
-        started_on: "2015-08-01", state: @google_job.state)
-    job6 = Position.new(user_id: @user.id, company_name: @google_job.company_name, title: "Googler",
-        started_on: "2015-08-01", city: @google_job.city)
+        started_on: "2015-08-01")
 
     assert job1.save
     refute job2.save
     refute job3.save
     refute job4.save
     refute job5.save
-    refute job6.save
   end
 end

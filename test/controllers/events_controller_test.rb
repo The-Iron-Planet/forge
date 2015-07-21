@@ -13,6 +13,11 @@ class EventsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:events)
   end
 
+  test "should get my events" do
+    get :my_events
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -31,6 +36,13 @@ class EventsControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @event
     assert_response :success
+  end
+
+  test "can't edit other user's events" do
+    sign_out @user
+    sign_in users(:two)
+    get :edit, id: @event
+    assert_redirected_to root_path
   end
 
   test "should update event" do

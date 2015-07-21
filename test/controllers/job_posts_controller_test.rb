@@ -12,6 +12,11 @@ class JobPostsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:job_posts)
   end
 
+  test "should get my_job_posts" do
+    get :my_job_posts
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -19,7 +24,7 @@ class JobPostsControllerTest < ActionController::TestCase
 
   test "should create job_post" do
     assert_difference('JobPost.count') do
-      post :create, job_post: { company_name: @job_post.company_name, city: @job_post.city, state: @job_post.state,
+      post :create, job_post: { company_name: @job_post.company_name, location: @job_post.location,
           curriculum_id: @job_post.curriculum_id, description: @job_post.description,
           experience_desired: @job_post.experience_desired, expires_on: (Date.today + 1.month),
           title: @job_post.title, user_id: @job_post.user_id, website: @job_post.website }
@@ -37,6 +42,13 @@ class JobPostsControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @job_post
     assert_response :success
+  end
+
+  test "should not get edit for other user's post" do
+    sign_out users(:one)
+    sign_in users(:two)
+    get :edit, id: @job_post
+    assert_redirected_to root_path
   end
 
   test "should update job_post" do

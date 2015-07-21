@@ -21,19 +21,17 @@ class JobPostTest < ActiveSupport::TestCase
   end
 
   test "validations" do
-    j1 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    j1 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.")
-    j2 = JobPost.new(user_id: @user1.id, city: @job2.city, state: @job2.state,
+    j2 = JobPost.new(user_id: @user1.id, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.")
-    j3 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, state: @job2.state,
+    j3 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.")
-    j4 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city,
-        curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.")
-    j5 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    j4 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         title: "Boss", experience_desired: "Lots.")
-    j6 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    j5 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id,  experience_desired: "Lots.")
-    j7 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    j6 = JobPost.new(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss")
 
     assert j1.save
@@ -42,7 +40,6 @@ class JobPostTest < ActiveSupport::TestCase
     refute j4.save
     refute j5.save
     refute j6.save
-    refute j7.save
   end
 
   test "can't have no expires_on date unless job is inactive" do
@@ -77,7 +74,7 @@ class JobPostTest < ActiveSupport::TestCase
 
   test "posting a job turns user's hiring field to true" do
     assert_equal false, @user2.hiring
-    JobPost.create!(user_id: @user2.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    JobPost.create!(user_id: @user2.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.")
     @user2.reload
     assert_equal true, @user2.hiring
@@ -108,7 +105,7 @@ class JobPostTest < ActiveSupport::TestCase
 
   test "deleting job doesn't change hiring field if user has other active posts" do
     assert_equal true, @user1.hiring
-    new_job = JobPost.create!(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    new_job = JobPost.create!(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.", active: true, expires_on: Date.today + 1.month)
     @job1.destroy!
     @user1.reload
@@ -120,7 +117,7 @@ class JobPostTest < ActiveSupport::TestCase
 
   test "marking a job inactive doesn't change hiring field if user has other active posts" do
     assert_equal true, @user1.hiring
-    new_job = JobPost.create!(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    new_job = JobPost.create!(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.", active: true, expires_on: Date.today + 1.month)
     @job1.active = false
     @job1.save!
@@ -133,7 +130,7 @@ class JobPostTest < ActiveSupport::TestCase
   end
 
   test "deleting job DOES change hiring field if all of user's other posts are inactive" do
-    new_job = JobPost.create!(user_id: @user1.id, company_name: @job2.company_name, city: @job2.city, state: @job2.state,
+    new_job = JobPost.create!(user_id: @user1.id, company_name: @job2.company_name, location: @job2.location,
         curriculum_id: @rails.id, title: "Boss", experience_desired: "Lots.", active: false, expires_on: Date.today + 1.month)
     assert_equal true, @user1.hiring
     @job1.destroy!
@@ -142,7 +139,7 @@ class JobPostTest < ActiveSupport::TestCase
   end
 
   # test "search returns accurate results" do
-  #   assert_equal [@job1], JobPost.search_results(@rails.id, @tiy.city, @tiy.state,
+  #   assert_equal [@job1], JobPost.search_results(@rails.id, @tiy.location,
   #       @job1.company_id, @job1.description, @job1.experience_desired)
   #   assert_equal JobPost.ordered.all_active, JobPost.search_results("", "", "", "", "", "")
   # end
