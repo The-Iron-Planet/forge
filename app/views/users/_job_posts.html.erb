@@ -1,4 +1,3 @@
-
 <div class="scroll-container">
   <% @job_posts.each do |job_post| %>
     <div class="job-post-block">
@@ -15,7 +14,6 @@
           <strong><%= job_post.company_name %></strong> - <%= job_post.location %>
         </p>
         <p class="dashboard-event-details"><%= job_post.experience_desired %></p>
-        <p class="dashboard-event-details"><%= job_post.description %></p>
       </div>
     </div>
   <% end %>
