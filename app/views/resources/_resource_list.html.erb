@@ -1,6 +1,6 @@
 
  <div class="resources-background-color">
- <!-- <div class="search-box-back-resources"></div> -->
+ <div class="search-box-back-resources"></div>
     <% @resources.each do |resource| %>
 
     <div class="row card">
@@ -8,11 +8,11 @@
       <div class="col-md-10">
         <div class="container resources-card">
 
-          <div class="collapse-card ">
+          <div class="collapse-card resource-card-header">
             <div class="collapse-card__heading job-heading">
-              <h4 class="collapse-card__title">
-                
-                <div class="resource-post-image">
+              <h4 class="collapse-card__title ">
+
+                <div class="resource-post-image-indexpg">
                   <% if resource.curriculum.nickname == "Rails" %>
                     <div>
                       <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
@@ -27,7 +27,6 @@
                     </div>
                   <% end %>
                 </div>
-
                 <div class=" resource-img">
                   <% if resource.user.uploaded_file_file_name.nil? %>
                   <div>
@@ -42,16 +41,18 @@
                   <% end %>
                 </div>
                 <div class="resource-header">
-                  <h4 class="title">
+                  <h4>
                     <%= resource.title %>
                   </h4>
-                  <p class="curriculum">
+                  <!-- <p class="curriculum">
                     <%= resource.curriculum.nickname %>
-                  </p>
+                  </p> -->
+
+
                 </div>
               </h4>
             </div>
-            <div class="collapse-card__body job-details">
+            <div class="collapse-card__body resource-details">
               <p>Description:
                 <%= resource.description %>
               </p>
@@ -64,7 +65,7 @@
               <p class="posted-by">
                 Posted by:
               </p>
-              <%=link_to resource.user.full_name, "/users/#{resource.user_id}" %>
+              <%=link_to resource.user.full_name, "/users/#{resource.user_id}", :class=>"posted-by" %>
 
               <div class="edit-delete">
                 <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit Resource"></i>'.html_safe,

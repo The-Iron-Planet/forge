@@ -62,10 +62,12 @@
   color: white;
   background-color: #CE8531;
   border: 1px solid #CE8531;
+
 }
 
 #resource-list {
-  z-index: -10;
+  // z-index: -10;
+  margin-top: 160px;
 }
 
 .fill-background {
@@ -80,4 +82,21 @@
 
   // padding-top: 800px;
   // margin-top: 500px;
+}
+
+.resource-post-image-indexpg{
+  padding-right: 20px;
+display: inline-block;
+float: left;
+margin: 10px;
+}
+
+.resource-index-title{
+// display: inline-block;
+// float: left;
+
+
+}
+.resource-details{
+  margin: -20px 35px 15px 35px;
 }

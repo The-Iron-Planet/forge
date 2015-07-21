@@ -32,6 +32,7 @@
   text-decoration: none;
   border: 1px solid $accent-color-light;
   display: inline-block;
+  z-index: 800;
 }
 
 .btn-add-record:hover{
@@ -191,7 +192,7 @@ btn-login {
   border: 1px solid $accent-color-light;
   display: inline-block;
   position: fixed;
-  z-index: 1000;
+  z-index: 50;
 }
 
 .btn-add-record-long:hover{
