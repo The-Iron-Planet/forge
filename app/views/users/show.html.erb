@@ -7,6 +7,7 @@
           <li role="presentation"><%= link_to 'My Events', my_events_path %></li>
           <li role="presentation"><%= link_to 'My Job Posts', my_job_posts_path %></li>
           <li role="presentation"><%= link_to 'My Resources', my_resources_path %></li>
+          <li role="presentation"><%= link_to 'My Preferences', '#' %></li>
         </ul>
       </div>
     <% else %>
@@ -22,13 +23,18 @@
               <% else %>
                 <div><%= image_tag @user.uploaded_file(:square) %></div>
               <% end %>
-              <div class = "first-name-bold"><strong><%= @user.full_name %></strong></div>
-              <div><%= @user.tiy_relation %></div>
-                <!--<button class = "btn-edit-profile link1-profile"><%= link_to 'Change Password', edit_password_user_path(@user) %></button>-->
             </div>
+            <% if @user.id == current_user.id %>
+              <div>
+                <%= link_to "Edit Profile", edit_user_path(@user), class: "btn-edit-profile"%>
+                <!-- <%= link_to 'Change Password', edit_password_user_path(@user), class: "btn-edit-profile" %> -->
+              </div>
+            <% end %>
           </div>
           <div class="col-md-7 contact-info">
-            <br/>
+            <h3 class="work-history"><%= @user.full_name %></h3>
+            <!-- <div class = "first-name-bold"><strong><%= @user.full_name %></strong></div> -->
+            <div id="user-profile-tiy-relation"><%= @user.tiy_relation %></div>
             <% unless @user.current_city.blank? || @user.current_state.blank? %>
               <div>
                 <i class="fa fa-map-marker" title="Location"></i>
@@ -82,14 +88,6 @@
               <div>Looking: Yes</div>
             <% end %> -->
           </div>
-        </div>
-        <div class="row">
-          <br/>
-          <br/>
-          <% if @user.id == current_user.id %>
-            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn-edit-profile"%>
-            <%= link_to 'Change Password', edit_password_user_path(@user), class: "btn-edit-profile" %>
-          <% end %>
         </div>
       </div>
     </div>
