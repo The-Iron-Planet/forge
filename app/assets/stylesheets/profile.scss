@@ -18,7 +18,7 @@
 .directory-search{
 // background-color: orange;
 margin-top: 30px;
-    position: fixed;
+    // position: fixed;
     right: 0;
     left: 0;
     margin-right: auto;
@@ -186,7 +186,7 @@ font-size: .8em;
 
 .profile-content{
   margin-top: 20px;
-  box-shadow: 10px 10px 90px #d7d7d7;
+  box-shadow: 10px 10px 30px #cecece;
   padding: 30px 10px;
 }
 
@@ -296,20 +296,20 @@ font-size: .8em;
 }
 
 
-.profile-details-checkbox { 
+.profile-details-checkbox {
   margin: 0 auto;
   padding-top: 5px;
   font-size: .9em;
 }
 
-.profile-details-checkbox-left { 
+.profile-details-checkbox-left {
   margin: 0 auto;
   padding-top: 5px;
   font-size: .9em;
   margin-left: 7px;
 }
 
-.fa-twitter-square, .fa-linkedin-square, 
+.fa-twitter-square, .fa-linkedin-square,
 .fa-github-square, .fa-envelope-square,
 .fa-external-link-square, .fa-rss-square {
   color: grey;
@@ -329,4 +329,3 @@ font-size: .8em;
   color: #383838;
   text-decoration: none;
 }
-
