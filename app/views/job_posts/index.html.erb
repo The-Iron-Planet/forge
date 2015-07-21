@@ -14,7 +14,7 @@
     <div class = "col-md-1"></div>
     <div class="general-search-jobs col-md-10 well">
       <%= form_tag search_jobs_path, remote: true do %>
-      <%= text_field_tag "query", params[:query], class: "input-field-search search-well-jobs", placeholder: "Search"%>
+      <%= text_field_tag "query", params[:query], class: "input-field-search-jobs", placeholder: "Search"%>
       <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
       <a class="more-options search-boxes-bar-more" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         More options
@@ -24,13 +24,13 @@
           <%= select_tag "curriculum_id", options_from_collection_for_select(Curriculum.all,
             :id, :name, params[:curriculum_id]), prompt: "Curriculum",
             class: "job-search-reg search-margin" %>
-          <span class="profile-details" style="color: #727d84;">
+          <span class="profile-details-checkbox" style="color: #727d84;">
             Junior Developer <%= radio_button_tag :experience_desired, "Junior Developer", params[:experience_desired] %>
           </span>
-          <span class="profile-details" style="color: #727d84;">
+          <span class="profile-details-checkbox-left" style="color: #727d84;">
             Mid-Level <%= radio_button_tag :experience_desired, "Mid-Level", params[:experience_desired] %>
           </span>
-          <span class="profile-details" style="color: #727d84;">
+          <span class="profile-details-checkbox-left" style="color: #727d84;">
             Senior Developer <%= radio_button_tag :experience_desired, "Senior Developer", params[:experience_desired] %>
           </span>
         </div>
