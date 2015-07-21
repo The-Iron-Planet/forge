@@ -125,7 +125,8 @@ btn-login {
   $font-size: $small-font;
   padding: 2px 14px;
   background-color: $accent-color-light;
-  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font-italic;
@@ -144,6 +145,29 @@ btn-login {
 .btn-edit-profile-align{
   margin-bottom: 20px;
   text-align: center;
+}
+
+.btn-edit-positions{
+  color: $white;
+  $font-size: $small-font;
+  padding: 2px 14px;
+  background-color: $accent-color-light;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  // margin-right: auto;
+  border-radius: $corners;
+  font-family: $font-italic;
+  text-decoration: none;
+  border: 1px solid $accent-color-light;
+  display: inline-block;
+}
+
+.btn-edit-positions:hover{
+  background-color: $accent-color-dark;
+  border-color: $accent-color-dark;
+  color: $white;
+  text-decoration: none;
 }
 
 .button-link{
