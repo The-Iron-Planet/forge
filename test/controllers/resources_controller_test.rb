@@ -13,6 +13,11 @@ class ResourcesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:resources)
   end
 
+  test "should get my_resources" do
+    get :my_resources
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -21,7 +26,7 @@ class ResourcesControllerTest < ActionController::TestCase
   test "should create resource" do
     assert_difference('Resource.count') do
       post :create, resource: { curriculum_id: @resource.curriculum_id,
-          description: @resource.description, title: @resource.title, 
+          description: @resource.description, title: @resource.title,
           user_id: @user.id, website: @resource.website }
     end
 
@@ -31,6 +36,13 @@ class ResourcesControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @resource
     assert_response :success
+  end
+
+  test "should not get edit on another user's resource" do
+    sign_out users(:one)
+    sign_in users(:two)
+    get :edit, id: @resource
+    assert_redirected_to root_path
   end
 
   test "should update resource" do
