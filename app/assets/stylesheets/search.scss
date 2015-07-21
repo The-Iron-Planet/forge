@@ -12,11 +12,12 @@
 
 .search-box{
   top: 170px;
+  // margin-bottom: 250px;
 // left: 0;
   // position: fixed;
-// z-index: 50;
+z-index: 50;
 // border: none;
-  // background-color: red;
+  background-color: red;
   // height: 90px;
   border-radius: 4px 4px 4px 4px;
   margin-left: auto;
@@ -24,6 +25,7 @@
 }
 
 .well {
+  z-index: 1000;
   margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -233,17 +235,17 @@
     margin-right: auto;
     margin-left: auto;
     width: 90%;
-    z-index: 10;
+    z-index: 100;
 // box-shadow: 0 20px 50px $white;
 }
 
-.search-box-back{
+.search-box-back-resources{
   position: fixed;
   left: 0;
   right: 0;
-  height: 230px;
-  z-index: 10;
-margin-top: -50px;
+  height: 200px;
+  z-index: 20;
+margin-top: -80px;
 // background-color: red;
   background-color: $white;
 }
