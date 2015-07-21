@@ -12,6 +12,13 @@ class CurriculaControllerTest < ActionController::TestCase
     assert_not_nil assigns(:curricula)
   end
 
+  test "should not get index if not a campus director" do
+    sign_out users(:one)
+    sign_in users(:two)
+    get :index
+    assert_redirected_to root_path
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -33,6 +40,13 @@ class CurriculaControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @curriculum
     assert_response :success
+  end
+
+  test "should not get edit if not a campus director" do
+    sign_out users(:one)
+    sign_in users(:two)
+    get :edit, id: @curriculum
+    assert_redirected_to root_path
   end
 
   test "should update curriculum" do
