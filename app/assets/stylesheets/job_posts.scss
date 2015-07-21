@@ -184,8 +184,7 @@ z-index: 0;
   margin: auto;
 }
 #save-job-post{
-  margin-top: 0;
-  padding: 0;
+  margin: 20px 20px 25px 15px;
 }
 #job_post_curriculum_id{
   margin: auto;
@@ -205,6 +204,11 @@ z-index: 0;
 #job-post-page-header {
   text-align: center;
   margin: auto;
+}
+
+#job-post-modal-header {
+  text-align: left;
+  padding-top: 30px;
 }
 
 #job-post-list {
