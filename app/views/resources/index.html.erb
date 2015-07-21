@@ -1,28 +1,26 @@
-<div class="container" class="container-fluid">
+<div class="container-fluid">
    <!-- <div class="search-box-back"></div>  -->
   <div class="row">
-    <div class="col-md-12">
-      <div class="jobs-header-box">
-
-        <h2>Resources index page</h2>
-        <div><%= link_to 'Add New Resource', new_resource_path, :class=>"btn-add-record"%></div>
-        <% if current_user.resources.count != 0 %>
-        <div class="btn-add-record-align"><%= link_to 'My Resources', my_resources_path, :class=>" btn-add-record"%></div>
-        <% end %>
-      </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6 fill-background">
+        <h2 class = "resources-head-text">Resources index page</h2>
     </div>
+    <div class = "col-md-4 line-up-header">
+        <div><%= link_to '', new_resource_path, :class=>" fa fa-plus fa-lg btn-add-record-long line-up-header"%></div>
+    </div>
+    <div class="col-md-1"></div>
   </div>
   <div class="row">
-    <div class="search-box col-med-12 well directory-search">
+    <div class="search-box col-med-12 well-short directory-search">
       <%= form_tag search_resources_path, remote: true do %>
-      <%= text_field_tag "query", params[:query], class: "input-field general-search ", placeholder: "Search"%>
-      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button" %>
+      <%= text_field_tag "query", params[:query], class: "input-field-search general-search-resources search-well", placeholder: "Search"%>
+      <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-boxes-bar-right search-button search-well" %>
       <% end %>
     </div>
-  </br>
-</div>
-</div>
-<div id="resource-list">
-  <%= render "resource_list" %>
-</div>
+    </br>
+  </div>
+
+  <div id="resource-list">
+    <%= render "resource_list" %>
+  </div>
 </div>
