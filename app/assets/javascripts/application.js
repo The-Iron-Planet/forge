@@ -16,9 +16,9 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui
-//= require magnific-popup.min.js
 //= require dialog
 //= require navbar
+//= require magnific-popup.min.js
 
 
 // var header = document.getElementById("#dir-header");
