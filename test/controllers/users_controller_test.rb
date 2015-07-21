@@ -19,7 +19,6 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should create user" do
-    # byebug
     assert_difference('User.count') do
       post :create, user: {first_name: @user2.first_name, last_name: @user2.last_name,
           email: "email@email.com", curriculum_id: @user2.curriculum.id, campus_id: @user2.campus.id,
@@ -38,8 +37,15 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get edit password" do
+    get :edit_password, id: @user1
+    assert_response :success
+  end
+
   test "should update user with more than 1 login" do
-    patch :update, id: @user1, user: { first_name: @user1.first_name }
+    patch :update, id: @user1, user: { first_name: @user1.first_name,
+      :positions_attributes =>{"0" => {title: "New Job", company_name: "TIY",
+        location: "Durham, NC", started_on: Date.today}}}
     assert_redirected_to user_path(assigns(:user))
   end
 
@@ -90,7 +96,4 @@ class UsersControllerTest < ActionController::TestCase
     assert_redirected_to user_path
   end
 
-  # test "should show user profile picture" do
-  #
-  # end
 end

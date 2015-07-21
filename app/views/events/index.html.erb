@@ -1,19 +1,19 @@
 <div class="container-fluid">
   <div class="row">
      <div class="col-md-1"></div>
-     <div class="col-md-6 fill-background">  
+     <div class="col-md-6 fill-background">
         <h2 class = "events-head-text">Events</h2>
      </div>
      <div class = "col-md-4 line-up-header">
-        <%= link_to '', new_job_post_path, :class=>"fa fa-plus fa-lg btn-add-record-long line-up-header"  %>
+        <%= link_to '', new_event_path, :class=>"fa fa-plus fa-lg btn-add-record-long line-up-header"  %>
      </div>
      <div class="col-md-1"></div>
   </div>
-  
+
   <div class="row">
      <div class = "col-md-1"></div>
      <div class="col-md-10 event-list-heading">
-        <div class="search-box well directory-search">
+        <div class="search-box well-events">
            <%= form_tag search_events_path, remote: true do %>
            <%= text_field_tag "query", params[:query], class: "input-field-search general-search-events", placeholder: "Search"%>
            <%= select_tag "campus_id", options_from_collection_for_select(Campus.all,
@@ -26,8 +26,8 @@
      <div class = "col-md-1"></div>
   </div>
     </br>
-  
-  <div class="row">  
+
+  <div class="row">
     <div id="event-list">
       <%= render 'event_list' %>
     </div>

@@ -7,7 +7,7 @@
              <div>
                <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
              </div>
-           <% elsif resource.curriculum.nickname == "Python" %>
+              <% elsif resource.curriculum.nickname == "Python" %>
              <div>
                <%= image_tag("data-science-icon.png", size: "80x80") %>
              </div>
@@ -19,7 +19,7 @@
          </div>
         <p class="dashboard-event-title"><%= resource.title %></p>
         <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
-        <p class="dashboard-event-details"><%= resource.description %></p>
+        <p class="dashboard-event-details event-details-spacing"><%= truncate( resource.description, length: 143) %></p>
         <!--<p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>-->
       </div>
     </a>

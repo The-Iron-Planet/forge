@@ -12,6 +12,11 @@ class JobPostsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:job_posts)
   end
 
+  test "should get my_job_posts" do
+    get :my_job_posts
+    assert_response :success
+  end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -37,6 +42,13 @@ class JobPostsControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @job_post
     assert_response :success
+  end
+
+  test "should not get edit for other user's post" do
+    sign_out users(:one)
+    sign_in users(:two)
+    get :edit, id: @job_post
+    assert_redirected_to root_path
   end
 
   test "should update job_post" do
