@@ -36,7 +36,7 @@
                 <li><%= link_to 'Courses', courses_path %></li>
                 <li><%= link_to 'Curriculum', curricula_path %></li>
               </ul>
-            
+
             </div>
           </div>
         <% end %>
@@ -59,7 +59,9 @@
     <% end %>
   </div>
   <div class="top-header" id="notice">
-    <%= render 'layouts/notice' %>
+    <% unless notice.blank? %>
+      <%= render 'layouts/notice' %>
+    <% end %>
   </div>
     <%= yield %>
 </body>
