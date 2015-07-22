@@ -1,84 +1,81 @@
+<div class="resources-background-color">
 
- <div class="resources-background-color">
+  <% @resources.each do |resource| %>
 
-    <% @resources.each do |resource| %>
+  <div class="row card">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="container resources-card">
+        <div class="collapse-card resource-card-header">
+          <div class="collapse-card__heading job-heading">
+            <h4 class="collapse-card__title ">
 
-    <div class="row card">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="container resources-card">
-
-          <div class="collapse-card resource-card-header">
-            <div class="collapse-card__heading job-heading">
-              <h4 class="collapse-card__title ">
-
-                <div class="resource-post-image-indexpg">
-                  <% if resource.curriculum.nickname == "Rails" %>
-                    <div>
-                      <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
-                    </div>
-                  <% elsif resource.curriculum.nickname == "Python" %>
-                    <div>
-                      <%= image_tag("data-science-icon.png", size: "80x80") %>
-                    </div>
-                  <% elsif resource.curriculum.nickname == "Front End" %>
-                    <div>
-                      <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
-                    </div>
-                  <% end %>
+              <div class="resource-post-image-indexpg">
+                <% if resource.curriculum.nickname == "Rails" %>
+                <div>
+                  <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
                 </div>
-                <div class=" resource-img">
-                  <% if resource.user.uploaded_file_file_name.nil? %>
-                  <div>
-                    <!-- <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %> -->
-
-                  </div>
-                  <% else %>
-                  <div>
-                    <!-- <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}" %> -->
-                    <%=link_to resource.user.full_name, "/users/#{resource.user_id}" %>
-                  </div>
-                  <% end %>
+                <% elsif resource.curriculum.nickname == "Python" %>
+                <div>
+                  <%= image_tag("data-science-icon.png", size: "80x80") %>
                 </div>
-                <div class="resource-header">
-                  <h4 class="events-index-header">
-                    <%= resource.title %>
-                  </h4>
-                  <!-- <p class="curriculum">
+                <% elsif resource.curriculum.nickname == "Front End" %>
+                <div>
+                  <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
+                </div>
+                <% end %>
+              </div>
+              <div class=" resource-img">
+                <% if resource.user.uploaded_file_file_name.nil? %>
+                <div>
+<!-- <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %> -->
+
+                </div>
+                <% else %>
+                <div>
+<!-- <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}" %> -->
+                  <%=link_to resource.user.full_name, "/users/#{resource.user_id}" %>
+                </div>
+                <% end %>
+              </div>
+              <div class="resource-header">
+                <h4 class="events-index-header">
+                  <%= resource.title %>
+                </h4>
+<!-- <p class="curriculum">
                     <%= resource.curriculum.nickname %>
                   </p> -->
 
-
-                </div>
-              </h4>
-            </div>
-            <div class="collapse-card__body resource-details">
-              <p>Description:
-                <%= resource.description %>
-              </p>
-              <p>
-                <%= link_to "View More", resource_path(resource) %>
-              </p>
-              <p>
-                <%= resource.website_html unless resource.website.blank? %>
-              </p>
-              <p class="posted-by">
-                Posted by:
-              </p>
-              <%=link_to resource.user.full_name, "/users/#{resource.user_id}", :class=>"posted-by" %>
-
-              <div class="edit-delete">
-                <%= link_to '<i class="glyphicon glyphicon-pencil resources-edit" title="Edit Resource"></i>'.html_safe,
-                          edit_resource_path(resource) if resource.user_id == current_user.id %>
-                <%= link_to '<i class="glyphicon glyphicon-remove resources-delete" title="Delete Resource"></i>'.html_safe,
-                          resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
               </div>
+            </h4>
+          </div>
+          <div class="collapse-card__body resource-details">
+            <p>Description:
+              <%= resource.description %>
+            </p>
+            <p>
+              <%= link_to "View More", resource_path(resource) %>
+            </p>
+            <p>
+              <%= resource.website_html unless resource.website.blank? %>
+            </p>
+            <p class="posted-by">
+              Posted by:
+            </p>
+            <%=link_to resource.user.full_name, "/users/#{resource.user_id}", :class=>"posted-by" %>
+
+            <div class="edit-delete">
+              <%= link_to '<i class="glyphicon glyphicon-pencil resources-edit" title="Edit Resource"></i>'.html_safe,
+                          edit_resource_path(resource) if resource.user_id == current_user.id %>
+              <%= link_to '<i class="glyphicon glyphicon-remove resources-delete" title="Delete Resource"></i>'.html_safe,
+                          resource, method: :delete, data: { confirm: 'Are you sure?' } if resource.user_id == current_user.id %>
             </div>
           </div>
         </div>
       </div>
-        <div class="col-md-1"></div>
     </div>
-    <% end %>
-
+    <div class="col-md-1"></div>
   </div>
+  <% end %>
+
+</div>

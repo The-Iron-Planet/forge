@@ -7,10 +7,10 @@
   background-color: white;
   text-align: left;
   padding: 10px;
-  margin: 10px 20px;
+  margin: 20px 20px;
   color: black;
   height: 125px;
-  box-shadow: 2.5px 2.5px 7.5px grey;
+  box-shadow: 0px 0px 40px $medium-gray;
 }
 
 .resource-block {
@@ -20,12 +20,10 @@
   background-color: white;
   text-align: left;
   padding: 10px;
-  margin: 10px 20px;
+  margin: 20px 20px;
   color: black;
-  box-shadow: 2.5px 2.5px 7.5px grey;
-  height: 140px;
+  box-shadow: 0px 0px 40px $medium-gray;
 }
-
 .job-post-block {
   // position: relative;
   min-width: 320px;
@@ -33,10 +31,10 @@
   background-color: white;
   text-align: left;
   padding: 10px;
-  margin: 10px 20px;
+  margin: 20px 20px;
   color: black;
   height: 110px;
-  box-shadow: 2.5px 2.5px 7.5px grey;
+  box-shadow: 0px 0px 40px $medium-gray;
 }
 
 .dashboard-background {

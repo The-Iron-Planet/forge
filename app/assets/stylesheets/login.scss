@@ -84,6 +84,7 @@
   background-color: #373d3b;
   border: 1px #373d3b;
   z-index: 5;
+
 }
 
 .forgot-password {
@@ -93,11 +94,13 @@
   margin-top: 10em;
   margin-left: 35em;
   background-color: red;
+
 }
 
 .forgot-password-text {
   font-size: 10pt;
   color: white;
+
 }
 
 .remember-me {
@@ -115,6 +118,7 @@
   font-family: $font;
   color: black;
   text-align: left;
+
 }
 
 .error-message-login {
@@ -132,5 +136,5 @@
 }
 
 #text-center a {
-  color: #797ff7;
+    color: white !important;
 }

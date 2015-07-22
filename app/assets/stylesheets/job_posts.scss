@@ -1,23 +1,16 @@
 // Place all the styles related to the JobPosts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 @import 'stylesheet';
 @import 'search';
 @import "fonts";
 @import "buttons";
-
 
 //
 //
 // .add-company{
 //   padding: 20px;
 // }
-
-
-
-
 .events-card,
 .job-card {
   display: inline-block;
@@ -27,69 +20,57 @@
   overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
+
   // border-bottom: solid 10px #b0c5cb;
-
-
 }
-
 
 // .job-card{
 //   width: 100%;
 // }
-
 // .job-heading {
 //   margin: 0 auto;
 //   min-width: 300px;
 // }
-
-
-.job-header{
+.job-header {
   display: inline-block;
 }
 .title {
   display: inline-block;
-  margin: 20px 30px 0px 0px;
+  margin: 20px 30px 0 0;
   font-family: $font-bold;
   text-align: left;
-
-
 }
 .employer {
-display: inline-block;
-float: left;
+  display: inline-block;
+  float: left;
+
   // margin: 2px 0px 0px 0px;
-// padding-bottom: 1em;
+  // padding-bottom: 1em;
   // padding-bottom: 0px;
   // line-height: 1.5em;
 }
-
-.pipe{
+.pipe {
   display: inline-block;
   float: left;
-  padding:0 .5em 0 .5em;
+  padding: 0 0.5em;
+
   // margin: 1px 0px 0px 0px;
   font-weight: lighter;
   color: $light-gray;
 }
 .employer-location {
-display: inline-block;
-float: left;
-  // margin: 2px 20px 0px 0px;
-//   // padding-bottom: 0px;
-//   // line-height: 1.5em;
-
-}
-
-
-
-.experience{
   display: inline-block;
   float: left;
-    margin: -5px 0 20px 0;
 
+  // margin: 2px 20px 0px 0px;
+  //   // padding-bottom: 0px;
+  //   // line-height: 1.5em;
 }
-
-
+.experience {
+  display: inline-block;
+  float: left;
+  margin: -5px 0 20px;
+}
 
 // .img-and-name-box{
 //   width: 80px;
@@ -99,9 +80,6 @@ float: left;
 //   justify-content: center;
 //   align-items: center;
 // }
-
-
-
 .event-img,
 .job-img {
   float: left;
@@ -109,8 +87,8 @@ float: left;
   width: 60px;
   height: 60px;
 }
+.jobs-name {
 
-.jobs-name{
   // display: inline-block;
   // float: left;
   // clear: both;
@@ -118,73 +96,49 @@ float: left;
   // top: 50%;
   // left: 50%;
   // position: absolute;
-
   // top: 50%;                         /* 3 */
   // transform: translate(0, -50%)
 }
-
-
-
 .card {
-
-
   text-align: center;
   margin-top: 30px;
-
 }
 .event-details,
 .job-details {
-  margin: -40px 35px 25px 35px;
-
+  margin: -40px 35px 25px;
 }
-
-.job-text{
+.job-text {
   padding: 0;
-  margin-top: .75em;
-
+  margin-top: 0.75em;
 }
+.job-footnote {
 
-.job-footnote{
   // display: inline-block;
-margin-top: 3em;
+  margin-top: 3em;
 }
-
-
-.jobs-edit-delete{
+.jobs-edit-delete {
   margin-top: -3em;
   display: inline-block;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
-
 }
-
-.jobs-edit{
+.jobs-edit {
   margin-top: -3em;
   margin-right: 2.2em;
   display: inline-block;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
-
 }
-
-
-
 .job-card {
   margin: 0 auto;
-
-
 }
-
-
-.job-post-list{
+.job-post-list {
   display: inline-block;
   vertical-align: top;
 }
-
-
-.job-post-list2{
+.job-post-list2 {
   display: inline-block;
   vertical-align: top;
 }
@@ -196,38 +150,34 @@ margin-top: 3em;
 //   background-color: purple;
 // z-index: 0;
 // }
-
-#new-job-form{
+#new-job-form {
   width: 50%;
 }
-
-#job_post_title{
+#job_post_title {
   margin: auto;
 }
-
-#job_post_company_name{
+#job_post_company_name {
   margin: auto;
 }
-#job_post_location{
+#job_post_location {
   margin: auto;
 }
-#job_post_experience_desired{
+#job_post_experience_desired {
   margin: auto;
 }
-#job_post_company_name{
+#job_post_company_name {
   margin: auto;
 }
-
-#job_post_website{
+#job_post_website {
   margin: auto;
 }
-#save-job-post{
+#save-job-post {
   margin: 20px 20px 25px 15px;
 }
-#job_post_curriculum_id{
+#job_post_curriculum_id {
   margin: auto;
 }
-#job_post_expires_on{
+#job_post_expires_on {
   margin: auto;
 }
 
@@ -238,33 +188,27 @@ margin-top: 3em;
 //   text-align: left;
 //   // background-color: red;
 // }
-
 #job-post-page-header {
   text-align: center;
   margin: auto;
 }
 
-
 // #job-post-list {
 //   // margin-top: 250px;
 // }
-
 #job-post-modal-header {
   text-align: left;
-  padding-top: 0px;
+  padding-top: 0;
   padding-left: 30px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
-
 #job-post-list {
   margin-top: 20px;
 }
-
 .job-modal-well {
   min-height: 20px;
   padding: 10px;
-  margin: auto;
-  margin-top: 5%;
+  margin: 5% auto auto;
   width: 450px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
@@ -272,16 +216,12 @@ margin-top: 3em;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
 }
-
 #job-post-form {
   padding-left: 20px;
 }
-
 .modal-body {
   padding-bottom: 5px;
 }
-
 .jobs-head-text {
   display: inline-block;
-
 }
