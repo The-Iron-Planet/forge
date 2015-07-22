@@ -16,17 +16,11 @@
   width: 375px;
   height: 390px;
   padding: 30px;
-  // margin-left: auto;
-  // margin-right: auto;
-  // border: 1px black solid;
-  // margin-top: 10%;
   border-radius: 5px;
-  position: absolute;
-  margin-left: 33%;
-  margin-top: 2%;
   background-color: #373d3b;
   border: 1px #373d3b;
   z-index: 5;
+  margin: 0 auto;
 }
 
 
@@ -90,6 +84,7 @@
   background-color: #373d3b;
   border: 1px #373d3b;
   z-index: 5;
+
 }
 
 .forgot-password {
@@ -99,11 +94,13 @@
   margin-top: 10em;
   margin-left: 35em;
   background-color: red;
+
 }
 
 .forgot-password-text {
   font-size: 10pt;
   color: white;
+
 }
 
 .remember-me {
@@ -121,6 +118,7 @@
   font-family: $font;
   color: black;
   text-align: left;
+
 }
 
 .error-message-login {
@@ -138,5 +136,5 @@
 }
 
 #text-center a {
-  color: #797ff7;
+    color: white !important;
 }

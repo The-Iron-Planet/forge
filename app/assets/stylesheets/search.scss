@@ -170,9 +170,11 @@
 }
 
 .general-search-events{
-  width: 65%;
+  width: 60%;
   height: 50px;
   border-radius: 0;
+  margin-top: 30px;
+  margin-right: 10px;
 }
 
 .general-search-resources{
@@ -344,4 +346,16 @@ margin-top: 10px;
 .h2-align-directory {
   margin-left: 60px;
   margin-top: -15px;
+}
+
+.well-short-events {
+  margin-left: auto;
+  margin-right: auto;
+  width: 97%;
+  height: 110px;
+  //margin: 0 auto;
+  // z-index: 10;
+  margin-bottom: 3px;
+  background-color: #F5F5F5;
+  border: 1px solid #ECECEC;
 }
