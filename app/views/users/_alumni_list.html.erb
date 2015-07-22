@@ -30,6 +30,7 @@
             </p>
             <p style="color: #727d84;">
               <% if user.current_city.blank? || user.current_state.blank? %>
+                <br/>
               <% else %>
                 <%= user.current_location %>
               <% end %>
