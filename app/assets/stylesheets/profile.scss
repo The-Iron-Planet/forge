@@ -193,7 +193,7 @@ z-index: 10;
   font-family: $font-italic;
   text-align: center;
   margin-left: 2px;
-  margin-right: 20px;
+  margin-right: 22px;
   margin-bottom: 20px;
   font-size: 1em;
 }
@@ -277,10 +277,18 @@ z-index: 10;
   font-size: .9em;
 }
 
+.event-pipe{
+  color: $light-gray;
+  display: inline-block;
+  float: left;
+
+margin: 0;
+}
+
 .image-pic-down {
   margin-top: 15px;
   float: left;
-  
+
 }
 
 .first-name-bold {

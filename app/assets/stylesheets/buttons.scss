@@ -120,10 +120,13 @@ btn-login {
 }
 
 .comment-btn{
-  margin-bottom: 0px;
-  margin-top: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  @extend .btn;
+  float: left;
+  // margin-bottom: 0px;
+  // margin-top: 5px;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+
 }
 
 .btn-profile {
@@ -288,7 +291,6 @@ btn-login {
   z-index: 500;
   float: right;
   margin-right: 25px;
-  text-decoration: none;
 }
 
 .btn-add-record-long-resources:hover{
