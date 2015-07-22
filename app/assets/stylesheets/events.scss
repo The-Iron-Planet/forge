@@ -10,9 +10,8 @@
 @import 'buttons';
 @import 'fonts';
 @import 'stylesheet';
-
-
 .event-block {
+
   // background-color: blue;
   min-width: 320px;
   background-color: $events-color;
@@ -45,65 +44,48 @@
   padding: 0.25em;
 }
 
-
-
-
-
-
 // events-list ---------------------------------
-
 .card {
-margin: 0 auto;
-text-align: center;
-
+  margin: 0 auto;
+  text-align: center;
 }
+.event-card {
 
-
-.event-card
- {
   // display: inline-block;
   text-align: left;
   margin: 0 auto;
   width: 80%;
+
   // overflow-y: scroll;
   margin-bottom: 20px;
+
   // min-width: 300px;
 }
-
-.events-background-color{
+.events-background-color {
   width: 80%;
   margin: 0 auto;
   text-align: center;
   background-color: #d3d5d7;
   padding-top: 30px;
-
 }
-
-
-
-
-.event-bk{
+.event-bk {
   border: black solid thin;
   margin: 10px;
   width: 450px;
   height: 300px;
-// display: inline-block;
+
+  // display: inline-block;
   float: left;
-    // direction:rtl;
+
+  // direction:rtl;
   overflow-y: scroll;
   text-align: left;
 }
-
-.events-index-header{
-margin-top: 30px;
+.events-index-header {
+  margin-top: 30px;
 }
-
-
-
-
 .event-card {
   display: inline-block;
-
   text-align: left;
   margin: 0 auto;
   width: 80%;
@@ -111,37 +93,29 @@ margin-top: 30px;
   margin: 30px;
   min-width: 300px;
 }
-
-
-
-
-
-
 .event-list-img {
   color: $light-gray;
   display: inline-block;
   float: left;
-
-
 }
-
-.event-list-content{
-
-text-align: left;
+.event-list-content {
+  text-align: left;
   display: inline-block;
   float: left;
 }
 .event-list-details {
-    color: $dark-gray;
+  color: $dark-gray;
+
   // padding-bottom: 10px;
   // width: 400px;
-// width: 280px;
-// min-width: 300px;
-display: inline-block;
+  // width: 280px;
+  // min-width: 300px;
+  display: inline-block;
   text-align: left;
   margin: 0 10px 0 30px;
-  padding: 1px 0 1px 0;
+  padding: 1px 0;
 }
+
 // .event-small-font {
 //   padding: 0;
 //   margin: 0 0 5px 0;
@@ -149,13 +123,12 @@ display: inline-block;
 //   font-size: $small-font;
 //   text-align: right;
 // }
-
-.posted-by{
+.posted-by {
   display: inline-block;
-// text-align: right;
-// display: inline;
-// width: 100%;
 
+  // text-align: right;
+  // display: inline;
+  // width: 100%;
 }
 .event-listing-thumbnail {
   display: inline-block;
@@ -167,20 +140,15 @@ display: inline-block;
   height: 50px;
   font-size: 1em;
 }
+.events-edit {
 
-
-
-
-.events-edit{
   // margin-top: -3em;
   margin-right: 0;
   display: inline-block;
   float: right;
   padding-right: 0;
   color: $dark-gray !important;
-
 }
-
 .events-card,
 .job-card {
   display: inline-block;
@@ -190,38 +158,25 @@ display: inline-block;
   overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
+
   // border-bottom: solid 10px #b0c5cb;
-
-
 }
-
-
-
-
-
-
-
-.img-box{
+.img-box {
   display: block;
   width: 200px;
   height: auto;
   background-color: $events-color;
   border: solid thick black;
 }
+.events-header-box {
 
-
-
-
-
-.events-header-box{
   // z-index: 100;
   // /width:90%;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: left;
-
 }
+.events-background-color {
 
-.events-background-color{
   // width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -234,7 +189,6 @@ display: inline-block;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
 .my-event-header {
   margin-top: 60px;
 }
@@ -243,8 +197,8 @@ display: inline-block;
 //   width: 400;
 //   height: 400;
 // }
-
 .event-list-img {
+
   // color: $light-gray;
   display: inline-block;
   float: left;
@@ -252,16 +206,16 @@ display: inline-block;
   width: 200;
   height: 200;
 }
+.events-delete {
 
-.events-delete{
   // margin-top: -3em;
   display: inline-block;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
 }
-
 .events-edit {
+
   // margin-top: -3em;
   // margin-right: 2.2em;
   display: inline-block;
@@ -269,7 +223,6 @@ display: inline-block;
   padding: 1em;
   color: $dark-gray !important;
 }
-
 .events-card,
 .job-card {
   display: inline-block;
@@ -279,9 +232,9 @@ display: inline-block;
   overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
+
   // border-bottom: solid 10px #b0c5cb;
 }
-
 
 // event details page
 // .col-md-6{
@@ -323,7 +276,7 @@ display: inline-block;
 // .event-page-heading{
 //   position: fixed;
 //   z-index: 10;
-//  padding-top: 150px;
+// padding-top: 150px;
 // top: 0;
 // background-color: $white;
 // box-shadow: 0 10px 50px $white;
@@ -361,16 +314,11 @@ display: inline-block;
 //
 // }
 //
-
-
-
-
 // my events page on profile
 // .my-events-header{
 //   margin-left: 0;
 //   text-align: left;
 // }
-
 //  .event-list-heading{
 //     margin: -50px;
 //     height: 80px;
@@ -388,7 +336,6 @@ display: inline-block;
 //
 //
 // }
-
 // .dashboard-events-header {
 //   margin: 0 auto;
 //   width: 33.333%;
@@ -408,64 +355,39 @@ display: inline-block;
 // .scroll-container {
 //   margin-top: 90px;
 // }
-
-
 .event-show-box {
   height: auto;
   margin-top: 15px;
 }
-
 .event-show-title {
-  margin: 0px;
+  margin: 0;
   font-family: $font-bold;
   text-align: left;
-  color: #3B3B3B;
+  color: #3b3b3b;
 }
-
 .event-show-details {
+
   // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   // color: #3B3B3B;
   // font-size: 1em;
   // margin-bottom: 0px;
 }
-
 .event-show-title-header {
   margin-top: 8px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   display: inline-block;
 }
-
-.event-edit-delete-links{
+.event-edit-delete-links {
   display: inline-block;
   font-size: 1.2em;
 }
-
-
-
-
 .event-card {
-  margin-left: 20px;
+  margin-left: 0 auto;
   margin-right: auto;
   color: $dark-gray;
   background-color: $white;
+
   // text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  width: 60%;
-  overflow-y: scroll;
-  margin-bottom: 20px;
-  min-width: 300px;
-}
-
-#event-list {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.events-head-text {
-  margin-left: 15px;
-  margin-top: -28px;
 }
