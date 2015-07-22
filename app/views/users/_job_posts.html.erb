@@ -1,20 +1,35 @@
 <div class="scroll-container">
-  <% @job_posts.each do |job_post| %>
+  <%if @job_posts.blank? %>
     <div class="job-post-block">
       <div class = "job-post-image">
-           <% if job_post.user.uploaded_file_file_name.nil? %>
-              <div><%= link_to image_tag("default_pic.png", size: "80x80"), "/users/#{job_post.user.id}" %></div>
-            <% else %>
-              <div><%= link_to image_tag(job_post.user.uploaded_file(:small)), "/users/#{job_post.user.id}" %></div>
-            <% end %>
+
       </div>
       <div class = "job-post-text">
-        <p class="dashboard-job-title"><%= job_post.title%></p>
+        <p class="dashboard-job-title">Sorry, no jobs match your prefernces :-(</p>
         <p class="dashboard-job-details">
-          <strong><%= job_post.company_name %></strong> - <%= job_post.location %>
+
         </p>
-        <p class="dashboard-event-details"><%= job_post.experience_desired %></p>
+        <p class="dashboard-event-details">Please search all jobs for some you may be interested in.</p>
       </div>
     </div>
+  <% else %>
+    <% @job_posts.each do |job_post| %>
+      <div class="job-post-block">
+        <div class = "job-post-image">
+             <% if job_post.user.uploaded_file_file_name.nil? %>
+                <div><%= link_to image_tag("default_pic.png", size: "80x80"), "/users/#{job_post.user.id}" %></div>
+              <% else %>
+                <div><%= link_to image_tag(job_post.user.uploaded_file(:small)), "/users/#{job_post.user.id}" %></div>
+              <% end %>
+        </div>
+        <div class = "job-post-text">
+          <p class="dashboard-job-title"><%= job_post.title%></p>
+          <p class="dashboard-job-details">
+            <strong><%= job_post.company_name %></strong> - <%= job_post.location %>
+          </p>
+          <p class="dashboard-event-details"><%= job_post.experience_desired %></p>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
