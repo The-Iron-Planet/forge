@@ -50,12 +50,63 @@
 
 
 
+// events-list ---------------------------------
+
+.card {
+margin: 0 auto;
+text-align: center;
+
+}
+
+
+.event-card
+ {
+  // display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 80%;
+  // overflow-y: scroll;
+  margin-bottom: 20px;
+  // min-width: 300px;
+}
+
+.events-background-color{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #d3d5d7;
+  padding-top: 30px;
+
+}
+
+
+
+
+.event-bk{
+  border: black solid thin;
+  margin: 10px;
+  width: 450px;
+  height: 300px;
+// display: inline-block;
+  float: left;
+    // direction:rtl;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+.events-index-header{
+margin-top: 30px;
+}
+
+
+
+
 .event-card {
   display: inline-block;
 
   text-align: left;
   margin: 0 auto;
-  // width: 80%;
+  width: 80%;
   overflow-y: scroll;
   margin: 30px;
   min-width: 300px;
@@ -63,11 +114,7 @@
 
 
 
-.card {
-margin: 0 auto;
-text-align: center;
 
-}
 
 
 .event-list-img {
@@ -86,13 +133,14 @@ text-align: left;
 }
 .event-list-details {
     color: $dark-gray;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   // width: 400px;
 // width: 280px;
 // min-width: 300px;
 display: inline-block;
   text-align: left;
   margin: 0 10px 0 30px;
+  padding: 1px 0 1px 0;
 }
 // .event-small-font {
 //   padding: 0;
@@ -117,6 +165,7 @@ display: inline-block;
   margin: 0;
   width: 50px;
   height: 50px;
+  font-size: 1em;
 }
 
 
@@ -132,7 +181,19 @@ display: inline-block;
 
 }
 
+.events-card,
+.job-card {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 70%;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  min-width: 300px;
+  // border-bottom: solid 10px #b0c5cb;
 
+
+}
 
 
 
@@ -153,16 +214,26 @@ display: inline-block;
 
 
 .events-header-box{
-  z-index: 100;
-  width:90%;
+  // z-index: 100;
+  // /width:90%;
   margin:0 auto;
   text-align: left;
-  // background-color: red;
+
 }
 
 .events-background-color{
-  width: 80%;
+  // width: 100%;
   margin: 0 auto;
+  text-align: center;
+  background-color: #d3d5d7;
+
+
+
+
+
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   background-color: #d3d5d7;
   padding-top: 30px;
@@ -186,7 +257,7 @@ display: inline-block;
 padding: 30px;
 width: 200;
 height: 200;
-background-color: red;
+
 
 
 }
@@ -210,23 +281,19 @@ background-color: red;
 
 }
 
+.events-card,
+.job-card {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 70%;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  min-width: 300px;
+  // border-bottom: solid 10px #b0c5cb;
 
-// #events-list {
-//   // z-index: -10;
-//   margin-top: 160px;
-// }
 
-// .search-box-back-events{
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   height: 300px;
-//   z-index: 5;
-//
-// background-color: red;
-//  // background-color:$white;
-// }
+}
 
 
 // event details page
@@ -317,7 +384,7 @@ background-color: red;
 //   text-align: left;
 // }
 
- // .event-list-heading{
+//  .event-list-heading{
 //     margin: -50px;
 //     height: 80px;
 //     z-index: 40;
@@ -369,10 +436,10 @@ background-color: red;
 }
 
 .event-show-details {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #3B3B3B;
-  font-size: 1em;
-  margin-bottom: 0px;
+  // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // color: #3B3B3B;
+  // font-size: 1em;
+  // margin-bottom: 0px;
 }
 
 .event-show-title-header {
@@ -386,25 +453,16 @@ background-color: red;
   font-size: 1.2em;
 }
 
-// #events-list {
-//   // z-index: -10;
-//   margin-top: 160px;
-
-// event listing page css
-// .margin-top{
-//   margin-top: 10px;
-
-// }
 
 
-// .event-card {
-//   // padding: 30px 30px;
-//   // margin: 30px 60px;
-//   margin-left: 0 auto;
-//   margin-right: auto;
-//   color: $dark-gray;
-//   background-color: $white;
-//   text-align: center;
-//   // margin-top: 30px;
-//   // margin-bottom: 30px;
-// }
+
+.event-card {
+
+  margin-left: 0 auto;
+  margin-right: auto;
+  color: $dark-gray;
+  background-color: $white;
+  // text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

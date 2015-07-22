@@ -66,7 +66,9 @@ btn-login {
   border: 1px solid $base;
 }
 
-
+#dropdownMenu1{
+  width: auto;
+}
 
 .toggle {
   @extend.btn;
@@ -133,7 +135,6 @@ btn-login {
   padding: 2px 14px;
   background-color: $accent-color-light;
   margin-top: 15px;
-  margin-bottom: 15px;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font-italic;
@@ -246,4 +247,3 @@ btn-login {
   color: $white;
   text-decoration: none;
 }
-

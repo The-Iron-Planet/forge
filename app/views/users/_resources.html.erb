@@ -1,27 +1,38 @@
 <div class="scroll-container">
-  <% @resources.each do |resource| %>
-    <a href='/resources/<%= resource.id %>' class='dashboard-box-link'>
-      <div class="resource-block">
-         <div class="resource-post-image">
-           <% if resource.curriculum.nickname == "Rails" %>
-             <div>
-               <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
-             </div>
-              <% elsif resource.curriculum.nickname == "Python" %>
-             <div>
-               <%= image_tag("data-science-icon.png", size: "80x80") %>
-             </div>
-           <% elsif resource.curriculum.nickname == "Front End" %>
-             <div>
-               <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
-             </div>
-           <% end %>
-         </div>
-        <p class="dashboard-event-title"><%= resource.title %></p>
-        <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
-        <p class="dashboard-event-details event-details-spacing"><%= truncate( resource.description, length: 143) %></p>
-        <!--<p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>-->
-      </div>
-    </a>
+  <% if @resources.blank? %>
+    <div class="resource-block">
+       <div class="resource-post-image">
+
+       </div>
+      <p class="dashboard-event-title">Sorry, no one has posted any resources that match your preferences :-( </p>
+      <p class="dashboard-event-details">Please search the resources page to find enlightenment in other areas.</p>
+      <p class="dashboard-event-details event-details-spacing"></p>
+    </div>
+  <% else %>
+    <% @resources.each do |resource| %>
+      <a href='/resources/<%= resource.id %>' class='dashboard-box-link'>
+        <div class="resource-block">
+           <div class="resource-post-image">
+             <% if resource.curriculum.nickname == "Rails" %>
+               <div>
+                 <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
+               </div>
+                <% elsif resource.curriculum.nickname == "Python" %>
+               <div>
+                 <%= image_tag("data-science-icon.png", size: "80x80") %>
+               </div>
+             <% elsif resource.curriculum.nickname == "Front End" %>
+               <div>
+                 <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
+               </div>
+             <% end %>
+           </div>
+          <p class="dashboard-event-title"><%= resource.title %></p>
+          <p class="dashboard-event-details"><%= resource.curriculum.nickname %></p>
+          <p class="dashboard-event-details event-details-spacing"><%= truncate( resource.description, length: 143) %></p>
+          <!--<p class="dashboard-event-details"><%= resource.website_html unless resource.website.blank? %></p>-->
+        </div>
+      </a>
+    <% end %>
   <% end %>
 </div>
