@@ -1,17 +1,7 @@
 // Place all the styles related to the Resources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.event-bk{
-  border: black solid thin;
-  margin: 10px;
-  width: 450px;
-  height: 300px;
-// display: inline-block;
-  float: left;
-    // direction:rtl;
-  overflow-y: scroll;
-  text-align: left;
-}
+
 .resources-card {
   display: inline-block;
   text-align: left;
@@ -42,9 +32,7 @@
 // }
 //
 
-.events-index-header{
-margin-top: 30px;
-}
+
 .title{
   display: inline-block;
   float: left;
