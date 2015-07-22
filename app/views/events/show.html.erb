@@ -23,7 +23,7 @@
               <div class="event-edit-delete-links">
                 <% if @event.user_id == current_user.id %>
                   <%= link_to '<i class="fa fa-pencil" title="Event"></i>'.html_safe,
-                      edit_resource_path(@event) %>
+                      edit_event_path(@event) %>
                   <%= link_to '<i class="fa fa-times" title="Delete"></i>'.html_safe,
                       @event, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>

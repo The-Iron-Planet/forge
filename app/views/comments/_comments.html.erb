@@ -19,8 +19,13 @@
             <%= distance_of_time_in_words(comment.created_at, Time.now) %>
           </span>
           <span class="text-muted">
-            <%= link_to '<i class="glyphicon glyphicon-pencil" title="Edit"></i>'.html_safe,
-                '#' if comment.user_id == current_user.id %>
+            <% if "#{comment.commentable_type.downcase}" == "event" %>
+              <%= link_to '<i class="fa fa-pencil" title="Edit"></i>'.html_safe,
+                  edit_event_comment_path(comment, event_id: commentable.id) %>
+            <% elsif "#{comment.commentable_type.downcase}" == "resource" %>
+              <%= link_to '<i class="fa fa-pencil" title="Edit"></i>'.html_safe,
+                  edit_resource_comment_path(comment, resource_id: commentable.id) %>
+            <% end %>
           </span>
         </div>
         <div class="panel-body">
