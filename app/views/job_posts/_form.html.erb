@@ -2,76 +2,76 @@
   <div class="row" id="job-post-form">
     <h2 id="job-post-modal-header">New Job Post</h2>
     <%= form_for(@job_post) do |f| %>
+  </div>
       <div class="row form-val">
         <%= render "shared/error_messages", :target => @job_post %>
       </div>
-      <div class="col-md-10 field">
-        <div class="modal-body">
-          <div class="job-post-list">
-            <div class="field">
-              <%= f.label :title, :class => "input-label" %><br>
-              <%= f.text_field :title, :class => "input-field" %>
-            </div>
-            <div class="field">
-              <%= f.label :company_name, :class => "input-label" %><br>
-              <%= f.text_field :company_name, :class => "input-field" %>
-            </div>
-            <div class="field">
-              <%= f.label :location, :class => "input-label" %><br>
-              <%= f.text_field :location, :class => "input-field" %>
-            </div>
-            <% if @job_post.expires_on && @job_post.expires_on < Date.today %>
+        <div class="col-md-12 field">
+          <div class="modal-body">
+            <div class="job-post-list">
               <div class="field">
-                <%= f.label :expires_on, "This post expired on", :class => "input-label" %><br>
-                <%= f.date_field :expires_on, :class => "input-field-dropdown"%>
+                <%= f.label :title, :class => "input-label" %><br>
+                <%= f.text_field :title, :class => "input-field" %>
               </div>
-            <% elsif @job_post.expires_on && @job_post.expires_on > Date.today%>
               <div class="field">
-                <%= f.label :expires_on, "This post will expire on", :class => "input-label" %><br>
-                <%= f.date_field :expires_on, :class => "input-field-dropdown" %>
+                <%= f.label :company_name, :class => "input-label" %><br>
+                <%= f.text_field :company_name, :class => "input-field" %>
+              </div>
+              <div class="field">
+                <%= f.label :location, :class => "input-label" %><br>
+                <%= f.text_field :location, :class => "input-field" %>
+              </div>
+              <% if @job_post.expires_on && @job_post.expires_on < Date.today %>
+                <div class="field">
+                  <%= f.label :expires_on, "This post expired on", :class => "input-label" %><br>
+                  <%= f.date_field :expires_on, :class => "input-field-dropdown"%>
+                </div>
+              <% elsif @job_post.expires_on && @job_post.expires_on > Date.today%>
+                <div class="field">
+                  <%= f.label :expires_on, "This post will expire on", :class => "input-label" %><br>
+                  <%= f.date_field :expires_on, :class => "input-field-dropdown" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="job-post-list2">
+            <div class="field">
+              <%= f.label :website, "Link to job description", :class => "input-label" %><br>
+              <%= f.text_field :website, :class => "input-field" %>
+            </div>
+            <div class="field">
+              <%= f.label :curriculum_id, "Which students would be the best fit for the position?", :class => "input-label" %><br>
+              <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, {include_blank: true},
+                  :class=>"input-field dropdown") %>
+            </div>
+            <div class="field">
+              <%= f.label :experience_desired, :class => "input-label input-label" %><br>
+              <span class="profile-details" style="color: #646769;">
+                <%= f.radio_button :experience_desired, "Junior Developer" , :class=>" radio-answer"%>Junior
+              </span>
+              <span class="profile-details" style="color: #646769;">
+                <%= f.radio_button :experience_desired, "Mid-Level", :class=>"radio-answer" %>Mid-Level
+              </span>
+              <span class="profile-details" style="color: #646769;">
+                <%= f.radio_button :experience_desired, "Senior Developer", :class=>"radio-answer" %>Senior
+              </span>
+            </div>
+
+            <% if @job_post.active != nil %>
+              <div class="field">
+                <%= f.label :active, "Is this Job Post active?", :class => "input-label" %><br>
+                <span class="profile-details" style="color: #646769;">
+                  <%= f.radio_button :active, true,:class=>"radio-answer"%>Yes
+                </span>
+                <span class="profile-details" style="color: #646769;">
+                  <%= f.radio_button :active, false %>No
+                </span>
               </div>
             <% end %>
           </div>
         </div>
-        <div class="job-post-list2">
-          <div class="field">
-            <%= f.label :website, "Link to job description", :class => "input-label" %><br>
-            <%= f.text_field :website, :class => "input-field" %>
-          </div>
-          <div class="field">
-            <%= f.label :curriculum_id, "Which students would be the best fit for the position?", :class => "input-label" %><br>
-            <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :name, {include_blank: true},
-                :class=>"input-field dropdown") %>
-          </div>
-          <div class="field">
-            <%= f.label :experience_desired, :class => "input-label input-label" %><br>
-            <span class="profile-details" style="color: #646769;">
-              <%= f.radio_button :experience_desired, "Junior Developer" , :class=>" radio-answer"%>Junior
-            </span>
-            <span class="profile-details" style="color: #646769;">
-              <%= f.radio_button :experience_desired, "Mid-Level", :class=>"radio-answer" %>Mid-Level
-            </span>
-            <span class="profile-details" style="color: #646769;">
-              <%= f.radio_button :experience_desired, "Senior Developer", :class=>"radio-answer" %>Senior
-            </span>
-          </div>
-
-          <% if @job_post.active != nil %>
-            <div class="field">
-              <%= f.label :active, "Is this Job Post active?", :class => "input-label" %><br>
-              <span class="profile-details" style="color: #646769;">
-                <%= f.radio_button :active, true,:class=>"radio-answer"%>Yes
-              </span>
-              <span class="profile-details" style="color: #646769;">
-                <%= f.radio_button :active, false %>No
-              </span>
-            </div>
-          <% end %>
-        </div>
-      </div>
       <div class="actions">
         <%= f.submit :class=> "btn ctr-btn", value: "Save Job Post", id: "save-job-post" %>
       </div>
     <% end %>
-  </div>
 </div>

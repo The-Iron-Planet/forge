@@ -254,12 +254,10 @@ btn-login {
   $font-size: 1em;
   padding: 10px 14px;
   background-color: $add-btn-color-light;
-  // margin-right: auto;
   border-radius: $corners;
   font-family: $font;
   text-decoration: none;
   border: 1px solid $add-btn-color-light;
-  // position: fixed;
   z-index: 500;
   float: right;
   margin-right: 25px;
@@ -275,17 +273,17 @@ btn-login {
 .btn-add-record-long-resources {
   color: $white;
   $font-size: 1em;
-  padding: 10px 14px;
+  height: 50px;
+  width: 50px;
+  padding: 14px 14px;
   background-color: $add-btn-color-light;
-  // margin-right: auto;
   border-radius: $corners;
   font-family: $font;
   text-decoration: none;
   border: 1px solid $add-btn-color-light;
-  // position: fixed;
   z-index: 500;
   float: right;
-  margin-right: 25px;
+  margin-top: -60px;
 }
 
 .btn-add-record-long-resources:hover{
@@ -294,5 +292,3 @@ btn-login {
   color: $white;
   text-decoration: none;
 }
-
-
