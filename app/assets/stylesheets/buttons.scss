@@ -247,3 +247,50 @@ btn-login {
   color: $white;
   text-decoration: none;
 }
+
+.btn-add-record-long {
+  color: $white;
+  $font-size: 1em;
+  padding: 10px 14px;
+  background-color: #f29c3a;
+  // margin-right: auto;
+  border-radius: $corners;
+  font-family: $font;
+  text-decoration: none;
+  border: 1px solid #f29c3a;
+  // position: fixed;
+  z-index: 500;
+  float: right;
+  margin-right: 25px;
+}
+
+.btn-add-record-long:hover{
+  background-color: orange;
+  border-color: orange;
+  color: $white;
+  text-decoration: none;
+}
+
+.btn-add-record-long-resources {
+  color: $white;
+  $font-size: 1em;
+  padding: 10px 14px;
+  background-color: #f29c3a;
+  // margin-right: auto;
+  border-radius: $corners;
+  font-family: $font;
+  text-decoration: none;
+  border: 1px solid #f29c3a;
+  // position: fixed;
+  z-index: 500;
+  float: right;
+  margin-right: 25px;
+}
+
+.btn-add-record-long-resources:hover{
+  background-color: orange;
+  border-color: orange;
+  color: $white;
+  text-decoration: none;
+}
+
