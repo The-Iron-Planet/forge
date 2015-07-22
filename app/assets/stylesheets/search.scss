@@ -84,7 +84,7 @@
   display: inline-block;
   -webkit-appearance:none;
   outline: none;
-  background-color: $accent-color-dark;
+  background-color: $search-btn-color-light;
   color: $white;
   font: $font;
   height: 50px;
@@ -93,7 +93,7 @@
   border: none;
 }
 .search-button:hover {
-  background-color: $accent-color-dark;
+  background-color:  $search-btn-color-dark;
 }
 
 

@@ -228,22 +228,25 @@ btn-login {
 .btn-add-record-long-jobs {
   color: $white;
   $font-size: 1em;
-  padding: 10px 14px;
-  background-color: #f29c3a;
+  padding: 14px 14px;
+  // background-color: #f29c3a;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font;
   text-decoration: none;
-  border: 1px solid #f29c3a;
+
+  // border: 1px solid #f29c3a;
   // position: fixed;
   z-index: 500;
   float: right;
   margin-right: 25px;
+  width: 20px;
+  height: 20px;
 }
 
 .btn-add-record-long-jobs:hover{
-  background-color: orange;
-  border-color: orange;
+  background-color: $add-btn-color-dark;
+  border-color: $add-btn-color-dark;
   color: $white;
   text-decoration: none;
 }
@@ -252,12 +255,12 @@ btn-login {
   color: $white;
   $font-size: 1em;
   padding: 10px 14px;
-  background-color: #f29c3a;
+  background-color: $add-btn-color-light;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font;
   text-decoration: none;
-  border: 1px solid #f29c3a;
+  border: 1px solid $add-btn-color-light;
   // position: fixed;
   z-index: 500;
   float: right;
@@ -265,8 +268,8 @@ btn-login {
 }
 
 .btn-add-record-long:hover{
-  background-color: orange;
-  border-color: orange;
+  background-color: $add-btn-color-dark;
+  border-color: $add-btn-color-dark;
   color: $white;
   text-decoration: none;
 }
@@ -275,22 +278,22 @@ btn-login {
   color: $white;
   $font-size: 1em;
   padding: 10px 14px;
-  background-color: #f29c3a;
+  background-color: $add-btn-color-light;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font;
   text-decoration: none;
-  border: 1px solid #f29c3a;
+  border: 1px solid $add-btn-color-light;
   // position: fixed;
   z-index: 500;
   float: right;
   margin-right: 25px;
-}
-
-.btn-add-record-long-resources:hover{
-  background-color: orange;
-  border-color: orange;
-  color: $white;
   text-decoration: none;
 }
 
+.btn-add-record-long-resources:hover{
+  background-color: $add-btn-color-dark;
+  border-color: $add-btn-color-dark;
+  color: $white;
+  text-decoration: none;
+}

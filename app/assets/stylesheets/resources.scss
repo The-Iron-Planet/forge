@@ -7,7 +7,6 @@
   text-align: left;
   margin: 0 auto;
   width: 100%;
-  overflow-y: scroll;
   margin-bottom: 20px;
   min-width: 300px;
   margin-top: 20px;
@@ -50,9 +49,12 @@
 
 .fa-plus {
   color: white;
-  background-color: #CE8531;
-  border: 1px solid #CE8531;
-
+  background-color: $add-btn-color-light;
+  border: 1px solid $add-btn-color-light;
+  :hover {
+    background-color: $add-btn-color-dark;
+    border: 1px solid $add-btn-color-dark;
+  }
 }
 
 #resource-list {
