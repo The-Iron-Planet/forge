@@ -1,30 +1,32 @@
 <div class="events-background-color">
 
   <% @events.each do |event| %>
-    <div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-10">
-    <div class="card">
-      <div class="container event-card">
-        <div class="collapse-card ">
-          <div class="collapse-card__heading event-heading ">
-            <h4 class="collapse-card__title">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="card">
+        <div class="container event-card">
+          <div class="collapse-card ">
+            <div class="collapse-card__heading event-heading ">
+              <h4 class="collapse-card__title">
                 <% if event.uploaded_file_file_name.nil? %>
                 <%= image_tag "event_default.png", size: "100x100", :class=>"default-img event-list-img" %>
                 <% else %>
                 <%= image_tag event.uploaded_file(:square), :class=>"event-list-img" %>
                 <% end %>
 
-              <div class="event-list-content">
-                <h4 class="event-list-details"><%= event.title %></h4>
+                <div class="event-list-content">
+                  <h4 class="event-list-details"><%= event.title %></h4>
                 </br>
                 <span class="event-list-details"><%= event.event_date  %></span>
                 <span class="event-pipe">
                   |
                 </span>
-                <span class="event-list-details"><%= event.event_time %></p></br>
-                <p class="event-list-details"><%= link_to "View More", event_path(event) %></p></br>
-              </div>
+                <span class="event-list-details"><%= event.event_time %></p>
+              </br>
+              <p class="event-list-details"><%= link_to "View More", event_path(event) %></p>
+            </br>
+          </div>
 
           <div class="event-listing-thumbnail">
             <div class="posted-by">
@@ -45,16 +47,16 @@
         </h4>
       </div>
 
-        <div class="collapse-card__body event-details">
+      <div class="collapse-card__body event-details">
         xon;akfjslfkjls;kbd
-        </div>
-        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-      <div class="col-md-1"></div>
+<div class="col-md-1"></div>
 
-    </div>
-    </div>
-  <% end %>
+</div>
+</div>
+<% end %>
 </div>
