@@ -9,43 +9,28 @@
         <div class="collapse-card resource-card-header">
           <div class="collapse-card__heading job-heading">
             <h4 class="collapse-card__title ">
-
               <div class="resource-post-image-indexpg">
-                <% if resource.curriculum.nickname == "Rails" %>
+                  <% if resource.curriculum.nickname == "Rails" %>
                 <div>
                   <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
                 </div>
-                <% elsif resource.curriculum.nickname == "Python" %>
+                  <% elsif resource.curriculum.nickname == "Python" %>
                 <div>
                   <%= image_tag("data-science-icon.png", size: "80x80") %>
                 </div>
-                <% elsif resource.curriculum.nickname == "Front End" %>
+                  <% elsif resource.curriculum.nickname == "Front End" %>
                 <div>
                   <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
                 </div>
-                <% end %>
+                  <% end %>
               </div>
-              <div class=" resource-img">
-                <% if resource.user.uploaded_file_file_name.nil? %>
-                <div>
-<!-- <%=link_to image_tag("default_pic.png", size: "50x50"), "users/#{resource.user_id}" %> -->
-
-                </div>
-                <% else %>
-                <div>
-<!-- <%=link_to image_tag(resource.user.uploaded_file(:thumb)),"users/#{resource.user_id}" %> -->
+              <div class= "resource-img">
                   <%=link_to resource.user.full_name, "/users/#{resource.user_id}" %>
-                </div>
-                <% end %>
               </div>
               <div class="resource-header">
                 <h4 class="events-index-header">
                   <%= resource.title %>
                 </h4>
-<!-- <p class="curriculum">
-                    <%= resource.curriculum.nickname %>
-                  </p> -->
-
               </div>
             </h4>
           </div>
@@ -77,5 +62,4 @@
     <div class="col-md-1"></div>
   </div>
   <% end %>
-
 </div>
