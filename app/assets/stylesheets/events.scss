@@ -226,11 +226,6 @@ display: inline-block;
   margin: 0 auto;
   text-align: center;
   background-color: #d3d5d7;
-
-
-
-
-
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -238,7 +233,6 @@ display: inline-block;
   background-color: #d3d5d7;
   padding-top: 30px;
   padding-bottom: 30px;
-
 }
 
 .my-event-header {
@@ -254,12 +248,9 @@ display: inline-block;
   // color: $light-gray;
   display: inline-block;
   float: left;
-padding: 30px;
-width: 200;
-height: 200;
-
-
-
+  padding: 30px;
+  width: 200;
+  height: 200;
 }
 
 .events-delete{
@@ -268,17 +259,15 @@ height: 200;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
-
 }
 
-.events-edit{
+.events-edit {
   // margin-top: -3em;
   // margin-right: 2.2em;
   display: inline-block;
   float: right;
   padding: 1em;
   color: $dark-gray !important;
-
 }
 
 .events-card,
@@ -291,8 +280,6 @@ height: 200;
   margin-bottom: 20px;
   min-width: 300px;
   // border-bottom: solid 10px #b0c5cb;
-
-
 }
 
 
@@ -336,7 +323,7 @@ height: 200;
 // .event-page-heading{
 //   position: fixed;
 //   z-index: 10;
-// padding-top: 150px;
+//  padding-top: 150px;
 // top: 0;
 // background-color: $white;
 // box-shadow: 0 10px 50px $white;
@@ -457,12 +444,28 @@ height: 200;
 
 
 .event-card {
-
-  margin-left: 0 auto;
+  margin-left: 20px;
   margin-right: auto;
   color: $dark-gray;
   background-color: $white;
   // text-align: center;
   margin-top: 30px;
   margin-bottom: 30px;
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 60%;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  min-width: 300px;
+}
+
+#event-list {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.events-head-text {
+  margin-left: 15px;
+  margin-top: -28px;
 }
