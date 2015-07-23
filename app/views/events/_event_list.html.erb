@@ -7,7 +7,7 @@
         <div class="container event-card">
           <div class="collapse-card ">
             <div class="collapse-card__heading event-heading ">
-              <h4 class="collapse-card__title">
+              <div class="collapse-card__title">
                 <% if event.uploaded_file_file_name.nil? %>
                 <%= image_tag "event_default.png", size: "100x100", :class=>"default-img event-list-img" %>
                 <% else %>
@@ -42,7 +42,7 @@
                       <%= link_to '<i class="glyphicon glyphicon-remove  resources-delete" title="Delete Event"></i>'.html_safe,
                       event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
                 </div>
-              </h4>
+              </div>
             </div>
 
               <div class="collapse-card__body event-details">
@@ -57,6 +57,6 @@
 
     </div>
     <div class="col-md-1"></div>
-<% end %>
   </div>
+  <% end %>
 </div>

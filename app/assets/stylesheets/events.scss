@@ -73,8 +73,8 @@
 }
 
 .event-list-img {
-  float: left;
   margin: 20px 40px 25px 35px;
+  float: left;
   width: 100px;
   height: 100px;
 }
@@ -115,7 +115,7 @@
 // }
 .event-listing-thumbnail {
   display: inline-block;
-  float: left;
+  // float: right;
   // margin: 20px 35px 25px 40px;
   width: 60px;
   height: 60px;
@@ -228,4 +228,8 @@
 .event-edit-delete-links {
   display: inline-block;
   font-size: 1.2em;
+}
+
+.events-head-text {
+  margin-top: -25px;
 }
