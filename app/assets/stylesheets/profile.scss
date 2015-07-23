@@ -144,7 +144,7 @@ z-index: 10;
   margin-top: 15px;
   margin-right: 30px;
   margin-left: 30px;
-  padding: 15px;
+
 }
 
 .input-field-company {
@@ -365,33 +365,37 @@ margin: 0;
   // padding-right: 5px;
 }
 
+
 .work-history {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: 15px;
+  margin-left: 25px;
+  width: 200px;
   // margin: 0 auto;
 }
 
-.profile-name-header {
-  margin-top: 8px;
-  margin-bottom: 0px;
-  // display: inline-block;
-margin-left: 15px;
-}
+
 
 #user-profile-tiy-relation{
   margin-bottom: 5px;
   // padding-left: 10px;
   // display: inline-block;
-margin-left: 15px;
+// margin-left: 15px;
 }
 
-
+.profile-page-img{
+  max-width: 100%;
+  height: auto;
+}
 .contact-info {
   font-size: 0.95em;
   color: #383838;
   text-decoration: none;
-margin-left: 15px;
+padding-right: 10px;
+
+display: inline-block;
+float: left;
+width: 240px;
 }
 
 .position-block {
@@ -447,5 +451,48 @@ margin-bottom: 10px;
   margin-top: -205px;
 }
 
+
+
+
 #directory-search-results {
+}
+
+
+
+.profile-name-header {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  display: inline-block;
+// margin-left: 15px;
+}
+.profile-page-icons{
+  // display: inline-block;
+  // float: left;
+  padding-right: 5px;
+// margin-left: 15px;
+
+}
+
+.profile-work-history{
+
+}
+#profile-page-name{
+  // margin-left: 15px;
+}
+
+#profile-page-relation{
+  // margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.profile-page-icons{
+  // margin-left: 15px;
+}
+.align-profile-page-map{
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+.align-profile-page-slack{
+  padding-right: 4px;
 }

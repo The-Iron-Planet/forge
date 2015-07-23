@@ -30,7 +30,7 @@
 
           <div class="event-listing-thumbnail">
             <div id="posted-by">
-              <p >Posted by</span>
+              <p >Posted by</p>
               <% if event.user.uploaded_file_file_name.nil? %>
               <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{event.user_id}" %>
               <% else %>

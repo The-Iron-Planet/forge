@@ -3,6 +3,7 @@
 
 
 .btn {
+
   font-size: $h4;
   border-radius: $corners;
   font-family: $font;
@@ -28,7 +29,7 @@
   margin-left: 70%;
   // margin-right: auto;
   border-radius: $corners;
-  font-family: $font;
+
   text-decoration: none;
   border: 1px solid $accent-color-light;
   display: inline-block;
@@ -145,6 +146,7 @@ btn-login {
   text-decoration: none;
   border: 1px solid $accent-color-light;
   display: inline-block;
+  float: left;
 }
 
 .btn-edit-profile:hover{
@@ -166,7 +168,7 @@ btn-login {
   background-color: $accent-color-light;
   margin-top: 10px;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 42px;
   // margin-right: auto;
   border-radius: $corners;
   font-family: $font-italic;
@@ -256,7 +258,7 @@ btn-login {
   padding: 10px 14px;
   background-color: $add-btn-color-light;
   border-radius: $corners;
-  font-family: $font;
+  // font-family: $font;
   text-decoration: none;
   border: 1px solid $add-btn-color-light;
   z-index: 500;
