@@ -10,14 +10,12 @@
 @import 'buttons';
 @import 'fonts';
 @import 'stylesheet';
-.event-block {
 
-  // background-color: blue;
+.event-block {
   min-width: 320px;
   background-color: $events-color;
   text-align: center;
   padding: 10px;
-
   margin: 10px 20px;
   color: $white;
 }
@@ -26,6 +24,7 @@
   padding-top: 10px;
   margin: 0;
   font-family: $font-bold;
+
   // display: inline-block;
   // float: left;
 }
@@ -49,20 +48,9 @@
 
 // events-list ---------------------------------
 .card {
-  margin: 0 auto;
   text-align: center;
-}
-.event-card {
+  margin-top: 30px;
 
-  // display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  width: 80%;
-
-  // overflow-y: scroll;
-  margin-bottom: 20px;
-
-  // min-width: 300px;
 }
 .events-background-color {
   margin: 0 auto;
@@ -70,19 +58,7 @@
   background-color: #d3d5d7;
   padding-top: 30px;
 }
-.event-bk {
-  border: black solid thin;
-  margin: 10px;
-  width: 450px;
-  height: 300px;
 
-  // display: inline-block;
-  float: left;
-
-  // direction:rtl;
-  overflow-y: scroll;
-  text-align: left;
-}
 .events-index-header {
   margin-top: 30px;
 }
@@ -90,58 +66,60 @@
   display: inline-block;
   text-align: left;
   margin: 0 auto;
-  width: 80%;
-  overflow-y: scroll;
-  margin: 30px;
+  width: 100%;
+  margin-bottom: 20px;
   min-width: 300px;
+  margin-top: 20px;
 }
+
 .event-list-img {
+  float: left;
+  margin: 20px 40px 25px 35px;
+  width: 100px;
+  height: 100px;
+}
+#event-header {
+  text-align: left;
+  display: inline-block;
+  float: left;
+}
+#event-date {
+  display: inline-block;
+  float: left;
+  font-family: $sans-serif;
+  padding-right: 1em;
+  vertical-align: text-top;
+}
+#pipe{
+  display: inline-block;
+  float: left;
+  font-family: $sans-serif;
+  padding-right: 1em;
   color: $light-gray;
-  display: inline-block;
-  float: left;
-}
-.event-list-content {
-  text-align: left;
-  display: inline-block;
-  float: left;
-}
-.event-list-details {
-  color: $dark-gray;
-
-  // padding-bottom: 10px;
-  // width: 400px;
-  // width: 280px;
-  // min-width: 300px;
-  display: inline-block;
-  text-align: left;
-  margin: 0 10px 0 30px;
-  padding: 1px 0;
 }
 
-.event-pipe{}
-// .event-small-font {
-//   padding: 0;
-//   margin: 0 0 5px 0;
-//   font-family: $sans-serif;
-//   font-size: $small-font;
-//   text-align: right;
+
+#event-list-details{
+  display: inline-block;
+  float: left;
+  font-family: $sans-serif;
+}
+
+// #posted-by {
+//   display: inline-block;
+// float: left;
+// margin-top: -50px;
+//   // text-align: right;
+//   // display: inline;
+//   // width: 100%;
 // }
-.posted-by {
-  display: inline-block;
-
-  // text-align: right;
-  // display: inline;
-  // width: 100%;
-}
 .event-listing-thumbnail {
   display: inline-block;
-  text-align: right;
-  padding: none;
-  float: right;
-  margin: 0;
-  width: 50px;
-  height: 50px;
-  font-size: 1em;
+  float: left;
+  // margin: 20px 35px 25px 40px;
+  width: 60px;
+  height: 60px;
+
 }
 .events-edit {
 
@@ -152,8 +130,7 @@
   padding-right: 0;
   color: $dark-gray !important;
 }
-.events-card,
-.job-card {
+.events-card{
   display: inline-block;
   text-align: left;
   margin: 0 auto;
@@ -194,16 +171,6 @@
   margin-top: 60px;
 }
 
-
-.event-list-img {
-
-  // color: $light-gray;
-  display: inline-block;
-  float: left;
-  // padding: 30px;
-  width: 100;
-  height: 100;
-}
 .events-delete {
 
   // margin-top: -3em;
@@ -221,6 +188,7 @@
   padding: 1em;
   color: $dark-gray !important;
 }
+
 .events-card,
 .job-card {
   display: inline-block;
@@ -234,17 +202,18 @@
 
 .event-show-box {
   height: auto;
+
   // margin-top: 15px;
 }
 .event-show-title {
   margin-left: 60px;
-
   font-family: $font-bold;
   text-align: left;
   color: #3b3b3b;
 }
 .event-show-details {
-margin-left: 60px;
+  margin-left: 60px;
+
   // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   // color: #3B3B3B;
   // font-size: 1em;
@@ -259,14 +228,4 @@ margin-left: 60px;
 .event-edit-delete-links {
   display: inline-block;
   font-size: 1.2em;
-}
-.event-card {
-  margin-left: 0 auto;
-  margin-right: auto;
-  color: $dark-gray;
-  background-color: $white;
-
-  // text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }

@@ -99,6 +99,12 @@ z-index: 10;
   text-align: center;
 }
 
+
+.user-contact-info{
+  display: inline-block;
+  float: left;
+  margin-left:20px;
+}
 .profile-name{
 
   margin: 20px 0 0px 0;
@@ -138,6 +144,7 @@ z-index: 10;
   margin-top: 15px;
   margin-right: 30px;
   margin-left: 30px;
+  padding: 15px;
 }
 
 .input-field-company {
@@ -221,6 +228,7 @@ z-index: 10;
   background-color: white;
   margin: 0 auto;
   margin-bottom: 10px;
+  // margin
   line-height: 15px;
 }
 
@@ -353,47 +361,51 @@ margin: 0;
 .fa-external-link-square, .fa-rss-square,
 .fa-slack, .fa-map-marker, .fa-pencil, .fa-times {
   color: grey;
+  // padding-left: 15px;
+  // padding-right: 5px;
 }
 
 .work-history {
-  margin-top: 8px;
-  margin-bottom: 0px;
-  margin-left: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  // margin: 0 auto;
 }
 
 .profile-name-header {
   margin-top: 8px;
   margin-bottom: 0px;
-
+  // display: inline-block;
+margin-left: 15px;
 }
 
 #user-profile-tiy-relation{
   margin-bottom: 5px;
-  padding-left: 10px;
+  // padding-left: 10px;
+  // display: inline-block;
+margin-left: 15px;
 }
-//
-// .row, .work-history-row {
-//   margin-left: 5px;
-//   margin-right: 5px;
-// }
+
 
 .contact-info {
   font-size: 0.95em;
   color: #383838;
   text-decoration: none;
-
+margin-left: 15px;
 }
 
 .position-block {
   // position: relative;
   min-width: 320px;
-  // width: 320px;
+  width: 340px;
   background-color: white;
   text-align: left;
   padding: 10px;
-  margin: 10px 20px;
+  // margin: 10px 20px;
   color: black;
   height: auto;
+  margin: 0 auto;
+margin-bottom: 10px;
 }
 
 .position-title {
@@ -428,6 +440,7 @@ margin: 0;
 #profile-show-box {
   margin-bottom: 15px;
   padding: 10px;
+
 }
 
 .color-list {

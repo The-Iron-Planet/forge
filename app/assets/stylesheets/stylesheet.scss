@@ -13,9 +13,9 @@ $form: #92aaff;
 $accent-color: #00b796;
 $accent-color-light: #32c5ab;
 $accent-color-dark: #009278;
-$search-btn-color-light:#4279b4;
-$search-btn-color-dark:#3b6ca2;
-$add-btn-color-light:#32c5ab;
+$search-btn-color-light: #e59400;
+$search-btn-color-dark: #cc8400;
+$add-btn-color-light: #32c5ab;
 $add-btn-color-dark: #009278;
 $link: #158cbd;
 $link-hover: grey;
@@ -43,8 +43,9 @@ h1 {
 }
 h2 {
   font-family: $font-bold;
+
   // font-family: $font-medium;
-  margin: 20px 0 20px;
+  margin: 20px 0;
   text-align: left;
   padding-top: 60px;
   color: #28394c;
@@ -97,7 +98,7 @@ input {
   width: 350px;
 
   // font-size: 16px;
-  padding: 0 6px 6px 6px;
+  padding: 0 6px 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
   margin: 5px 0 20px;
@@ -111,7 +112,7 @@ input {
 #input-lable,
 .input-label {
   width: 350px;
-  padding: 6px 0 0 0;
+  padding: 6px 0 0;
   border-style: none;
   border-radius: $corners;
   text-align: left;
@@ -122,7 +123,6 @@ input {
 .input-links {
   width: 300px;
 }
-
 .link {
   color: $link;
 }
@@ -153,6 +153,7 @@ input {
   font-style: italic;
   color: red;
 }
+
 // col-md-3 {
 //   border: 1px black solid;
 // }
@@ -194,7 +195,6 @@ td {
 .links {
   text-align: center;
 }
-
 .radio-button {
   display: inline-block;
   padding: 1em;
@@ -245,20 +245,17 @@ td {
   width: 800px;
   background-color: $events-color;
 }
-
-
-
 .question-label {
   font-size: 0.8em;
-  padding: 0 0 10px 0;
+  padding: 0 0 10px;
   border-style: none;
   border-radius: $corners;
   text-align: left;
+
   // font-size: 0.8em;
   color: $dark-gray;
-  margin: 6px 0 0 0;
+  margin: 6px 0 0;
 }
-
 .radio-answer[type="radio"] {
   margin: 0 0.5em 0.75em;
   display: inline-block;
@@ -266,71 +263,58 @@ td {
   font-size: 0.8em;
   padding: 6px;
   color: $dark-gray;
-  font:$sans-serif;
+  font: $sans-serif;
 }
 .input-field-dropdown[type="date"] {
-
-  padding: 0 6px 6px 6px;
+  padding: 0 6px 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
   margin: 5px 0 20px;
   background-color: $light-gray;
   color: $dark-gray;
 }
-
-.input-field [type="select"]{
-  padding: 0 6px 6px 6px;
+.input-field [type="select"] {
+  padding: 0 6px 6px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
   margin: 5px 0 20px;
   background-color: $light-gray;
   color: $dark-gray;
-
 }
-
 .field_with_errors {
   input {
     border-color: #a94442;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   }
   label {
     color: #a94442;
   }
 }
-
 .login-error {
   color: #a94442;
 }
 
-
-
-
 // events jobs and resources
-
 .events-background-color,
 .resources-background-color,
-.jobs-background-color{
+.jobs-background-color {
   text-align: center;
   background-color: #d3d5d7;
   padding-top: 30px;
+
   // margin-top: 180px;
 }
-
-.resources-card,
-.event-card,
-.job-card {
-  display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  width: 80%;
-  margin-bottom: 20px;
-  min-width: 300px;
-}
-
-
-.posted-by{
+// .resources-card,
+// .event-card,
+// .job-card {
+//   text-align: left;
+//   margin: 0 auto;
+//   width: 80%;
+//   min-width: 300px;
+// }
+.posted-by {
   display: inline-block;
   text-align: right;
-  font-size:.6em;
+  font-size: 0.6em;
 }

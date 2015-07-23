@@ -18,7 +18,7 @@
 @import 'fonts';
 @import 'fontastic';
 @import 'stylesheet';
-
+@import "positions-collapse";
 @import 'search';
 @import 'login';
 @import 'navbar';
@@ -26,12 +26,13 @@
 @import 'profile';
 @import 'campuses';
 @import "events";
-@import "job_posts";
+
 @import "variables";
 @import "mixins";
 @import "component";
-@import "positions-collapse";
+
 @import "resources";
 @import "dashboard";
 @import "font-awesome";
 @import 'magnific-popup';
+@import "job_posts";
