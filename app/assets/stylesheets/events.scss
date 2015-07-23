@@ -17,7 +17,6 @@
   background-color: $events-color;
   text-align: center;
   padding: 10px;
-
   margin: 10px 20px;
   color: $white;
 }
@@ -26,6 +25,7 @@
   padding-top: 10px;
   margin: 0;
   font-family: $font-bold;
+
   // display: inline-block;
   // float: left;
 }
@@ -51,18 +51,6 @@
 .card {
   margin: 0 auto;
   text-align: center;
-}
-.event-card {
-
-  // display: inline-block;
-  text-align: left;
-  margin: 0 auto;
-  width: 80%;
-
-  // overflow-y: scroll;
-  margin-bottom: 20px;
-
-  // min-width: 300px;
 }
 .events-background-color {
   width: 80%;
@@ -92,7 +80,6 @@
   text-align: left;
   margin: 0 auto;
   width: 80%;
-  overflow-y: scroll;
   margin: 30px;
   min-width: 300px;
 }
@@ -108,18 +95,15 @@
 }
 .event-list-details {
   color: $dark-gray;
-
-  // padding-bottom: 10px;
-  // width: 400px;
-  // width: 280px;
-  // min-width: 300px;
   display: inline-block;
   text-align: left;
   margin: 0 10px 0 30px;
   padding: 1px 0;
 }
+.event-pipe {
 
-.event-pipe{}
+}
+
 // .event-small-font {
 //   padding: 0;
 //   margin: 0 0 5px 0;
@@ -196,13 +180,12 @@
 .my-event-header {
   margin-top: 60px;
 }
-
-
 .event-list-img {
 
   // color: $light-gray;
   display: inline-block;
   float: left;
+
   // padding: 30px;
   width: 100;
   height: 100;
@@ -236,139 +219,20 @@
 
   // border-bottom: solid 10px #b0c5cb;
 }
-
-// event details page
-// .col-md-6{
-//   // background-color: blue;
-//   // height: 700px;
-//
-// }
-//
-// .event-detail-page{
-//   display: inline-block;
-// float: left;
-//   margin: -30px 20px 20px 20px;
-//   padding: 20px;
-//
-// }
-//
-//
-// .detail-event-img{
-//   float: left;
-//   margin: 110px 20px 20px 100px;
-//   width: 100px;
-//   height: 100px;
-//   position: fixed;
-//   z-index: 10;
-//   // background-color: blue;
-// }
-//
-// .thumbnail-event-img{
-//   float: left;
-//   margin: 240px 20px 185px 120px;
-//   width: 50px;
-//   height: 50px;
-//   position: fixed;
-//   z-index: 10;
-//
-//
-// }
-//
-// .event-page-heading{
-//   position: fixed;
-//   z-index: 10;
-// padding-top: 150px;
-// top: 0;
-// background-color: $white;
-// box-shadow: 0 10px 50px $white;
-//
-//
-// }
-// .indiv-event-details{
-//   width: 600px;
-//   min-width: 300px;
-//   position: fixed;
-//   text-align: left;
-//     list-style-type: none;
-// margin-top: 110px;
-// margin-left: -40px;
-// margin-right: 40px;
-// font-size: $h4;
-//
-//   border-left: 10px solid $events-color;
-// // padding-left: -200px;
-//
-// }
-//
-//
-// .bold-sans-serif{
-//   font-family: $sans-serif-bold;
-// }
-//
-// .event-description{
-//   margin-top: 20px;
-//   margin-right: 40px;
-// }
-//
-// .event-details-edit-delete{
-//   float: right;
-//
-// }
-//
-// my events page on profile
-// .my-events-header{
-//   margin-left: 0;
-//   text-align: left;
-// }
-//  .event-list-heading{
-//     margin: -50px;
-//     height: 80px;
-//     z-index: 40;
-//     top: 0;
-//     right: 0;
-//     left: 0;
-//     padding-top: 180px;
-//     padding-bottom: 100px;
-//     // position: fixed;
-//     background-color: $white;
-//     min-width: 320px;
-//     min-height: 80px;
-// box-shadow: 0 10px 50px $white;
-//
-//
-// }
-// .dashboard-events-header {
-//   margin: 0 auto;
-//   width: 33.333%;
-//   height: 80px;
-//   z-index: 40;
-//   top: 0;
-//   right: 0;
-//   margin-top: -50px;
-//   padding-top: 180px;
-//   padding-bottom: 70px;
-//   position: fixed;
-//   background-color: $white;
-//   min-width: 320px;
-//   min-height: 80px;
-//   box-shadow: 0 10px 90px $white;
-// }
-// .scroll-container {
-//   margin-top: 90px;
-// }
 .event-show-box {
   height: auto;
+
   // margin-top: 15px;
 }
 .event-show-title {
   margin-left: 60px;
-
   font-family: $font-bold;
   text-align: left;
   color: #3b3b3b;
 }
 .event-show-details {
-margin-left: 60px;
+  margin-left: 60px;
+
   // font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   // color: #3B3B3B;
   // font-size: 1em;
@@ -383,14 +247,4 @@ margin-left: 60px;
 .event-edit-delete-links {
   display: inline-block;
   font-size: 1.2em;
-}
-.event-card {
-  margin-left: 0 auto;
-  margin-right: auto;
-  color: $dark-gray;
-  background-color: $white;
-
-  // text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
 }

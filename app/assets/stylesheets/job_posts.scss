@@ -6,31 +6,17 @@
 @import "fonts";
 @import "buttons";
 
-//
-//
-// .add-company{
-//   padding: 20px;
-// }
-.events-card,
+
 .job-card {
   display: inline-block;
   text-align: left;
   margin: 0 auto;
-  width: 100%;
-  overflow-y: scroll;
-  margin-bottom: 20px;
+  width: 80%;
+  margin: 30px;
   min-width: 300px;
-
-  // border-bottom: solid 10px #b0c5cb;
 }
 
-// .job-card{
-//   width: 100%;
-// }
-// .job-heading {
-//   margin: 0 auto;
-//   min-width: 300px;
-// }
+
 .job-header {
   display: inline-block;
 }
@@ -43,28 +29,17 @@
 .employer {
   display: inline-block;
   float: left;
-
-  // margin: 2px 0px 0px 0px;
-  // padding-bottom: 1em;
-  // padding-bottom: 0px;
-  // line-height: 1.5em;
 }
 .pipe {
   display: inline-block;
   float: left;
   padding: 0 0.5em;
-
-  // margin: 1px 0px 0px 0px;
   font-weight: lighter;
   color: $light-gray;
 }
 .employer-location {
   display: inline-block;
   float: left;
-
-  // margin: 2px 20px 0px 0px;
-  //   // padding-bottom: 0px;
-  //   // line-height: 1.5em;
 }
 .experience {
   display: inline-block;
@@ -72,14 +47,6 @@
   margin: -5px 0 20px;
 }
 
-// .img-and-name-box{
-//   width: 80px;
-//   height:100px;
-//   background-color: green;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
 .event-img,
 .job-img {
   float: left;
@@ -88,16 +55,6 @@
   height: 60px;
 }
 .jobs-name {
-
-  // display: inline-block;
-  // float: left;
-  // clear: both;
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // position: absolute;
-  // top: 50%;                         /* 3 */
-  // transform: translate(0, -50%)
 }
 .card {
   text-align: center;
@@ -131,9 +88,7 @@
   padding: 1em;
   color: $dark-gray !important;
 }
-.job-card {
-  margin: 0 auto;
-}
+
 .job-post-list {
   display: inline-block;
   vertical-align: top;
@@ -143,13 +98,7 @@
   vertical-align: top;
 }
 
-// #jobs-header{
-//   left: 0;
-//   right: 0;
-//   height: 500px;
-//   background-color: purple;
-// z-index: 0;
-// }
+
 #new-job-form {
   width: 50%;
 }
@@ -172,7 +121,7 @@
   margin: auto;
 }
 #save-job-post {
-  margin: 20px 20px 25px 15px;
+  margin: 20px 20px 25px 25px;
 }
 #job_post_curriculum_id {
   margin: auto;
@@ -181,21 +130,11 @@
   margin: auto;
 }
 
-// .jobs-header-box {
-//   width: 82%;
-//   // align-content: flex-end;
-//   margin: 0 auto;
-//   text-align: left;
-//   // background-color: red;
-// }
 #job-post-page-header {
   text-align: center;
   margin: auto;
 }
 
-// #job-post-list {
-//   // margin-top: 250px;
-// }
 #job-post-modal-header {
   text-align: left;
   padding-top: 0;
