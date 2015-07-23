@@ -3,7 +3,9 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <h2 class = "resources-head-text">Resources</h2>
-        <div><%= link_to '', new_resource_path, :class=>"fa fa-plus fa-lg btn-add-record-long-resources"%></div>
+        <%= link_to new_resource_path, :class=>"btn-add-record-long-resources" do %>
+          <span class = "fa fa-plus fa-lg"></span>
+        <% end %>
         <div class="well">
           <%= form_tag search_resources_path, remote: true do %>
           <%= text_field_tag "query", params[:query], class: "general-search-resources", placeholder: "Search"%>
