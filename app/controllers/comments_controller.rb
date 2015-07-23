@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user
     @comment.save
-    redirect_to @commentable, notice: "Your comment was succesfully posted."
+    redirect_to @commentable #, notice: "Your comment was succesfully posted."
   end
 
   def edit
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to @commentable, notice: 'Comment was successfully updated.'
+      redirect_to @commentable #, notice: 'Comment was successfully updated.'
     else
       render :edit
     end
