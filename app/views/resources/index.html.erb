@@ -6,7 +6,7 @@
         <div><%= link_to '', new_resource_path, :class=>"fa fa-plus fa-lg btn-add-record-long-resources"%></div>
         <div class="well">
           <%= form_tag search_resources_path, remote: true do %>
-          <%= text_field_tag "query", params[:query], class: "input-field-search general-search-resources search-well-resources", placeholder: "Search"%>
+          <%= text_field_tag "query", params[:query], class: "general-search-resources", placeholder: "Search"%>
           <%= button_tag "", type: "submit", class: "glyphicon glyphicon-search search-button" %>
           <% end %>
         </div>

@@ -1,35 +1,13 @@
 @import "stylesheet";
 
 
-// .search-bar {
-//   border-top: solid thin black;
-//   border-bottom: solid thin black;
-//   width: 100%;
-//   height: 60px;
-//   margin-bottom: 30px;
-//
-// }
-
 .search-box{
   top: 170px;
-  // margin-bottom: 250px;
-// left: 0;
-  // position: fixed;
-// z-index: 500;
-// border: none;
-
-  // height: 90px;
   border-radius: 4px 4px 4px 4px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.well {
-  // margin-top: 15px;
-  // margin-left: auto;
-  // margin-right: auto;
-  // margin-bottom: 10px;
-}
 
 .search {
   font: $font;
@@ -67,9 +45,6 @@
 
 .search-all{
   display: inline-block;
-
-
-// background-color: red;
 }
 .search::first-letter{
     background-color: $field-focus-gray;
@@ -95,9 +70,7 @@
 .align-search{
   display: inline;
   list-style-type: none;
-  // text-align: right;
-   list-style-position: inside;
-  // float: right;
+  list-style-position: inside;
   clear: none;
 }
 
@@ -113,7 +86,6 @@
 
 .search-boxes-bar {
   display: inline-block;
-  // margin-left: 100px;
   width: 500px;
 }
 
@@ -172,12 +144,7 @@
   margin-right: 10px;
 }
 
-.general-search-resources{
-  width: 80%;
-  height: 50px;
-  border-radius: 0;
-  margin-top: 27px;
-}
+
 
 .general-search-jobs{
   margin-top: -1%;
@@ -187,7 +154,6 @@
 .input-field-search {
     -webkit-appearance:none;
   outline: none;
-  // font-size: 16px;
   padding: 5px;
   border-style: none;
   border-radius: 4px 4px 4px 4px;
@@ -197,22 +163,43 @@
   color: $dark-gray
 }
 
-.search-boxes-bar-more {
-  display: inline-block;
-  margin-left: 60px;
+.general-search-resources{
+  @extend .input-field-search;
+  width: 80%;
+  height: 50px;
+  border-radius: 0;
+  // margin-top: 27px;
 }
 
+.input-field-search-jobs {
+  @extend .input-field-search;
+  // margin-bottom: 10px;
+  width: 70%;
+  height: 50px;
+}
+
+
 .resources-search-boxes-bar {
+  @extend .input-field-search;
   display: inline-block;
   width: 800px;
   height: 50px;
 }
+
+
 
 .job-search-boxes-bar {
   display: inline-block;
   width: 700px;
   height: 50px;
 }
+
+.search-boxes-bar-more {
+  display: inline-block;
+  margin-left: 60px;
+}
+
+
 
 .job-search-reg {
   @extend .search;
@@ -221,7 +208,7 @@
 }
 
 .search-margin {
-  margin-left: 25px;
+  margin-left: 50px;
 }
 
 .container-fluid{
@@ -230,7 +217,6 @@
 
 
 .directory-search{
-// background-color: orange;
     margin-top: 10px;
     right: 0;
     left: 0;
@@ -240,25 +226,7 @@
     z-index: 100;
     width: 90%;
     z-index: 100;
-// box-shadow: 0 20px 50px $white;
 }
-
-.input-field-search-jobs {
-    -webkit-appearance:none;
-  outline: none;
-  // font-size: 16px;
-  padding: 5px;
-  border-style: none;
-  border-radius: 4px 4px 4px 4px;
-  margin-left: 25px;
-  margin-bottom: 10px;
-  background-color: $light-gray;
-  color: $dark-gray;
-  margin-top: 1%;
-  width: 70%;
-  height: 50px;
-}
-
 
 
 
@@ -267,21 +235,16 @@ padding-top: 60px;
 }
 
 .jobs-search{
-// background-color: orange;
 margin-top: 10px;
-    // position: fixed;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
     width: 90%;
-    // z-index: 10;
-// box-shadow: 0 20px 50px $white;
 }
 
 .jobs-btn{
   padding-bottom: 50px;
-  // z-index: 100;
 }
 
 .well-short {
@@ -290,8 +253,6 @@ margin-top: 10px;
   margin-right: auto;
   width: 80%;
   height: 22%;
-  //margin: 0 auto;
-  // z-index: 10;
   margin-bottom: 10px;
   background-color: #F5F5F5;
   border: 1px solid #ECECEC;
@@ -302,8 +263,6 @@ margin-top: 10px;
   margin-right: auto;
   width: 78%;
   height: 100px;
-  //margin: 0 auto;
-  // z-index: 10;
   margin-bottom: 3px;
   background-color: #F5F5F5;
   border: 1px solid #ECECEC;
@@ -321,8 +280,6 @@ margin-top: 10px;
   margin-right: auto;
   width: 80%;
   height: 28%;
-  //margin: 0 auto;
-  // z-index: 10;
   margin-bottom: 10px;
   background-color: #F5F5F5;
   border: 1px solid #ECECEC;
@@ -338,8 +295,6 @@ margin-top: 10px;
   margin-right: auto;
   width: 97%;
   height: 110px;
-  //margin: 0 auto;
-  // z-index: 10;
   margin-bottom: 3px;
   background-color: #F5F5F5;
   border: 1px solid #ECECEC;
