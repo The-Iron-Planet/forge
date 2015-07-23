@@ -11,15 +11,15 @@
         </ul>
       </div>
     <% else %>
-      <div class="col-md-1"></div>
+      <div class="col-md-2"></div>
     <% end %>
     <div class="col-md-4 profile">
-      <div class="container-fluid">
+      <!-- <div class="container-fluid"> -->
         <div class="row" id="profile-show-box">
-          <div class="col-md-6">
-            <div class = "image-pic-down">
+          <div class="col-md-4">
+            <div class = "image-pic-down profile-page-img">
               <% if @user.uploaded_file_file_name.nil? %>
-                <div><%= image_tag "default_pic.png", size: "175x175" %></div>
+                <div><%= image_tag "default_pic.png", size: "175x175", :class=>"profile-page-img" %></div>
               <% else %>
                 <div><%= image_tag @user.uploaded_file(:square) %></div>
               <% end %>
@@ -31,41 +31,41 @@
               </div>
             <% end %>
           </div>
-          <div class="col-md-7 contact-info">
+          <div class="col-md-6 contact-info">
             <h3 class="profile-name-header"><%= @user.full_name %></h3>
             <!-- <div class = "first-name-bold"><strong><%= @user.full_name %></strong></div> -->
-            <div id="user-profile-tiy-relation"><%= @user.tiy_relation %></div>
+            <div id="user-profile-tiy-relation profile-page-relation"><%= @user.tiy_relation %></div>
             <% unless @user.current_city.blank? || @user.current_state.blank? %>
               <div>
-                <i class="fa fa-map-marker" title="Location"></i>
+                <i class="fa fa-map-marker profile-page-icons   align-profile-page-map" title="Location"></i>
                 <%= @user.current_location %>
               </div>
             <% end %>
             <div>
-              <i class="fa fa-envelope-square" title="Email"></i>
+              <i class="fa fa-envelope-square profile-page-icons" title="Email"></i>
               <%= @user.email %>
             </div>
             <% unless @user.github_profile.blank? %>
               <div>
-                <i class="fa fa-github-square" title="Github"></i>
+                <i class="fa fa-github-square profile-page-icons" title="Github"></i>
                 <%= link_to "#{@user.github_profile}", @user.github_link, target: "_blank" %>
               </div>
             <% end %>
             <% unless @user.twitter.blank? %>
               <div>
-                <i class="fa fa-twitter-square" title="Twitter"></i>
+                <i class="fa fa-twitter-square profile-page-icons" title="Twitter profile-page-icons"></i>
                 <%= link_to "@#{@user.twitter}", @user.twitter_link, target: "_blank" %>
               </div>
             <% end %>
             <% unless @user.slack_handle.blank? %>
               <div>
-                <i class="fa fa-slack" title="Slack"></i>
+                <i class="fa fa-slack align-profile-page-slack" title="Slack profile-page-icons"></i>
                 <%= "@#{@user.slack_handle}" %>
               </div>
             <% end %>
             <% unless @user.linked_in.blank? %>
               <div>
-                <i class="fa fa-linkedin-square" title="Linked In"></i>
+                <i class="fa fa-linkedin-square profile-page-icons" title="Linked In"></i>
                 <%= link_to @user.linked_in, @user.linked_in, target: "_blank" %>
               </div>
             <% end %>
@@ -77,7 +77,7 @@
             <% end %>
             <% unless @user.blog.blank? %>
               <div>
-                <i class="fa fa-rss-square" title="Blog"></i>
+                <i class="fa fa-rss-square " title="Blog"></i>
                 <%= link_to "Blog", @user.blog, target: "_blank" %>
               </div>
             <% end %>
@@ -89,7 +89,7 @@
             <% end %> -->
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
     <div class = "col-md-4 profile-work-history">
       <div class="row work-history-row">

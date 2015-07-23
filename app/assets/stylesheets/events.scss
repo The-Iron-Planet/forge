@@ -114,11 +114,13 @@
 //   // width: 100%;
 // }
 .event-listing-thumbnail {
-  display: inline-block;
+  // display: inline-block;
   // float: right;
   // margin: 20px 35px 25px 40px;
   width: 60px;
   height: 60px;
+  vertical-align: top;
+
 
 }
 .events-edit {
