@@ -53,7 +53,6 @@
 
 }
 .events-background-color {
-  width: 80%;
   margin: 0 auto;
   text-align: center;
   background-color: #d3d5d7;
@@ -157,12 +156,9 @@
   text-align: left;
 }
 .events-background-color {
-
-  // width: 100%;
   margin: 0 auto;
   text-align: center;
   background-color: #d3d5d7;
-  width: 80%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -170,6 +166,7 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
 .my-event-header {
   margin-top: 60px;
 }
@@ -190,6 +187,17 @@
   float: right;
   padding: 1em;
   color: $dark-gray !important;
+}
+
+.events-card,
+.job-card {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 70%;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  min-width: 300px;
 }
 
 .event-show-box {
