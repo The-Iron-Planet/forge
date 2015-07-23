@@ -5,62 +5,71 @@
 @import 'search';
 @import "fonts";
 @import "buttons";
+// @import "component";
+// @import "mixins";
 
+.card {
+  text-align: center;
+  margin-top: 20px;
+    overflow-y: none;
+}
 
 .job-card {
   display: inline-block;
   text-align: left;
   margin: 0 auto;
-  width: 80%;
-  margin: 30px;
+  width: 100%;
+  margin-bottom: 20px;
   min-width: 300px;
+  margin-top: 20px;
+
 }
 
-
-.job-header {
-  display: inline-block;
-}
-.title {
-  display: inline-block;
-  margin: 20px 30px 0 0;
-  font-family: $font-bold;
-  text-align: left;
-}
-.employer {
-  display: inline-block;
-  float: left;
-}
-.pipe {
-  display: inline-block;
-  float: left;
-  padding: 0 0.5em;
-  font-weight: lighter;
-  color: $light-gray;
-}
-.employer-location {
-  display: inline-block;
-  float: left;
-}
-.experience {
-  display: inline-block;
-  float: left;
-  margin: -5px 0 20px;
-}
-
-.event-img,
 .job-img {
   float: left;
   margin: 20px 40px 25px 35px;
   width: 60px;
   height: 60px;
 }
-.jobs-name {
+
+
+#title {
+  display: inline-block;
+  margin: 20px 10px 1px 0;
+  font-family: $font-bold;
+  text-align: left;
 }
-.card {
-  text-align: center;
-  margin-top: 30px;
+#employer{
+  display: inline-block;
+  float: left;
+  font-family: $sans-serif;
+  padding-right: 1em;
+  vertical-align: text-top;
 }
-.event-details,
+#pipe {
+  display: inline-block;
+  float: left;
+  font-family: $sans-serif;
+  padding-right: 1em;
+  color: $light-gray;
+}
+
+
+#employer-location {
+  display: inline-block;
+  float: left;
+  font-family: $sans-serif;
+}
+.experience {
+  display: inline-block;
+  float: left;
+  margin-top: 15px ;
+}
+
+
+
+
+
 .job-details {
   margin: -40px 35px 25px;
 }
@@ -97,6 +106,7 @@
   display: inline-block;
   vertical-align: top;
 }
+
 
 
 #new-job-form {

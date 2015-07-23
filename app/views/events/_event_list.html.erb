@@ -15,21 +15,21 @@
                 <%= image_tag event.uploaded_file(:square), :class=>"event-list-img" %>
                 <% end %>
 
-                <div class="event-list-content">
-                  <h4 class="event-list-details"><%= event.title %></h4>
+                <div class="event-header">
+                  <h4 id="title"><%= event.title %></h4>
                 </br>
-                <span class="event-list-details"><%= event.event_date  %></span>
-                <span class="event-pipe">
+                <span id="event-date"><%= event.event_date  %></span>
+                <span id="pipe">
                   |
                 </span>
-                <span class="event-list-details"><%= event.event_time %></p>
+                <span id="event-list-details"><%= event.event_time %></span>
               </br>
-              <p class="event-list-details"><%= link_to "View More", event_path(event) %></p>
+              <p id="event-list-details"><%= link_to "View More", event_path(event) %></p>
             </br>
           </div>
 
           <div class="event-listing-thumbnail">
-            <div class="posted-by">
+            <div id="posted-by">
               <p >Posted by</span>
               <% if event.user.uploaded_file_file_name.nil? %>
               <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{event.user_id}" %>
@@ -48,7 +48,7 @@
       </div>
 
       <div class="collapse-card__body event-details">
-    
+
       </div>
     </div>
   </div>
