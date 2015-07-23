@@ -27,8 +27,9 @@
                 </div>
 
                 <div class="event-listing-thumbnail">
-                  <div id="posted-by">
-                    <span >Posted by</span>
+                  <span class="posted-by-events" >Posted by</span></br>
+                  <div id="posted-by-img">
+
                       <% if event.user.uploaded_file_file_name.nil? %>
                       <%=link_to image_tag("default_pic.png", size: "50x50"), "/users/#{event.user_id}" %>
                       <% else %>
@@ -36,12 +37,12 @@
                       <% end %>
                   </div>
                 </div>
-                <div class="edit-delete">
+                <!-- <div class="edit-delete">
                   <%= link_to '<i class="glyphicon glyphicon-pencil resources-edit" title="Edit Event"></i>'.html_safe,
                       edit_event_path(event) if event.user_id == current_user.id %>
                       <%= link_to '<i class="glyphicon glyphicon-remove  resources-delete" title="Delete Event"></i>'.html_safe,
                       event, method: :delete, data: { confirm: 'Are you sure?' } if event.user_id == current_user.id %>
-                </div>
+                </div> -->
               </div>
             </div>
 
@@ -52,8 +53,8 @@
         </div>
       </div>
 
-      <!-- <div class="collapse-card__body event-details">
-      </div> -->
+      <div class="collapse-card__body event-details">
+      </div>
 
     </div>
     <div class="col-md-1"></div>
