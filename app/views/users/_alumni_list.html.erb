@@ -12,6 +12,9 @@
             <% else %>
               <div><%= link_to image_tag(user.uploaded_file(:medium)), "/users/#{user.id}" %></div>
             <% end %>
+          <div class="user-contact-info">
+
+
             <h4 class="profile-name" style="color: #233139;"><%= user.full_name %></h4>
             <% if !user.looking && !user.hiring && !user.is_mentor %>
               <p> </p>
@@ -36,7 +39,7 @@
               <% end %>
             </p>
           </div>
-          <div class="icon-box">
+          <div id="icon-box">
             <a class="fa fa-envelope-square fa-lg" href="mailto:<%= user.email %>"></a>
 
             <% unless user.github_profile.blank? %>
@@ -69,6 +72,7 @@
               </a>
             <% end %>
           </div>
+        </div>
         </div>
         <!--end of box here  -->
       </div>
