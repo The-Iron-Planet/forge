@@ -3,9 +3,12 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <h2 class = "resources-head-text">Resources</h2>
-        <%= link_to new_resource_path, :class=>"btn-add-record-long-resources" do %>
-          <span class = "fa fa-plus fa-lg"></span>
-        <% end %>
+        <a href="#new-resource" data-toggle="modal" aria-hidden="true">
+          <span class = "fa fa-plus fa-lg btn-add-record-long-resources"></span>
+        </a>
+        <div id="new-resource" class="modal fade">
+          <%= render 'form' %>
+        </div>
         <div class="well">
           <%= form_tag search_resources_path, remote: true do %>
           <%= text_field_tag "query", params[:query], class: "general-search-resources", placeholder: "Search"%>

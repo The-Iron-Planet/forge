@@ -1,10 +1,12 @@
-<div class="resources-modal">
+<div class="job-modal-well">
+  <div class="row" id="job-post-form">
+    <h2 id="job-post-modal-header">New Resource</h2>
     <%= form_for(@resource) do |f| %>
         <div class="row form-val">
           <%= render "shared/error_messages", :target => @resource %>
         </div>
-        <div class="row">
-          <div class="col-md-12 field">
+        <div class="col-md-12 field">
+          <div class="modal-body">
             <div class="resource-list">
               <div class="field">
                 <%= f.label :title, class: "input-label" %><br>
@@ -20,7 +22,7 @@
               </div>
               <div class="field">
                 <%= f.label :curriculum, class: "input-label" %><br>
-                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :nickname, prompt: "", class: "input-field dropdown") %>
+                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :nickname, prompt: "", class: "input-field") %>
               </div>
             </div>
           </div>
@@ -32,4 +34,3 @@
       <% end %>
     </div>
   </div>
-</div>

@@ -18,6 +18,7 @@ class ResourcesController < ApplicationController
     else
       @resources = Resource.ordered.first(5)
     end
+    @resource = Resource.new
   end
 
   def my_resources
