@@ -10,7 +10,7 @@ class EventsController < ApplicationController
           search_results(params[:query], params[:campus_id])
       if @events.blank?
         flash.now[:notice] = "Your search returned no results. Please try again."
-      elsif @events == Event  
+      elsif @events == Event
         @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
             where(campus_id: current_user.campus_id)
         flash.now[:notice] = "Please choose specific search parameters."
@@ -20,6 +20,7 @@ class EventsController < ApplicationController
       @events = Event.where("happens_on >= ?", Time.zone.now.beginning_of_day).ordered.
         where(campus_id: current_user.campus_id)
     end
+    @event = Event.new
   end
 
   # GET /events/new

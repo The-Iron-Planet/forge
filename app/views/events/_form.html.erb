@@ -1,46 +1,48 @@
-<div class="container-fluid">
-  <%= form_for(@event) do |f| %>
-    <div class="row form-val">
-      <%= render "shared/error_messages", :target => @event %>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field">
-          <%= f.label :happens_on, "Happens On", :class => "input-label" %><br>
-          <%= f.datetime_select :happens_on, class: "form-control" %>
+<div class="job-modal-well">
+  <div class="row" id="job-post-form">
+    <h2 id="job-post-modal-header">New Event</h2>
+    <%= form_for(@event) do |f| %>
+      <div class="row form-val">
+        <%= render "shared/error_messages", :target => @event %>
+      </div>
+      <div class="col-md-12 field">
+        <div class="modal-body">
+          <div class="resource-list">
+            <div class="field">
+              <%= f.label :happens_on, "Happens On", :class => "input-label" %><br>
+              <%= f.datetime_select :happens_on, class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :title, :class => "input-label" %><br>
+              <%= f.text_field :title, :class => "input-field" %>
+            </div>
+            <div class="field">
+              <%= f.label :location, :class => "input-label" %><br>
+              <%= f.text_area :location, :class => "input-field" %>
+            </div>
+            <div class="field">
+              <%= f.label :description, :class => "input-label" %><br>
+              <%= f.text_area :description, :class => "description" %>
+            </div>
+            <div class="field">
+              <%= f.label :website , :class => "input-label"%><br>
+              <%= f.text_field :website, :class => "input-field" %>
+            </div>
+            <div class="field">
+              <%= f.label :campus, :class => "input-label" %><br>
+              <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, {selected: current_user.campus_id},
+                  :class=>"input-field dropdown") %>
+            </div>
+            <div class="field">
+              <%= f.label "Event Photo", class: "input-label" %>
+              <%= f.file_field :uploaded_file, class: "input-field"%>
+            </div>
         </div>
-        <div class="field">
-          <%= f.label :title, :class => "input-label" %><br>
-          <%= f.text_field :title, :class => "input-field" %>
-        </div>
-        <div class="field">
-          <%= f.label :location, :class => "input-label" %><br>
-          <%= f.text_area :location, :class => "input-field" %>
-        </div>
-        <div class="field">
-          <%= f.label :description, :class => "input-label" %><br>
-          <%= f.text_area :description, :class => "description" %>
-        </div>
-        <div class="field">
-          <%= f.label :website , :class => "input-label"%><br>
-          <%= f.text_field :website, :class => "input-field" %>
-        </div>
-        <div class="field">
-          <%= f.label :campus, :class => "input-label" %><br>
-          <%= f.collection_select(:campus_id, Campus.all, :id, :long_name, {selected: current_user.campus_id},
-              :class=>"input-field dropdown") %>
+        <div class="actions">
+        <%= f.submit :class=> "btn", :value => 'Save Event'%>
         </div>
       </div>
-      <div class="col-md-6">
-        <div>
-          <%= f.label :uploaded_file, class: "uploaded" %>
-          <%= f.file_field :uploaded_file, class: "uploaded choose"%>
-        </div>
-      </div>
-      
-      <div class="actions">
-      <%= f.submit :class=> "btn", :value => 'Save Event'%>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+</div>
 </div>
