@@ -21,7 +21,7 @@
               <% if @user.uploaded_file_file_name.nil? %>
                 <div><%= image_tag "default_pic.png", size: "175x175", :class=>"profile-page-img" %></div>
               <% else %>
-                <div><%= image_tag @user.uploaded_file(:square) %></div>
+                <div><%= image_tag @user.uploaded_file(:square), :class=>"profile-page-img" %></div>
               <% end %>
             </div>
             <% if @user.id == current_user.id %>

@@ -17,3 +17,6 @@ This app was created in Ruby version 2.2.2 with Rails 4.2.1
 * MailGun
 * AutoHTML
 * Magnific-Popup-Rails
+
+
+(Here's a link to the database structure in an [ERD](https://www.lucidchart.com/invitations/accept/cb495000-71f1-48af-81f5-3f7e0bf90b38))

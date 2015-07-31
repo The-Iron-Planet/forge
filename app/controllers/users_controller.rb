@@ -18,7 +18,7 @@ class UsersController < ApplicationController
         render :index
       end
     else
-      @users = User.all.ordered
+      @users = User.ordered.where(campus_id: current_user.campus_id)
     end
   end
 
