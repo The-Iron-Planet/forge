@@ -22,7 +22,7 @@
               </div>
               <div class="field">
                 <%= f.label :curriculum, class: "input-label" %><br>
-                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :nickname, prompt: "", class: "input-field") %>
+                <%= f.collection_select(:curriculum_id, Curriculum.all, :id, :nickname, {prompt: ""}, class: "input-field dropdown") %>
               </div>
             </div>
           </div>
