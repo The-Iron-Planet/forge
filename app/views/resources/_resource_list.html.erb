@@ -10,19 +10,23 @@
           <div class="collapse-card__heading job-heading">
             <h4 class="collapse-card__title ">
               <div class="resource-post-image-indexpg">
-                  <% if resource.curriculum.nickname == "Rails" %>
-                <div>
-                  <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
-                </div>
-                  <% elsif resource.curriculum.nickname == "Python" %>
-                <div>
-                  <%= image_tag("data-science-icon.png", size: "80x80") %>
-                </div>
-                  <% elsif resource.curriculum.nickname == "Front End" %>
-                <div>
-                  <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
-                </div>
-                  <% end %>
+                <% if resource.curriculum.nickname == "Rails" %>
+                  <div>
+                    <%= image_tag("back-end-engineering-icon.png", size: "80x80") %>
+                  </div>
+                <% elsif resource.curriculum.nickname == "Python" %>
+                  <div>
+                    <%= image_tag("data-science-icon.png", size: "80x80") %>
+                  </div>
+                <% elsif resource.curriculum.nickname == "Front End" %>
+                  <div>
+                    <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
+                  </div>
+                <% elsif resource.curriculum.nickname == "Mobile" %>
+                  <div>
+                    <%= image_tag("mobile-engineering-icon.png", size: "80x80") %>
+                  </div>
+                <% end %>
               </div>
               <div class= "resource-img">
                   <%=link_to resource.user.full_name, "/users/#{resource.user_id}" %>

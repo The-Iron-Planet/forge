@@ -25,6 +25,10 @@
                <div>
                  <%= image_tag("front-end-engineering-icon.png", size: "80x80") %>
                </div>
+             <% elsif resource.curriculum.nickname == "Mobile" %>
+               <div>
+                 <%= image_tag("mobile-engineering-icon.png", size: "80x80") %>
+               </div>
              <% end %>
            </div>
           <p class="dashboard-event-title"><%= resource.title %></p>
