@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-d1 = Time.zone.local(2015, 7, 30, 18, 30, 00)
-d2 = Time.zone.local(2015, 8, 5, 19, 00, 00)
-d3 = Time.zone.local(2015, 8, 3, 17, 30, 00)
-d4 = Time.zone.local(2015, 8, 27, 18, 30, 00)
-d5 = Time.zone.local(2015, 8, 15, 14, 00, 00)
-d6 = Time.zone.local(2015, 7, 24, 14, 00, 00)
+d1 = Time.zone.local(2016, 7, 30, 18, 30, 00)
+d2 = Time.zone.local(2016, 8, 5, 19, 00, 00)
+d3 = Time.zone.local(2016, 8, 3, 17, 30, 00)
+d4 = Time.zone.local(2016, 8, 27, 18, 30, 00)
+d5 = Time.zone.local(2016, 8, 15, 14, 00, 00)
+d6 = Time.zone.local(2016, 7, 24, 14, 00, 00)
 
 dur_campus = Campus.create!(city: "Durham", state: "NC")
 atl_campus = Campus.create!(city: "Atlanta", state: "GA")
